@@ -102,7 +102,3 @@ Wickham H. (2016) [**ggplot2: Elegant Graphics for Data Analysis (Use R)**](http
 
 Healy K. (2018) [**Data visualization: A practical introduction**](https://socviz.co/). Princeton University Press.
 
-\
-
-\
-
