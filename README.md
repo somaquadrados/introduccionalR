@@ -42,7 +42,8 @@ Marília Melo Favalesso ([mariliabioufpr\@gmail.com](mariliabioufpr@gmail.com))
 
 48 h (8 clases de 6 h)
 
-## Enmienda
+## Plan del curso
+([descarga el plan completo aquí](https://github.com/Soma-dos-Quadrados/introduccionalR/blob/main/plan_curso/emienta.pdf))
 
 ### Clase 1
 
