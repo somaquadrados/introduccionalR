@@ -4,9 +4,7 @@
 
 ### ¿De qué se trata el curso?
 
-Este es un curso de dos meses en programación R para analizar datos biológicos. Se realiza de forma virtual y contará con una combinación de clases sincrónicas y asincrónicas, con ejercicios que se entregarán semanalmente y un proyecto final. Es un curso intensivo y desafiante que invita al estudiante a pensar y desarrollar algoritmos para el análisis de datos biológicos.
-
-Es un curso de programación en R que prepara a los participantes para poder programar algoritmos y comprender los métodos desarrollados por otros. Específicamente, el curso tiene como objetivo enseñar a los participantes a:
+Este es un curso de un mes y medio en programación R para análisis de datos biológicos. Se realiza de forma virtual y contará con una combinación de clases sincrónicas y asincrónicas, con ejercicios que se entregarán semanalmente y un proyecto final. Es un curso intensivo y desafiante que invita al estudiante a pensar y desarrollar algoritmos para el análisis de datos biológicos. Específicamente, el curso tiene como objetivo enseñar a los participantes a:
 
 (a) desarrollar e interpretar scripts R
 
@@ -16,13 +14,13 @@ Es un curso de programación en R que prepara a los participantes para poder pro
 
 (d) crear informes con RMarkdown
 
-Subiremos los videos de las clases al canal de youtube [\@somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A). Los videos se pueden ver de forma asincrónica. El material escrito, diapositivas, scripts y tareas estarán disponibles en el repositorio de "[Soma dos Quadrados](https://github.com/Soma-dos-Quadrados/introduccionalR)". Las clases presenciales se llevan a cabo semanalmente los viernes, de 2:00 pm a 5:00 pm. Las clases presenciales se utilizarán para resolver dudas y ejercicios.
+Subiremos los videos de las clases al canal de youtube [\@somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A). Los videos se pueden ver de forma asincrónica. El material escrito, diapositivas, scripts y tareas estarán disponibles en el repositorio de "Soma dos Quadrados" ([github.com/Soma-dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR))". Las clases presenciales se llevan a cabo semanalmente los viernes, de 2:00 pm a 5:00 pm. Las clases presenciales se utilizarán para resolver dudas y ejercicios.
 
-El curso se ofrece de forma gratuita y la preinscripción estará abierta entre los días 20 y 20 del XX XXXX 2021. El curso comienza el día XX de XXXX hasta finales de XXXX de 2021.
+El curso se ofrece de forma gratuita y la preinscripción estará abierta entre los días 01 y 16 de julio. El curso comienza el día 02 de agosto hasta el medio de septiembre de 2021
 
 ### Público
 
-El curso está dirigido a estudiantes de pós-grado y/o investigadores interesados ​​en aprender a utilizar R para el análisis de datos biológicos. Es un curso introductorio que trabajará con la importación, manipulación y análisis descriptivo y visual de datos biológicos.
+El curso está dirigido a estudiantes de pós-grado, técnicos y investigadores interesados ​​en aprender a utilizar R para el análisis de datos biológicos. Es un curso introductorio que trabajará con la importación, manipulación y análisis descriptivo y visual de datos biológicos.
 
 El cupo máximo es de 20 personas.
 
@@ -30,64 +28,70 @@ El cupo máximo es de 20 personas.
 
 Los estudiantes deben ver las lecciones en video y resolver los ejercicios disponibles en el repositorio de [Soma dos Quadrados](https://github.com/Soma-dos-Quadrados/introduccionalR). La duración estimada de las clases es de 3h a 4h. Los ejercicios semanales son obligatorios.
 
-El viernes habrá clases virtuales obligatorias y sincrónicas, donde se hará un repaso de la clase teórica y un lugar para resolver las dudas de los alumnos. Los ejercicios de tareas también se revisarán con los participantes. La duración media de estas clases es de 2h haste 3h. También habrá un grupo de Telegram (mensajería on-line) para consultas y discusiones entre estudiantes en tiempo real. El curso requiere de seis a ocho horas de dedicación a la semana durante dos meses.
+El viernes habrá clases virtuales obligatorias y sincrónicas, donde se hará un repaso de la clase teórica y resolución de dudas. Los ejercicios de tareas también se revisarán con los participantes. La duración media de estas clases es de 3h. También habrá un grupo de Telegram (mensajería on-line) para consultas y discusiones entre estudiantes en tiempo real.
+
+El curso requiere de seis a ocho horas de dedicación a la semana durante dos meses.
 
 ## Responsables
 
-Eliana Burgos ([burgosef\@gmail.com](burgosef@gmail.com))
+Eliana Burgos ([efburgos\@conicet.gov.ar](efburgos@conicet.gov.ar))
 
 Marília Melo Favalesso ([mariliabioufpr\@gmail.com](mariliabioufpr@gmail.com))
 
 ## Carga horaria
 
-48 h (8 clases de 6 h)
+48 h
 
 ## Plan del curso
 ([descarga el plan completo aquí](https://github.com/Soma-dos-Quadrados/introduccionalR/blob/main/plan_curso/emienta.pdf))
 
-### Clase 1
+### Clase 0
 
 -   **Introducción al curso**
 -   **Programación**
 -   **IDE**
 -   **RStudio**
 
-### Clase 2
+### Clase 1
 
 -   **Objetos y atribuciones**
 -   **Estructuras de objetos: qué son y cómo construir en R**
 -   **Funciones**
 -   **Estructuras de Control**
 
-### Clase 3
+### Clase 2
 
 -   **Datos biológicos**
 -   **Importación de bases de datos para el R**
 -   **Manipulación de la base de datos en R**
 
-### Clase 4
+### Clase 3
 
 -   **Variables estadística**
 -   **Distribución de probabilidad**
 -   **Estadística descriptiva: medidas de posición**
 -   **Estadística descriptiva: medidas de dispersión**
 
-### Clase 5
+### Clase 4
 
 -   **Estadísticas descriptivas: las frecuencias**
 -   **Gráficos**
 
-### Clase 6
+### Clase 5
 
 -   **Mapas con R**
 
-### Clase 7
+### Clase 6
 
 -   **Informes dinámicos con RMarkdown**
 
-### Clase 8
+### Clase 7
 
--   **Resolución de ejercicios y presentación de informe final**
+-   **Presentación del trabajo final**
+
+## Inscripción
+
+La inscripción al curso comienza el lunes 9 de agosto a las 9 am y se extiende hasta el día 27 a las 00 am. Para aquellos interesados ​​en registrarse, solo complete el siguiente formulario:
 
 ## Referencias
 
