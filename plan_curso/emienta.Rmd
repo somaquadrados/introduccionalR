@@ -13,7 +13,7 @@ fontsize: 11pt
 
 ### ¿De qué se trata el curso?
 
-Este es un curso de un mes y medio en programación R para análisis de datos biológicos. Se realiza de forma virtual y contará con una combinación de clases sincrónicas y asincrónicas, con ejercicios que se entregarán semanalmente y un proyecto final. Es un curso intensivo y desafiante que invita al estudiante a pensar y desarrollar algoritmos para el análisis de datos biológicos. Específicamente, el curso tiene como objetivo enseñar a los participantes a:
+Este es un curso de un mes y medio en programación R para análisis de datos biológicos. Se realiza de forma virtual y contará con una combinación de clases sincrónicas y asincrónicas, con ejercicios que se entregarán semanalmente y una presentación final. Es un curso intensivo y desafiante que invita al estudiante a pensar y desarrollar algoritmos para el análisis de datos biológicos. Específicamente, el curso tiene como objetivo enseñar a los participantes a:
 
 (a) desarrollar e interpretar scripts R
 
@@ -25,11 +25,11 @@ Este es un curso de un mes y medio en programación R para análisis de datos bi
 
 Subiremos los videos de las clases al canal de youtube [\@somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A). Los videos se pueden ver de forma asincrónica. El material escrito, diapositivas, scripts y tareas estarán disponibles en el repositorio de "Soma dos Quadrados" ([github.com/Soma-dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR)). Las clases presenciales se llevan a cabo semanalmente los viernes, de 2:00 pm a 5:00 pm. Las clases presenciales se utilizarán para resolver dudas y ejercicios.
 
-El curso se ofrece de forma gratuita y la preinscripción estará abierta entre los días 01 y 16 de julio. El curso comienza el día 02 de agosto hasta el medio de septiembre de 2021
+El curso se ofrece de forma gratuita y la preinscripción estará abierta entre los días 12 y 31 de julio. El curso comienza el día 16 de agosto hasta el dia 27 de septiembre de 2021.
 
 ### Público
 
-El curso está dirigido a estudiantes de pós-grado, técnicos y investigadores interesados ​​en aprender a utilizar R para el análisis de datos biológicos. Es un curso introductorio que trabajará con la importación, manipulación y análisis descriptivo y visual de datos biológicos.
+El curso está dirigido a estudiantes de pós-grado, técnicos y investigadores interesados en aprender a utilizar R para el análisis de datos biológicos. Es un curso introductorio que trabajará con la importación, manipulación y análisis descriptivo y visual de datos biológicos.
 
 El cupo máximo es de 20 personas.
 
@@ -37,15 +37,15 @@ El cupo máximo es de 20 personas.
 
 Los estudiantes deben ver las lecciones en video y resolver los ejercicios disponibles en el repositorio de [Soma dos Quadrados](https://github.com/Soma-dos-Quadrados/introduccionalR). La duración estimada de las clases es de 3h a 4h. Los ejercicios semanales son obligatorios.
 
-El viernes habrá clases virtuales obligatorias y sincrónicas, donde se hará un repaso de la clase teórica y resolución de dudas. Los ejercicios de tareas también se revisarán con los participantes. La duración media de estas clases es de 3h. También habrá un grupo de Telegram (mensajería on-line) para consultas y discusiones entre estudiantes en tiempo real.
+El viernes habrá clases virtuales obligatorias y sincrónicas, donde se hará un repaso de la clase teórica y resolución de dudas. Los ejercicios de tareas también se revisarán con los participantes. La duración media de estas clases es de 3h. También habrá un grupo de [Telegram (mensajería on-line)](https://t.me/joinchat/54-wd1g7gBswMjUx) para consultas y discusiones entre estudiantes en tiempo real.
 
-El curso requiere de seis a ocho horas de dedicación a la semana durante dos meses.
+El curso requiere de seis a ocho horas de dedicación a la semana.
 
 ## Responsables
 
-Eliana Burgos ([efburgos\@conicet.gov.ar](efburgos@conicet.gov.ar))
+Eliana Burgos ([efburgos@conicet.gov.ar](efburgos@conicet.gov.ar))
 
-Marília Melo Favalesso ([mariliabioufpr\@gmail.com](mariliabioufpr@gmail.com))
+Marília Melo Favalesso ([mariliabioufpr@gmail.com](mariliabioufpr@gmail.com))
 
 ## Carga horaria
 
@@ -385,38 +385,6 @@ Marília Melo Favalesso ([mariliabioufpr\@gmail.com](mariliabioufpr@gmail.com))
 
 ### Clase 5
 
--   **Mapas con R**
-
-    -   Paquetes R
-
-    -   ¿Qué es un mapa?
-
-    -   ¿Qué es un ráster?
-
-    -   ¿Qué es un vector?
-
-    -   ¿Qué es un punto?
-
-    -   Sistema de información geográfica
-
-    -   Elementos de un mapa
-
-    -   Base de datos geoespacial
-
-    -   Mapas para datos continuos
-
-    -   Mapas para datos de recuento
-
-    -   Mapas para datos binarios
-
-    -   Mapas para series de tiempo
-
-    -   Cómo crear un mapa animado
-
-    -   Ejercicios
-
-### Clase 6
-
 -   **Informes dinámicos con RMarkdown**
 
     -   El 'markdown' y el 'RMarkdown'
@@ -437,13 +405,13 @@ Marília Melo Favalesso ([mariliabioufpr\@gmail.com](mariliabioufpr@gmail.com))
 
     -   Compilar un documento 'RMarkdown'
 
-### Clase 7
+### Clase 6
 
--   **Resolución de ejercicios y presentación de informe final**
+-   **Presentación del proyecto desarrollado**
 
-## **Inscripción**
+## Inscripción
 
-La inscripción al curso comienza el lunes 01 de julio a las 9 am y se extiende hasta el día 16 a las 00 am. Para aquellos interesados en registrarse, solo complete el siguiente formulario: (**INCLUYER ENLACE**).
+La inscripción al curso comienza el lunes 12 de julio a las 9 am y se extiende hasta el día 31 a las 00 am. Para aquellos interesados en registrarse, solo complete el siguiente formulario: [https://forms.gle/1Y6rR8VbfCE214nw8](https://forms.gle/1Y6rR8VbfCE214nw8).
 
 ## Referencias
 
@@ -493,7 +461,4 @@ Wilke CO. (2019) [**Fundamentals of Data Visualization**](https://clauswilke.com
 
 Wright C, Ellis SE, Hicks SC, Peng RD. (2021) [**Tidyverse Skills for Data Science in R**](https://jhudatascience.org/tidyversecourse/). Johns Hopkins University.
 
-\
-\
 
-\
