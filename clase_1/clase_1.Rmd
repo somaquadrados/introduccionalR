@@ -423,7 +423,15 @@ hh == ii
 
 ### Ejercicios
 
-Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que `r fontawesome::fa("r-project")` lo hizo correctamente.
+1 - Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que `r fontawesome::fa("r-project")` lo hizo correctamente.
+
+2 - Trabajará con un modelo matemático en el que la variable de respuesta tiene una distribución de Poisson. Tu variable de respuesta es:
+
+```{r}
+vr <- c(20, 22, 21, 26, 14, 30, 21, 39)
+```
+
+Escribe la 'vr' para que la clase coincida con el tipo `integer`. 
 
 ---
 name: tipos
@@ -453,16 +461,6 @@ class: middle, center
 <img src="figs/3-estruc.png" style="width: 85%;">
 </small>
 ]
-
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-Dimensiones = c("1d", "2d", "nd")
-Homogeneo = c("Atomic vector", "Matrix", "Array")
-Heterogeneo = c("List", "Data frame", "")
-
-data.frame(Dimensiones, Homogeneo, Heterogeneo) %>% 
-  kableExtra::kbl() %>%
-  kableExtra:: kable_material(c("striped", "hover", "condensed"))
-```
 
 ---
 ## Tipos de objetos

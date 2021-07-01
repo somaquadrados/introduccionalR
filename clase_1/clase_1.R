@@ -163,13 +163,15 @@ a <- 1
 ## funciones y los operadores pueden saber exactamente qué hacer con un objeto.
 
 # Por ejemplo, es posible sumar dos objetos numéricos,...
-a = 1
-b = 2
+a <- 1
+b <- 2
+
 a + b
 
 # ... pero no podemos sumar dos caracteres:
-c = "c"
-d = "!"
+c <- "c"
+d <- "!"
+
 c + d
 
 # > !!R verificó la naturaleza de "c" y "d" y las identificó como no numéricas.
@@ -243,8 +245,13 @@ hh == ii
 
 ## ★ Ejercicios ★
 
-## 1. Crea un objeto para las clases numeric, integer, character e logical y 
-##    comprueba que lo hizo correctamente.
+## 1 - Crea un objeto para las clases numeric, integer, character e logical y 
+##     comprueba que lo hizo correctamente.
+
+## 2 - Trabajará con un modelo matemático en el que la variable de respuesta 
+##     tiene una distribución de Poisson. Tu variable de respuesta es:
+vr <- c(20, 22, 21, 26, 14, 30, 21, 39)
+##     Escribe la 'vr' para que la clase coincida con el tipo `integer`. 
 
 ## --
 

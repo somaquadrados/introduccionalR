@@ -260,8 +260,19 @@ ls()
 ```
 
 ```
-##  [1] "a"      "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto"
-## [10] "w"      "y"
+##  [1] "a"           "a1"          "a2"          "a3"          "a4"          "aa"         
+##  [7] "accidentes"  "altura"      "anos"        "ar"          "area"        "b"          
+## [13] "bb"          "c"           "ca"          "cc"          "cod"         "com"        
+## [19] "d"           "dd"          "dtf"         "e"           "edad"        "ee"         
+## [25] "f"           "ff"          "genero"      "gg"          "glicose"     "hh"         
+## [31] "i"           "ii"          "j"           "k"           "letras"      "letras2"    
+## [37] "lis"         "loc"         "loc1"        "loc2"        "loc3"        "localidad"  
+## [43] "logtf"       "m"           "ma"          "mes"         "mt"          "muestras"   
+## [49] "n"           "num"         "num_int"     "objeto"      "Objeto"      "objeto1"    
+## [55] "p"           "p1"          "paciente"    "peso"        "poblacion"   "presencia"  
+## [61] "s"           "sorteo1"     "sorteo2"     "t"           "tabla"       "temperatura"
+## [67] "temporada"   "tiempo"      "v"           "v1"          "v2"          "vc"         
+## [73] "ve"          "vitamina_D"  "vr"          "w"           "y"
 ```
 
 Para eliminar solo un objeto con `rm()`:
@@ -272,8 +283,19 @@ ls() # ¿Qué objetos quedan?
 ```
 
 ```
-##  [1] "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto" "w"     
-## [10] "y"
+##  [1] "a1"          "a2"          "a3"          "a4"          "aa"          "accidentes" 
+##  [7] "altura"      "anos"        "ar"          "area"        "b"           "bb"         
+## [13] "c"           "ca"          "cc"          "cod"         "com"         "d"          
+## [19] "dd"          "dtf"         "e"           "edad"        "ee"          "f"          
+## [25] "ff"          "genero"      "gg"          "glicose"     "hh"          "i"          
+## [31] "ii"          "j"           "k"           "letras"      "letras2"     "lis"        
+## [37] "loc"         "loc1"        "loc2"        "loc3"        "localidad"   "logtf"      
+## [43] "m"           "ma"          "mes"         "mt"          "muestras"    "n"          
+## [49] "num"         "num_int"     "objeto"      "Objeto"      "objeto1"     "p"          
+## [55] "p1"          "paciente"    "peso"        "poblacion"   "presencia"   "s"          
+## [61] "sorteo1"     "sorteo2"     "t"           "tabla"       "temperatura" "temporada"  
+## [67] "tiempo"      "v"           "v1"          "v2"          "vc"          "ve"         
+## [73] "vitamina_D"  "vr"          "w"           "y"
 ```
 
 ---
@@ -287,7 +309,19 @@ ls() # ¿Qué objetos quedan?
 ```
 
 ```
-## [1] "b"      "d"      "e"      "i"      "objeto" "w"      "y"
+##  [1] "a1"          "a2"          "a3"          "a4"          "aa"          "accidentes" 
+##  [7] "altura"      "anos"        "ar"          "area"        "b"           "bb"         
+## [13] "ca"          "cc"          "cod"         "com"         "d"           "dd"         
+## [19] "dtf"         "e"           "edad"        "ee"          "f"           "ff"         
+## [25] "genero"      "gg"          "glicose"     "hh"          "i"           "ii"         
+## [31] "letras"      "letras2"     "lis"         "loc"         "loc1"        "loc2"       
+## [37] "loc3"        "localidad"   "logtf"       "m"           "ma"          "mes"        
+## [43] "mt"          "muestras"    "n"           "num"         "num_int"     "objeto"     
+## [49] "Objeto"      "objeto1"     "p"           "p1"          "paciente"    "peso"       
+## [55] "poblacion"   "presencia"   "s"           "sorteo1"     "sorteo2"     "t"          
+## [61] "tabla"       "temperatura" "temporada"   "tiempo"      "v"           "v1"         
+## [67] "v2"          "vc"          "ve"          "vitamina_D"  "vr"          "w"          
+## [73] "y"
 ```
 
 
@@ -602,7 +636,16 @@ hh == ii
 
 ### Ejercicios
 
-Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> lo hizo correctamente.
+1 - Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> lo hizo correctamente.
+
+2 - Trabajará con un modelo matemático en el que la variable de respuesta tiene una distribución de Poisson. Tu variable de respuesta es:
+
+
+```r
+vr &lt;- c(20, 22, 21, 26, 14, 30, 21, 39)
+```
+
+Escribe la 'vr' para que la clase coincida con el tipo `integer`. 
 
 ---
 name: tipos
@@ -632,8 +675,6 @@ class: middle, center
 &lt;img src="figs/3-estruc.png" style="width: 85%;"&gt;
 &lt;/small&gt;
 ]
-
-
 
 ---
 ## Tipos de objetos
@@ -884,7 +925,7 @@ sorteo1
 ```
 
 ```
-##  [1] 19 24 23 88 81 48 16 39 38 21 77  9 46 85 83 70 97 47 72 75
+##  [1] 79 50 57 72 54 69 18 13 34 92 63 26 45 32 99 29 98 20 21 38
 ```
 
 ```r
@@ -894,7 +935,7 @@ sorteo2
 ```
 
 ```
-##  [1]  23  71  82  60  24  96   7  28  50  46  43  32  36  59  43  23   9  20  64 100
+##  [1] 30 24 57  2 74  5 98 77 90 30 70 86 20  2 82 19 76 50 97 21
 ```
 
 ---
@@ -1544,7 +1585,7 @@ lis
 ## [2,]    4    5
 ## 
 ## [[2]]
-## [1] 14 15 49 84 39
+## [1] 18 79 52 83  2
 ## 
 ## [[3]]
 ## [1] &lt;NA&gt;
@@ -1782,7 +1823,7 @@ vitamina_D
 ```
 
 ```
-## [1] 46 38 22 24 59
+## [1]  9 36 27  6 38
 ```
 
 
@@ -1794,10 +1835,10 @@ for(paciente in vitamina_D){ # para cada uno de los pacientes en "vitamina_D"...
 ```
 
 ```
+## [1] "no ideales"
 ## [1] "ideales"
 ## [1] "ideales"
-## [1] "ideales"
-## [1] "ideales"
+## [1] "no ideales"
 ## [1] "ideales"
 ```
 
@@ -1846,7 +1887,7 @@ glicose &lt;- sample(70:130, 4); glicose
 ```
 
 ```
-## [1] 110  80  74 101
+## [1] 107 106 100 110
 ```
 
 
@@ -1860,8 +1901,8 @@ for(paciente in glicose){ # para cada paciente con datos de glucosa...
 
 ```
 ## [1] "prediabetes"
-## [1] "normal"
-## [1] "normal"
+## [1] "prediabetes"
+## [1] "prediabetes"
 ## [1] "prediabetes"
 ```
 
