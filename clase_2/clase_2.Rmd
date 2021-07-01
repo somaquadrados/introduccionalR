@@ -1,0 +1,606 @@
+---
+title: "Presentation Ninja"
+subtitle: "&#x2694;&#xFE0F; xaringan +<br/>&#x1F60E; xaringanthemer"  
+author: 
+  - "Yihui Xie"
+  - "Garrick Aden-Buie"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+name: manejo
+class: middle, center
+
+# Manejo de datos
+
+---
+## Manejo de datos
+
+### Indexación
+
+- Los objetos son conjuntos *indexados* - Esto nos permite acceder a cada valor de manera individual.
+
+- Usamos corchetes (`[]`) para acceder a la posición de los elementos de un objeto.
+
+.center[<img src="figs/index1.png" style="width: 95%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/vectore.png" style="width: 50%;">]
+
+```{r}
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/vectore2.png" style="width: 50%;">]
+
+```{r}
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+--
+
+```{r}
+ve[1]
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+```{r}
+ve[2] # selecciona solo el segundo elemento
+
+ve[c(2, 4)] # selecciona los elementos en la segunda y cuarta posición
+
+ve[4:6] # selecciona los entre la cuarta y sexta posición
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+.center[<img src="figs/vectore2.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+.center[<img src="figs/quitar.png" style="width: 50%;">]
+
+--
+
+```{r}
+ve[-1]
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+```{r}
+ve[-2] # quitar solo el segundo elemento
+
+ve[-c(2, 4)] # quitar los elementos en la segunda y cuarta posición
+
+ve[-c(4:6)] # quitar los entre la cuarta y sexta posición
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/bidim.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/bidim2.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+```{r}
+ma <- matrix(data = (c(1:25)), nrow = 5, ncol = 5, byrow = TRUE)
+ma
+
+ma[2,2] # seleccionar el valor de la segunda línea y la segunda columna.
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+```{r}
+ma[3:4, c(3, 5)] # seleccione las filas 3 y 4 y las columnas 3 y 5
+
+ma[c(1,5), 3:5] # seleccione las filas 1 y 5 y las columnas entre 3 y 5
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+.center[<img src="figs/bidim2.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+.center[<img src="figs/bimdim3.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+```{r}
+ma[-2, -2] # menos la fila dos y la columna dos
+
+ma[-c(1, 4), -2:-3] # menos las filas 1 y 4 y las columnas 2 y 3
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/array1.png" style="width: 40%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/array2.png" style="width: 40%;">]
+
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.pull-left[
+```{r}
+ar <- array(data = c(1:8), dim = c(2, 2, 2)); ar # array
+```
+]
+
+.pull-right[
+```{r}
+ar[,,1] # dimensión
+
+ar[,2,1] # columna y dimensión
+
+ar[2,2,1] # fila, columna y dimensión
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.center[<img src="figs/array4.png" style="width: 40%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.pull-left[
+```{r}
+ar
+```
+
+]
+
+.pull-right[
+```{r}
+ar[,,-1] # dimensión
+
+ar[,-2,-1] # columna y dimensión
+
+ar[-2,-2,-1] # fila, columna y dimensión
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
+
+.pull-left[
+```{r}
+# vectores
+exp <- rep(c("CT", "EXP"), 5)
+val <- sample(1:50, 10)
+gen <- sample(c("H", "M"), 10, replace = T)
+```
+
+```{r}
+# data-frame
+dt <- data.frame(exp, val, gen)
+```
+
+```{r eval=FALSE, include=TRUE}
+# resultado
+dt
+```
+]
+
+.pull-right[
+```{r echo=FALSE}
+dt
+```
+
+]
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
+
+```{r}
+dt$exp
+
+dt$val
+
+dt$gen
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+```{r}
+class(dt$exp)
+
+dt$exp <- as.factor(dt$exp)
+dt$exp
+
+class(dt$exp)
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+```{r}
+class(dt$val)
+
+dt$val <- as.numeric(dt$val)
+dt$val
+
+class(dt$val)
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+- agregar una nueva columna:
+
+.pull-left[
+```{r}
+# antes
+dt
+```
+]
+
+.pull-right[
+```{r}
+# después
+dt$ID <- 1:10; dt
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+.pull-left[Trabajará con una tabla de datos que no es suya. Esta tabla corresponde a datos de pacientes tratados en un hospital de su ciudad.
+
+```{r echo=FALSE}
+pacientes <- paste("Paciente", sep = "_", 1:6)
+barrio <- c(12, 28, 7, 20, 19, 8)
+genro <- rep(c("F", "M"), 3)
+edad <- c(57, 60, 39, 56, 67, 33)
+ano <- c(2020, 2021, 2021, 2020, 2018, 2018)
+medico <- rep(c("A", "B", "C"), 2)
+
+data.frame(pacientes, barrio, genro, edad, ano, medico) %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(position = "left")
+```
+]
+
+.pull-right[
+1 - Trabajarás con las variables "genro", "edad", "barrio" y "medico". Descarte las otras variables de la tabla.
+
+2 - En su estudio, solo trabajará con personas que se identifiquen con el género femenino. Seleccione solo los datos correspondientes a estas personas.
+
+3 - Agregue una columna que contenga el motivo de la búsqueda de atención médica: Paciente 1 = "tratamiento hormonal", Paciente 3 = "Problemas gástricos", Paciente 5 = "Sospecha de dengue".
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+```{r}
+pacientes <- paste("Paciente", sep = "_", 1:6)
+barrio <- c(12, 28, 7, 20, 19, 8)
+genro <- rep(c("F", "M"), 3)
+edad <- c(57, 60, 39, 56, 67, 33)
+ano <- c(2020, 2021, 2021, 2020, 2018, 2018)
+medico <- rep(c("A", "B", "C"), 2)
+
+hosp <- data.frame(pacientes, barrio, genro, edad, ano, medico)
+hosp
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+1 - Trabajarás con las variables "genro", "edad", "barrio" y "medico". Descarte las otras variables de la tabla.
+
+2 - En su estudio, solo trabajará con personas que se identifiquen con el género femenino. Seleccione solo los datos correspondientes a estas personas.
+
+
+```{r}
+hosp2 = hosp[c(1,3,5),c(2, 3, 4, 6)]
+hosp2
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+3 - Agregue una columna que contenga el motivo de la búsqueda de atención médica: Paciente 1 = "tratamiento hormonal", Paciente 3 = "problemas gástricos", Paciente 5 = "sospecha de dengue".
+
+```{r}
+hosp2$motivo <- c("tratamiento hormonal", "problemas gástricos", "sospecha de dengue")
+hosp2
+```
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Operadores relacionales con salidas booleanas (VERDADERO o FALSO). 
+```{r}
+A <- 6; B <- 28
+```
+
+.pull-left[
+```{r}
+A == B # A es igual a B?
+A != B # A es distinto de B?
+A > B # A es mayor que B?
+```
+]
+
+.pull-right[
+```{r}
+A >= B # A es mayor o igual que B?
+A < B # A es menor que B?
+A <= B # A es menor o igual que B?
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Operadores relacionales con salidas booleanas (VERDADERO o FALSO). 
+```{r}
+ve <- sample(1:100, 6)
+```
+
+.pull-left[
+```{r}
+# ¿Qué elementos tienen el valor = 30?
+ve == 30 
+
+# ¿Qué elementos tienen un valor superior a 30?
+ve > 30
+```
+]
+
+.pull-right[
+```{r}
+# ¿Qué elementos tienen el valor inferior a 50?
+ve < 50
+
+# ¿Qué elementos tienen valores mayores o iguales a 45?
+ve >= 45
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Elementos del vector
+
+<br>
+
+.center[<img src="figs/vec_selection.png" style="width: 60%;">]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Elementos del vector
+
+.pull-left[
+```{r}
+# ¿Qué elementos tienen el valor = 30?
+ve[ve == 30]
+
+# ¿Qué elementos tienen un valor superior a 30?
+ve[ve > 30]
+```
+]
+
+.pull-right[
+```{r}
+# ¿Qué elementos tienen el valor inferior a 50?
+ve[ve < 50]
+
+# ¿Qué elementos tienen valores mayores o iguales a 45?
+ve[ve >= 45]
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**data frame**)
+
+- Elementos del vector
+
+<br>
+
+.center[<img src="figs/dataframe_selection.png" style="width: 80%;">]
+
+---

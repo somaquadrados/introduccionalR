@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Programación con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Marília Melo Favalesso" />
+    <script src="clase_1_files/header-attrs-2.9/header-attrs.js"></script>
+    <script src="clase_1_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="clase_1_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Programación con R
+## Clase 1
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Marília Melo Favalesso
+
+---
+
+# Script
+
+- [`clase_1.R`](clase_1.R)
+
+# Contenido de hoy
+
+- [Objetos y atribuciones](#objatr)
+
+- [Clases](#clases)
+
+- [Tipos de objetos](#tipos)
+
+- [Estructuras de Control](#control)
+
+- [Funciones](#funciones)
+
+---
+name: objatr
+class: middle, center
+
+# Objetos y atribuciones
+
+---
+## Objetos y atribuciones
+
+- Los **objetos** son variables capazes de almacenar cualquier valor o estructura de datos.
+
+&lt;br&gt;
+.center[&lt;img src="figs/1-obj.png" style="width: 50%;"&gt;]
+&lt;br&gt;
+
+
+```r
+objeto &lt;- 6 # Guardamos el valor '6' en 'objeto' con '&lt;-'
+objeto # Siempre que evaluamos el `objeto`, la R devolverá el valor 6
+```
+
+```
+## [1] 6
+```
+
+&gt; El símbolo **`=`** se puede utilizar en lugar de **`&lt;-`** pero no se recomienda. 
+
+---
+## Objetos y atribuciones
+
+
+```r
+j &lt;- 14
+```
+
+...está haciendo una **declaración**, es decir, declarando que la variable `j` ahora se convertirá en un objeto que contiene el número `14`. Las declaraciones se pueden hacer una en cada línea ...
+
+
+```r
+j &lt;- 14
+y &lt;- 24
+```
+
+... o separados por `;`
+
+
+```r
+j &lt;- 14; y &lt;- 24
+```
+
+podemos usar el `;` siguiendo la asignación para llamar a nuestro objeto y ver su contenido:
+
+
+```r
+j &lt;- 14; j
+```
+
+```
+## [1] 14
+```
+
+---
+## Objetos y atribuciones
+
+#### Otros ejemplos de creación de objetos
+
+
+```r
+b &lt;- 24 
+b
+```
+
+```
+## [1] 24
+```
+
+```r
+c &lt;- 69
+c
+```
+
+```
+## [1] 69
+```
+
+```r
+d &lt;- "e"
+d
+```
+
+```
+## [1] "e"
+```
+
+```r
+e &lt;- "d"
+e
+```
+
+```
+## [1] "d"
+```
+
+---
+## Objetos y atribuciones
+
+**¡¡**Tenga en cuenta que cada objeto solo puede almacenar una estructura a la vez (un número o una secuencia de valores)**!!**
+
+
+```r
+a &lt;- 5
+a
+```
+
+```
+## [1] 5
+```
+
+```r
+a &lt;- "bien"
+a
+```
+
+```
+## [1] "bien"
+```
+
+```r
+a &lt;- 36924612
+a
+```
+
+```
+## [1] 36924612
+```
+
+---
+## Reglas para nombrar objetos
+
+1. Pueden estar formados por *letras*, *números*, "*_*" y "*.*"
+
+2. **No** se puede empezar con un número y/o un punto
+
+3. **No** puede contener espacios
+
+4. Evitar el uso de acentos
+
+5. Evitar el uso de nombres de funciones como:
+
+  &gt; sum, diff, df, var, pt, data, C, etc
+
+6. La **R** distingue entre mayúsculas y minúsculas, por lo que:
+
+  &gt; obj ≠ Obj ≠ OBJ
+
+---
+## Reglas para nombrar objetos
+
+#### Permitido
+
+
+```r
+a &lt;- 5
+a1 &lt;- 5
+obj &lt;- 10
+mi_obj &lt;- 15
+mi.obj &lt;-15
+```
+
+#### No permitido
+
+
+```r
+1a &lt;- 1
+a 1 &lt;- 5
+_obj &lt;-15
+mi-obj &lt;- 15
+```
+
+---
+## Objetos y atribuciones
+
+Podemos almacenar el valor de un objeto `k` dentro de un objeto `w`:
+
+
+```r
+k &lt;- 10
+w &lt;- k
+w
+```
+
+```
+## [1] 10
+```
+
+Podemos usar objetos para realizar operaciones matemáticas...
+
+
+```r
+a + y / j
+```
+
+```
+## [1] 36924614
+```
+
+... y podemos asignar esta operación matemática a un nuevo objeto.
+
+
+```r
+k &lt;- a + y / j
+```
+
+---
+## Gestionar el lugar de trabajo
+
+Enumere los objetos creados con la función `ls()`:
+
+```r
+ls()
+```
+
+```
+##  [1] "a"      "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto"
+## [10] "w"      "y"
+```
+
+Para eliminar solo un objeto con `rm()`:
+
+```r
+rm(a) # elimina el objeto 'obj'
+ls() # ¿Qué objetos quedan?
+```
+
+```
+##  [1] "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto" "w"     
+## [10] "y"
+```
+
+---
+## Gestionar el lugar de trabajo
+
+Para eliminar&gt; 1 objeto con `rm()`:
+
+```r
+rm(c, j, k) # elimina los objetos 'c', 'j' y 'k'
+ls() # ¿Qué objetos quedan?
+```
+
+```
+## [1] "b"      "d"      "e"      "i"      "objeto" "w"      "y"
+```
+
+
+Para eliminar todos los objetos:
+
+```r
+rm(list = ls()) # elimina TODOS los objetos
+ls() # ¿Qué objetos quedan?
+```
+
+```
+## character(0)
+```
+
+---
+## Gestionar el lugar de trabajo
+
+#### Observación:
+
+La pestaña "**Environmental**" de RStudio muestra los objetos creados hasta ahora en la sesión actual.
+
+&lt;center&gt;
+&lt;img src="figs/2-envi.png" style="width: 75%;"&gt;
+&lt;/center&gt;
+
+
+---
+## Objetos y atribuciones
+
+.pull-left[
+Fuiste al campo y recogiste algunos mosquitos, que se enumeran en la siguiente tabla. 
+
+&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Objeto &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Anopheles_sp &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Lutzomyia_sp &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aedes_sp &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Desconocido &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+1 - Cree objetos para cada especie de mosquito y almacene el número de individuos en cada objeto (**n** en la tabla).
+
+2 - Cree objetos para cada especie de mosquito y almacene el número de individuos en cada objeto (**n** en la tabla).
+
+3 - ¿Qué porcentaje de *Lutzomyia sp.* se muestreó?
+
+4 - Si eliminamos los mosquitos desconocidos, ¿cuál es la cantidad total muestreada? ¿Y cuál es el porcentaje de *Aedes*?
+]
+
+---
+name: clases
+class: middle, center
+
+# Clases 
+
+---
+## Clases y tipos de objetos
+
+Los `objetos` tienen tres características:
+
+&gt; &lt;big&gt; a &lt;- 1&lt;/big&gt;
+
+
+1. **Nombre** que le damos al objeto (= a)
+
+2. **Contenido** en sí del objeto (= 1)
+
+3. **Atributo** del objeto
+
+  - `Clase`: naturaleza del elementos (1 = numerico)
+  - `Estructura`: Cómo están organizados los elementos (a = vector)
+
+---
+## Clases de objetos
+
+La clase de un objeto es muy importante en **R**! Es a partir de él que las funciones y los operadores pueden saber *exactamente* qué hacer con un objeto. 
+
+--
+
+Por ejemplo, es posible sumar dos objetos numéricos,...
+
+
+```r
+a = 1
+b = 2
+a + b
+```
+
+```
+## [1] 3
+```
+
+--
+
+... pero no podemos sumar dos caracteres:
+
+```r
+c = "c"
+d = "!"
+c + d
+```
+
+\## simpleError in "c" + "d": argumento no numérico para el operador binario.
+
+&gt; **R** verificó la naturaleza de "c" y "d" y las identificó como no numéricas.
+
+---
+## Clases de objetos
+
+### Objetos atómicos
+
+**R** tiene 5 clases básicas de objetos, también llamados **objetos atómicos**:
+
+.pull-left[
+1 - `numeric`: Números reales, punto flotante (enteros o decimales).
+
+```r
+num &lt;- 1.50
+```
+
+2 - `integer`: Números enteros.
+
+```r
+num_int &lt;- 1L
+```
+
+3 - `logical`: booleano (True/False).
+
+```r
+logtf &lt;- TRUE
+```
+]
+
+.pull-right[
+4 -  `character`: una cadena de caracteres, comúnmente utilizada para representar palabras, frases o texto.
+
+```r
+ca &lt;- "holla!"
+```
+
+5 - `complex`: Un número con partes reales e imaginarias.
+
+```r
+com &lt;- 1.5 + 2i
+```
+]
+
+---
+## Clases de objetos
+
+#### Importante!
+
+1 - Use la función\* `class()` en **R** para verificar si la clase de su objeto es correcta:
+
+```r
+aa &lt;- 1
+class(aa)
+```
+
+```
+## [1] "numeric"
+```
+
+&lt;small&gt;
+&gt; **\*** La idea básica de una función es encapsular un código que se pueda invocar en cualquier momento en R. Su significado y uso son muy similares al de las funciones matemáticas, es decir, hay un nombre, una definición y posterior invocación de la función.
+
+.pull-left[
+
+```r
+f &lt;- function(x) {
+  y &lt;- 6
+  x + y
+}
+
+f(5)
+```
+
+```
+## [1] 11
+```
+]
+
+.pull-right[
+
+```r
+5 + 6
+```
+
+```
+## [1] 11
+```
+&gt; **\*\*** Hablaremos más sobre las funciones más adelante.
+]
+
+&lt;/small&gt;
+
+---
+## Clases de objetos
+
+#### Importante!
+2 - Las expresiones de tipo `character` deben aparecer entre comillas simples o dobles:
+
+```r
+bb &lt;- 'Esto es un character!'
+bb
+```
+
+```
+## [1] "Esto es un character!"
+```
+
+```r
+cc &lt;- "Lo mismo (:"
+cc
+```
+
+```
+## [1] "Lo mismo (:"
+```
+
+```r
+dd &lt;- "I'm gonna take my horse to the old town road ♫"
+dd
+```
+
+```
+## [1] "I'm gonna take my horse to the old town road &lt;U+266B&gt;"
+```
+
+---
+## Clases de objetos
+
+#### Importante!
+
+3 - Los números en **R** generalmente se tratan como objetos `numeric` (números reales de doble precisión), incluso los que escribimos como enteros. 
+
+Para que un entero se trate como un objeto `integer`, debe usar la letra **L** después del número:
+
+
+```r
+dd &lt;- 1
+class(dd) # NO interpretado como integer
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+ee &lt;- 1L
+class(ee) # interpretado como integer
+```
+
+```
+## [1] "integer"
+```
+
+---
+## Clases de objetos
+
+#### Importante!
+
+4 - Los valores `logical` (o booleanos) son **TRUE** (verdaderos) o **FALSE** (falsos). También se aceptan **T** o **F**.
+
+```r
+ff &lt;- T
+gg &lt;- TRUE
+
+ff == gg
+```
+
+```
+## [1] TRUE
+```
+
+```r
+hh &lt;- F
+ii &lt;- FALSE
+
+hh == ii
+```
+
+```
+## [1] TRUE
+```
+
+&gt; **==** : operador matemático "exactamente igual a ..."
+
+---
+## Clases de objetos
+
+### Ejercicios
+
+Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> lo hizo correctamente.
+
+---
+name: tipos
+class: middle, center
+
+# Tipos de objetos
+
+---
+## Tipos de objetos
+
+.pull-left[
+- El tipo del objeto está relacionado con la **clase** y la **estructura/organización**.
+
+- Pueden estar formados por elementos de la misma clase o de clases diferentes.
+
+- Pueden tener de una hasta n dimensiones.
+
+- En **R** tenemos cinco estructuras:
+  - `Vector`
+  - `Matrix`
+  - `Array`
+  - `List`
+  - `Data frame`
+]
+
+.pull-right[
+&lt;img src="figs/3-estruc.png" style="width: 85%;"&gt;
+&lt;/small&gt;
+]
+
+
+
+---
+## Tipos de objetos
+
+.pull-left[
+- El tipo del objeto está relacionado con la **clase** y la **estructura/organización**.
+
+- Pueden estar formados por elementos de la misma clase o de clases diferentes.
+
+- Pueden tener de una hasta n dimensiones.
+
+- En **R** tenemos cinco estructuras:
+  - `Vector`
+  - `Matrix`
+  - `Array`
+  - `List`
+  - `Data frame`
+]
+
+.pull-right[
+&lt;img src="figs/4-struc.png" style="width: 85%;"&gt;
+&lt;/small&gt;
+]
+
+---
+## Tipos de objetos
+
+### Vetores
+
+- Colección **unidimensional** de valores:
+
+.center[&lt;img src="figs/5-vector.png" style="width: 50%;"&gt;]
+
+- Almacena datos de una misma clase.
+
+- La forma más sencilla de crear un `vector` es enumerar los valores separados por comas dentro de una `c()`:
+
+.pull-left[
+
+```r
+area &lt;- c("urb", "rur", "urb", "rur", "urb", "rur")
+area
+```
+
+```
+## [1] "urb" "rur" "urb" "rur" "urb" "rur"
+```
+]
+
+.pull-right[
+
+```r
+temperatura &lt;- c(20, 23, 18, 20, 14, 17)
+temperatura
+```
+
+```
+## [1] 20 23 18 20 14 17
+```
+
+]
+
+---
+## Tipos de objetos
+
+### Vetores
+
+#### Coerción
+
+- No es posible mezclar datos de dos clases en un vector.
+
+- Si lo intenta, **R** exhibirá el comportamiento conocido como **coerción**.
+
+
+```r
+aa &lt;- c(1, 2, 3, 4, "a")
+class(aa)
+```
+
+```
+## [1] "character"
+```
+
+```r
+bb &lt;- c(1L, 2L, 3.50, 4.1)
+class(bb)
+```
+
+```
+## [1] "numeric"
+```
+
+&gt; **DOMINANTE** character &gt; numeric &gt; integer &gt; logical **RECESIVO**
+
+---
+## Tipos de objetos
+
+### Vetores
+
+#### Conversión 
+
+- Es posible intentar forzar a un vector a tener una clase específica:
+
+```r
+a &lt;- 1
+```
+
+.pull-left[
+
+```r
+a1 &lt;- as.character(a) 
+class(a1)
+```
+
+```
+## [1] "character"
+```
+
+```r
+a2 &lt;- as.integer(a)
+class(a2)
+```
+
+```
+## [1] "integer"
+```
+]
+
+.pull-right[
+
+```r
+a3 &lt;- as.numeric(a)
+class(a3)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+a4 &lt;- as.logical(a)
+class(a4)
+```
+
+```
+## [1] "logical"
+```
+]
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+Hay algunas formas prácticas de crear vectores...
+
+- Secuencia de unidade: `x1:xn`.
+
+
+```r
+anos &lt;- 2001:2021
+anos
+```
+
+```
+##  [1] 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017
+## [18] 2018 2019 2020 2021
+```
+
+- Secuencia con espaciado diferente: `seq()`
+
+
+```r
+edad &lt;- seq(from = 0, to = 80, by = 20)
+edad
+```
+
+```
+## [1]  0 20 40 60 80
+```
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+- Repetición: `rep()`.
+
+```r
+area &lt;- rep(x = c("urb", "rur"), times = 3)
+area
+```
+
+```
+## [1] "urb" "rur" "urb" "rur" "urb" "rur"
+```
+
+```r
+mes &lt;- rep(x = c(1, 2), times = 3)
+mes
+```
+
+```
+## [1] 1 2 1 2 1 2
+```
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+- Nombres con secuencia numérica: `paste()`.
+
+
+```r
+# Sin una separación definida
+muestras &lt;- paste("muestra", 1:10)
+muestras
+```
+
+```
+##  [1] "muestra 1"  "muestra 2"  "muestra 3"  "muestra 4"  "muestra 5"  "muestra 6" 
+##  [7] "muestra 7"  "muestra 8"  "muestra 9"  "muestra 10"
+```
+
+```r
+# Con una separación definida
+muestras &lt;- paste("muestra", 1:10, sep = "_")
+muestras
+```
+
+```
+##  [1] "muestra_1"  "muestra_2"  "muestra_3"  "muestra_4"  "muestra_5"  "muestra_6" 
+##  [7] "muestra_7"  "muestra_8"  "muestra_9"  "muestra_10"
+```
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+- Muestreo aleatorio de valores: `sample()`.
+
+```r
+# sorteo sin reemplazo
+sorteo1 &lt;- sample(1:100, 20, replace = F)
+sorteo1
+```
+
+```
+##  [1] 19 24 23 88 81 48 16 39 38 21 77  9 46 85 83 70 97 47 72 75
+```
+
+```r
+# sorteo con reemplazo
+sorteo2 &lt;- sample(1:100, 20, replace = T)
+sorteo2
+```
+
+```
+##  [1]  23  71  82  60  24  96   7  28  50  46  43  32  36  59  43  23   9  20  64 100
+```
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+- **¡**Muy importante para el análisis de datos**!** 
+
+- Un `data frame` se compone de diferentes vectores.
+
+.center[
+&lt;img src="figs/6-vecdatae.png" style="width: 80%;"&gt;
+]
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+**Pertenece** (`%in%`) es un operador muy útil cuando necesitamos verificar si un cierto valor está dentro de nuestro conjunto de valores (vector):
+
+
+```r
+# ¿recuerdas el objeto "área" que creamos?
+area
+```
+
+```
+## [1] "urb" "rur" "urb" "rur" "urb" "rur"
+```
+
+```r
+# ¿Hay 'valores' llamados 'urb' en él?
+"urb" %in% area
+```
+
+```
+## [1] TRUE
+```
+
+```r
+# ¿Hay 'valores' llamados 'for'?
+"for" %in% area
+```
+
+```
+## [1] FALSE
+```
+
+---
+## Tipos de objetos
+
+### Vetores 
+
+#### Ejercicios
+
+1. Comenzará un estudio con flebótomos en la ciudad de Puerto Iguazú y deberá seleccionar al azar 3 de 10 vecindarios para el muestreo. Haga un sorteo con <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> y almacena los resultados en un objeto.
+
+2. Crear un nuevo objeto mediante la repetición de los barrios donde recogerá los flebótomos 4 veces (una por cada estación de barrio). Por ejemplo, si va a muestrear los vecindarios "1", "3" y "6", el resultado debería ser `(1, 3, 6, 1, 3, 6, 1, 3, 6, 1, 3, 6)`.
+
+3. ¿El barrio "1" forma parte de su muestra? ¿Y el barrio "10"? ¿Y el "7"?
+
+---
+## Tipos de objetos
+
+### Factor
+
+- Colección **unidimensional** de valores.
+
+- Almacena datos de la clase `character`.
+
+- El factor representa medidas de una variable *cualitativa*, que puede ser *nominal* u *ordinal*.
+
+
+```r
+temporada &lt;- factor(x = c("verano", "verano", "primavera", "primavera", "primavera", "otono", "invierno",  "invierno"), 
+                    levels = c("verano", "primavera", "otono", "invierno"))
+
+temporada
+```
+
+```
+## [1] verano    verano    primavera primavera primavera otono     invierno  invierno 
+## Levels: verano primavera otono invierno
+```
+
+---
+## Tipos de objetos
+
+### Factor
+
+&gt; Internamente, **R** almacena los factores como `interger`.
+
+&lt;br&gt;
+.center[&lt;img src="figs/7-factor.png" style="width: 50%;"&gt;]
+
+---
+## Tipos de objetos
+
+### Factor
+
+#### Tipos
+
+- *Factor nominal*: variables nominales.
+
+
+```r
+genero &lt;- factor(x = c("Lonomia", "Megalopyge", "Automeris", "Hylesia", "Megalopyge", "Automeris", "Hylesia", "Lonomia", "Hylesia", "Megalopyge"),
+                 levels = c("Lonomia", "Megalopyge", "Hylesia", "Automeris"))
+genero
+```
+
+```
+##  [1] Lonomia    Megalopyge Automeris  Hylesia    Megalopyge Automeris  Hylesia    Lonomia   
+##  [9] Hylesia    Megalopyge
+## Levels: Lonomia Megalopyge Hylesia Automeris
+```
+
+```r
+levels(genero)
+```
+
+```
+## [1] "Lonomia"    "Megalopyge" "Hylesia"    "Automeris"
+```
+
+---
+## Tipos de objetos
+
+### Factor
+
+#### Tipos
+
+- *Factor ordinal*: variable ordinal.
+
+
+```r
+mes &lt;- factor(x = c("Janeiro", "Janeiro", "Fevereiro", "Fevereiro", "Março", "Março"),
+              levels = c("Janeiro", "Fevereiro", "Março"), ordered = TRUE)
+mes
+```
+
+```
+## [1] Janeiro   Janeiro   Fevereiro Fevereiro Março     Março    
+## Levels: Janeiro &lt; Fevereiro &lt; Março
+```
+
+```r
+levels(mes)
+```
+
+```
+## [1] "Janeiro"   "Fevereiro" "Março"
+```
+
+---
+## Tipos de objetos
+
+### Factor
+
+Convertir un vector para un factor: `as.factor()`.
+
+
+```r
+# Vector de caracteres.
+letras &lt;- c("a", "c", "b", "d", "c", "a", "b", "d", "c")
+letras
+```
+
+```
+## [1] "a" "c" "b" "d" "c" "a" "b" "d" "c"
+```
+
+```r
+# Convierta el objeto en factor.
+letras2 &lt;- as.factor(letras)
+letras2
+```
+
+```
+## [1] a c b d c a b d c
+## Levels: a b c d
+```
+
+---
+## Tipos de objetos
+
+### Factor
+
+#### Ejercicios
+
+Muestrará en tres áreas diferentes de Puerto Iguazú (Misiones, Argentina): 
+
+1. El Parque Nacional Iguazú (PNI)
+
+2. un área antropogénica
+
+3. un área rural
+
+De esta manera, cree un vector que repita 12 veces el nombre de cada ubicación de recolección (= 1 año de muestreo). 
+
+---
+## Tipos de objetos
+
+### Matrix
+
+- Colección **bidimensional** de valores:
+
+  - líneas (por ejemplo, unidades de muestreo)
+  
+  - columnas (variables cuantitativas o cualitativas, por ejemplo: horario, tubo de ensayo, ubicación)
+  
+- Almacena datos de una única clase.
+
+.center[&lt;img src="figs/8-matrixe.png" style="width: 35%;"&gt;]
+
+---
+## Tipos de objetos
+
+### Matrix
+
+- Colección **bidimensional** de valores:
+
+  - líneas (por ejemplo, unidades de muestreo)
+  
+  - columnas (variables cuantitativas o cualitativas, por ejemplo: horario, tubo de ensayo, ubicación)
+  
+- Almacena datos de una única clase.
+
+.center[&lt;img src="figs/9-matrixe2.png" style="width: 68%;"&gt;]
+
+---
+## Tipos de objetos
+
+### Matrix
+
+Puede construir matrices en **R** de dos formas:
+
+1 - Disposición de elementos de un vector: `matrix()`.
+
+
+```r
+ma &lt;- 1:12
+ma
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+```
+
+
+.pull-left[
+
+```r
+m &lt;- matrix(data = ma, nrow = 4, ncol = 3, byrow = TRUE)
+m
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
+```
+]
+
+.pull-right[
+
+```r
+m &lt;- matrix(data = ma, nrow = 4, ncol = 3, byrow = FALSE)
+m
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+```
+]
+
+---
+## Tipos de objetos
+
+### Matrix
+
+Puede construir matrices en **R** de dos formas:
+
+2 - Combinación de vectores: 
+
+
+```r
+# Creamos dos vectores con r
+v1 &lt;- c(1, 2, 3); v2 &lt;- c(4, 5, 6)
+```
+
+
+.pull-left[
+- Combinar vectores por línea - `rbind()`.
+
+
+```r
+# Combinamos los vectores verticalmente, 
+# uno debajo del otro
+vr &lt;- rbind(v1, v2)
+vr
+```
+
+```
+##    [,1] [,2] [,3]
+## v1    1    2    3
+## v2    4    5    6
+```
+
+]
+
+.pull-right[
+- Combinar vectores por columna - `cbind()`.
+
+
+```r
+# Combinamos los vectores horizontalmente, 
+# uno al lado del otro.
+vr &lt;- cbind(v1, v2)
+vr
+```
+
+```
+##      v1 v2
+## [1,]  1  4
+## [2,]  2  5
+## [3,]  3  6
+```
+]
+
+---
+## Tipos de objetos
+
+### Matrix
+
+Para cambiar el nombre de las filas y columnas de una `matrix`, utilice las funciones `rownames()` y `colnames()` respectivamente.
+
+.pull-left[
+- Antes
+
+```r
+ma &lt;- 1:12
+m &lt;- matrix(data = ma, nrow = 4, ncol = 3, byrow = TRUE)
+m
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
+```
+]
+
+.pull-right[
+- Después
+
+```r
+colnames(m) &lt;- c("A", "B", "C") # cambia columnas
+rownames(m) &lt;- c("LA", "LB", "LC", "LD") # cambia lineas
+m
+```
+
+```
+##     A  B  C
+## LA  1  2  3
+## LB  4  5  6
+## LC  7  8  9
+## LD 10 11 12
+```
+]
+
+---
+## Tipos de objetos
+
+### Matrix
+
+#### Ejercicios
+
+Está desarrollando un medicamento para la fiebre y desea analizar el efecto a lo largo del tiempo. Tiene 3 pacientes y midió su fiebre después de la medicación en los tiempos: 5 m, 10 m, 15 m, 20 m y 25 m. Los resultados son:
+
+- Paciente 1: 38, 37.9, 37.3, 37.2, 36.9
+- Paciente 2: 37.9, 37.6, 37.1, 36.8, 36
+- Paciente 3: 38.2, 38, 37.8, 37.2, 36.8
+
+Configure una matriz de datos con pacientes en filas y tiempos en columnas.
+
+---
+## Tipos de objetos
+
+### Array
+
+- Tiene **n dimensiones** - "varias matrices emparejadas".
+
+- Tiene filas, columnas y dimensiones (`arrays`).
+
+- Almacena datos de una única clase.
+
+&lt;img src="figs/10-array.png" style="width: 85%;"&gt;
+
+---
+## Tipos de objetos
+
+### Array
+
+Construir un array en **R**: `array()`.
+
+
+```r
+vc &lt;- 1:8 # datos
+ar &lt;- array(data = vc, dim = c(2, 2, 2)) # array
+ar
+```
+
+```
+## , , 1
+## 
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8
+```
+
+---
+## Tipos de objetos
+
+.pull-left[
+- El tipo del objeto está relacionado con la **clase** y la **estructura/organización**.
+
+- Pueden estar formados por elementos de la misma clase o de clases diferentes.
+
+- Pueden tener de una hasta n dimensiones.
+
+- En **R** tenemos cinco estructuras:
+  - `Vector`
+  - `Matrix`
+  - `Array`
+  - `List`
+  - `Data frame`
+]
+
+.pull-right[
+&lt;img src="figs/11-p2.png" style="width: 85%;"&gt;
+]
+
+---
+## Tipos de objetos
+
+### Data frame
+
+- Colección **bidimensional** de valores:
+
+  - líneas (unidades de muestreo)
+  
+  - columnas (variables cuantitativas o cualitativas, por ejemplo: horario, tubo de ensayo, ubicación)
+  
+- Almacena datos de ≠ clases.
+
+.pull-left[&lt;img src="figs/12-dataframe.png" style="width: 70%;"&gt;]
+
+--
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="figs/13-excel3.png" style="width: 85%;"&gt;]
+
+---
+## Tipos de objetos
+
+### Data frame
+
+&lt;img src="figs/14-dataframe1.png" style="width: 100%;"&gt;
+
+---
+## Tipos de objetos
+
+### Data frame
+
+&lt;img src="figs/6-vecdatae.png" style="width: 100%;"&gt;
+
+---
+## Tipos de objetos
+
+### Data frame
+
+Cómo construir un **data frame** en **R**: `data.frame()`. 
+
+.pull-left[
+
+```r
+# Vamos a crear 4 vectores
+area &lt;- c("urb", "rur", "urb", "rur", "urb", "rur")
+mes &lt;- c(1, 1, 2, 2, 3, 3)
+presencia &lt;- c(T, T, F, F, T, T)
+temperatura &lt;- c(20.1, 21.2, 22.2, 23.8, 22.9, 23)
+
+area; mes; presencia; temperatura
+```
+
+```
+## [1] "urb" "rur" "urb" "rur" "urb" "rur"
+```
+
+```
+## [1] 1 1 2 2 3 3
+```
+
+```
+## [1]  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+```
+
+```
+## [1] 20.1 21.2 22.2 23.8 22.9 23.0
+```
+]
+
+--
+
+.pull-right[
+
+```r
+# Unamos los vetores en un dataframe. 
+# Observe que cada vector se convierte en una columna.
+dtf &lt;- data.frame(area, mes, presencia, temperatura)
+dtf
+```
+
+```
+##   area mes presencia temperatura
+## 1  urb   1      TRUE        20.1
+## 2  rur   1      TRUE        21.2
+## 3  urb   2     FALSE        22.2
+## 4  rur   2     FALSE        23.8
+## 5  urb   3      TRUE        22.9
+## 6  rur   3      TRUE        23.0
+```
+]
+
+---
+## Tipos de objetos
+
+### Data frame
+
+#### Ejercicio
+
+Cree un `data frame` con los datos de su investigación (máximo de 6 filas y 6 columnas). Si no tiene datos, utilice los datos a continuación:
+
+&lt;table class="table" style="font-size: 22px; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; tiempo &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; poblacion &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; accidentes &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10326 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 396 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9658 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6985 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 236 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 123 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3265 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 238 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 632 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+## Tipos de objetos
+
+### List
+
+- Colección **unidimensional** de objetos.
+  
+- Almacena datos de ≠ tipos (`vectors`, `arrays`, `data frame`, `lists`).
+
+- Es un vector especial que acepta objetos como elementos.
+  
+&gt; Muchas funciones que usamos para analizar datos en R tienen listas como salida.
+
+
+&lt;img src="figs/15-listae.png" style="width: 100%;"&gt;
+
+---
+## Tipos de objetos
+
+### List
+
+crea una **lista** en r: `list()`.
+
+
+```r
+lis &lt;- list(rbind(c(3,6), c(4,5)), 
+            sample(1:100, 5), 
+            factor(2, 6, 9))
+lis
+```
+
+```
+## [[1]]
+##      [,1] [,2]
+## [1,]    3    6
+## [2,]    4    5
+## 
+## [[2]]
+## [1] 14 15 49 84 39
+## 
+## [[3]]
+## [1] &lt;NA&gt;
+## Levels: 9
+```
+
+---
+name: control
+class: middle, center
+
+# Estructuras de Control
+
+---
+## Estructuras de Control
+
+- **¿Por qué programar?** <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"/></svg>
+  - Evite la repetición innecesaria de análisis o cálculos que se repiten con frecuencia.
+  
+  - Documente los pasos que tomó para llegar a un resultado.
+  
+  - Fácil recuperación y modificación del programa. 
+  
+- **¿Cómo programar?** <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M32,224H64V416H32A31.96166,31.96166,0,0,1,0,384V256A31.96166,31.96166,0,0,1,32,224Zm512-48V448a64.06328,64.06328,0,0,1-64,64H160a64.06328,64.06328,0,0,1-64-64V176a79.974,79.974,0,0,1,80-80H288V32a32,32,0,0,1,64,0V96H464A79.974,79.974,0,0,1,544,176ZM264,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,264,256Zm-8,128H192v32h64Zm96,0H288v32h64ZM456,256a40,40,0,1,0-40,40A39.997,39.997,0,0,0,456,256Zm-8,128H384v32h64ZM640,256V384a31.96166,31.96166,0,0,1-32,32H576V224h32A31.96166,31.96166,0,0,1,640,256Z"/></svg>
+
+  - ¡Creando programas! (guiones/scripts, rutinas, algoritmos).
+  
+  - Crear una secuencia lógica de comandos que se deben ejecutar en orden.
+  
+  - Utilizar las herramientas básicas de programación: 
+  
+      - Estructuras de repetición (`for()`)
+      
+      - Estructuras de selección (`if()`)
+      
+      - Estructura de repetición (`while()`)
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Sirve para repetir uno o más comandos varias veces. 
+
+&lt;br&gt;
+.center[&lt;img src="figs/16-for.png" style="width: 65%;"&gt;]
+&lt;br&gt;
+
+- En otras palabras, estamos diciendo que para **cada elemento i** contenido en el **conjunto de valores** ejecutaremos los comandos que están dentro de las llaves (**code**).
+
+- El índice no tiene que ser **i**, en realidad puede ser cualquier letra o palabra. 
+
+```r
+for(w in conjunto_de_valores){code}
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+  
+.pull-left[
+
+```r
+# Creamos un vector con valores entre 1 y 6
+objeto1 &lt;- 1:6
+
+for(v in objeto1){ # Para cada valor v en 'objeto1' (= i)
+  print(v) # imprime el valor v
+}
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+```
+]
+
+--
+
+.pull-right[
+
+```r
+# También podemos pedirle a R que imprima 
+# valores entre 1 y 6 directamente:
+
+for(p in 1:6){ # Para cada valor p entre 1 y 6 (= i)
+  print(p) # imprime el valor p
+}
+```
+
+```
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+```
+]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+  
+
+```r
+for(m in 1:6){ # Para cada valor m entre 1 y 6 (= i)
+  a &lt;- m + 1 # agregue el valor en m con 1 y guárdelo en "a"
+  print(a) # imprime el objeto a
+}
+```
+
+```
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+Muestreó especies en tres ubicaciones diferentes: loc1, loc2 y loc3. Al final del muestreo, desea calcular el total de especies muestreadas. Haga esto usando el comando "`for()`".
+
+
+```r
+loc1 &lt;- c(1, 8, 5)
+loc2 &lt;- c(4, 7, 1)
+loc3 &lt;- c(9, 4, 3)
+
+mt &lt;- rbind(loc1, loc2, loc3)
+colnames(mt) &lt;- c('T1', 'T2', 'T3')
+
+mt
+```
+
+```
+##      T1 T2 T3
+## loc1  1  8  5
+## loc2  4  7  1
+## loc3  9  4  3
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+Muestreó especies en tres ubicaciones diferentes: loc1, loc2 y loc3. Al final del muestreo, desea calcular el total de especies muestreadas. Haga esto usando el comando "`for()`".
+
+
+```r
+for(loc in 1:3){ # Para cada uno de los 3 loc's...
+  s &lt;- sum(mt[loc, 1:3]) # ... sumar las columnas entre 1 y 3
+  print(s) # imprimir el resultado
+}
+```
+
+```
+## [1] 14
+## [1] 12
+## [1] 16
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+#### Ejercicio
+
+1 - Escriba un loop `for` que calcule el cubo de cada número entre 1 y 7 usando la función `print()`.
+
+2 - Pesó a diferentes personas con 1.80 m de altura y obtuvo los siguientes valores: 70, 85, 90, 68. Cree un loop `for` para calcular el IMC de estas personas según la siguiente expresión matemática: IMC = Peso ÷ (Altura × Altura).
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Una estructura de selección - `if()` - sirve para ejecutar algún comando solo si se satisface alguna condición (en forma de expresión condicional).
+
+.center[&lt;img src="figs/17-ifes.png" style="width: 30%;"&gt;]
+
+&gt; En español, piense en el `if` como la palabra "*SI*" y el else como "*DEMÁS*"
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- La sintaxis siempre estará en la forma:
+
+.center[&lt;img src="figs/18-if.png" style="width: 50%;"&gt;]
+
+- En **R**:
+
+
+```r
+if(&lt;condicion 1&gt;){
+  # comandos que satisface la condición
+}else{
+  # comandos que NO satisface la confidición
+    }
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (&gt;20)" y "no ideales (&lt;21)".
+
+
+```r
+vitamina_D &lt;- sample(0:60, 5)
+vitamina_D
+```
+
+```
+## [1] 46 38 22 24 59
+```
+
+
+```r
+for(paciente in vitamina_D){ # para cada uno de los pacientes en "vitamina_D"...
+  if(paciente &gt; 21){print("ideales")} # si el paciente tiene un valor&gt; 21, imprima "ideal" 
+  else{print("no ideales")} # demás, imprima "no ideales"
+}
+```
+
+```
+## [1] "ideales"
+## [1] "ideales"
+## [1] "ideales"
+## [1] "ideales"
+## [1] "ideales"
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Podemos usar `else if()` para poner otras condiciones.
+
+.center[&lt;img src="figs/19-elseif.png" style="width: 25%;"&gt;]
+
+&gt; El `else if` es una condicion intermediaria entre if y else. 
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- La sintaxis es:
+
+.center[&lt;img src="figs/20-elseif2.png" style="width: 50%;"&gt;]
+
+- En **R**:
+
+
+```r
+if(condición 1){
+  # comandos que satisface la condición 1
+  } else if (condición 2){
+    # comandos que satisface la condición 2
+    } else { # comandos que NO satisface las confidiciónes
+}
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+Se realizaron pruebas de glucosa en cuatro pacientes. A partir de los resultados se desea realizar la siguiente clasificación: 70-99 mg/dl = normal; 100-125 mg/dl = prediabetes; \&gt; 126 mg/dl = diabetes. 
+
+
+```r
+glicose &lt;- sample(70:130, 4); glicose
+```
+
+```
+## [1] 110  80  74 101
+```
+
+
+```r
+for(paciente in glicose){ # para cada paciente con datos de glucosa...
+  if(paciente &lt;= 99){print("normal")} # si el paciente tiene un valor &lt;=99 - diabetes normal
+  else if(paciente &gt;= 126){"diabetes"} # si el paciente tiene valores superiores o iguales a 126 - diabetes
+  else{print("prediabetes")} # los demás son prediabetes. 
+}
+```
+
+```
+## [1] "prediabetes"
+## [1] "normal"
+## [1] "normal"
+## [1] "prediabetes"
+```
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+#### Ejercicio
+
+.pull-left[
+Tomando como entrada la altura y el sexo (codificados de la siguiente manera: 1 = mujer 2 = hombre) de una persona, calcule e imprima su peso ideal, usando las siguientes fórmulas:
+
+- para mujeres: (62.1 * altura) - 44.7
+- para hombres: (72.7 * altura) - 58
+]
+
+.pull-right[
+&lt;table class="table" style="font-size: 22px; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; cod &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; altura &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.65 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.72 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.78 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.81 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Un ciclo `while` en la programación **R** es una función diseñada para ejecutar algún código hasta que se cumpla una condición.
+
+.center[&lt;img src="figs/21-while2.png" style="width: 26%;"&gt;]
+
+- Si bien la condición lógica es VERDADERA, el código no dejará de ejecutarse. 
+
+&gt; El loop `while` es muy similar al loop `for`, pero en el segundo definirás el número de iteraciones a ejecutar.
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Para un loop `while` necesitas usar la función con la siguiente sintaxis:
+
+&lt;br&gt;
+.center[&lt;img src="figs/22-while1.png" style="width: 60%;"&gt;]
+&lt;br&gt;
+
+- En <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>:
+
+
+```r
+while(condición lógica){
+  # Code
+  }
+```
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+
+```r
+n = 5
+
+while(n &gt; 0){ # siempre que el valor de n sea mayor que 0 ...
+  print("R está trabajando")
+  print(n)
+  n = n - 1
+}
+```
+
+```
+## [1] "R está trabajando"
+## [1] 5
+## [1] "R está trabajando"
+## [1] 4
+## [1] "R está trabajando"
+## [1] 3
+## [1] "R está trabajando"
+## [1] 2
+## [1] "R está trabajando"
+## [1] 1
+```
+
+---
+name: funciones
+class: middle, center
+
+# Funciones
+
+---
+## Funciones
+
+- Mientras que los **objetos** son *nombres que contienen valores*, las **funciones** son *nombres que contienen un código R*.
+
+.center[&lt;img src="figs/23-func.png" style="width: 40%;"&gt;]
+
+-  La idea básica de una función es encapsular un código que se pueda invocar en cualquier momento en R. 
+&lt;br&gt;
+
+&lt;br&gt;
+.center[&lt;img src="figs/24-func2.png" style="width: 55%;"&gt;]
+
+&gt; Usamos algunas funciones hasta ahora: `c()`, `rep()`, `data.frame()`, `class()`, otros.
+
+---
+## Funciones
+
+### Argumentos
+
+- Las funciones toman **argumentos**.
+
+- Los argumentos son los valores u objetos que ponemos entre paréntesis y que las funciones necesitan un par funcional (calculando un resultado).
+
+- Por ejemplo, la función `class()` necesita recibir un objeto para investigar la clase y devolverlo:
+
+
+```r
+a &lt;- 3
+class(a)
+```
+
+```
+## [1] "numeric"
+```
+
+&gt; En este caso, "a" es el argumento que incluimos en la función `class()`.
+
+---
+## Funciones
+
+### Argumentos
+
+- Para las funciones que toman más de un argumento, tenemos que separar los argumentos con comas.
+
+- Por ejemplo, cuando usamos la concatenación (`c()`) para crear un **vector**.
+
+
+```r
+ve &lt;- c(1, 2, 3, 4)
+```
+
+--
+**Importante:**
+
+**!!** Observe cómo debe ser la entrada de valores para que funcione la función.
+
+
+```r
+class(1, 2, 3, 4)
+```
+&lt;small&gt; \# simpleError in class(1, 2, 3, 4): 4 argumentos passados para 'class', que requer 1 &lt;/small&gt;
+
+
+```r
+class(ve)
+```
+
+```
+## [1] "numeric"
+```
+
+---
+## Funciones
+
+### Argumentos
+
+Los argumentos de las funciónes también tienen **nombre**, que pueden o no ser usando en la función. Por ejemplo a función `rep()`.
+
+
+```r
+rep(x, 
+    times = 1,
+    length.out = NA, 
+    each = 1) 
+```
+
+- **x**: valores que se repetirán.
+- **times**: Un vector de valor entero que da el número (no negativo) de veces que se repite cada elemento si tiene una longitud (x), o que se repite todo el vector si tiene una longitud 1.
+- **lenght.out**: O comprimento desejado do vetor de saída. 
+- **each**: Cada elemento de x é repetido todas as vezes.
+
+---
+## Funciones
+
+### Argumentos
+
+#### ¿Cuál es la diferencia entre las salidas?
+
+
+```r
+rep(x = 1:3, 
+    times = 3,
+    length.out = NA, 
+    each = 2) 
+```
+
+```
+##  [1] 1 1 2 2 3 3 1 1 2 2 3 3 1 1 2 2 3 3
+```
+
+
+```r
+rep(x = 1:3, 
+    times = NA,
+    length.out = 10, 
+    each = 2) 
+```
+
+```
+##  [1] 1 1 2 2 3 3 1 1 2 2
+```
+
+---
+## Funciones
+
+### Argumentos
+
+También podemos usar la función sin incluir los nombres de los argumentos:
+
+
+```r
+rep(x = 1:3, 
+    times = 2,
+    length.out = NA, 
+    each = 1) 
+```
+
+```
+## [1] 1 2 3 1 2 3
+```
+
+
+```r
+rep(1:3, 
+    2,
+    NA, 
+    1) 
+```
+
+```
+## [1] 1 2 3 1 2 3
+```
+
+---
+## Funciones
+
+### Creación
+
+- Las funciónes en <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> son muy similares al de las funciones matemáticas, es decir, hay un *nombre*, una *definición* y posterior *invocación de la función*.
+
+- Siempre que ejecute una función, el código que almacena se ejecutará y se devolverá el resultado.
+
+- Además de usar las funciones listas, puede crear su propia función. La sintaxis es la siguiente:
+
+&lt;br&gt;
+.center[&lt;img src="figs/25-crearfunc.png" style="width: 55%;"&gt;]
+&lt;br&gt;
+
+---
+## Funciones
+
+### Creación
+
+- En <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>:
+
+
+```r
+# creando una función llamada 'f':
+f &lt;- function(a, b) { 
+  code 
+}
+
+# invocando la función:
+f(a, b)
+```
+
+&gt; Tenga en cuenta que `function` es un nombre reservado en R, es decir, no podrá crear un objeto con ese nombre.
+
+---
+## Funciones
+
+### Creación
+
+Creemos una función para calcular el peso ideal de las mujeres en función de la altura: 
+
+
+```r
+peso &lt;- function(altura){
+  p &lt;- (62.1 * altura) - 44.7
+  p
+}
+```
+
+- Nuestra función tiene los siguientes argumentos:
+  - **peso**: nombre de la función
+  - **altura**: argumento de la función
+  - **p &lt;- (62.1 * altura) - 44.7**: operación que realizará la función
+  - **p**: valor devuelto por la función
+
+
+```r
+peso(1.7) # resultado para 1.70m
+```
+
+```
+## [1] 60.87
+```
+
+---
+## Funciones
+
+### Argumentos
+
+- Nuestra función también toma un vector como argumentos:
+
+
+```r
+v &lt;- c(1.7, 1.5, 1.65)
+peso(v)
+```
+
+```
+## [1] 60.870 48.450 57.765
+```
+
+- Y también podemos usar con conjuntos de control:
+
+
+```r
+# Usando nuestra función en un loop 'for'.
+for(i in v){
+  print(peso(i))
+}
+```
+
+```
+## [1] 60.87
+## [1] 48.45
+## [1] 57.765
+```
+
+---
+## Funciones
+
+**!!** Observaciones importantes:
+
+- De forma predeterminada, las funciones siempre devuelven la última línea de código como resultado de la función. En nuestro caso, es el valor contenido en '**p**'.
+
+
+```r
+peso &lt;- function(altura){
+  p &lt;- (62.1 * altura) - 44.7
+  p # nuestra función devolverá p
+}
+```
+
+- ¿Y qué pasa si eliminamos **p** de nuestra función?...
+
+
+```r
+peso &lt;- function(altura){
+  p &lt;- (62.1 * altura) - 44.7
+}
+
+peso(1.65)
+```
+
+- ... ¡La R no devuelve nada!
+
+---
+## Funciones
+
+**!!** Observaciones importantes:
+
+- En el caso comentado, la última línea de código es la función matemática que será el 'valor' devuelto.
+
+- En este caso, para ver el resultado de la función debemos hacer:
+
+
+```r
+peso &lt;- function(altura){
+  p &lt;- (62.1 * altura) - 44.7
+}
+
+p1 &lt;- peso(1.65)
+p1
+```
+
+```
+## [1] 57.765
+```
+
+- En nuestro caso, es como si lo estuviéramos haciendo directamente: `p1 &lt;- (62.1 * 1.65) - 44.7`.
+
+---
+## Funciones
+
+- **¿**Existe una función lista para mi problema**?**
+
+- **¿**Cómo averiguar el nombre de esta función**?**
+
+.center[&lt;img src="figs/26-usagi.png" style="width: 50%;"&gt;]
+
+---
+name: paquetes
+class: middle, center
+
+# Paquetes
+
+---
+## Paquetes
+
+- Las funciones provienen de dos fuentes: 
+  1. paquetes **R** estándar que se cargan siempre que trabajamos con el lenguaje 
+  2. paquetes que instalamos y cargamos por comandos.
+
+- Básicamente, un paquete es una convención para organizar y estandarizar la distribución de funciones **R**.
+
+&lt;br&gt;
+.center[&lt;img src="figs/27-paquetes.png" style="width: 40%;"&gt;]
+
+---
+## Paquetes
+
+- La principal motivación de crear un paquete **R** es de organizar y compartir funciones de nuevos métodos y/o implementaciones creadas y que son útiles para otras personas.
+
+- En general, descargamos paquetes de dos fuentes: [CRAN](https://cran.r-project.org/) y [GitHub](https://github.com/). 
+
+&lt;br&gt;
+.center[&lt;img src="figs/28-crangit.png" style="width: 50%;"&gt;]
+
+---
+## Paquetes
+
+### Instalación
+
+- Para instalar paquetes desde **CRAN** usamos el comando `install.packages("nombre_paquete")`.
+
+
+```r
+install.packages("ggplot2") # Para instalar el paquete "ggplot2"
+```
+
+&gt; **\*** Tenga en cuenta que el nombre del paquete siempre debe ir entre comillas para la instalación.
+
+&lt;br&gt;
+- Compruebe si el paquete se ha instalado:
+
+.pull-left[
+
+```r
+library()
+```
+&gt; abre una nueva pestaña en R escrita "Paquetes R disponibles".
+
+]
+.pull-right[&lt;img src="figs/29-paqinst.png" style="width: 100%;"&gt;]
+
+
+---
+## Paquetes
+
+### Instalación
+
+- Para instalar paquetes de **Github**, usamos el paquete `devtools`: `install_github("direccion/nombre_paquete")`.
+
+- Para hacer esto, necesitaremos la dirección y el nombre del paquete de un repositorio de GitHub (&lt;https://github.com/tidyverse/dplyr&gt;)
+
+
+```r
+# Instalar el paquete 'devtools'
+install.packages("devtools")
+
+# Cargar el paquete para su uso
+library(devtools)
+
+# Incluir la dirección de descarga 
+# del paquete do github en install_github()
+install_github("tidyverse/dplyr")
+```
+
+---
+## Paquetes
+
+### Instalación
+
+- Para instalar paquetes de **Github**, usamos el paquete `devtools`:
+
+&lt;img src="figs/30-fromgit.png" style="width: 80%;"&gt;
+
+---
+## Paquetes
+
+### Instalación
+
+- Solo instalamos los paquetes una vez.
+
+- Los paquetes se descargan a través de la internet.
+
+- El nombre del paquete debe estar entre comillas (`"paquete_nombre"`), independientemente de si lo vamos a descargar de **CRAN** o **GitHub**.
+
+- Para cargar paquetes en R usamos la función `library(paquete_nombre`). 
+  - En este caso no es necesario incluir comillas.
+  - Cargamos paquetes para usar sus funciones. 
+
+
+```r
+library(ggplot2)
+library(dplyr)
+```
+
+---
+## Paquetes
+
+### Actualización
+
+- Los paquetes no se actualizan solos.
+
+- Es necesario actualizarlos de vez en cuando.
+
+- ¡Es un proceso que lleva tiempo!
+
+
+```r
+update.packages(ask = FALSE)
+```
+
+### Dirección en mi compu
+
+- ¿Dónde están los paquetes?
+
+  - Windows: `C:/Users/nombre_del_compu/Documentación/R/win-library/versión_r`
+  - Unix (Linux o MacOS): `/home/nombre_del_compu/R/tipo_compu/versión_r`
+
+---
+## Paquetes
+
+### Dos paquetes útiles para empezar
+
+.pull-left[
+- **tidyverse** es una colección obstinada de paquetes R diseñados para la ciencia de datos. 
+ - dplyr
+ - ggplot2
+ - forcats
+ - tibble
+ - readr
+ - stringr
+ - tidyr
+ - purr
+]
+
+.pull-right[
+- **tidymodels** es una colección de paquetes R para modelado y aprendizaje automático utilizando principios tidyverse.
+  - tidymodels
+  - rsample
+  - parsnip
+  - recipes
+  - tune
+  - yardstick
+]
+
+---
+## Paquetes
+
+### Cantidad de paquetes disponibles
+
+```r
+nrow(available.packages(repos = "http://cran.r-project.org"))
+```
+
+```
+## [1] 17779
+```
+
+.center[&lt;img src="figs/31-sailor_suprise.gif" style="width: 45%;"&gt;]
+
+---
+## Paquetes
+
+### Help! (ayuda)
+
+- El "help" de **R** es muy útil cuando necesitamos ayuda para comprender una función.
+
+
+```r
+help("sum") 
+# es necesario encerrar el nombre de 
+# la función entre comillas.
+```
+
+.center[&lt;img src="figs/32-help.png" style="width: 50%;"&gt;]
+
+---
+## Paquetes
+### Help! (ayuda)
+- *Description*: Una declaración sobre el propósito de la función.
+
+- *Usage*: Muestra cómo debemos usar la función (parámetros y argumentos).
+
+- *Arguments*: Explica lo que significa cada uno de los argumentos de la función.
+
+- *Details*: Explica algunos detalles sobre el uso y la aplicación de la función.
+
+- *Value*: La salida de la función (o resultados).
+
+- *Note*: Notas de función.
+
+- *Authors*: Los autores de la función.
+
+- *References*: Las referencias utilizadas para desarrollar la función/método.
+
+- *See also*: Otras funciones relacionadas que se pueden consultar en R help.
+
+- *Examples*: Ejemplos de cómo utilizar la función
+
+---
+## Paquetes
+
+###  ¿Cómo citar la **R**?
+
+
+```r
+citation()
+```
+
+```
+## 
+## To cite R in publications use:
+## 
+##   R Core Team (2021). R: A language and environment for statistical computing. R
+##   Foundation for Statistical Computing, Vienna, Austria. URL
+##   https://www.R-project.org/.
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {R: A Language and Environment for Statistical Computing},
+##     author = {{R Core Team}},
+##     organization = {R Foundation for Statistical Computing},
+##     address = {Vienna, Austria},
+##     year = {2021},
+##     url = {https://www.R-project.org/},
+##   }
+## 
+## We have invested a lot of time and effort in creating R, please cite it when
+## using it for data analysis. See also 'citation("pkgname")' for citing R packages.
+```
+
+---
+## Paquetes
+
+###  ¿Cómo citar la **R**?
+
+
+```r
+citation("ggplot2")
+```
+
+```
+## 
+## To cite ggplot2 in publications, please use:
+## 
+##   H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+##   York, 2016.
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Book{,
+##     author = {Hadley Wickham},
+##     title = {ggplot2: Elegant Graphics for Data Analysis},
+##     publisher = {Springer-Verlag New York},
+##     year = {2016},
+##     isbn = {978-3-319-24277-4},
+##     url = {https://ggplot2.tidyverse.org},
+##   }
+```
+
+---
+## Paquetes
+
+### Ejercicios
+
+Trabajarás con índices de disimilitud y para eso usarás el paquete "vegan" (CRAN).
+Instale el paquete, asegúrese de que esté instalado, cárguelo en R y obtenga su cita.
+
+---
+class: clear, center
+
+## ¡¡Fin de clase!!
+
+.center[&lt;img src="figs/33-fim.jpg" style="width: 80%;"&gt;]
+
+---
+class: middle
+
+&lt;br&gt; 
+
+&lt;br&gt; 
+
+&lt;br&gt;
+
+### Soma dos quadrados
+
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [Soma-Dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR)
+- &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somadosquadrados](https://www.twitch.tv/somaquadrados)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; [@somadosquadrados](https://twitter.com/somaquadrados)
+
+
+### Marília Melo Favalesso 
+
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt; [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"&gt;&lt;/path&gt;&lt;/svg&gt; [www.mmfava.com](www.mmfava.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [ /mmfava](https://github.com/mmfava)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
