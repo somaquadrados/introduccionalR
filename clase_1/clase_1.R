@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------ #
-# Introducción al análisis de datos biológicos con R
+# Introducción al análisis de datos biológicos con R - Clase 1
 #
 # Marília Melo Favalesso
 # mariliabioufpr@gmail.com
@@ -464,7 +464,8 @@ letras2
 #
 # Colección bidimensional de valores:
 #   • líneas (por ejemplo, unidades de muestreo)
-#   • columnas (variables cuantitativas o cualitativas, por ejemplo: horario, tubo de ensayo, ubicación)
+#   • columnas (variables cuantitativas o cualitativas, por ejemplo: horario, 
+#     tubo de ensayo, ubicación)
 # Almacena datos de una única clase.
 
 ## --
@@ -1037,8 +1038,44 @@ citation("ggplot2") # Como citar los paquetes
 
 ## --
 
-# -------------------------- •• Fin •• ---------------------------------- #
+# ------------------------ •• Fin de clase •• -------------------------------- #
 
+## ---- •• home work! •• ---- #
+
+# Enviar para: https://forms.gle/324eBcwtQzqaGMid6
+
+# 1 -Durante su doctorado, pasó 2 años en el campo, una vez a la semana. 
+#    La duración de cada campo fue de ~ 4 horas. En total, ¿ fuerán cuántos días 
+#    de campo? ¿Y cuantas horas? Utilice R para calcular los resultados y 
+#    guardarlos en los respectivos objetos: días y horas.
+
+# 2 - cree una función que calcule el total de días de campo (=ejercicio 1) 
+#     simplemente dando el número de días: total_dias(x). Utilice la función 
+#     para calcular un total de días para 1 y 3 años de campo.
+
+# 3 - Cree un vector con tres especies de animales venenosos o tres vectores de 
+#     enfermedades distintos y guárdelos en un objeto. 
+
+# 4 - Cree una matriz de datos con valores enteros aleatorios entre 0 y 100. 
+#     La matriz debe contener 3 filas y 3 columnas.
+
+# 5 - Cree un data.frame con los datos del ejercicio 2 y el ejercicio 3. 
+#     Las especies animales deben estar en las filas.
+
+# 6 - Cambie el nombre de las columnas a: c("animal/vector", "2018", "2019", 
+#     "2020"). 
+
+# 7 - Haga una loop 'for' para imprimir los números almacenados en el 
+#     objeto a.
+a <- sample(0:200, 30)
+
+# 8 - Haga un loop que imprime los valores del objeto "a" multiplicados por -2.
+
+# 10 - ¿Qué hacen "for", "ifelse" y "while"?
+
+# 11 - Instale el siguiente paquete: <https://github.com/rstudio/rmarkdown>.
+
+# -------------------------- •• Fin •• ---------------------------------- #
 
 
 

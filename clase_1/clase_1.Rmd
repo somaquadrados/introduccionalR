@@ -1893,7 +1893,7 @@ class: clear, center
 ---
 class: middle
 
-<br> 
+## [¡No olvides tu tarea!](https://forms.gle/J4iwNMt9PNSmjxcK8) `r icons::icon_style(icons::fontawesome("user-edit"), fill = "#000000")`
 
 <br> 
 

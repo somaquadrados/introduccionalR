@@ -1,19 +1,50 @@
 ---
-title: "Presentation Ninja"
-subtitle: "&#x2694;&#xFE0F; xaringan +<br/>&#x1F60E; xaringanthemer"  
+title: "Programación con R"
+subtitle: "Clase 2"
 author: 
-  - "Yihui Xie"
-  - "Garrick Aden-Buie"
-date: '`r Sys.Date()`'
+  - "<img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>"
+  - "Marília Melo Favalesso"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
     nature:
-      slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
-      countIncrementalSlides: true
+      
+---
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.path = 'assets/chunks/', cache.path = "assets/cache/", dpi = 300)
+library(tidyverse)
+theme_set(theme_grey(base_size = 16))
+library(emo)
+#devtools::install_github("ropenscilabs/icon")
+#devtools::install_github("hadley/emo")
+```
+
+## Archivos
+
+- [`clase_2.R`](clase_2.R)
+- [datos.xlsx](datos.xlsx)
+- [datos.txt](datos.txt)
+- [datos.csv](datos.csv)
+- [tidy_ej.xlsx](tidy_ej.xlsx)
+
+## Contenido de hoy
+
+.pull-left[
+- [Manejo de objetos en R](#manejo)
+- [¿Cómo armar mi tabla de datos?](#tabla)
+- [Tidyverse](#tidyverse)
+- [Importar datos a R](#importar)
+]
+
+.pull-right[
+- [Operador pipe (`%>%`)](#pipe)
+- [tidyr](#tidyr)
+- [dplyr](#dplyr)
+]
+
 ---
 name: manejo
 class: middle, center
@@ -27,9 +58,11 @@ class: middle, center
 
 - Los objetos son conjuntos *indexados* - Esto nos permite acceder a cada valor de manera individual.
 
+- Comprender la indexación es fundamental para manipular datos en **R**.
+
 - Usamos corchetes (`[]`) para acceder a la posición de los elementos de un objeto.
 
-.center[<img src="figs/index1.png" style="width: 95%;">]
+.center[<img src="figs/1-objetos.png" style="width: 90%;">]
 
 ---
 ## Manejo de datos
@@ -40,14 +73,15 @@ class: middle, center
 
 - Seleccionar elementos
 
-.center[<img src="figs/vectore.png" style="width: 50%;">]
+.center[<img src="figs/2-vetor1.png" style="width: 50%;">]
+
+- No **R**:
 
 ```{r}
 ve = c(11, 12, 13, 14, 15, 16)
 ve
 ```
 
-
 ---
 ## Manejo de datos
 
@@ -57,10 +91,12 @@ ve
 
 - Seleccionar elementos
 
-.center[<img src="figs/vectore2.png" style="width: 50%;">]
+.center[<img src="figs/3-vetor2.png" style="width: 50%;">]
+
+- No **R**:
 
 ```{r}
-ve = c(11, 12, 13, 14, 15, 16)
+ve <- c(11, 12, 13, 14, 15, 16)
 ve
 ```
 
@@ -96,7 +132,12 @@ ve[4:6] # selecciona los entre la cuarta y sexta posición
 
 - Quitar elementos
 
-.center[<img src="figs/vectore2.png" style="width: 50%;">]
+.center[<img src="figs/2-vetor1.png" style="width: 50%;">]
+
+```{r}
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
 
 ---
 ## Manejo de datos
@@ -107,7 +148,12 @@ ve[4:6] # selecciona los entre la cuarta y sexta posición
 
 - Quitar elementos
 
-.center[<img src="figs/quitar.png" style="width: 50%;">]
+.center[<img src="figs/5-vetor4.png" style="width: 50%;">]
+
+```{r}
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
 
 --
 
@@ -141,7 +187,7 @@ ve[-c(4:6)] # quitar los entre la cuarta y sexta posición
 
 - Seleccionar elementos
 
-.center[<img src="figs/bidim.png" style="width: 50%;">]
+.center[<img src="figs/6-bi1.png" style="width: 50%;">]
 
 ---
 ## Manejo de datos
@@ -152,7 +198,7 @@ ve[-c(4:6)] # quitar los entre la cuarta y sexta posición
 
 - Seleccionar elementos
 
-.center[<img src="figs/bidim2.png" style="width: 50%;">]
+.center[<img src="figs/7-bi2.png" style="width: 50%;">]
 
 ---
 ## Manejo de datos
@@ -164,7 +210,7 @@ ve[-c(4:6)] # quitar los entre la cuarta y sexta posición
 - Seleccionar elementos
 
 ```{r}
-ma <- matrix(data = (c(1:25)), nrow = 5, ncol = 5, byrow = TRUE)
+ma <- matrix(data = (c(1:25)), nrow = 5, ncol = 5, byrow = TRUE) # crear una matriz
 ma
 
 ma[2,2] # seleccionar el valor de la segunda línea y la segunda columna.
@@ -180,21 +226,12 @@ ma[2,2] # seleccionar el valor de la segunda línea y la segunda columna.
 - Seleccionar elementos
 
 ```{r}
-ma[3:4, c(3, 5)] # seleccione las filas 3 y 4 y las columnas 3 y 5
+ma[3:4, c(3, 5)] # seleccione las lineas 3 y 4 y las columnas 3 y 5
 
-ma[c(1,5), 3:5] # seleccione las filas 1 y 5 y las columnas entre 3 y 5
+ma[c(1,5), 3:5] # seleccione las lineas 1 y 5 y las columnas entre 3 - 5
 ```
 
----
-## Manejo de datos
-
-### Indexación
-
-#### Gestión de datos bidimensionales `[L,C]`
-
-- Quitar elementos
-
-.center[<img src="figs/bidim2.png" style="width: 50%;">]
+> Es posible seleccionar más de una fila y columna al mismo tiempo.
 
 ---
 ## Manejo de datos
@@ -205,7 +242,18 @@ ma[c(1,5), 3:5] # seleccione las filas 1 y 5 y las columnas entre 3 y 5
 
 - Quitar elementos
 
-.center[<img src="figs/bimdim3.png" style="width: 50%;">]
+.center[<img src="figs/6-bi1.png" style="width: 50%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+.center[<img src="figs/8-bi3.png" style="width: 50%;">]
 
 ---
 ## Manejo de datos
@@ -227,11 +275,154 @@ ma[-c(1, 4), -2:-3] # menos las filas 1 y 4 y las columnas 2 y 3
 
 ### Indexación
 
-#### Gestión de datos *n* dimensionales `[L,C,D]`
+#### Gestión de datos bidimensionales `[L,C]`
 
-- Seleccionar elementos
+- También podemos usar el nombre de las filas y columnas para manejar los datos: `[nombre_linea, nombre_columna]`.
 
-.center[<img src="figs/array1.png" style="width: 40%;">]
+```{r}
+rownames(ma) = paste("nomlin", 1:5, sep = "_") # nombre en las lineas
+colnames(ma) = paste("nomcol", 1:5, sep = "_") # nombre en las columnas
+ma # la tabla
+
+ma["nomlin_2", "nomcol_3"] # selecciona linea 2 y columna 3
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+> El operador `$` se utiliza para extraer elementos con nombre de un **data frame**. 
+
+.pull-left[
+```{r}
+# vectores
+grupo <- rep(c("CT", "EXP"), 5)
+valor <- sample(1:50, 10)
+genero <- sample(c("H", "M"), 10, replace = T)
+```
+
+```{r}
+# data-frame
+dt <- data.frame(grupo, valor, genero)
+```
+
+```{r eval=FALSE, include=TRUE}
+# resultado
+dt
+```
+]
+
+.pull-right[
+```{r echo=FALSE}
+dt
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
+
+```{r}
+dt$grupo
+
+dt$valor
+
+dt$genero
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+```{r}
+class(dt$grupo)
+
+dt$grupo <- as.factor(dt$grupo)
+dt$grupo
+
+class(dt$grupo)
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+```{r}
+class(dt$valor)
+
+dt$valor <- as.numeric(dt$valor)
+dt$valor
+
+class(dt$valor)
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- agregar una nueva columna:
+
+.pull-left[
+```{r}
+# antes
+dt
+```
+]
+
+.pull-right[
+```{r}
+# después
+dt$ID <- 1:10; dt
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Usamos el `$` para separar una variable de un **data.frame**.
+
+- Esta variable ahora se puede manejar como un *objeto unidimensional*.
+
+.pull-left[
+```{r}
+# selecciona el primero elemento
+dt$valor
+dt$valor[1] 
+```
+]
+
+.pull-right[
+```{r}
+# elimina los valores en las posiciones 3 y 4
+dt$genero
+dt$genero[-c(3:4)] 
+```
+]
 
 ---
 ## Manejo de datos
@@ -242,8 +433,18 @@ ma[-c(1, 4), -2:-3] # menos las filas 1 y 4 y las columnas 2 y 3
 
 - Seleccionar elementos
 
-.center[<img src="figs/array2.png" style="width: 40%;">]
+.center[<img src="figs/9-array1.png" style="width: 40%;">]
 
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.center[<img src="figs/10-array2.png" style="width: 40%;">]
 
 ---
 ## Manejo de datos
@@ -262,11 +463,11 @@ ar <- array(data = c(1:8), dim = c(2, 2, 2)); ar # array
 
 .pull-right[
 ```{r}
-ar[,,1] # dimensión
+ar[,,1] # dimensión 1
 
-ar[,2,1] # columna y dimensión
+ar[,2,1] # columna 2 y dimensión 1
 
-ar[2,2,1] # fila, columna y dimensión
+ar[2,2,1] # linea 2, columna 2 y dimensión 1
 ```
 ]
 
@@ -279,7 +480,18 @@ ar[2,2,1] # fila, columna y dimensión
 
 - Quitar elementos.
 
-.center[<img src="figs/array4.png" style="width: 40%;">]
+.center[<img src="figs/9-array1.png" style="width: 40%;">]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.center[<img src="figs/11-array3.png" style="width: 40%;">]
 
 ---
 ## Manejo de datos
@@ -312,110 +524,26 @@ ar[-2,-2,-1] # fila, columna y dimensión
 
 ### Indexación
 
-#### Gestión de *data frame* `$`:
+#### Ejercicios
 
-- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
+Trabajará con una tabla de datos que no es suya (son datos secundarios). Esta tabla corresponde a datos de pacientes tratados en un hospital de su ciudad.
 
-.pull-left[
-```{r}
-# vectores
-exp <- rep(c("CT", "EXP"), 5)
-val <- sample(1:50, 10)
-gen <- sample(c("H", "M"), 10, replace = T)
-```
-
-```{r}
-# data-frame
-dt <- data.frame(exp, val, gen)
-```
-
-```{r eval=FALSE, include=TRUE}
-# resultado
-dt
-```
-]
-
-.pull-right[
 ```{r echo=FALSE}
-dt
+library(tidyverse)
+pacientes <- paste("Paciente", sep = "_", 1:6)
+barrio <- c(12, 28, 7, 20, 19, 8)
+genero <- rep(c("F", "M"), 3)
+edad <- c(57, 60, 39, 56, 67, 33)
+ano <- c(2020, 2021, 2021, 2020, 2018, 2018)
+medico <- rep(c("A", "B", "C"), 2)
+
+tb <- data.frame(pacientes, barrio, genero, edad, ano, medico)
+colnames(tb) = c("Pacientes", "Barrio", "Genéro", "Edad", "Año", "Médico")
+
+tb %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(position = "left")
 ```
-
-]
----
-## Manejo de datos
-
-### Indexación
-
-#### Gestión de *data frame* `$`:
-
-- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
-
-```{r}
-dt$exp
-
-dt$val
-
-dt$gen
-```
-
----
-## Manejo de datos
-
-### Indexación
-
-#### Gestión de *data frame* `$`:
-
-- Para cambiar la clase de elementos de una columna:
-
-```{r}
-class(dt$exp)
-
-dt$exp <- as.factor(dt$exp)
-dt$exp
-
-class(dt$exp)
-```
-
----
-## Manejo de datos
-
-### Indexación
-
-#### Gestión de *data frame* `$`:
-
-- Para cambiar la clase de elementos de una columna:
-
-```{r}
-class(dt$val)
-
-dt$val <- as.numeric(dt$val)
-dt$val
-
-class(dt$val)
-```
-
----
-## Manejo de datos
-
-### Indexación
-
-#### Gestión de *data frame* `$`:
-
-- agregar una nueva columna:
-
-.pull-left[
-```{r}
-# antes
-dt
-```
-]
-
-.pull-right[
-```{r}
-# después
-dt$ID <- 1:10; dt
-```
-]
 
 ---
 ## Manejo de datos
@@ -424,79 +552,37 @@ dt$ID <- 1:10; dt
 
 #### Ejercicios
 
-.pull-left[Trabajará con una tabla de datos que no es suya. Esta tabla corresponde a datos de pacientes tratados en un hospital de su ciudad.
+0 - Cree la tabla como un `data.frame` en **R**.
 
-```{r echo=FALSE}
-pacientes <- paste("Paciente", sep = "_", 1:6)
-barrio <- c(12, 28, 7, 20, 19, 8)
-genro <- rep(c("F", "M"), 3)
-edad <- c(57, 60, 39, 56, 67, 33)
-ano <- c(2020, 2021, 2021, 2020, 2018, 2018)
-medico <- rep(c("A", "B", "C"), 2)
-
-data.frame(pacientes, barrio, genro, edad, ano, medico) %>% 
-  kableExtra::kbl() %>%
-  kableExtra::kable_styling(position = "left")
-```
-]
-
-.pull-right[
-1 - Trabajarás con las variables "genro", "edad", "barrio" y "medico". Descarte las otras variables de la tabla.
+1 - Trabajarás con las variables "género", "edad", "barrio" y "médico". Descarte las otras variables de la tabla.
 
 2 - En su estudio, solo trabajará con personas que se identifiquen con el género femenino. Seleccione solo los datos correspondientes a estas personas.
 
 3 - Agregue una columna que contenga el motivo de la búsqueda de atención médica: Paciente 1 = "tratamiento hormonal", Paciente 3 = "Problemas gástricos", Paciente 5 = "Sospecha de dengue".
-]
+
+4 - Cambie la clase de variable "edad" para `numeric`.
 
 ---
 ## Manejo de datos
 
-### Indexación
+### Seleccionar elementos por condición (**vector**)
 
-#### Ejercicios
+<br>
+.center[<img src="figs/14-cond.png" style="width: 40%;">]
+<br>
 
-```{r}
-pacientes <- paste("Paciente", sep = "_", 1:6)
-barrio <- c(12, 28, 7, 20, 19, 8)
-genro <- rep(c("F", "M"), 3)
-edad <- c(57, 60, 39, 56, 67, 33)
-ano <- c(2020, 2021, 2021, 2020, 2018, 2018)
-medico <- rep(c("A", "B", "C"), 2)
-
-hosp <- data.frame(pacientes, barrio, genro, edad, ano, medico)
-hosp
-```
+> Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
 
 ---
 ## Manejo de datos
 
-### Indexación
+### Seleccionar elementos por condición (**vector**)
 
-#### Ejercicios
+<br>
+.center[<img src="figs/15-cond2.png" style="width: 40%;">]
 
-1 - Trabajarás con las variables "genro", "edad", "barrio" y "medico". Descarte las otras variables de la tabla.
-
-2 - En su estudio, solo trabajará con personas que se identifiquen con el género femenino. Seleccione solo los datos correspondientes a estas personas.
-
-
-```{r}
-hosp2 = hosp[c(1,3,5),c(2, 3, 4, 6)]
-hosp2
-```
-
----
-## Manejo de datos
-
-### Indexación
-
-#### Ejercicios
-
-3 - Agregue una columna que contenga el motivo de la búsqueda de atención médica: Paciente 1 = "tratamiento hormonal", Paciente 3 = "problemas gástricos", Paciente 5 = "sospecha de dengue".
-
-```{r}
-hosp2$motivo <- c("tratamiento hormonal", "problemas gástricos", "sospecha de dengue")
-hosp2
-```
+> Comparación de objetos: **A** *con* **B**. <br>
+> Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
 
 ---
 ## Manejo de datos
@@ -513,6 +599,7 @@ A <- 6; B <- 28
 A == B # A es igual a B?
 A != B # A es distinto de B?
 A > B # A es mayor que B?
+A <= B # A menor o igual que?
 ```
 ]
 
@@ -520,7 +607,8 @@ A > B # A es mayor que B?
 ```{r}
 A >= B # A es mayor o igual que B?
 A < B # A es menor que B?
-A <= B # A es menor o igual que B?
+A %in% B # A en B?
+A != B # A no es igual B?
 ```
 ]
 
@@ -529,9 +617,10 @@ A <= B # A es menor o igual que B?
 
 ### Seleccionar elementos por condición (**vector**)
 
-- Operadores relacionales con salidas booleanas (VERDADERO o FALSO). 
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
 ```{r}
-ve <- sample(1:100, 6)
+ve <- c(10, 15, 30, 32, 50, 68, 70)
+ve
 ```
 
 .pull-left[
@@ -561,9 +650,24 @@ ve >= 45
 
 - Elementos del vector
 
-<br>
+  - ¿Qué pasa si, en lugar de querer saber cuál valor coincide con la condición y cuál no, quisiera seleccionar los valores relacionados con esa condición?
 
-.center[<img src="figs/vec_selection.png" style="width: 60%;">]
+<br>
+.center[<img src="figs/12-cond_vector.png" style="width: 60%;">]
+
+.pull-left[
+```{r}
+# Antes:
+ve < 30
+```
+]
+
+.pull-right[
+```{r}
+# Después:
+ve[ve < 30]
+```
+]
 
 ---
 ## Manejo de datos
@@ -574,33 +678,1332 @@ ve >= 45
 
 .pull-left[
 ```{r}
-# ¿Qué elementos tienen el valor = 30?
+# ¿Qué elementos tienen el valor igual a 30?
 ve[ve == 30]
 
-# ¿Qué elementos tienen un valor superior a 30?
-ve[ve > 30]
+# ¿Qué elementos valen menos de 50?
+ve[ve < 50]
+
+# ¿Está el ve insertado en el conjunto '32'?
+ve[ve %in% 32]
 ```
 ]
 
 .pull-right[
 ```{r}
-# ¿Qué elementos tienen el valor inferior a 50?
-ve[ve < 50]
+# ¿Qué elementos tienen un valor superior a 30?
+ve[ve > 30]
 
 # ¿Qué elementos tienen valores mayores o iguales a 45?
 ve[ve >= 45]
+
+# ¿Qué elementos son distintos de 10?
+ve[ve != 10]
 ```
 ]
 
 ---
 ## Manejo de datos
 
+### Seleccionar elementos por condición (**vector**)
+
+#### Ejercicios 🐀
+
+Tomó muestras de ratas en tres áreas de Puerto Iguazú. En estos tres anotó la abundancia mensual de ratas durante dos años (24 meses).
+
+```{r}
+loc1 <- sample(1:100, 24)
+loc2 <- sample(1:100, 24)
+loc3 <- sample(1:100, 24)
+```
+
+1 -  En los dos años de recolección, ¿algunos de los sitios presentaron una abundancia superior a 50 ratas en un solo mes? ¿Y abundancia de menos de 20 ratas en un solo mes?
+
+3 - ¿Alguna de las ubicaciones tiene los valores `[10, 20, 22]`?
+
+4 - Seleccione solo las abundancias que sean mayores que 0 y cree un nuevo vector para cada local.
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+<br>
+.center[<img src="figs/16-cond3.png" style="width: 80%;">]
+<br>
+
+> Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
+```{r}
+ma <- matrix(c(1:12), nrow = 3)
+ma
+```
+
+.pull-left[
+```{r}
+# ¿Qué elementos tienen los valores
+# = 5 o 6?
+ma == c(5, 6)
+```
+]
+
+.pull-right[
+```{r}
+# ¿Qué elementos tienen el valor 
+# inferior a 8?
+ma < 8
+```
+]
+---
+## Manejo de datos
+
 ### Seleccionar elementos por condición (**data frame**)
 
-- Elementos del vector
+- Elementos del **data.frame**.
+
+  - ¿Qué pasa si, en lugar de querer saber cuál valor coincide con la condición y cuál no, quisiera seleccionar los valores relacionados con esa condición?
+
+<br>
+.center[<img src="figs/13-cond_dataf.png" style="width: 80%;">]
+<br>
+
+```{r}
+ma[ma == 8]
+```
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
+```{r}
+ma <- matrix(c(1:12), nrow = 3)
+ma
+```
+
+.pull-left[
+```{r}
+# ¿Qué elementos tienen los valores
+# = 5 o 6?
+ma[ma == c(5, 6)]
+```
+]
+
+.pull-right[
+```{r}
+# ¿Qué elementos tienen el valor 
+# inferior a 8?
+ma[ma < 8]
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**data.frame**)
+
+- En un **data.frame**, podemos separar la columna que nos interesa con el operador `$` y luego aplicar la selección por condición.
+
+```{r}
+# Nombra las columnas y transforma la matriz en data.frame
+colnames(ma) = c("A", "B", "C", "D")
+mb <- data.frame(ma)
+mb
+```
+
+```{r}
+mb$A == 1 # Para la columna "A"
+
+mb$B > 5 # Para la columna "B"
+```
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+#### Ejercicios 
+
+.pull-left[
+Tiene una tabla con valores de temperatura, lluvia y abundancia de flebótomos que muestreó en los ultimos 5 meses:
+
+```{r echo=FALSE}
+temperatura <- sample(15:30, 5)
+lluvia <- sample(0:100, 5)
+abundancia <- sample(0:100, 5)
+
+data.frame(temperatura, lluvia, abundancia) %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(font_size = 22, position = "left")
+```
+]
+
+.pull-right[
+1 - En alguno de los meses, ¿la temperatura bajó de los 20°C?
+
+2 - En alguno de los meses, ¿tomó muestras de más de 20 flebótomos?
+
+3 - Seleccione valores de precipitación superiores a 50.
+
+4 - ¿Hay un mes con abundancia de flebótomos igual a 10, 20 o 31?
+
+5 - En toda la tabla, ¿hay algún valor cero?
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**character**)
+
+- Todo lo que hemos hecho hasta ahora se puede hacer con characters.
+
+```{r}
+l <- c("A", "B", "C", "d")
+```
+
+
+```{r}
+l < "C"
+
+l == "B"
+
+l[l > "B"]
+
+l[l != "d"]
+```
+
+---
+name: tabla
+class: middle, center
+
+# ¿Cómo armar mi tabla de datos?
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+<br>
+.center[<img src="figs/17-tabla.png" style="width: 80%;">]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+<br>
+.center[<img src="figs/18-tabla2.png" style="width: 80%;">]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+### Resumen
+
+Características principales de un conjunto de datos ordenado:
+
+- cada variable es una columna
+- cada observación es una linea
+- cada valor está en una celda diferente
+
+.center[<img src="figs/30-tidyverse.png" style="width: 100%;">]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+.pull-left[
+<br>
+.center[<img src="figs/19-tabla3.png" style="width: 100%;">]
+]
+
+.pull-right[
+**Descripción de datos:**
+
+- Utilice las hojas de datos de su editor (ex. excel) para almacenar información sobre su tabla.
+
+- En la primera hoja (hoja 1) dejamos nuestra tabla y en las demás (normalmente la hoja 2, pero si es necesario usamos otras) incluimos información sobre nuestra tabla, como a qué se refieren los datos, descripción de cada variable, alguna observación importante y alguna fecha de edición de esta tabla.
+]
+
+---
+name: tidyverse
+class: middle, center
+
+# Tidyverse
+### <https://www.tidyverse.org/>
+
+---
+## Tidyverse
+
+> El tidyverse es una colección obstinada de 📦 **R** diseñados para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.
+
+.center[<img src="figs/24-tidyverse.png" style="width: 40%;">]
+
+- Instale el tidyverse completo con:
+```{r eval=FALSE, include=TRUE}
+install.packages("tidyverse")
+```
+
+---
+## Tidyverse
+
+.center[<img src="figs/25-tidyverse.png" style="width: 100%;">]
+
+---
+## Tidyverse
+
+### Tidyverse es una colección de 📦 R 
+
+- [readr](https://readr.tidyverse.org/) - importación de datos
+
+- [tibble](https://tibble.tidyverse.org/) - formato de `data.frame` mejorado
+
+- [tidyr](https://tidyr.tidyverse.org/), [dplyr](https://dplyr.tidyverse.org/)  - manipulación de datos 
+</mark> 
+
+- [ggplot2](https://ggplot2.tidyverse.org/) - visualizando de datos
+
+- [purrr](https://purrr.tidyverse.org/) - programación avanzada
+
+- [forcats](https://forcats.tidyverse.org/) - trabajando con factores
+
+- [stringr](https://stringr.tidyverse.org/) - trabajando con cadena de caracteres
+
+---
+## Tidyverse
+
+### Tidyverse es una colección de 📦 R 
+
+- <mark>[readr](https://readr.tidyverse.org/) - importación de datos
+
+- <mark>[tibble](https://tibble.tidyverse.org/) - formato de `data.frame` mejorado
+
+- <mark>[tidyr](https://tidyr.tidyverse.org/), [dplyr](https://dplyr.tidyverse.org/)  - manipulación de datos
+
+- <mark>[ggplot2](https://ggplot2.tidyverse.org/) - visualizando de datos
+
+- [purrr](https://purrr.tidyverse.org/) - programación avanzada
+
+- [forcats](https://forcats.tidyverse.org/) - trabajando con factores
+
+- [stringr](https://stringr.tidyverse.org/) - trabajando con cadena de caracteres
+
+
+
+
+---
+## Tidyverse
+
+### Flujo de trabajo en ciencia de datos, con **Tidyverse**
+
+.center[<img src="figs/26-tidyverse.png" style="width: 80%;">]
+
+---
+## Tidyverse
+
+El creador de **Tidyverse** es Hadley Wickham y hoy en día muchas personas han contribuido a su expansión.
+
+.center[<img src="figs/27-hadley.jpg" style="width: 55%;">
+
+`r icons::icon_style(icons::fontawesome("globe-americas", style = "solid"), fill = "#000000")` <http://hadley.nz/> <br>
+ `r icons::icon_style(icons::fontawesome("twitter"), fill = "#000000")` [@hadleywickham](https://twitter.com/hadleywickham)
+]
+---
+## Tidyverse
+
+### R for Data Science
+
+.pull-left[
+.center[
+<img src="figs/28-tidyverse.png" style="width: 55%;">
+]
+]
+.center[
+<br>
+
+"This book will teach you how to do data science with **R**: You’ll learn how to get your data into **R**, get it into the most useful structure, transform it, visualise it and model it. In this book, you will find a practicum of skills for data science. Just as a chemist learns how to clean test tubes and stock a lab, you’ll learn how to clean data and draw plots—and many other things besides. (...)"
+
+<https://r4ds.had.co.nz/>
+]
+
+---
+## Tidyverse
+
+### Ejercicio
+
+Instale y cargue el paquete **Tidyverse** en su computadora.
+                
+<img src="figs/29-tidyverse.jpg" style="width: 35%;">
+
+---
+name: importar
+class: middle, center
+
+# Importar datos a R
+
+---
+## Importar datos a R
+
+> Para su alivio, **no es necesario producir su tabla en R** (como lo hemos hecho hasta ahora). Es posible construir la tabla en Excel y luego importar los datos (de HD a nuestra memoria RAM).
+
+<br>
+.center[<img src="figs/21-happy.gif" style="width: 50%;">]
+<br>
+
+> La función de importación dependerá del formato en el que se guardó nuestra tabla (.txt, .csv, .xls, .xlsx).
+
+---
+## Importar datos a R
+
+### Working directory
+
+- Recuerde que el directorio de trabajo es una 📁 donde **R** lee y guarda archivos.
+
+- Deberá decirle a R dónde están los archivos en los que va a trabajar.
+
+```{r eval=FALSE, include=TRUE}
+# Aquí incluirá la dirección donde están sus archivos en su computadora.
+setwd("C:/Users/mmfav/introduccionalR/clase_2/data")
+```
+
+- Deje todos los archivos guardados en esta misma carpeta, esto facilitará su trabajo.
+
+- Tenga en cuenta que la dirección aquí se indica con barras invertidas (`/`), a diferencia de lo que usan algunos sistemas operativos (`\`). Por ejemplo:
+  - `r icons::icon_style(icons::fontawesome("windows"), fill = "#000000")`: `C:\Users\mmfav\introduccionalR\clase_2\data`
+  - `r icons::icon_style(icons::fontawesome("r-project"), fill = "#000000")`: `C:/Users/mmfav/introduccionalR/clase_2/data`
+
+---
+## Importar datos a R
+
+.pull-left[.center[<img src="figs/31-readr.png" style="width: 50%;">
+
+El 📦 **tidyverse** `readr` se usa para importar archivos de texto, como *.txt* o *.csv* a **R**. 
+
+`reader` transforma archivos de texto en **tibbles**.]]
+
+.pull-right[
+- `read_csv()`; `read_csv2`: para archivos separados por comas. 
+- `read_tsv()`: para archivos separados por tabulaciones.
+- `read_delim()`: para archivos separados por un delimitador genérico. El argumento delim `=` indica qué carácter separa cada columna del archivo de texto.
+- `read_table()`: para archivos de texto tabulares con columnas separadas por espacios.
+- `read_fwf()`: para archivos compactos que deben tener el ancho de cada columna especificado.
+- `read_log()`: para archivos de registro estándar.
+]
+
+---
+## Importar datos a R
+
+.pull-left[.center[<img src="figs/31-readr.png" style="width: 50%;">
+
+El 📦 **tidyverse** `readr` se usa para importar archivos de texto, como *.txt* o *.csv* a **R**. 
+
+`reader` transforma archivos de texto en **tibbles**.]]
+
+.pull-right[
+- <mark>`read_csv()`; `read_csv2`: para archivos separados por comas.</mark>  
+- `read_tsv()`: para archivos separados por tabulaciones.
+-  <mark>`read_delim()`: para archivos separados por un delimitador genérico. El argumento delim `=` indica qué carácter separa cada columna del archivo de texto.</mark> 
+- `read_table()`: para archivos de texto tabulares con columnas separadas por espacios.
+- `read_fwf()`: para archivos compactos que deben tener el ancho de cada columna especificado.
+- `read_log()`: para archivos de registro estándar.
+]
+
+---
+## Importar datos a R
+
+### readr: `.csv`
+
+- Como ejemplo, usaremos la base de datos que proporcionamos en el repositorio ([datos.csv](datos.csv)).
+
+- La función para leer los datos es: `read_csv2(file = "archivo.csv")`.
+
+```{r}
+datos_csv <- read_csv2(file = "datos.csv")
+```
+
+<!--- El mensaje devuelto por la función indica qué clase se asignó a cada columna. Tenga en cuenta que el argumento file = representa la ruta al archivo. Si el archivo que se va a leer no está en el directorio de trabajo de su sesión, debe especificar la ruta al archivo. -->
+
+---
+## Importar datos a R
+
+### readr: `.txt`
+
+- Como ejemplo, usaremos la base de datos que proporcionamos en el repositorio ([datos.txt](datos.txt)).
+
+- La función para leer los datos es: `read_delim(file = "archivo.txt", delim = "\t")`.
+
+```{r}
+datos_txt <- read_delim(file = "datos.txt", delim = "\t")
+```
+
+---
+## Importar datos a R
+
+### Exportar datos (`write_ `)
+
+- Para la mayoría de las funciones `read_`, existe una función `write_` correspondiente. 
+
+- Estas funciones sirven para guardar bases en un formato de archivo específico. 
+
+- Debe especificar el objeto a exportar y el nombre del archivo con la extensión.
+
+```{r eval=FALSE, include=TRUE}
+# archivo .csv
+write.csv2(x = objeto, path = "nombre_tabla.csv")
+
+# como un .txt
+write_delim(x = objeto, path = "nombre_tabla.txt", delim = "\t")
+```
+
+---
+## Importar datos a R
+
+.pull-left[
+¿Qué pasa si mis datos se guardan como un archivo **excel**?
+
+.center[<img src="figs/32-readxl.png" style="width: 50%;">
+
+El 📦 `readxl` se usa para importar archivos de excel, como *.xslx* o *.xls* a **R**. 
+
+]]
+
+.pull-right[
+- Instalar:
+```{r eval=FALSE, include=TRUE}
+install.packages("readxl")
+```
+
+- Cargar el paquete:
+```{r}
+library(readxl)
+```
+
+- Para abrir nuestro [archivo de repositorio (datos.xlsx)](datos.xlsx): `read_xlsx("archivo.xlsx")`
+
+- `readxl` transforma archivos de excel en **tibbles**.
+
+---
+
+- **<mark> <font color = "red"> ¡¡No es parte del tidyverse !! </font></mark> **
+
+---
+
+]
+
+---
+## Importar datos a R
+
+### readxl: **.xlsx**
+
+**Ejemplo:**
+
+```{r}
+datos_xlsx <- read_xlsx("datos.xlsx")
+datos_xlsx
+```
+
+---
+## Importar datos a R
+
+.pull-left[.center[
+
+<img src="figs/33-tibble.png" style="width: 60%;">
+
+Un **tibble**, o `tbl_df`, es una reinvención moderna del `data.frame`, manteniendo el tiempo que ha demostrado ser efectivo y descartando lo que no lo es. 
+
+
+]]
+
+.pull-right[
+<br>
+
+---
+
+- Es un formato requerido para usar funciones **tidyverse**.
+
+- Las variables pueden ser de tipo *numérico (int, dbl)*, *carácter (chr)*, *lógicas (lgl)* y *factor (fctr)*
+
+---
+
+- Convertir:
+
+> `data.frame` en `tibble`: 
+```{r eval=FALSE, include=TRUE}
+as_tibble(data)
+```
+
+---
+
+]
+
+---
+## Importar datos a R
+
+#### Ejercicio:
+
+1 - Importe una tabla relacionada con una de sus investigaciónes para el R; puede tener cualquier format y numero de variables. El formato de salida debe ser `tibbler`.
+
+2 - ¿Cuál es la diferencia entre las tablas datos_csv, datos_txt y datos_xlsx?
+
+---
+name: pipe
+class: middle, center
+
+# Operador pipe (`%>%`)
+
+---
+## Operador pipe (`%>%`)
+
+.pull-left[.center[
+<img src="figs/34-magrittr.png" style="width: 60%;">
+
+El 📦 `magrittr` ofrece un perador que hace que su código sea más legible: el pipe (`%>%`).
+]
+]
+
+.pull-right[
+La idea del operador pipe (`%>%`) es bastante simple: use el valor resultante de la expresión de la izquierda como primer argumento de la función de la derecha.
+
+**Por ejemplo**:
+
+```{r}
+# suma el vector y luego obtén la √ (sqrt):
+x <- 1:10
+```
+```{r}
+# Sin el pipe:
+sqrt(sum(x)) 
+```
+```{r}
+# Con el pipe:
+x %>% sum() %>% sqrt()
+```
+]
+
+---
+## Operador pipe (`%>%`)
+
+**Para hacerlo un poco más intuitivo:**
+
+.pull-left[
+- Hacer empanadas SIN el pipe:
+```{r eval=FALSE, include=TRUE}
+enfriarse(
+  hornear(
+    cerrar_la_masa(
+      agregar_relleno(
+        abre_la_massa(
+          mezclar(
+            hacer_la_masa(rep(farina, 5), manteca, sal, agua_tibia),
+            hasta = 'masa homogénea'),
+          tipo = "carne picada"),
+      ),
+    ),
+    temperatura = 180, tiempo = 20),
+)
+```
+]
+
+.pull-right[
+- Hacer empanadas CON el pipe:
+```{r eval=FALSE, include=TRUE}
+hacer_la_masa(rep(farina, 5), manteca, sal, agua_tibia) %>%
+  mezclar(hasta = 'masa homogénea') %>%
+  abre_la_massa() %>%
+  agregar_relleno(tipo = "carne picada") %>%
+  cerrar_la_masa() %>%
+  hornear(temperatura = 180, tiempo = 20) %>%
+  enfriarse()
+```
+
+---
+**!!** El código no solo es más pequeño, es más intuitivo, la lectura se vuelve mucho más fácil **!!**
+
+---
+]
+
+---
+name: tidyr
+class: middle, center
+
+# tidyr
+
+---
+## tidyr 
+
+.pull-left[.center[
+<img src="figs/35-tidyr.png" style="width: 60%;">
+
+El objetivo del 📦 `tidyr` es ayudarte a crear datos ordenados.
+]
+]
+
+.pull-right[
+Los datos ordenados son datos donde:
+- Cada columna es variable.
+- Cada fila es una observación.
+- Cada celda es un valor único.
+
+---
+
+Tidyr data describe una forma estándar de almacenar datos que se utiliza siempre que sea posible en **tidyverse**. 
+
+Si se asegura de que sus datos estén ordenados, pasará menos tiempo luchando con las herramientas y más tiempo trabajando en su análisis.
+
+---
+]
+
+---
+## tidyr 
+
+- Estas son sus principales funciones:
+
+  - `separate()`: separar los caracteres en varias columnas
+  - `unite()`: unir datos de varias columnas en una
+  - `drop_na()`: eliminar líneas con NA
+  - `replace_na()`: reemplazar valores NA
+  - `pivot_wider()`: pasa valores de filas a columnas
+  - `pivot_longer()`: pasa valores de columnas a filas
+<br>
 
 <br>
 
-.center[<img src="figs/dataframe_selection.png" style="width: 80%;">]
+<br>
+
+---------
+> Para ver todas las funciones del paquete, consulte la *cheatsheets*: <https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf>
+
+---------
 
 ---
+## tidyr 
+
+### **separate()**
+
+.pull-left[
+- Muchas veces, una sola variable de columna capturará múltiples variables, o incluso partes de una variable que simplemente no le importa.
+
+.center[
+<img src="figs/36-separate.png" style="width: 90%;">
+]
+]
+
+.pull-right[
+- La función `separate()` separa dos o más variables que están concatenadas en la misma columna.
+
+-----
+
+- La sintaxis de la función es:
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+datos %>%
+  separate(
+    col = columna_vieja,
+    into = c("nueva_columna_1", "nueva_columna_2"),
+    sep = c("_") # cómo se separan las variables en la columna (ej. ".", "_")
+  )
+```
+
+]
+
+---
+## tidyr 
+
+### **separate()**
+
+**Por ejemplo**, dividamos la columna "localidad" de la tabla "datos_xlsx" en "ciudad" y "provincia".
+
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  separate(
+    col = localidad, # la columna vieja
+    into = c("ciudad", "provincia"), # las nuevas columnas
+    sep = c(" - ") # modo de separación
+  )
+```
+
+
+```{r echo=FALSE}
+datos_xlsx %>%
+  separate(
+    col = localidad, # la columna vieja
+    into = c("ciudad", "provincia"), # las nuevas columnas
+    sep = c(" - ") # modo de separación
+  ) %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  kableExtra::column_spec(2:3, bold = T, background = "#FFCC33") %>% 
+  kableExtra::scroll_box(width = "100%", height = "250px")
+```
+
+
+---
+## tidyr 
+
+### **unite()**
+
+.pull-left[
+- La operación `unite()` es lo opuesto a `separate()`. 
+
+.center[
+<img src="figs/37-united.png" style="width: 90%;">
+]
+
+- La función `unite()` une dos variables que están en columnas diferentes.
+
+]
+
+.pull-right[
+- Toma dos columnas (variables) y las convierte en una. Se usa ampliamente para ensamblar informes finales o tablas para análisis visual. 
+
+-----
+
+- La sintaxis de la función es:
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+datos %>%
+  unite(
+    col = nueva_columna, columnas_para_juntar,
+    sep = c("_") # cómo se separan las variables en la columna (ej. ".", "_")
+  )
+```
+
+]
+
+---
+## tidyr 
+
+### **unite()**
+
+**Por ejemplo**, unamos las columnas "zona" y "año".
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  unite(
+    col = "zona_ano", "zona", "ano",
+    sep = "_"
+  )
+```
+
+```{r echo=FALSE}
+datos_xlsx %>%
+  unite(
+    col = "zona_ano", "zona", "ano",
+    sep = "_"
+  ) %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  kableExtra::column_spec(3, bold = T, background = "#FFCC33") %>%
+  kableExtra::scroll_box(width = "100%", height = "280px")
+
+```
+
+---
+## tidyr 
+
+### **replace_na()** y **drop_na()**
+
+.pull-left[
+Cuando tenemos datos faltantes en nuestra tabla (NA), podemos reemplazar NA con nuevos valores con la función `replace_na()`,... 
+
+```{r eval=FALSE, include=TRUE}
+replace_na(
+  list(columna_X = valor)
+)
+```
+
+...o podemos eliminar las filas con valores faltantes con `drop_na()`.
+
+```{r eval=FALSE, include=TRUE}
+drop_na(
+  columna
+)
+```
+
+]
+
+.pull-right[
+.center[
+<img src="figs/40-NA.png" style="width: 100%;">
+]
+]
+
+---
+## tidyr 
+
+### **replace_na()**
+
+**Por ejemplo**, podemos reemplazar las filas con el valor faltante en la columna "var_respuesta" por cero (lineas 1, 6 y 20)...
+
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  replace_na(list(var_respuesta = 0))
+```
+
+
+```{r echo=FALSE}
+datos_xlsx %>%
+  replace_na(list(var_respuesta = 0)) %>% 
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  kableExtra::row_spec(c(1,6,20), bold = T, background = "#FFCC33") %>%
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+---
+## tidyr 
+
+### **drop_na()** 
+
+...o podemos eliminar las líneas que tiene valores NA.
+
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  drop_na(var_respuesta)
+```
+
+```{r echo=FALSE}
+datos_xlsx %>%
+  drop_na(var_respuesta) %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  kableExtra::scroll_box(width = "100%", height = "330px")
+```
+
+---
+## tidyr 
+
+.pull-left[### **pivot_longer()**
+
+- "Alarga" los datos, aumentando el número de filas y disminuyendo el número de columnas.
+
+.center[
+<img src="figs/38-piv_longer.png" style="width: 60%;">
+]
+```{r eval=FALSE, include=TRUE}
+pivot_longer(
+  cols = Columnas_para_pivotar,
+  names_to = "nombre_nova_columna",
+  values_to = "nombre_col_values"
+  )
+```
+]
+
+.pull-right[### **pivot_wider()**
+
+- Pasa los datos de columnas para filas, aumentando el número de columnas.
+
+.center[
+<img src="figs/39-piv_wider.png" style="width: 62%;">
+]
+```{r eval=FALSE, include=TRUE}
+  pivot_wider(
+    names_from = columna_nombres, 
+    values_from = columna_valores
+    ) 
+```
+
+]
+
+---
+## tidyr 
+
+### **pivot_longer()**
+
+.pull-left[
+**Por ejemplo**, pasemos los años de la tabla "datos_csv" de las columnas a las filas. Los valores los almacenaremos en una columna llamada 'value'.
+
+```{r eval=FALSE, include=TRUE}
+datos_csv %>%
+  pivot_longer(
+    cols = c('2001', '2002', '2003'),
+    names_to = "año",
+    values_to = "value"
+  )
+```
+]
+
+.pull-right[
+```{r echo=FALSE}
+datos_csv %>%
+  pivot_longer(
+    cols = c('2001', '2002', '2003'),
+    names_to = "año",
+    values_to = "value"
+  ) %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"))
+```
+]
+
+---
+## tidyr 
+
+### **pivot_wider()**
+
+**Por ejemplo**, pasemos los elementos de la columna "variable" a las columnas y usemos la columna "valor" para los valores (tabla "data_txt").
+```{r eval=FALSE, include=TRUE}
+datos_txt %>%
+  pivot_wider(
+    names_from = variable,
+    values_from = value
+  )
+```
+
+```{r echo=FALSE}
+datos_txt %>%
+  pivot_wider(
+    names_from = variable,
+    values_from = value
+  ) %>%
+  kableExtra::kbl() %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+---
+## tidyr 
+
+#### Ejercicios
+
+1 - Abra la tabla "*tidy_ej.xlsx*" en R.
+
+2 - ¿Faltan datos en la tabla *tidy_ej*? Si es así, reemplace los valores faltantes con 0.
+
+**Tip**:
+```{r eval=FALSE, include=TRUE}
+tidy_ej %>% is.na() %>% table()
+```
+
+3 - Separe la columna "departamento - año" en dos columnas.
+
+4 - Mueva las columnas "PNI", "Urban" y "Rural" a una sola columna y agregue los valores a una nueva columna llamada "número de accidentes".
+
+5 - Guarde todo lo que ha hecho en una nueva table `tibble` llamada "tidy_ej2". 
+
+---
+name: dplyr
+class: middle, center
+
+# dplyr 
+
+---
+## dplyr 
+
+.pull-left[
+<img src="figs/41-dplyr.png" style="width: 60%;">
+
+El 📦 `dplyr` es lo paquete más útil para realizar la transformación de datos, combinando simplicidad y eficiencia de una manera elegante.
+]
+
+.pull-right[
+- Los scripts **R** que hacen un uso inteligente de los verbos `dplyr` y las facilidades del operador `pipe` tienden a ser más legibles y organizados sin perder velocidad de ejecución.
+
+---
+
+- Las principales funciones de `dplyr` son:
+
+  - `select()`: seleccionar columnas
+  - `arrange()`: ordenar la base de datos
+  - `filter()`: filtrar las lineas
+  - `mutate()`: crear/modificar columnas
+  - `group_by()`: agrupar la base de datos
+  - `summarise()`: resume la base
+  - `relocate()`: reordenar columnas
+  - `left_join()`, `right_join()` y `full_join()`: juntar ≠ bases de datos. 
+]
+
+---
+## dplyr 
+
+### **select()**
+
+- Usamos para seleccionar columnas.
+
+- Los argumentos son los nombres de las columnas que desea seleccionar.
+
+```{r eval=FALSE, include=TRUE}
+datos %>%
+  select(nombre_col, nombre_col2)
+```
+
+- Para eliminar columnas de la base, agregue un "menos" (`-`) antes de la selección.
+
+```{r eval=FALSE, include=TRUE}
+datos %>%
+  select(-nombre_col, -nombre_col2)
+```
+
+- También disponemos de otras funciones auxiliares:
+  - `starts_with()`: para columnas que comienzan con texto estándar
+  - `ends_with()`: para columnas que terminan con texto estándar
+  - `contiene()`: para columnas que contienen texto estándar
+---
+## dplyr 
+
+### **select()**
+
+Seleccionemos las columnas "localidad" y "año" de la tabla "datos_xlsx".
+
+```{r}
+datos_xlsx %>%
+  select(localidad, ano)
+```
+
+---
+## dplyr 
+
+### **select()**
+
+Seleccione todos los datos excepto "ID" y "temperatura".
+
+```{r}
+datos_xlsx %>%
+  select(-ID, -temperatura)
+```
+
+---
+## dplyr 
+
+### **arrange()**
+
+- Para ordenar líneas. 
+
+- Los argumentos son las columnas por las que queremos ordenar las filas.
+
+```{r eval=FALSE, include=TRUE}
+datos %>% 
+  arrange(columna_x)
+```
+
+- También podemos ordenar en orden descendente usando la función `desc()`...
+
+```{r eval=FALSE, include=TRUE}
+datos %>% 
+  arrange(desc(columna_x))
+```
+
+- ¡Y ordena más de una columna al mismo tiempo!
+
+```{r eval=FALSE, include=TRUE}
+datos %>% 
+  arrange(columna_y, desc(columna_x))
+```
+
+---
+## dplyr 
+
+### **arrange()**
+
+- En el siguiente ejemplo, ordenamos las líneas base en orden ascendente de "response_var".
+
+```{r}
+datos_xlsx %>%
+  arrange(var_respuesta, desc(ano))
+```
+
+---
+## dplyr 
+
+### **filter()**
+
+- Para filtrar valores de una columna base, usamos la función `filter()`.
+
+```{r eval=FALSE, include=TRUE}
+datos %>% 
+  filter(columna < value)
+```
+
+- Por ejemplo, podemos seleccionar datos con una "var_respuesta" superior a 50.
+
+```{r}
+datos_xlsx %>%
+  filter(var_respuesta > 50)
+```
+
+---
+## dplyr 
+
+### **filter()**
+
+- También podemos usar el filtro con caracteres.
+
+```{r}
+datos_xlsx %>%
+  filter(zona %in% "urbano")
+```
+
+---
+## dplyr 
+
+### **mutate()**
+
+- Para modificar una columna existente o crear una nueva. 
+
+- Aplicaremos una función.
+
+- La regla es que el resultado de la operación devuelve un vector con una longitud igual al número de filas en la base.
+
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  mutate(columna = columna+función)
+```
+
+- También puede crear/modificar tantas columnas como desee dentro de la misma mutación.
+
+```{r eval=FALSE, include=TRUE}
+datos_xlsx %>%
+  mutate(columna = columna+función, nueva_columna = columna/valor)
+```
+
+---
+## dplyr 
+
+### **mutate()**
+
+- Por ejemplo, digamos que descubrió un error en su tabla. Agregaste uno individuo más en la columna "var_respuesta" y ahora necesitas quitar ese valor.
+
+```{r}
+datos_xlsx %>%
+  mutate(var_respuesta = var_respuesta - 1)
+```
+
+---
+## dplyr 
+
+### **summarize()**
+
+- Es la técnica de resumir un conjunto de datos utilizando alguna métrica de interés. 
+
+- Media, mediana, varianza, frecuencia, proporción, por ejemplo, son tipos de resumen que aportan información diferente sobre una variable.
+
+```{r eval=FALSE, include=TRUE}
+datos %>%
+  summarize(función(columna))
+```
+
+- No vamos a explorar esta función aquí, ya que tendremos una clase solo sobre estadística descriptiva en **R**.
+
+```{r}
+datos_xlsx %>%
+  summarize(media = mean(temperatura), na.rm = TRUE)
+```
+
+---
+## dplyr 
+
+### **relocate()**
+
+- Para reubicar columnas.
+
+- De forma predeterminada, coloca una o más columnas al comienzo de la base.
+
+```{r eval=FALSE, include=TRUE}
+# Coloque las columnas 5 y 4 al principio de la tabla.
+datos %>%
+  relocate(columna5, columna4)
+```
+
+- Podemos usar los argumentos `.after =` y `.before =` para realizar cambios más complejos.
+
+```{r eval=FALSE, include=TRUE}
+# Poner la columna 2 después de la columna 4
+datos %>%
+  relocate(columna2, .after = columna4)
+```
+
+```{r eval=FALSE, include=TRUE}
+# Poner la columna 2 antes de la columna 4
+datos %>%
+  relocate(columna2, .before = columna4)
+```
+
+---
+## dplyr 
+
+### **rename()***
+
+- Cambia los nombres de variables individuales (columnas) usando la sintaxis `nuevo_nombre = viejo_nombre`.
+
+```{r eval=FALSE, include=TRUE}
+datos %>%
+  rename(columna_x = columna.x)
+```
+
+- Por ejemplo, vamos cambiar el nombre de la columna "localidad" por "municipalidad".
+
+```{r}
+datos_xlsx %>%
+  rename(municipalidad = localidad) %>%
+  names()
+```
+
+---
+## dplyr 
+
+### **left_join()**, **right_join()** y **full_join()**
+
+- Lo usamos para unir dos tablas en una.
+
+```{r eval=FALSE, include=TRUE}
+# Une la tabla 'datos' a la tabla 'datos2' por 'columna_x'
+
+# Mantiene los elementos de la tabla 'datos' y excluye elementos adicionales de 'datos2'.
+datos %>%
+  left_join(datos2, 
+            by = "columna_x")
+
+# Mantiene los elementos de la tabla 'datos2' y excluye elementos adicionales de 'datos'.
+datos %>%
+  right_join(datos2, 
+            by = "columna_x")
+
+# Mantiene los valores de las dos tablas.
+datos %>%
+  full_join(datos2, by = "columna_x")
+
+```
+
+---
+## dplyr 
+
+#### Ejercicios
+
+Trabajemos con la tabla "**tidy_ej2**".
+
+1 - Reordene los datos de forma ascendente de acuerdo con la columna "ID".
+
+2 - Retire la columna "temperatura".
+
+3 - Seleccione solo las líneas con "número de accidentes"> 0.
+
+4 - Divida el valor de la columna "número de accidentes" por la columna "población" y multiplique por 100,000; resultando en el número de casos por cada 100.000 habitantes. 
+
+5 - Salvar la tabla como un ".csv".
+
+---
+class: clear, center
+
+## ¡¡Fin de clase!!
+
+.center[<img src="figs/43-fim.jpg" style="width: 80%;">]
+---
+class: middle
+
+## [¡No olvides tu tarea!](https://forms.gle/ryeDtZNHuzk56LtF8) `r icons::icon_style(icons::fontawesome("user-edit"), fill = "#000000")`
+
+<br> 
+
+<br> 
+
+### Soma dos quadrados
+
+- `r icons::icon_style(icons::fontawesome("github"), fill = "#000000")` [Soma-Dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR)
+- `r icons::icon_style(icons::fontawesome("youtube"), fill = "#000000")` [/somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A)
+- `r icons::icon_style(icons::fontawesome("twitch"), fill = "#000000")` [/somadosquadrados](https://www.twitch.tv/somaquadrados)
+- `r icons::icon_style(icons::fontawesome("twitter"), fill = "#000000")` [@somadosquadrados](https://twitter.com/somaquadrados)
+
+
+### Marília Melo Favalesso 
+
+- `r icons::icon_style(icons::fontawesome("envelope", style = "solid"), fill = "#000000")` [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- `r icons::icon_style(icons::fontawesome("globe-americas", style = "solid"), fill = "#000000")` [www.mmfava.com](www.mmfava.com)
+- `r icons::icon_style(icons::fontawesome("github"), fill = "#000000")` [ /mmfava](https://github.com/mmfava)
+

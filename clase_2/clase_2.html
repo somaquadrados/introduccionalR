@@ -1,0 +1,3779 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Programación con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Marília Melo Favalesso" />
+    <script src="clase_2_files/header-attrs-2.9/header-attrs.js"></script>
+    <script src="clase_2_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="clase_2_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Programación con R
+## Clase 2
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Marília Melo Favalesso
+
+---
+
+
+
+## Archivos
+
+- [`clase_2.R`](clase_2.R)
+- [datos.xlsx](datos.xlsx)
+- [datos.txt](datos.txt)
+- [datos.csv](datos.csv)
+- [tidy_ej.xlsx](tidy_ej.xlsx)
+
+## Contenido de hoy
+
+.pull-left[
+- [Manejo de objetos en R](#manejo)
+- [¿Cómo armar mi tabla de datos?](#tabla)
+- [Tidyverse](#tidyverse)
+- [Importar datos a R](#importar)
+]
+
+.pull-right[
+- [Operador pipe (`%&gt;%`)](#pipe)
+- [tidyr](#tidyr)
+- [dplyr](#dplyr)
+]
+
+---
+name: manejo
+class: middle, center
+
+# Manejo de datos
+
+---
+## Manejo de datos
+
+### Indexación
+
+- Los objetos son conjuntos *indexados* - Esto nos permite acceder a cada valor de manera individual.
+
+- Comprender la indexación es fundamental para manipular datos en **R**.
+
+- Usamos corchetes (`[]`) para acceder a la posición de los elementos de un objeto.
+
+.center[&lt;img src="figs/1-objetos.png" style="width: 90%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/2-vetor1.png" style="width: 50%;"&gt;]
+
+- No **R**:
+
+
+```r
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+```
+## [1] 11 12 13 14 15 16
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/3-vetor2.png" style="width: 50%;"&gt;]
+
+- No **R**:
+
+
+```r
+ve &lt;- c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+```
+## [1] 11 12 13 14 15 16
+```
+
+--
+
+
+```r
+ve[1]
+```
+
+```
+## [1] 11
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Seleccionar elementos
+
+
+```r
+ve[2] # selecciona solo el segundo elemento
+```
+
+```
+## [1] 12
+```
+
+```r
+ve[c(2, 4)] # selecciona los elementos en la segunda y cuarta posición
+```
+
+```
+## [1] 12 14
+```
+
+```r
+ve[4:6] # selecciona los entre la cuarta y sexta posición
+```
+
+```
+## [1] 14 15 16
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+.center[&lt;img src="figs/2-vetor1.png" style="width: 50%;"&gt;]
+
+
+```r
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+```
+## [1] 11 12 13 14 15 16
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+.center[&lt;img src="figs/5-vetor4.png" style="width: 50%;"&gt;]
+
+
+```r
+ve = c(11, 12, 13, 14, 15, 16)
+ve
+```
+
+```
+## [1] 11 12 13 14 15 16
+```
+
+--
+
+
+```r
+ve[-1]
+```
+
+```
+## [1] 12 13 14 15 16
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos unidimensionales `[L]`
+
+- Quitar elementos
+
+
+```r
+ve[-2] # quitar solo el segundo elemento
+```
+
+```
+## [1] 11 13 14 15 16
+```
+
+```r
+ve[-c(2, 4)] # quitar los elementos en la segunda y cuarta posición
+```
+
+```
+## [1] 11 13 15 16
+```
+
+```r
+ve[-c(4:6)] # quitar los entre la cuarta y sexta posición
+```
+
+```
+## [1] 11 12 13
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/6-bi1.png" style="width: 50%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/7-bi2.png" style="width: 50%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+
+```r
+ma &lt;- matrix(data = (c(1:25)), nrow = 5, ncol = 5, byrow = TRUE) # crear una matriz
+ma
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    6    7    8    9   10
+## [3,]   11   12   13   14   15
+## [4,]   16   17   18   19   20
+## [5,]   21   22   23   24   25
+```
+
+```r
+ma[2,2] # seleccionar el valor de la segunda línea y la segunda columna.
+```
+
+```
+## [1] 7
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Seleccionar elementos
+
+
+```r
+ma[3:4, c(3, 5)] # seleccione las lineas 3 y 4 y las columnas 3 y 5
+```
+
+```
+##      [,1] [,2]
+## [1,]   13   15
+## [2,]   18   20
+```
+
+```r
+ma[c(1,5), 3:5] # seleccione las lineas 1 y 5 y las columnas entre 3 - 5
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    3    4    5
+## [2,]   23   24   25
+```
+
+&gt; Es posible seleccionar más de una fila y columna al mismo tiempo.
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+.center[&lt;img src="figs/6-bi1.png" style="width: 50%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+.center[&lt;img src="figs/8-bi3.png" style="width: 50%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- Quitar elementos
+
+
+```r
+ma[-2, -2] # menos la fila dos y la columna dos
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    3    4    5
+## [2,]   11   13   14   15
+## [3,]   16   18   19   20
+## [4,]   21   23   24   25
+```
+
+```r
+ma[-c(1, 4), -2:-3] # menos las filas 1 y 4 y las columnas 2 y 3
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    6    9   10
+## [2,]   11   14   15
+## [3,]   21   24   25
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos bidimensionales `[L,C]`
+
+- También podemos usar el nombre de las filas y columnas para manejar los datos: `[nombre_linea, nombre_columna]`.
+
+
+```r
+rownames(ma) = paste("nomlin", 1:5, sep = "_") # nombre en las lineas
+colnames(ma) = paste("nomcol", 1:5, sep = "_") # nombre en las columnas
+ma # la tabla
+```
+
+```
+##          nomcol_1 nomcol_2 nomcol_3 nomcol_4 nomcol_5
+## nomlin_1        1        2        3        4        5
+## nomlin_2        6        7        8        9       10
+## nomlin_3       11       12       13       14       15
+## nomlin_4       16       17       18       19       20
+## nomlin_5       21       22       23       24       25
+```
+
+```r
+ma["nomlin_2", "nomcol_3"] # selecciona linea 2 y columna 3
+```
+
+```
+## [1] 8
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* `$`:
+
+&gt; El operador `$` se utiliza para extraer elementos con nombre de un **data frame**. 
+
+.pull-left[
+
+```r
+# vectores
+grupo &lt;- rep(c("CT", "EXP"), 5)
+valor &lt;- sample(1:50, 10)
+genero &lt;- sample(c("H", "M"), 10, replace = T)
+```
+
+
+```r
+# data-frame
+dt &lt;- data.frame(grupo, valor, genero)
+```
+
+
+```r
+# resultado
+dt
+```
+]
+
+.pull-right[
+
+```
+##    grupo valor genero
+## 1     CT    37      M
+## 2    EXP    40      H
+## 3     CT    16      H
+## 4    EXP    49      H
+## 5     CT    24      M
+## 6    EXP     3      H
+## 7     CT     1      M
+## 8    EXP     6      M
+## 9     CT    21      H
+## 10   EXP    38      H
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- El operador `$` se utiliza para extraer elementos con nombre de un *data frame*. 
+
+
+```r
+dt$grupo
+```
+
+```
+##  [1] "CT"  "EXP" "CT"  "EXP" "CT"  "EXP" "CT"  "EXP" "CT"  "EXP"
+```
+
+```r
+dt$valor
+```
+
+```
+##  [1] 37 40 16 49 24  3  1  6 21 38
+```
+
+```r
+dt$genero
+```
+
+```
+##  [1] "M" "H" "H" "H" "M" "H" "M" "M" "H" "H"
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+
+```r
+class(dt$grupo)
+```
+
+```
+## [1] "character"
+```
+
+```r
+dt$grupo &lt;- as.factor(dt$grupo)
+dt$grupo
+```
+
+```
+##  [1] CT  EXP CT  EXP CT  EXP CT  EXP CT  EXP
+## Levels: CT EXP
+```
+
+```r
+class(dt$grupo)
+```
+
+```
+## [1] "factor"
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Para cambiar la clase de elementos de una columna:
+
+
+```r
+class(dt$valor)
+```
+
+```
+## [1] "integer"
+```
+
+```r
+dt$valor &lt;- as.numeric(dt$valor)
+dt$valor
+```
+
+```
+##  [1] 37 40 16 49 24  3  1  6 21 38
+```
+
+```r
+class(dt$valor)
+```
+
+```
+## [1] "numeric"
+```
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- agregar una nueva columna:
+
+.pull-left[
+
+```r
+# antes
+dt
+```
+
+```
+##    grupo valor genero
+## 1     CT    37      M
+## 2    EXP    40      H
+## 3     CT    16      H
+## 4    EXP    49      H
+## 5     CT    24      M
+## 6    EXP     3      H
+## 7     CT     1      M
+## 8    EXP     6      M
+## 9     CT    21      H
+## 10   EXP    38      H
+```
+]
+
+.pull-right[
+
+```r
+# después
+dt$ID &lt;- 1:10; dt
+```
+
+```
+##    grupo valor genero ID
+## 1     CT    37      M  1
+## 2    EXP    40      H  2
+## 3     CT    16      H  3
+## 4    EXP    49      H  4
+## 5     CT    24      M  5
+## 6    EXP     3      H  6
+## 7     CT     1      M  7
+## 8    EXP     6      M  8
+## 9     CT    21      H  9
+## 10   EXP    38      H 10
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de *data frame* con `$`:
+
+- Usamos el `$` para separar una variable de un **data.frame**.
+
+- Esta variable ahora se puede manejar como un *objeto unidimensional*.
+
+.pull-left[
+
+```r
+# selecciona el primero elemento
+dt$valor
+```
+
+```
+##  [1] 37 40 16 49 24  3  1  6 21 38
+```
+
+```r
+dt$valor[1] 
+```
+
+```
+## [1] 37
+```
+]
+
+.pull-right[
+
+```r
+# elimina los valores en las posiciones 3 y 4
+dt$genero
+```
+
+```
+##  [1] "M" "H" "H" "H" "M" "H" "M" "M" "H" "H"
+```
+
+```r
+dt$genero[-c(3:4)] 
+```
+
+```
+## [1] "M" "H" "M" "H" "M" "M" "H" "H"
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/9-array1.png" style="width: 40%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.center[&lt;img src="figs/10-array2.png" style="width: 40%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Seleccionar elementos
+
+.pull-left[
+
+```r
+ar &lt;- array(data = c(1:8), dim = c(2, 2, 2)); ar # array
+```
+
+```
+## , , 1
+## 
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8
+```
+]
+
+.pull-right[
+
+```r
+ar[,,1] # dimensión 1
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
+```r
+ar[,2,1] # columna 2 y dimensión 1
+```
+
+```
+## [1] 3 4
+```
+
+```r
+ar[2,2,1] # linea 2, columna 2 y dimensión 1
+```
+
+```
+## [1] 4
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.center[&lt;img src="figs/9-array1.png" style="width: 40%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.center[&lt;img src="figs/11-array3.png" style="width: 40%;"&gt;]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Gestión de datos *n* dimensionales `[L,C,D]`
+
+- Quitar elementos.
+
+.pull-left[
+
+```r
+ar
+```
+
+```
+## , , 1
+## 
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8
+```
+
+]
+
+.pull-right[
+
+```r
+ar[,,-1] # dimensión
+```
+
+```
+##      [,1] [,2]
+## [1,]    5    7
+## [2,]    6    8
+```
+
+```r
+ar[,-2,-1] # columna y dimensión
+```
+
+```
+## [1] 5 6
+```
+
+```r
+ar[-2,-2,-1] # fila, columna y dimensión
+```
+
+```
+## [1] 5
+```
+]
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+Trabajará con una tabla de datos que no es suya (son datos secundarios). Esta tabla corresponde a datos de pacientes tratados en un hospital de su ciudad.
+
+&lt;table class="table" style=""&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Pacientes &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Barrio &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Genéro &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Edad &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Año &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Médico &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2020 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 39 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2021 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2020 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paciente_6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+## Manejo de datos
+
+### Indexación
+
+#### Ejercicios
+
+0 - Cree la tabla como un `data.frame` en **R**.
+
+1 - Trabajarás con las variables "género", "edad", "barrio" y "médico". Descarte las otras variables de la tabla.
+
+2 - En su estudio, solo trabajará con personas que se identifiquen con el género femenino. Seleccione solo los datos correspondientes a estas personas.
+
+3 - Agregue una columna que contenga el motivo de la búsqueda de atención médica: Paciente 1 = "tratamiento hormonal", Paciente 3 = "Problemas gástricos", Paciente 5 = "Sospecha de dengue".
+
+4 - Cambie la clase de variable "edad" para `numeric`.
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+&lt;br&gt;
+.center[&lt;img src="figs/14-cond.png" style="width: 40%;"&gt;]
+&lt;br&gt;
+
+&gt; Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+&lt;br&gt;
+.center[&lt;img src="figs/15-cond2.png" style="width: 40%;"&gt;]
+
+&gt; Comparación de objetos: **A** *con* **B**. &lt;br&gt;
+&gt; Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Operadores relacionales con salidas booleanas (VERDADERO o FALSO). 
+
+```r
+A &lt;- 6; B &lt;- 28
+```
+
+.pull-left[
+
+```r
+A == B # A es igual a B?
+```
+
+```
+## [1] FALSE
+```
+
+```r
+A != B # A es distinto de B?
+```
+
+```
+## [1] TRUE
+```
+
+```r
+A &gt; B # A es mayor que B?
+```
+
+```
+## [1] FALSE
+```
+
+```r
+A &lt;= B # A menor o igual que?
+```
+
+```
+## [1] TRUE
+```
+]
+
+.pull-right[
+
+```r
+A &gt;= B # A es mayor o igual que B?
+```
+
+```
+## [1] FALSE
+```
+
+```r
+A &lt; B # A es menor que B?
+```
+
+```
+## [1] TRUE
+```
+
+```r
+A %in% B # A en B?
+```
+
+```
+## [1] FALSE
+```
+
+```r
+A != B # A no es igual B?
+```
+
+```
+## [1] TRUE
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
+
+```r
+ve &lt;- c(10, 15, 30, 32, 50, 68, 70)
+ve
+```
+
+```
+## [1] 10 15 30 32 50 68 70
+```
+
+.pull-left[
+
+```r
+# ¿Qué elementos tienen el valor = 30?
+ve == 30 
+```
+
+```
+## [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+```
+
+```r
+# ¿Qué elementos tienen un valor superior a 30?
+ve &gt; 30
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+```
+]
+
+.pull-right[
+
+```r
+# ¿Qué elementos tienen el valor inferior a 50?
+ve &lt; 50
+```
+
+```
+## [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE
+```
+
+```r
+# ¿Qué elementos tienen valores mayores o iguales a 45?
+ve &gt;= 45
+```
+
+```
+## [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Elementos del vector
+
+  - ¿Qué pasa si, en lugar de querer saber cuál valor coincide con la condición y cuál no, quisiera seleccionar los valores relacionados con esa condición?
+
+&lt;br&gt;
+.center[&lt;img src="figs/12-cond_vector.png" style="width: 60%;"&gt;]
+
+.pull-left[
+
+```r
+# Antes:
+ve &lt; 30
+```
+
+```
+## [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
+```
+]
+
+.pull-right[
+
+```r
+# Después:
+ve[ve &lt; 30]
+```
+
+```
+## [1] 10 15
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+- Elementos del vector
+
+.pull-left[
+
+```r
+# ¿Qué elementos tienen el valor igual a 30?
+ve[ve == 30]
+```
+
+```
+## [1] 30
+```
+
+```r
+# ¿Qué elementos valen menos de 50?
+ve[ve &lt; 50]
+```
+
+```
+## [1] 10 15 30 32
+```
+
+```r
+# ¿Está el ve insertado en el conjunto '32'?
+ve[ve %in% 32]
+```
+
+```
+## [1] 32
+```
+]
+
+.pull-right[
+
+```r
+# ¿Qué elementos tienen un valor superior a 30?
+ve[ve &gt; 30]
+```
+
+```
+## [1] 32 50 68 70
+```
+
+```r
+# ¿Qué elementos tienen valores mayores o iguales a 45?
+ve[ve &gt;= 45]
+```
+
+```
+## [1] 50 68 70
+```
+
+```r
+# ¿Qué elementos son distintos de 10?
+ve[ve != 10]
+```
+
+```
+## [1] 15 30 32 50 68 70
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**vector**)
+
+#### Ejercicios 🐀
+
+Tomó muestras de ratas en tres áreas de Puerto Iguazú. En estos tres anotó la abundancia mensual de ratas durante dos años (24 meses).
+
+
+```r
+loc1 &lt;- sample(1:100, 24)
+loc2 &lt;- sample(1:100, 24)
+loc3 &lt;- sample(1:100, 24)
+```
+
+1 -  En los dos años de recolección, ¿algunos de los sitios presentaron una abundancia superior a 50 ratas en un solo mes? ¿Y abundancia de menos de 20 ratas en un solo mes?
+
+3 - ¿Alguna de las ubicaciones tiene los valores `[10, 20, 22]`?
+
+4 - Seleccione solo las abundancias que sean mayores que 0 y cree un nuevo vector para cada local.
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+&lt;br&gt;
+.center[&lt;img src="figs/16-cond3.png" style="width: 80%;"&gt;]
+&lt;br&gt;
+
+&gt; Operadores relacionales con salidas** booleanas** (VERDADERO o FALSO). 
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
+
+```r
+ma &lt;- matrix(c(1:12), nrow = 3)
+ma
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+```
+
+.pull-left[
+
+```r
+# ¿Qué elementos tienen los valores
+# = 5 o 6?
+ma == c(5, 6)
+```
+
+```
+##       [,1]  [,2]  [,3]  [,4]
+## [1,] FALSE FALSE FALSE FALSE
+## [2,] FALSE  TRUE FALSE FALSE
+## [3,] FALSE  TRUE FALSE FALSE
+```
+]
+
+.pull-right[
+
+```r
+# ¿Qué elementos tienen el valor 
+# inferior a 8?
+ma &lt; 8
+```
+
+```
+##      [,1] [,2]  [,3]  [,4]
+## [1,] TRUE TRUE  TRUE FALSE
+## [2,] TRUE TRUE FALSE FALSE
+## [3,] TRUE TRUE FALSE FALSE
+```
+]
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**data frame**)
+
+- Elementos del **data.frame**.
+
+  - ¿Qué pasa si, en lugar de querer saber cuál valor coincide con la condición y cuál no, quisiera seleccionar los valores relacionados con esa condición?
+
+&lt;br&gt;
+.center[&lt;img src="figs/13-cond_dataf.png" style="width: 80%;"&gt;]
+&lt;br&gt;
+
+
+```r
+ma[ma == 8]
+```
+
+```
+## [1] 8
+```
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+- Operadores relacionales con salidas **booleanas** (VERDADERO o FALSO). 
+
+```r
+ma &lt;- matrix(c(1:12), nrow = 3)
+ma
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+```
+
+.pull-left[
+
+```r
+# ¿Qué elementos tienen los valores
+# = 5 o 6?
+ma[ma == c(5, 6)]
+```
+
+```
+## [1] 5 6
+```
+]
+
+.pull-right[
+
+```r
+# ¿Qué elementos tienen el valor 
+# inferior a 8?
+ma[ma &lt; 8]
+```
+
+```
+## [1] 1 2 3 4 5 6 7
+```
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**data.frame**)
+
+- En un **data.frame**, podemos separar la columna que nos interesa con el operador `$` y luego aplicar la selección por condición.
+
+
+```r
+# Nombra las columnas y transforma la matriz en data.frame
+colnames(ma) = c("A", "B", "C", "D")
+mb &lt;- data.frame(ma)
+mb
+```
+
+```
+##   A B C  D
+## 1 1 4 7 10
+## 2 2 5 8 11
+## 3 3 6 9 12
+```
+
+
+```r
+mb$A == 1 # Para la columna "A"
+```
+
+```
+## [1]  TRUE FALSE FALSE
+```
+
+```r
+mb$B &gt; 5 # Para la columna "B"
+```
+
+```
+## [1] FALSE FALSE  TRUE
+```
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**matrix/data.frame**)
+
+#### Ejercicios 
+
+.pull-left[
+Tiene una tabla con valores de temperatura, lluvia y abundancia de flebótomos que muestreó en los ultimos 5 meses:
+
+&lt;table class="table" style="font-size: 22px; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; temperatura &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; lluvia &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; abundancia &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+1 - En alguno de los meses, ¿la temperatura bajó de los 20°C?
+
+2 - En alguno de los meses, ¿tomó muestras de más de 20 flebótomos?
+
+3 - Seleccione valores de precipitación superiores a 50.
+
+4 - ¿Hay un mes con abundancia de flebótomos igual a 10, 20 o 31?
+
+5 - En toda la tabla, ¿hay algún valor cero?
+]
+
+---
+## Manejo de datos
+
+### Seleccionar elementos por condición (**character**)
+
+- Todo lo que hemos hecho hasta ahora se puede hacer con characters.
+
+
+```r
+l &lt;- c("A", "B", "C", "d")
+```
+
+
+
+```r
+l &lt; "C"
+```
+
+```
+## [1]  TRUE  TRUE FALSE FALSE
+```
+
+```r
+l == "B"
+```
+
+```
+## [1] FALSE  TRUE FALSE FALSE
+```
+
+```r
+l[l &gt; "B"]
+```
+
+```
+## [1] "C" "d"
+```
+
+```r
+l[l != "d"]
+```
+
+```
+## [1] "A" "B" "C"
+```
+
+---
+name: tabla
+class: middle, center
+
+# ¿Cómo armar mi tabla de datos?
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+&lt;br&gt;
+.center[&lt;img src="figs/17-tabla.png" style="width: 80%;"&gt;]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+&lt;br&gt;
+.center[&lt;img src="figs/18-tabla2.png" style="width: 80%;"&gt;]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+### Resumen
+
+Características principales de un conjunto de datos ordenado:
+
+- cada variable es una columna
+- cada observación es una linea
+- cada valor está en una celda diferente
+
+.center[&lt;img src="figs/30-tidyverse.png" style="width: 100%;"&gt;]
+
+---
+## ¿Cómo armar mi tabla de datos?
+
+.pull-left[
+&lt;br&gt;
+.center[&lt;img src="figs/19-tabla3.png" style="width: 100%;"&gt;]
+]
+
+.pull-right[
+**Descripción de datos:**
+
+- Utilice las hojas de datos de su editor (ex. excel) para almacenar información sobre su tabla.
+
+- En la primera hoja (hoja 1) dejamos nuestra tabla y en las demás (normalmente la hoja 2, pero si es necesario usamos otras) incluimos información sobre nuestra tabla, como a qué se refieren los datos, descripción de cada variable, alguna observación importante y alguna fecha de edición de esta tabla.
+]
+
+---
+name: tidyverse
+class: middle, center
+
+# Tidyverse
+### &lt;https://www.tidyverse.org/&gt;
+
+---
+## Tidyverse
+
+&gt; El tidyverse es una colección obstinada de 📦 **R** diseñados para la ciencia de datos. Todos los paquetes comparten una filosofía de diseño, una gramática y estructuras de datos subyacentes.
+
+.center[&lt;img src="figs/24-tidyverse.png" style="width: 40%;"&gt;]
+
+- Instale el tidyverse completo con:
+
+```r
+install.packages("tidyverse")
+```
+
+---
+## Tidyverse
+
+.center[&lt;img src="figs/25-tidyverse.png" style="width: 100%;"&gt;]
+
+---
+## Tidyverse
+
+### Tidyverse es una colección de 📦 R 
+
+- [readr](https://readr.tidyverse.org/) - importación de datos
+
+- [tibble](https://tibble.tidyverse.org/) - formato de `data.frame` mejorado
+
+- [tidyr](https://tidyr.tidyverse.org/), [dplyr](https://dplyr.tidyverse.org/)  - manipulación de datos 
+&lt;/mark&gt; 
+
+- [ggplot2](https://ggplot2.tidyverse.org/) - visualizando de datos
+
+- [purrr](https://purrr.tidyverse.org/) - programación avanzada
+
+- [forcats](https://forcats.tidyverse.org/) - trabajando con factores
+
+- [stringr](https://stringr.tidyverse.org/) - trabajando con cadena de caracteres
+
+---
+## Tidyverse
+
+### Tidyverse es una colección de 📦 R 
+
+- &lt;mark&gt;[readr](https://readr.tidyverse.org/) - importación de datos
+
+- &lt;mark&gt;[tibble](https://tibble.tidyverse.org/) - formato de `data.frame` mejorado
+
+- &lt;mark&gt;[tidyr](https://tidyr.tidyverse.org/), [dplyr](https://dplyr.tidyverse.org/)  - manipulación de datos
+
+- &lt;mark&gt;[ggplot2](https://ggplot2.tidyverse.org/) - visualizando de datos
+
+- [purrr](https://purrr.tidyverse.org/) - programación avanzada
+
+- [forcats](https://forcats.tidyverse.org/) - trabajando con factores
+
+- [stringr](https://stringr.tidyverse.org/) - trabajando con cadena de caracteres
+
+
+
+
+---
+## Tidyverse
+
+### Flujo de trabajo en ciencia de datos, con **Tidyverse**
+
+.center[&lt;img src="figs/26-tidyverse.png" style="width: 80%;"&gt;]
+
+---
+## Tidyverse
+
+El creador de **Tidyverse** es Hadley Wickham y hoy en día muchas personas han contribuido a su expansión.
+
+.center[&lt;img src="figs/27-hadley.jpg" style="width: 55%;"&gt;
+
+&lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"&gt;&lt;/path&gt;&lt;/svg&gt; &lt;http://hadley.nz/&gt; &lt;br&gt;
+ &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; [@hadleywickham](https://twitter.com/hadleywickham)
+]
+---
+## Tidyverse
+
+### R for Data Science
+
+.pull-left[
+.center[
+&lt;img src="figs/28-tidyverse.png" style="width: 55%;"&gt;
+]
+]
+.center[
+&lt;br&gt;
+
+"This book will teach you how to do data science with **R**: You’ll learn how to get your data into **R**, get it into the most useful structure, transform it, visualise it and model it. In this book, you will find a practicum of skills for data science. Just as a chemist learns how to clean test tubes and stock a lab, you’ll learn how to clean data and draw plots—and many other things besides. (...)"
+
+&lt;https://r4ds.had.co.nz/&gt;
+]
+
+---
+## Tidyverse
+
+### Ejercicio
+
+Instale y cargue el paquete **Tidyverse** en su computadora.
+                
+&lt;img src="figs/29-tidyverse.jpg" style="width: 35%;"&gt;
+
+---
+name: importar
+class: middle, center
+
+# Importar datos a R
+
+---
+## Importar datos a R
+
+&gt; Para su alivio, **no es necesario producir su tabla en R** (como lo hemos hecho hasta ahora). Es posible construir la tabla en Excel y luego importar los datos (de HD a nuestra memoria RAM).
+
+&lt;br&gt;
+.center[&lt;img src="figs/21-happy.gif" style="width: 50%;"&gt;]
+&lt;br&gt;
+
+&gt; La función de importación dependerá del formato en el que se guardó nuestra tabla (.txt, .csv, .xls, .xlsx).
+
+---
+## Importar datos a R
+
+### Working directory
+
+- Recuerde que el directorio de trabajo es una 📁 donde **R** lee y guarda archivos.
+
+- Deberá decirle a R dónde están los archivos en los que va a trabajar.
+
+
+```r
+# Aquí incluirá la dirección donde están sus archivos en su computadora.
+setwd("C:/Users/mmfav/introduccionalR/clase_2/data")
+```
+
+- Deje todos los archivos guardados en esta misma carpeta, esto facilitará su trabajo.
+
+- Tenga en cuenta que la dirección aquí se indica con barras invertidas (`/`), a diferencia de lo que usan algunos sistemas operativos (`\`). Por ejemplo:
+  - &lt;svg viewBox="0 0 448 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"&gt;&lt;/path&gt;&lt;/svg&gt;: `C:\Users\mmfav\introduccionalR\clase_2\data`
+  - &lt;svg viewBox="0 0 581 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"&gt;&lt;/path&gt;&lt;/svg&gt;: `C:/Users/mmfav/introduccionalR/clase_2/data`
+
+---
+## Importar datos a R
+
+.pull-left[.center[&lt;img src="figs/31-readr.png" style="width: 50%;"&gt;
+
+El 📦 **tidyverse** `readr` se usa para importar archivos de texto, como *.txt* o *.csv* a **R**. 
+
+`reader` transforma archivos de texto en **tibbles**.]]
+
+.pull-right[
+- `read_csv()`; `read_csv2`: para archivos separados por comas. 
+- `read_tsv()`: para archivos separados por tabulaciones.
+- `read_delim()`: para archivos separados por un delimitador genérico. El argumento delim `=` indica qué carácter separa cada columna del archivo de texto.
+- `read_table()`: para archivos de texto tabulares con columnas separadas por espacios.
+- `read_fwf()`: para archivos compactos que deben tener el ancho de cada columna especificado.
+- `read_log()`: para archivos de registro estándar.
+]
+
+---
+## Importar datos a R
+
+.pull-left[.center[&lt;img src="figs/31-readr.png" style="width: 50%;"&gt;
+
+El 📦 **tidyverse** `readr` se usa para importar archivos de texto, como *.txt* o *.csv* a **R**. 
+
+`reader` transforma archivos de texto en **tibbles**.]]
+
+.pull-right[
+- &lt;mark&gt;`read_csv()`; `read_csv2`: para archivos separados por comas.&lt;/mark&gt;  
+- `read_tsv()`: para archivos separados por tabulaciones.
+-  &lt;mark&gt;`read_delim()`: para archivos separados por un delimitador genérico. El argumento delim `=` indica qué carácter separa cada columna del archivo de texto.&lt;/mark&gt; 
+- `read_table()`: para archivos de texto tabulares con columnas separadas por espacios.
+- `read_fwf()`: para archivos compactos que deben tener el ancho de cada columna especificado.
+- `read_log()`: para archivos de registro estándar.
+]
+
+---
+## Importar datos a R
+
+### readr: `.csv`
+
+- Como ejemplo, usaremos la base de datos que proporcionamos en el repositorio ([datos.csv](datos.csv)).
+
+- La función para leer los datos es: `read_csv2(file = "archivo.csv")`.
+
+
+```r
+datos_csv &lt;- read_csv2(file = "datos.csv")
+```
+
+```
+## i Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------------------------------
+## cols(
+##   ID = col_double(),
+##   localidad = col_character(),
+##   `2001` = col_double(),
+##   `2002` = col_double(),
+##   `2003` = col_double()
+## )
+```
+
+&lt;!--- El mensaje devuelto por la función indica qué clase se asignó a cada columna. Tenga en cuenta que el argumento file = representa la ruta al archivo. Si el archivo que se va a leer no está en el directorio de trabajo de su sesión, debe especificar la ruta al archivo. --&gt;
+
+---
+## Importar datos a R
+
+### readr: `.txt`
+
+- Como ejemplo, usaremos la base de datos que proporcionamos en el repositorio ([datos.txt](datos.txt)).
+
+- La función para leer los datos es: `read_delim(file = "archivo.txt", delim = "\t")`.
+
+
+```r
+datos_txt &lt;- read_delim(file = "datos.txt", delim = "\t")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------------------------------
+## cols(
+##   ID = col_double(),
+##   localidad = col_character(),
+##   variable = col_character(),
+##   value = col_double()
+## )
+```
+
+---
+## Importar datos a R
+
+### Exportar datos (`write_ `)
+
+- Para la mayoría de las funciones `read_`, existe una función `write_` correspondiente. 
+
+- Estas funciones sirven para guardar bases en un formato de archivo específico. 
+
+- Debe especificar el objeto a exportar y el nombre del archivo con la extensión.
+
+
+```r
+# archivo .csv
+write.csv2(x = objeto, path = "nombre_tabla.csv")
+
+# como un .txt
+write_delim(x = objeto, path = "nombre_tabla.txt", delim = "\t")
+```
+
+---
+## Importar datos a R
+
+.pull-left[
+¿Qué pasa si mis datos se guardan como un archivo **excel**?
+
+.center[&lt;img src="figs/32-readxl.png" style="width: 50%;"&gt;
+
+El 📦 `readxl` se usa para importar archivos de excel, como *.xslx* o *.xls* a **R**. 
+
+]]
+
+.pull-right[
+- Instalar:
+
+```r
+install.packages("readxl")
+```
+
+- Cargar el paquete:
+
+```r
+library(readxl)
+```
+
+- Para abrir nuestro [archivo de repositorio (datos.xlsx)](datos.xlsx): `read_xlsx("archivo.xlsx")`
+
+- `readxl` transforma archivos de excel en **tibbles**.
+
+---
+
+- **&lt;mark&gt; &lt;font color = "red"&gt; ¡¡No es parte del tidyverse !! &lt;/font&gt;&lt;/mark&gt; **
+
+---
+
+]
+
+---
+## Importar datos a R
+
+### readxl: **.xlsx**
+
+**Ejemplo:**
+
+
+```r
+datos_xlsx &lt;- read_xlsx("datos.xlsx")
+datos_xlsx
+```
+
+```
+## # A tibble: 24 x 6
+##       ID localidad                    ano zona     var_respuesta temperatura
+##    &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;
+##  1     1 Puerto Iguazú - Misiones    2001 agrícola            NA        25  
+##  2     2 Puerto Liberdad - Misiones  2001 agrícola             2        26.7
+##  3     3 San Pedro - Misiones        2001 agrícola             5        24.2
+##  4     4 Tareiri - Misiones          2001 agrícola             4        26.2
+##  5     5 Puerto Iguazú - Misiones    2005 agrícola             6        27  
+##  6     6 Puerto Liberdad - Misiones  2005 agrícola            NA        25.5
+##  7     7 San Pedro - Misiones        2005 agrícola             7        26  
+##  8     8 Tareiri - Misiones          2005 agrícola             9        26.5
+##  9     9 Puerto Iguazú - Misiones    2001 bosque              30        20  
+## 10    10 Puerto Liberdad - Misiones  2001 bosque              52        21  
+## # ... with 14 more rows
+```
+
+---
+## Importar datos a R
+
+.pull-left[.center[
+
+&lt;img src="figs/33-tibble.png" style="width: 60%;"&gt;
+
+Un **tibble**, o `tbl_df`, es una reinvención moderna del `data.frame`, manteniendo el tiempo que ha demostrado ser efectivo y descartando lo que no lo es. 
+
+
+]]
+
+.pull-right[
+&lt;br&gt;
+
+---
+
+- Es un formato requerido para usar funciones **tidyverse**.
+
+- Las variables pueden ser de tipo *numérico (int, dbl)*, *carácter (chr)*, *lógicas (lgl)* y *factor (fctr)*
+
+---
+
+- Convertir:
+
+&gt; `data.frame` en `tibble`: 
+
+```r
+as_tibble(data)
+```
+
+---
+
+]
+
+---
+## Importar datos a R
+
+#### Ejercicio:
+
+1 - Importe una tabla relacionada con una de sus investigaciónes para el R; puede tener cualquier format y numero de variables. El formato de salida debe ser `tibbler`.
+
+2 - ¿Cuál es la diferencia entre las tablas datos_csv, datos_txt y datos_xlsx?
+
+---
+name: pipe
+class: middle, center
+
+# Operador pipe (`%&gt;%`)
+
+---
+## Operador pipe (`%&gt;%`)
+
+.pull-left[.center[
+&lt;img src="figs/34-magrittr.png" style="width: 60%;"&gt;
+
+El 📦 `magrittr` ofrece un perador que hace que su código sea más legible: el pipe (`%&gt;%`).
+]
+]
+
+.pull-right[
+La idea del operador pipe (`%&gt;%`) es bastante simple: use el valor resultante de la expresión de la izquierda como primer argumento de la función de la derecha.
+
+**Por ejemplo**:
+
+
+```r
+# suma el vector y luego obtén la √ (sqrt):
+x &lt;- 1:10
+```
+
+```r
+# Sin el pipe:
+sqrt(sum(x)) 
+```
+
+```
+## [1] 7.416198
+```
+
+```r
+# Con el pipe:
+x %&gt;% sum() %&gt;% sqrt()
+```
+
+```
+## [1] 7.416198
+```
+]
+
+---
+## Operador pipe (`%&gt;%`)
+
+**Para hacerlo un poco más intuitivo:**
+
+.pull-left[
+- Hacer empanadas SIN el pipe:
+
+```r
+enfriarse(
+  hornear(
+    cerrar_la_masa(
+      agregar_relleno(
+        abre_la_massa(
+          mezclar(
+            hacer_la_masa(rep(farina, 5), manteca, sal, agua_tibia),
+            hasta = 'masa homogénea'),
+          tipo = "carne picada"),
+      ),
+    ),
+    temperatura = 180, tiempo = 20),
+)
+```
+]
+
+.pull-right[
+- Hacer empanadas CON el pipe:
+
+```r
+hacer_la_masa(rep(farina, 5), manteca, sal, agua_tibia) %&gt;%
+  mezclar(hasta = 'masa homogénea') %&gt;%
+  abre_la_massa() %&gt;%
+  agregar_relleno(tipo = "carne picada") %&gt;%
+  cerrar_la_masa() %&gt;%
+  hornear(temperatura = 180, tiempo = 20) %&gt;%
+  enfriarse()
+```
+
+---
+**!!** El código no solo es más pequeño, es más intuitivo, la lectura se vuelve mucho más fácil **!!**
+
+---
+]
+
+---
+name: tidyr
+class: middle, center
+
+# tidyr
+
+---
+## tidyr 
+
+.pull-left[.center[
+&lt;img src="figs/35-tidyr.png" style="width: 60%;"&gt;
+
+El objetivo del 📦 `tidyr` es ayudarte a crear datos ordenados.
+]
+]
+
+.pull-right[
+Los datos ordenados son datos donde:
+- Cada columna es variable.
+- Cada fila es una observación.
+- Cada celda es un valor único.
+
+---
+
+Tidyr data describe una forma estándar de almacenar datos que se utiliza siempre que sea posible en **tidyverse**. 
+
+Si se asegura de que sus datos estén ordenados, pasará menos tiempo luchando con las herramientas y más tiempo trabajando en su análisis.
+
+---
+]
+
+---
+## tidyr 
+
+- Estas son sus principales funciones:
+
+  - `separate()`: separar los caracteres en varias columnas
+  - `unite()`: unir datos de varias columnas en una
+  - `drop_na()`: eliminar líneas con NA
+  - `replace_na()`: reemplazar valores NA
+  - `pivot_wider()`: pasa valores de filas a columnas
+  - `pivot_longer()`: pasa valores de columnas a filas
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+---------
+&gt; Para ver todas las funciones del paquete, consulte la *cheatsheets*: &lt;https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf&gt;
+
+---------
+
+---
+## tidyr 
+
+### **separate()**
+
+.pull-left[
+- Muchas veces, una sola variable de columna capturará múltiples variables, o incluso partes de una variable que simplemente no le importa.
+
+.center[
+&lt;img src="figs/36-separate.png" style="width: 90%;"&gt;
+]
+]
+
+.pull-right[
+- La función `separate()` separa dos o más variables que están concatenadas en la misma columna.
+
+-----
+
+- La sintaxis de la función es:
+
+```r
+datos %&gt;%
+  separate(
+    col = columna_vieja,
+    into = c("nueva_columna_1", "nueva_columna_2"),
+    sep = c("_") # cómo se separan las variables en la columna (ej. ".", "_")
+  )
+```
+
+]
+
+---
+## tidyr 
+
+### **separate()**
+
+**Por ejemplo**, dividamos la columna "localidad" de la tabla "datos_xlsx" en "ciudad" y "provincia".
+
+
+```r
+datos_xlsx %&gt;%
+  separate(
+    col = localidad, # la columna vieja
+    into = c("ciudad", "provincia"), # las nuevas columnas
+    sep = c(" - ") # modo de separación
+  )
+```
+
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; ciudad &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; provincia &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ano &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; zona &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; var_respuesta &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; temperatura &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; San Pedro &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+
+---
+## tidyr 
+
+### **unite()**
+
+.pull-left[
+- La operación `unite()` es lo opuesto a `separate()`. 
+
+.center[
+&lt;img src="figs/37-united.png" style="width: 90%;"&gt;
+]
+
+- La función `unite()` une dos variables que están en columnas diferentes.
+
+]
+
+.pull-right[
+- Toma dos columnas (variables) y las convierte en una. Se usa ampliamente para ensamblar informes finales o tablas para análisis visual. 
+
+-----
+
+- La sintaxis de la función es:
+
+```r
+datos %&gt;%
+  unite(
+    col = nueva_columna, columnas_para_juntar,
+    sep = c("_") # cómo se separan las variables en la columna (ej. ".", "_")
+  )
+```
+
+]
+
+---
+## tidyr 
+
+### **unite()**
+
+**Por ejemplo**, unamos las columnas "zona" y "año".
+
+```r
+datos_xlsx %&gt;%
+  unite(
+    col = "zona_ano", "zona", "ano",
+    sep = "_"
+  )
+```
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:280px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; zona_ano &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; var_respuesta &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; temperatura &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; bosque_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano_2005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+## tidyr 
+
+### **replace_na()** y **drop_na()**
+
+.pull-left[
+Cuando tenemos datos faltantes en nuestra tabla (NA), podemos reemplazar NA con nuevos valores con la función `replace_na()`,... 
+
+
+```r
+replace_na(
+  list(columna_X = valor)
+)
+```
+
+...o podemos eliminar las filas con valores faltantes con `drop_na()`.
+
+
+```r
+drop_na(
+  columna
+)
+```
+
+]
+
+.pull-right[
+.center[
+&lt;img src="figs/40-NA.png" style="width: 100%;"&gt;
+]
+]
+
+---
+## tidyr 
+
+### **replace_na()**
+
+**Por ejemplo**, podemos reemplazar las filas con el valor faltante en la columna "var_respuesta" por cero (lineas 1, 6 y 20)...
+
+
+```r
+datos_xlsx %&gt;%
+  replace_na(list(var_respuesta = 0))
+```
+
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ano &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; zona &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; var_respuesta &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; temperatura &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 25.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;background-color: #FFCC33 !important;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;background-color: #FFCC33 !important;"&gt; 30.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+## tidyr 
+
+### **drop_na()** 
+
+...o podemos eliminar las líneas que tiene valores NA.
+
+
+```r
+datos_xlsx %&gt;%
+  drop_na(var_respuesta)
+```
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:330px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; ano &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; zona &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; var_respuesta &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; temperatura &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; agrícola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; bosque &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 28.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Iguazú - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Puerto Liberdad - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; San Pedro - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tareiri - Misiones &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 33.6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+## tidyr 
+
+.pull-left[### **pivot_longer()**
+
+- "Alarga" los datos, aumentando el número de filas y disminuyendo el número de columnas.
+
+.center[
+&lt;img src="figs/38-piv_longer.png" style="width: 60%;"&gt;
+]
+
+```r
+pivot_longer(
+  cols = Columnas_para_pivotar,
+  names_to = "nombre_nova_columna",
+  values_to = "nombre_col_values"
+  )
+```
+]
+
+.pull-right[### **pivot_wider()**
+
+- Pasa los datos de columnas para filas, aumentando el número de columnas.
+
+.center[
+&lt;img src="figs/39-piv_wider.png" style="width: 62%;"&gt;
+]
+
+```r
+  pivot_wider(
+    names_from = columna_nombres, 
+    values_from = columna_valores
+    ) 
+```
+
+]
+
+---
+## tidyr 
+
+### **pivot_longer()**
+
+.pull-left[
+**Por ejemplo**, pasemos los años de la tabla "datos_csv" de las columnas a las filas. Los valores los almacenaremos en una columna llamada 'value'.
+
+
+```r
+datos_csv %&gt;%
+  pivot_longer(
+    cols = c('2001', '2002', '2003'),
+    names_to = "año",
+    values_to = "value"
+  )
+```
+]
+
+.pull-right[
+&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; año &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Agricola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Agricola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Agricola &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PNI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PNI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PNI &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Urbano &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Urbano &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Urbano &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+## tidyr 
+
+### **pivot_wider()**
+
+**Por ejemplo**, pasemos los elementos de la columna "variable" a las columnas y usemos la columna "valor" para los valores (tabla "data_txt").
+
+```r
+datos_txt %&gt;%
+  pivot_wider(
+    names_from = variable,
+    values_from = value
+  )
+```
+
+&lt;table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; localidad &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; temperatura &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; pluviosidad &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Agricola &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; PNI &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Urbano &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+## tidyr 
+
+#### Ejercicios
+
+1 - Abra la tabla "*tidy_ej.xlsx*" en R.
+
+2 - ¿Faltan datos en la tabla *tidy_ej*? Si es así, reemplace los valores faltantes con 0.
+
+**Tip**:
+
+```r
+tidy_ej %&gt;% is.na() %&gt;% table()
+```
+
+3 - Separe la columna "departamento - año" en dos columnas.
+
+4 - Mueva las columnas "PNI", "Urban" y "Rural" a una sola columna y agregue los valores a una nueva columna llamada "número de accidentes".
+
+5 - Guarde todo lo que ha hecho en una nueva table `tibble` llamada "tidy_ej2". 
+
+---
+name: dplyr
+class: middle, center
+
+# dplyr 
+
+---
+## dplyr 
+
+.pull-left[
+&lt;img src="figs/41-dplyr.png" style="width: 60%;"&gt;
+
+El 📦 `dplyr` es lo paquete más útil para realizar la transformación de datos, combinando simplicidad y eficiencia de una manera elegante.
+]
+
+.pull-right[
+- Los scripts **R** que hacen un uso inteligente de los verbos `dplyr` y las facilidades del operador `pipe` tienden a ser más legibles y organizados sin perder velocidad de ejecución.
+
+---
+
+- Las principales funciones de `dplyr` son:
+
+  - `select()`: seleccionar columnas
+  - `arrange()`: ordenar la base de datos
+  - `filter()`: filtrar las lineas
+  - `mutate()`: crear/modificar columnas
+  - `group_by()`: agrupar la base de datos
+  - `summarise()`: resume la base
+  - `relocate()`: reordenar columnas
+  - `left_join()`, `right_join()` y `full_join()`: juntar ≠ bases de datos. 
+]
+
+---
+## dplyr 
+
+### **select()**
+
+- Usamos para seleccionar columnas.
+
+- Los argumentos son los nombres de las columnas que desea seleccionar.
+
+
+```r
+datos %&gt;%
+  select(nombre_col, nombre_col2)
+```
+
+- Para eliminar columnas de la base, agregue un "menos" (`-`) antes de la selección.
+
+
+```r
+datos %&gt;%
+  select(-nombre_col, -nombre_col2)
+```
+
+- También disponemos de otras funciones auxiliares:
+  - `starts_with()`: para columnas que comienzan con texto estándar
+  - `ends_with()`: para columnas que terminan con texto estándar
+  - `contiene()`: para columnas que contienen texto estándar
+---
+## dplyr 
+
+### **select()**
+
+Seleccionemos las columnas "localidad" y "año" de la tabla "datos_xlsx".
+
+
+```r
+datos_xlsx %&gt;%
+  select(localidad, ano)
+```
+
+```
+## # A tibble: 24 x 2
+##    localidad                    ano
+##    &lt;chr&gt;                      &lt;dbl&gt;
+##  1 Puerto Iguazú - Misiones    2001
+##  2 Puerto Liberdad - Misiones  2001
+##  3 San Pedro - Misiones        2001
+##  4 Tareiri - Misiones          2001
+##  5 Puerto Iguazú - Misiones    2005
+##  6 Puerto Liberdad - Misiones  2005
+##  7 San Pedro - Misiones        2005
+##  8 Tareiri - Misiones          2005
+##  9 Puerto Iguazú - Misiones    2001
+## 10 Puerto Liberdad - Misiones  2001
+## # ... with 14 more rows
+```
+
+---
+## dplyr 
+
+### **select()**
+
+Seleccione todos los datos excepto "ID" y "temperatura".
+
+
+```r
+datos_xlsx %&gt;%
+  select(-ID, -temperatura)
+```
+
+```
+## # A tibble: 24 x 4
+##    localidad                    ano zona     var_respuesta
+##    &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;
+##  1 Puerto Iguazú - Misiones    2001 agrícola            NA
+##  2 Puerto Liberdad - Misiones  2001 agrícola             2
+##  3 San Pedro - Misiones        2001 agrícola             5
+##  4 Tareiri - Misiones          2001 agrícola             4
+##  5 Puerto Iguazú - Misiones    2005 agrícola             6
+##  6 Puerto Liberdad - Misiones  2005 agrícola            NA
+##  7 San Pedro - Misiones        2005 agrícola             7
+##  8 Tareiri - Misiones          2005 agrícola             9
+##  9 Puerto Iguazú - Misiones    2001 bosque              30
+## 10 Puerto Liberdad - Misiones  2001 bosque              52
+## # ... with 14 more rows
+```
+
+---
+## dplyr 
+
+### **arrange()**
+
+- Para ordenar líneas. 
+
+- Los argumentos son las columnas por las que queremos ordenar las filas.
+
+
+```r
+datos %&gt;% 
+  arrange(columna_x)
+```
+
+- También podemos ordenar en orden descendente usando la función `desc()`...
+
+
+```r
+datos %&gt;% 
+  arrange(desc(columna_x))
+```
+
+- ¡Y ordena más de una columna al mismo tiempo!
+
+
+```r
+datos %&gt;% 
+  arrange(columna_y, desc(columna_x))
+```
+
+---
+## dplyr 
+
+### **arrange()**
+
+- En el siguiente ejemplo, ordenamos las líneas base en orden ascendente de "response_var".
+
+
+```r
+datos_xlsx %&gt;%
+  arrange(var_respuesta, desc(ano))
+```
+
+```
+## # A tibble: 24 x 6
+##       ID localidad                    ano zona     var_respuesta temperatura
+##    &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;
+##  1     2 Puerto Liberdad - Misiones  2001 agrícola             2        26.7
+##  2     4 Tareiri - Misiones          2001 agrícola             4        26.2
+##  3     3 San Pedro - Misiones        2001 agrícola             5        24.2
+##  4     5 Puerto Iguazú - Misiones    2005 agrícola             6        27  
+##  5     7 San Pedro - Misiones        2005 agrícola             7        26  
+##  6     8 Tareiri - Misiones          2005 agrícola             9        26.5
+##  7    18 Puerto Liberdad - Misiones  2001 urbano              14        29.4
+##  8    23 San Pedro - Misiones        2005 urbano              16        33  
+##  9    19 San Pedro - Misiones        2001 urbano              16        32.4
+## 10    24 Tareiri - Misiones          2005 urbano              18        33.6
+## # ... with 14 more rows
+```
+
+---
+## dplyr 
+
+### **filter()**
+
+- Para filtrar valores de una columna base, usamos la función `filter()`.
+
+
+```r
+datos %&gt;% 
+  filter(columna &lt; value)
+```
+
+- Por ejemplo, podemos seleccionar datos con una "var_respuesta" superior a 50.
+
+
+```r
+datos_xlsx %&gt;%
+  filter(var_respuesta &gt; 50)
+```
+
+```
+## # A tibble: 4 x 6
+##      ID localidad                    ano zona   var_respuesta temperatura
+##   &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;
+## 1    10 Puerto Liberdad - Misiones  2001 bosque            52          21
+## 2    11 San Pedro - Misiones        2001 bosque            63          22
+## 3    15 San Pedro - Misiones        2005 bosque            56          24
+## 4    16 Tareiri - Misiones          2005 bosque            64          26
+```
+
+---
+## dplyr 
+
+### **filter()**
+
+- También podemos usar el filtro con caracteres.
+
+
+```r
+datos_xlsx %&gt;%
+  filter(zona %in% "urbano")
+```
+
+```
+## # A tibble: 8 x 6
+##      ID localidad                    ano zona   var_respuesta temperatura
+##   &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;       &lt;dbl&gt;
+## 1    17 Puerto Iguazú - Misiones    2001 urbano            20        28  
+## 2    18 Puerto Liberdad - Misiones  2001 urbano            14        29.4
+## 3    19 San Pedro - Misiones        2001 urbano            16        32.4
+## 4    20 Tareiri - Misiones          2001 urbano            NA        30  
+## 5    21 Puerto Iguazú - Misiones    2005 urbano            29        29  
+## 6    22 Puerto Liberdad - Misiones  2005 urbano            30        32.5
+## 7    23 San Pedro - Misiones        2005 urbano            16        33  
+## 8    24 Tareiri - Misiones          2005 urbano            18        33.6
+```
+
+---
+## dplyr 
+
+### **mutate()**
+
+- Para modificar una columna existente o crear una nueva. 
+
+- Aplicaremos una función.
+
+- La regla es que el resultado de la operación devuelve un vector con una longitud igual al número de filas en la base.
+
+
+```r
+datos_xlsx %&gt;%
+  mutate(columna = columna+función)
+```
+
+- También puede crear/modificar tantas columnas como desee dentro de la misma mutación.
+
+
+```r
+datos_xlsx %&gt;%
+  mutate(columna = columna+función, nueva_columna = columna/valor)
+```
+
+---
+## dplyr 
+
+### **mutate()**
+
+- Por ejemplo, digamos que descubrió un error en su tabla. Agregaste uno individuo más en la columna "var_respuesta" y ahora necesitas quitar ese valor.
+
+
+```r
+datos_xlsx %&gt;%
+  mutate(var_respuesta = var_respuesta - 1)
+```
+
+```
+## # A tibble: 24 x 6
+##       ID localidad                    ano zona     var_respuesta temperatura
+##    &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt;
+##  1     1 Puerto Iguazú - Misiones    2001 agrícola            NA        25  
+##  2     2 Puerto Liberdad - Misiones  2001 agrícola             1        26.7
+##  3     3 San Pedro - Misiones        2001 agrícola             4        24.2
+##  4     4 Tareiri - Misiones          2001 agrícola             3        26.2
+##  5     5 Puerto Iguazú - Misiones    2005 agrícola             5        27  
+##  6     6 Puerto Liberdad - Misiones  2005 agrícola            NA        25.5
+##  7     7 San Pedro - Misiones        2005 agrícola             6        26  
+##  8     8 Tareiri - Misiones          2005 agrícola             8        26.5
+##  9     9 Puerto Iguazú - Misiones    2001 bosque              29        20  
+## 10    10 Puerto Liberdad - Misiones  2001 bosque              51        21  
+## # ... with 14 more rows
+```
+
+---
+## dplyr 
+
+### **summarize()**
+
+- Es la técnica de resumir un conjunto de datos utilizando alguna métrica de interés. 
+
+- Media, mediana, varianza, frecuencia, proporción, por ejemplo, son tipos de resumen que aportan información diferente sobre una variable.
+
+
+```r
+datos %&gt;%
+  summarize(función(columna))
+```
+
+- No vamos a explorar esta función aquí, ya que tendremos una clase solo sobre estadística descriptiva en **R**.
+
+
+```r
+datos_xlsx %&gt;%
+  summarize(media = mean(temperatura), na.rm = TRUE)
+```
+
+```
+## # A tibble: 1 x 2
+##   media na.rm
+##   &lt;dbl&gt; &lt;lgl&gt;
+## 1  26.5 TRUE
+```
+
+---
+## dplyr 
+
+### **relocate()**
+
+- Para reubicar columnas.
+
+- De forma predeterminada, coloca una o más columnas al comienzo de la base.
+
+
+```r
+# Coloque las columnas 5 y 4 al principio de la tabla.
+datos %&gt;%
+  relocate(columna5, columna4)
+```
+
+- Podemos usar los argumentos `.after =` y `.before =` para realizar cambios más complejos.
+
+
+```r
+# Poner la columna 2 después de la columna 4
+datos %&gt;%
+  relocate(columna2, .after = columna4)
+```
+
+
+```r
+# Poner la columna 2 antes de la columna 4
+datos %&gt;%
+  relocate(columna2, .before = columna4)
+```
+
+---
+## dplyr 
+
+### **rename()***
+
+- Cambia los nombres de variables individuales (columnas) usando la sintaxis `nuevo_nombre = viejo_nombre`.
+
+
+```r
+datos %&gt;%
+  rename(columna_x = columna.x)
+```
+
+- Por ejemplo, vamos cambiar el nombre de la columna "localidad" por "municipalidad".
+
+
+```r
+datos_xlsx %&gt;%
+  rename(municipalidad = localidad) %&gt;%
+  names()
+```
+
+```
+## [1] "ID"            "municipalidad" "ano"           "zona"          "var_respuesta" "temperatura"
+```
+
+---
+## dplyr 
+
+### **left_join()**, **right_join()** y **full_join()**
+
+- Lo usamos para unir dos tablas en una.
+
+
+```r
+# Une la tabla 'datos' a la tabla 'datos2' por 'columna_x'
+
+# Mantiene los elementos de la tabla 'datos' y excluye elementos adicionales de 'datos2'.
+datos %&gt;%
+  left_join(datos2, 
+            by = "columna_x")
+
+# Mantiene los elementos de la tabla 'datos2' y excluye elementos adicionales de 'datos'.
+datos %&gt;%
+  right_join(datos2, 
+            by = "columna_x")
+
+# Mantiene los valores de las dos tablas.
+datos %&gt;%
+  full_join(datos2, by = "columna_x")
+```
+
+---
+## dplyr 
+
+#### Ejercicios
+
+Trabajemos con la tabla "**tidy_ej2**".
+
+1 - Reordene los datos de forma ascendente de acuerdo con la columna "ID".
+
+2 - Retire la columna "temperatura".
+
+3 - Seleccione solo las líneas con "número de accidentes"&gt; 0.
+
+4 - Divida el valor de la columna "número de accidentes" por la columna "población" y multiplique por 100,000; resultando en el número de casos por cada 100.000 habitantes. 
+
+5 - Salvar la tabla como un ".csv".
+
+---
+class: clear, center
+
+## ¡¡Fin de clase!!
+
+.center[&lt;img src="figs/43-fim.jpg" style="width: 80%;"&gt;]
+---
+class: middle
+
+## [¡No olvides tu tarea!](https://forms.gle/ryeDtZNHuzk56LtF8) &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h274.9c-2.4-6.8-3.4-14-2.6-21.3l6.8-60.9 1.2-11.1 7.9-7.9 77.3-77.3c-24.5-27.7-60-45.5-99.9-45.5zm45.3 145.3l-6.8 61c-1.1 10.2 7.5 18.8 17.6 17.6l60.9-6.8 137.9-137.9-71.7-71.7-137.9 137.8zM633 268.9L595.1 231c-9.3-9.3-24.5-9.3-33.8 0l-37.8 37.8-4.1 4.1 71.8 71.7 41.8-41.8c9.3-9.4 9.3-24.5 0-33.9z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+&lt;br&gt; 
+
+&lt;br&gt; 
+
+### Soma dos quadrados
+
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [Soma-Dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR)
+- &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somadosquadrados](https://www.twitch.tv/somaquadrados)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; [@somadosquadrados](https://twitter.com/somaquadrados)
+
+
+### Marília Melo Favalesso 
+
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt; [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"&gt;&lt;/path&gt;&lt;/svg&gt; [www.mmfava.com](www.mmfava.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [ /mmfava](https://github.com/mmfava)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

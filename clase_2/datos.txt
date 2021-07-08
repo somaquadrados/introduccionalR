@@ -1,0 +1,7 @@
+ID	localidad	variable	value
+1	Agricola	temperatura	25
+1	Agricola	pluviosidad	10
+2	PNI	pluviosidad	23
+2	PNI	temperatura	22
+3	Urbano	temperatura	30
+3	Urbano	pluviosidad	30
