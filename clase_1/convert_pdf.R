@@ -13,7 +13,7 @@ library(tidyverse)
 setwd("C:/Users/mmfav/OneDrive/GitHub/cursos/somadosquadrados/introduccionalR/clase_1")
 purrr::map(dir(pattern = ".Rmd$"), pagedown::chrome_print)
 
-# pagedown::chrome_print("clase_1.html")
+pagedown::chrome_print("clase_1.html")
 # system("`npm bin`/decktape remark file.html file.pdf")
 # remotes::install_github('rstudio/pagedown')
 

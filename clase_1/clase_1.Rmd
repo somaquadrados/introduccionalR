@@ -11,6 +11,40 @@ output:
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
+
+---
+## Introducción
+
+.center[<img src="figs/33-ini1.png" style="width: 55%;">]
+
+---
+## Introducción
+
+.center[<img src="figs/34-ini2.png" style="width: 52%;">]
+
+---
+## Introducción
+
+<br>
+.center[<img src="figs/38-rstudio.png" style="width: 75%;">]
+
+---
+## Introducción
+
+.center[<img src="figs/39-atv.gif" style="width: 85%;">
+
+[`clase_1.R`](clase_1.R)
+]
+
+---
+## Introducción
+
+### ¿Script mal configurado?
+
+<button type="button">Tools</button> **>** <button type="button">Global options</button> **>** <button type="button">Code</button> **>** <button type="button">Saving</button> **>** <button type="button">Default text enconding</button> **>** select **UTF-8**
+
+.center[<img src="figs/40-utf8.gif" style="width: 70%;">]
+
 ---
 # Script
 

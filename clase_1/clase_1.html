@@ -21,6 +21,39 @@ class: center, middle, inverse, title-slide
 
 ---
 
+## Introducción
+
+.center[&lt;img src="figs/33-ini1.png" style="width: 55%;"&gt;]
+
+---
+## Introducción
+
+.center[&lt;img src="figs/34-ini2.png" style="width: 52%;"&gt;]
+
+---
+## Introducción
+
+&lt;br&gt;
+.center[&lt;img src="figs/38-rstudio.png" style="width: 75%;"&gt;]
+
+---
+## Introducción
+
+.center[&lt;img src="figs/39-atv.gif" style="width: 85%;"&gt;
+
+[`clase_1.R`](clase_1.R)
+]
+
+---
+## Introducción
+
+### ¿Script mal configurado?
+
+&lt;button type="button"&gt;Tools&lt;/button&gt; **&gt;** &lt;button type="button"&gt;Global options&lt;/button&gt; **&gt;** &lt;button type="button"&gt;Code&lt;/button&gt; **&gt;** &lt;button type="button"&gt;Saving&lt;/button&gt; **&gt;** &lt;button type="button"&gt;Default text enconding&lt;/button&gt; **&gt;** select **UTF-8**
+
+.center[&lt;img src="figs/40-utf8.gif" style="width: 70%;"&gt;]
+
+---
 # Script
 
 - [`clase_1.R`](clase_1.R)
@@ -260,8 +293,7 @@ ls()
 ```
 
 ```
-##  [1] "a"      "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto" "w"     
-## [11] "y"
+##  [1] "a"      "b"      "c"      "d"      "e"      "i"      "j"      "k"      "objeto" "w"      "y"
 ```
 
 Para eliminar solo un objeto con `rm()`:
@@ -805,8 +837,8 @@ anos
 ```
 
 ```
-##  [1] 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018
-## [19] 2019 2020 2021
+##  [1] 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020
+## [21] 2021
 ```
 
 - Secuencia con espaciado diferente: `seq()`
@@ -890,7 +922,7 @@ sorteo1
 ```
 
 ```
-##  [1] 48 81  5 29 92  3 33  1 39 34 73 18 56 53 11 85 74 93 69 87
+##  [1] 77 64 99 44 27 24 32 26 54 60  9 34 18 14 43 95  4 89 46 59
 ```
 
 ```r
@@ -900,7 +932,7 @@ sorteo2
 ```
 
 ```
-##  [1] 48 32 77 18 53 19  6 50 26 68 57 33 43 79 94 95 59 55 93  3
+##  [1] 99 37 99 36 40 82 26 10 99 55 95 19 60 37 47 39 70 92 89 36
 ```
 
 ---
@@ -1015,8 +1047,8 @@ genero
 ```
 
 ```
-##  [1] Lonomia    Megalopyge Automeris  Hylesia    Megalopyge Automeris  Hylesia    Lonomia   
-##  [9] Hylesia    Megalopyge
+##  [1] Lonomia    Megalopyge Automeris  Hylesia    Megalopyge Automeris  Hylesia    Lonomia    Hylesia   
+## [10] Megalopyge
 ## Levels: Lonomia Megalopyge Hylesia Automeris
 ```
 
@@ -1550,7 +1582,7 @@ lis
 ## [2,]    4    5
 ## 
 ## [[2]]
-## [1] 87 74 81 33 60
+## [1] 54 99 31 62 75
 ## 
 ## [[3]]
 ## [1] &lt;NA&gt;
@@ -1788,7 +1820,7 @@ vitamina_D
 ```
 
 ```
-## [1] 53 48  9 17 34
+## [1] 35  3 22 36 56
 ```
 
 
@@ -1801,9 +1833,9 @@ for(paciente in vitamina_D){ # para cada uno de los pacientes en "vitamina_D"...
 
 ```
 ## [1] "ideales"
+## [1] "no ideales"
 ## [1] "ideales"
-## [1] "no ideales"
-## [1] "no ideales"
+## [1] "ideales"
 ## [1] "ideales"
 ```
 
@@ -1852,7 +1884,7 @@ glicose &lt;- sample(70:130, 4); glicose
 ```
 
 ```
-## [1] 128  84  74 115
+## [1]  86  71  94 125
 ```
 
 
@@ -1865,6 +1897,7 @@ for(paciente in glicose){ # para cada paciente con datos de glucosa...
 ```
 
 ```
+## [1] "normal"
 ## [1] "normal"
 ## [1] "normal"
 ## [1] "prediabetes"
@@ -2465,7 +2498,7 @@ nrow(available.packages(repos = "http://cran.r-project.org"))
 ```
 
 ```
-## [1] 17795
+## [1] 17806
 ```
 
 .center[&lt;img src="figs/31-sailor_suprise.gif" style="width: 45%;"&gt;]
@@ -2523,9 +2556,8 @@ citation()
 ## 
 ## To cite R in publications use:
 ## 
-##   R Core Team (2021). R: A language and environment for statistical computing. R
-##   Foundation for Statistical Computing, Vienna, Austria. URL
-##   https://www.R-project.org/.
+##   R Core Team (2021). R: A language and environment for statistical computing. R Foundation for
+##   Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
@@ -2538,8 +2570,8 @@ citation()
 ##     url = {https://www.R-project.org/},
 ##   }
 ## 
-## We have invested a lot of time and effort in creating R, please cite it when using
-## it for data analysis. See also 'citation("pkgname")' for citing R packages.
+## We have invested a lot of time and effort in creating R, please cite it when using it for data
+## analysis. See also 'citation("pkgname")' for citing R packages.
 ```
 
 ---
@@ -2556,8 +2588,7 @@ citation("ggplot2")
 ## 
 ## To cite ggplot2 in publications, please use:
 ## 
-##   H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York,
-##   2016.
+##   H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
