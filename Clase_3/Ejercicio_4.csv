@@ -1,0 +1,17 @@
+pais;anio;uso_suelo;estacion;Phypomelanus;Pvampyrus;Cbrachyotis;Bmaculata;Skuhlii;Msobrinus;Raffinis;Hbicolor;n_total;ind_analizados;ind_positivos;prev_nipah;riqueza;indShannon
+Malaysia;2018;areanat1;invierno;11;42;19;1;15;7;3;4;102;102;25;0.245098039;8;1.660399765
+Malaysia;2018;areanat2;invierno;31;21;24;3;38;7;3;4;131;131;7;0.053435115;8;1.740476997
+Malaysia;2018;areanat1;primavera;24;20;3;2;35;6;5;4;99;99;27;0.272727273;8;1.669360511
+Malaysia;2018;areanat2;primavera;42;17;45;1;5;2;5;0;117;117;10;0.085470085;7;1.395274479
+Malaysia;2018;areanat1;verano;15;5;44;4;35;5;2;3;113;113;19;0.168141593;8;1.560273068
+Malaysia;2018;areanat2;verano;44;24;41;3;28;1;4;4;149;149;0;0;8;1.629973094
+Malaysia;2018;areanat1;otonio;7;17;7;3;13;2;7;1;57;57;17;0.298245614;8;1.814012446
+Malaysia;2018;areanat2;otonio;24;5;8;0;22;5;1;4;69;69;2;0.028985507;7;1.588435276
+Malaysia;2019;areanat1;invierno;22;25;5;1;37;1;4;0;95;95;8;0.084210526;7;1.441548898
+Malaysia;2019;areanat2;invierno;35;41;17;4;18;0;0;6;121;121;23;0.190082645;6;1.546363359
+Malaysia;2019;areanat1;primavera;40;14;12;0;43;0;0;1;110;110;15;0.136363636;5;1.281821588
+Malaysia;2019;areanat2;primavera;29;9;15;4;10;0;1;0;68;68;19;0.279411765;6;1.47511974
+Malaysia;2019;areanat1;verano;34;44;17;2;41;8;5;0;151;151;7;0.046357616;7;1.620652687
+Malaysia;2019;areanat2;verano;9;32;42;1;11;8;5;6;114;114;14;0.122807018;8;1.670664933
+Malaysia;2020;areanat1;otonio;20;30;3;4;8;4;3;2;74;74;11;0.148648649;8;1.633059387
+Malaysia;2020;areanat2;otonio;42;13;2;3;9;6;7;5;87;87;12;0.137931034;8;1.624497366
