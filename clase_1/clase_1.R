@@ -126,7 +126,7 @@ ls()
 
 ## ★ Ejercicios ★
 
-## Fuiste al campo y recogiste algunos mosquitos, que se enumeran en la 
+## Fuiste al campo y recogiste algunos vectores, que se enumeran en la 
 ## en la secuencia:
 
 # Anopheles_sp =	5
@@ -134,7 +134,7 @@ ls()
 # Aedes	= 4
 # Desconocido = 16
 
-## 1 - Cree objetos para cada especie de mosquito y almacene el número de 
+## 1 - Cree objetos para cada especie y almacene el número de 
 ##     individuos en cada objeto (n en la tabla).
 
 ## 2 - Cree objetos para cada especie de mosquito y almacene el número de 
@@ -242,17 +242,22 @@ ii <- FALSE
 hh == ii
 
 ## --
-
 ## ★ Ejercicios ★
 
 ## 1 - Crea un objeto para las clases numeric, integer, character e logical y 
 ##     comprueba que lo hizo correctamente.
 
-## 2 - Trabajará con un modelo matemático en el que la variable de respuesta 
-##     tiene una distribución de Poisson. Tu variable de respuesta es:
-vr <- c(20, 22, 21, 26, 14, 30, 21, 39)
-##     Escribe la 'vr' para que la clase coincida con el tipo `integer`. 
+## 2 - Tenga en cuenta los siguientes objetos:
+a <- 35 + 18^4 * 2
+b <- 2L + 3L + 5L
+c <- 2L + 3L + 5
+d <- "Me encanta la r" == TRUE
+e <- F
+f <- "2L + 3L + 5L"
 
+## a) ¿Cuál es la clase de cada objeto?
+## b) ¿Qué objetos tienen la misma clase y cuáles no?
+## b) ¿Qué objetos tienen el mismo valor y cuáles no?
 ## --
 
 # ------------------------------------------------------------------------ #
@@ -678,17 +683,30 @@ for(loc in 1:3){ # Para cada uno de los 3 loc's...
 }
 
 ## --
-
 ## ★ Ejercicios ★
+# 1 - Supongamos que ha estado en el campo durante 6 meses, registrando números 
+#     de especies por cada mes. Al final del campo, desea calcular la frecuencia 
+#     acumulada de especies.
 
-# 1 - Escriba un loop `for` que calcule el cubo de cada número entre 1 y 7 
+# Número de especies muestreadas cada mes
+sps <- c(10, 12, 16, 15, 18, 11)
+
+# Loop
+total <- 0
+for(n in sps){
+  total <- total + n
+  print(total)
+}
+# En una hoja de papel, escriba todos los pasos por los que pasará este loop 
+# y el resultado de cada ciclo.
+
+# 2 - Escriba un loop `for` que calcule el cubo de cada número entre 1 y 7 
 #     usando la función `print()`.
 
-# 2 - Pesó a diferentes personas con 1.80 m de altura y obtuvo los siguientes 
+# 3 - Pesó a diferentes personas con 1.80 m de altura y obtuvo los siguientes 
 #     valores: 70, 85, 90, 68. Cree un loop `for` para calcular el IMC de estas
 #     personas según la siguiente expresión matemática: 
 #     IMC = Peso ÷ (Altura × Altura).
-
 ## ----
 
 ## •• Estructura de selección: if() ••

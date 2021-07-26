@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Programación con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Marília Melo Favalesso" />
+    <script src="clase_5_files/header-attrs-2.9/header-attrs.js"></script>
+    <script src="clase_5_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="clase_5_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Programación con R
+## Clase 5
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Marília Melo Favalesso
+
+---
+
+
+
+## Archivos
+
+- [enejul2018.csv](enejul2018.csv)
+- [juldic2018.csv](juldic2018.csv)
+
+## Contenido de hoy
+
+.pull-left[
+
+- [R Markdown](#RMarkdown)
+- [Instalación](#instalacion)
+- [Estructura de un R Markdown](#estructura)
+- [YAML](#YAML)
+- [Texto](#texto)
+- [Renderizado el documento](#renderizado)
+- [Chunk](#chunk)
+]
+
+---
+name: RMarkdown
+class: middle, center
+
+# R Markdown
+
+---
+## R Markdown
+
+&lt;br&gt;
+
+&lt;br&gt;
+.center[&lt;img src="figs/1-Laura.png" style="width: 100%;"&gt;]
+&lt;br&gt;
+
+---
+## R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/2-Laura.png" style="width: 80%;"&gt;]
+&lt;br&gt;
+
+---
+## R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/3.2-Ellie.gif" style="width: 80%;"&gt;]
+&lt;br&gt;
+
+---
+## R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/11-RMarkdown.png" style="width: 80%;"&gt;]
+&lt;br&gt;
+
+---
+## R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/12-Laura.png" style="width: 75%;"&gt;]
+&lt;br&gt;
+
+---
+## R Markdown
+
+.pull-left[
+
+- R Markdown es una poderosa herramienta para combinar análisis e informes en el mismo documento 💪.
+
+- Permite compartir un solo archivo que contiene todos el texto, el código R y los metadatos necesarios para reproducir un análisis de datos del principio a fin 😉.
+
+- No es necesário tener que conocer ningún código HTML o LaTeX ni preocuparse por obtener el formato correcto en un archivo DOCX de Microsoft Word 😎.
+
+- Puede generar una variedad de formatos diferentes, y todo esto se hace usando un solo archivo de texto con algunos bits de formato ✌. 
+]
+
+.pull-right[
+.center[&lt;img src="figs/70-rmrkdown.png" style="width: 80%;"&gt;
+
+[R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/R Markdown-reference.pdf)
+]
+]
+
+---
+## R Markdown
+
+### Beneficios
+👉 **Reproducible**: Documenta los pasos de una investigación o estudio científico.
+
+👉 **Colaborativo**: Fácil de trabajar con otros en investigaciones y estudios científicos.
+
+👉 **Eficiente**: Genere y actualice informes automáticamente (ej., HTML, MS Word y PDF).
+
+👉 **Atractivo**: Incruste figuras, mapas y tablas interactivos en los informes (solo HTML).
+]
+
+### Aplicación 
+.pull-left[
+- [dashboard](https://pkgs.rstudio.com/flexdashboard/)
+- [site](https://bookdown.org/yihui/blogdown/)
+- [libros](https://bookdown.org/yihui/bookdown/)
+- [tesis](https://ourcodingclub.github.io/tutorials/R Markdown-dissertation/)
+]
+.pull-right[
+- [diapositivas](https://beatrizmilz.github.io/IME-27-08-2019/#1)
+- [reportes](http://www.botanicaamazonica.wiki.br/labotam/doku.php?id=bot89:precurso:R Markdown:inicio)
+- [póster académico](póster académico)
+- [↑ ¡mucho más!]()
+]
+
+---
+## R Markdown
+
+.center[&lt;img src="figs/13-RMarkdown.png" style="width: 75%;"&gt;]
+
+&gt; P.S: Las diapositivas de la clase se realizaron con los paquetes **R Markdown** + **Xarigan**.
+
+---
+## R Markdown
+
+.pull-left[
+.center[&lt;img src="figs/7-markdown.png" style="width: 93%;"&gt;]
+]
+
+.pull-right[
+### ¡Utilice **R Markdown** en todo!
+
+-----
+
+La recomendación es crear un archivo **R Markdown** para cada uno de sus proyectos R. La intención es documentar tanto del proyecto como sea posible.
+
+-----
+**R Markdown** proporciona un documento más legible con mejores descripciones de cómo y por qué se realizó una actividad que un script R estándar con algunas líneas comentadas.
+
+-----
+]
+
+---
+## R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/14-RMarkdown.png" style="width: 95%;"&gt;]
+
+---
+## R Markdown
+
+.center[&lt;img src="figs/15-RMarkdown.png" style="width: 40%;"&gt;]
+
+&lt;!---
+- *Markdown* es un lenguaje de marcado para desarrollar y formatear documentos;
+
+- El paquete `knitr` ejecutará "fragmentos" de código y generará un archivo **.Rmd** con los códigos y sus resultados. A continuación, pandoc, que es un conversor, lo convierte al formato de
+seado, generando los archivos en `.html`, `.docx`, `.pdf`, o `.odt`. 
+---&gt;
+
+---
+## R Markdown
+
+&lt;br&gt;
+
+.center[&lt;img src="figs/16-laura.png" style="width: 95%;"&gt;]
+
+---
+name: instalacion
+class: middle, center
+
+# Instalación
+
+---
+## Instalación
+
+- Instalar el paquete `R Markdown`:
+
+
+```r
+# Instalar desde CRAN
+install.packages('R Markdown')
+
+# O si desea probar la versión de desarrollo, instálela desde GitHub:
+devtools::install_github('rstudio/R Markdown') 
+```
+
+------
+- Instalar el paquete `knitr`:
+
+
+```r
+# Instalar desde CRAN
+install.packages('knitr')
+
+# O si desea probar la versión de desarrollo, instálela desde GitHub:
+devtools::install_github('yihui/knitr') 
+```
+
+------
+&gt; **Nota:** el uso de "::" ayuda a acceder a la función exacta de un paquete específico: `nombre del paquete::función()`.
+
+---
+name: estructura
+class: middle, center
+
+# Estructura de un R Markdown
+
+---
+## Estructura de un R Markdown
+
+- Empiece a crear un documento:
+
+.center[
+&lt;button type="button"&gt;File&lt;/button&gt; ⟶ &lt;button type="button"&gt;New File &lt;/button&gt; ⟶ &lt;button type="button"&gt;R Markdown&lt;/button&gt; ⟶  **OK**
+
+&lt;img src="figs/17-RMarkdown.gif" style="width: 70%;"&gt;]
+
+---
+## Estructura de un R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/17-yaml.png" style="width: 150%;"&gt;]
+
+---
+## Estructura de un R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/18-texto.png" style="width: 150%;"&gt;]
+
+---
+## Estructura de un R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/19-code.png" style="width: 150%;"&gt;]
+
+---
+## Estructura de un R Markdown
+
+&lt;br&gt;
+.center[&lt;img src="figs/17-RMarkdown.png" style="width: 150%;"&gt;]
+
+---
+name: YAML
+class: middle, center
+
+# YAML
+
+---
+## YAML
+
+- YAML es responsable de la configuración del documento.
+
+&lt;br&gt;
+.center[&lt;img src="figs/20-yaml.png" style="width: 120%;"&gt;]
+
+---
+## YAML
+
+.center[&lt;img src="figs/21-yaml.png" style="width: 75%;"&gt;]
+
+- En el ejemplo se define como salida `html_document`, pero podemos modificar esta salida a otros formatos.
+
+---
+## YAML
+
+### Otros cambios
+
+- También podemos agregar otras informaciónes o cambiar configuraciones en nuestro documento ([consulte el documento de pandoc para obtener más información](https://pandoc.org/MANUAL.html#variables-for-latex)). 
+
+- A continuación, se muestran algunos cambios que se aplican a **TODOS** los formatos de salida.
+
+.center[&lt;img src="figs/54-yaml.png" style="width: 45%;"&gt;]
+
+- `fontsize: 10pt, 11pt o 12pt`.
+
+---
+## YAML
+
+### Para salida en PDF
+
+- Especificar `output: pdf_document` en el encabezado **YAML** producirá un archivo `.pdf` formateado con **LaTeX**.
+
+&lt;br&gt;
+.center[&lt;img src="figs/62-yaml.png" style="width: 40%;"&gt;]
+&lt;br&gt;
+
+- **LaTeX** (pronunciado LAY-tech) es otro lenguaje de marcado de documentos, que permite al usuario usar etiquetas para formatear texto sin formato con un control muy fino. 
+
+```
+\color{red}{texto}
+```
+&lt;p style="color:red"&gt;texto&lt;/p&gt;
+
+---
+## YAML
+
+### Para salida en PDF
+
+- La compilación de un archivo **LaTeX** en un documento PDF legible requiere que también se instale una distribución **TeX** (por ejemplo, [MikTeX](https://miktex.org/)).
+
+- Puede instalar una versión pequeña de **TeX** en su computadora directamente a través de **R** con el paquete [tinyTeX](https://yihui.name/tinytex/).
+
+
+```r
+# Instalar desde CRAN
+install.packages('tinytex')
+
+# Instalar TinyTeX
+tinytex::install_tinytex()  
+```
+
+&gt; ¡Ahora es solo comezar a editar y generar sus archivos `.PDF` con R Markdown!
+
+&gt; A continuación, hablaremos sobre algunos parámetros útiles para editar archivos `PDF`.
+
+---
+## YAML
+
+### Para salida en PDF
+
+.center[&lt;img src="figs/56-yaml.png" style="width: 70%;"&gt;]
+
+- Puede agregar una tabla de contenido usando la opción `toc=TRUE`. 
+
+- Para especificar la 'profundidad' de los encabezados de la tabla de contenido tenemos la opción `toc_depth = 2`. 
+
+- Puede agregar numeración de secciones a los encabezados usando la opción `number_sections: TRUE`. 
+
+- Simplemente haga clic en el nombre de la sesión para acceder a ella &lt;img src="figs/61-yaml.png" style="width: 3%;"&gt;.
+
+---
+## YAML
+
+### Para salida en PDF
+
+&lt;br&gt;
+.center[&lt;img src="figs/57-yaml.png" style="width: 70%;"&gt;]
+
+---
+## YAML
+
+### Para salida en PDF
+
+&lt;br&gt;
+.center[&lt;img src="figs/58-yaml.png" style="width: 50%;"&gt;]
+
+---
+## YAML
+
+### Para salida en PDF
+
+&lt;br&gt;
+.center[&lt;img src="figs/59-yaml.png" style="width: 50%;"&gt;]
+
+---
+## YAML
+
+- Otra opción útil es utilizar `xelatex` para cambinar la fuente de nuestro documento:
+
+&lt;br&gt;
+.center[&lt;img src="figs/60-yaml.png" style="width: 50%;"&gt;]
+
+- `latex_engine: xelatex` permite el uso de fuentes del sistema (no disponible para el *default engine* `pdflatex`).
+
+&gt; `mainfont: font-family` especifica la fuente que se utilizará.
+
+---
+### Ejercicio 🤓
+
+&lt;br&gt;
+
+Comencemos por eliminar todo el contenido que tenemos en nuestro archivo **R Markdown**, con la excepción de *YAML*.
+
+.center[&lt;img src="figs/22-texto.gif" style="width: 55%;"&gt;]
+
+---
+### Ejercicio 🤓
+
+&gt; ¡Elaboración de un CV!
+
+1 - Cambie el formato de archivo a `PDF`.
+
+2 - Incluya la siguiente información en el **YALM** de su documento:
+
+a) El título "Mi curriculum vitae". &lt;br&gt;
+b) Su nombre. &lt;br&gt;
+
+2 - Eliminar el tópico "fecha". 
+
+4 - El archivo debe tener la siguiente configuración:
+
+a) Fuente: 12pt.&lt;br&gt;
+b) Márgenes: superior e inferior: 2 cm; izquierda y derecha: 1cm.&lt;br&gt;
+c) El interlineado debe ser 1.25.&lt;br&gt;
+d) El color de los enlaces debe ser azul.
+
+5 - Guarda el archivo &lt;img src="figs/64-disq.png" style="width: 3%;"&gt;.
+---
+name: texto
+class: middle, center
+
+# Texto
+
+---
+## Texto
+
+### Markdown &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+- Un lenguaje de *marcado simple*, **no** de programación.
+
+- Textos con caracteres no alfabéticos (`#`, `\`, `*`, `!`, `[]` y `()`), que se utilizan para configurar títulos, listas, cursiva, negrita e insertar imágenes.
+
+- Creado originalmente por [John Gruber](https://en.wikipedia.org/wiki/John_Gruber) y [Aaron Swartz](https://pt.wikipedia.org/wiki/Aaron_Swartz). 
+
+- Vantajas son la simplicidad y la posibilidad de utilizar un lenguaje común para crear varios tipos de documentos (ej: HTML, PDF y Word).
+
+- Es como *word*, pero con una gama de aplicaciones mucho más amplia.
+
+---
+## Texto
+
+### Markdown &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+.pull-left[
+
+- *Markdown* fue diseñado originalmente para ser la abreviatura de *HTML*. Por ejemplo, para poner un texto en cursiva en *HTML*, lo encierra en `&lt;em&gt;texto&lt;/em&gt;`. En *Markdown*, tenemos que hacer `\*texto\*`.
+
+- **R Markdown** usa la versión *Markdown* de [Pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown), que difiere ligeramente del Markdown estándar.
+
+- Debido a su simplicidad, Markdown es muy fácil de usar 😺.
+]
+
+.pull-right[&lt;img src="figs/27-markdown.png" style="width: 75%;"&gt;]
+
+---
+## Texto
+
+### Edición de texto
+
+.center[&lt;img src="figs/23-markdown.png" style="width: 100%;"&gt;]
+
+- No inserte espacios entre las *tags* de formato y el texto.
+
+- Cualquier carácter precedido por una barra invertida (**\\**) se tratará como un carácter literal y no como una etiqueta de código: **\\\*cursiva\\\*** produce **\*cursiva\***.
+
+---
+## Texto
+
+### Edición de texto
+
+&lt;br&gt;
+&lt;img src="figs/26-markdown.png" style="width: 40%;"&gt;
+
+- Las fórmulas matemáticas están escritas en [sintaxis de ecuación de LaTeX](https://latex.codecogs.com/eqneditor/editor.php).
+
+- Las fórmulas se escriben dentro de los signos de dólar (**$**) para luego convertirse en ecuaciones matemáticas con los símbolos apropiados.
+
+---
+## Texto
+
+### Edición de texto
+
+.center[&lt;img src="figs/24-markdown.png" style="width: 70%;"&gt;]
+
+- Para crear una lista, anteponga a cada elemento de la lista ***** (o **+** o **-**) y un espacio.
+- Para agregar sublistas, sangra 4 espacios.
+- Use números con puntos como *tags* para listas numeradas.
+
+---
+## Texto
+
+### Edición de texto
+
+&lt;img src="figs/30-markdown.png" style="width: 45%;"&gt;
+&lt;br&gt;
+
+```
+[Accede al sitio web del curso aquí](https://introduccionalr.netlify.app/)
+```
+[Accede al sitio web del curso aquí](https://introduccionalr.netlify.app/)
+
+---
+## Texto
+
+### Edición de texto
+
+&lt;img src="figs/29-markdown.png" style="width: 40%;"&gt;
+
+&lt;img src="figs/28-markdown.gif" style="width: 40%;"&gt;
+
+---
+## Texto
+
+&lt;img src="figs/25-markdown.png" style="width: 60%;"&gt;
+&lt;br&gt;
+
+---
+## Texto
+
+&lt;img src="figs/25.2-markdown.png" style="width: 60%;"&gt;
+&lt;br&gt;
+
+--
+
+&gt; También puede utilizar la dirección virtual de una figura para incluirla en su trabajo. Por ejemplo:
+&gt; `![](https://www.jurassicworld.com/sites/default/files/2018-06/960x540_0001_trex.png)`
+
+---
+name: renderizado
+class: middle, center
+
+# Renderizado el documento
+
+---
+## Renderizado el documento
+
+- Genera el archivo PDF
+
+&lt;br&gt;
+.center[&lt;img src="figs/33-rend.png" style="width: 70%;"&gt;]
+
+---
+## Renderizado el documento
+
+- Genera el archivo PDF
+
+&lt;br&gt;
+.center[&lt;img src="figs/34-rend.png" style="width: 65%;"&gt;]
+
+---
+## Renderizado el documento
+
+- Genera el archivo PDF
+
+&lt;br&gt;
+&lt;div class="background" style="width: 1050px; height: 440px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 10px;"&gt;
+
+.center[&lt;img src="figs/35-rend.png" style="width: 70%;"&gt;]
+
+---
+## Ejercicio 🤓
+
+1 - Cree el tópico "Información personal" en su archivo R Markdown. A continuación, incluya las siguientes informaciónes:
+- Correo electrónico
+- Otros medios de contacto (site, twitter, researchgate, etc)
+
+2 - Cree un tópico llamado "Educación" e incluya información sobre su formación académica.
+
+3 - Cree un tópico llamado "Capacitación adicional" y agregue cursos que ya haya tomado.
+
+4 - Incluye otros temas que creas que son importantes para tu **CV**, por ejemplo:
+- Premios por distinción académica
+- Publicaciones en congresos
+- Artículos científicos
+- Clases y / o cursos impartidos
+
+&gt; ¡Utilice y abuse de las funciones de R Markdown!
+
+5 - Genere el archivo en **pdf**.
+
+---
+## Ejercicio 🤓
+
+.center[
+&lt;div class="background" style="width: 1050px; height: 530px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+&lt;img src="figs/63-texto.png" style="width: 100%;"&gt;
+]
+
+---
+name: chunk
+class: middle, center
+
+# Chunk
+
+---
+## Chunk
+
+&lt;br&gt;
+Los **code chunks** son fragmentos de código en R que se pueden ejecutar para generar resultados que se incorporarán al documento `.Rmd`. 
+
+&lt;br&gt;
+&lt;img src="figs/37-chunk.png" style="width: 35%;"&gt;
+
+---
+## Chunk
+
+&lt;br&gt;
+Los **code chunks** son fragmentos de código en R que se pueden ejecutar para generar resultados que se incorporarán al documento `.Rmd`. 
+
+&lt;br&gt;
+&lt;img src="figs/38-chunk.png" style="width: 35%;"&gt;
+
+---
+## Chunk
+
+&lt;br&gt;
+- Los `chunks` están delimitados por tres acentos graves (&lt;img src="figs/42-chunk.png" style="width: 4%;"&gt;) en la parte superior e inferior.
+
+- Entre las llaves `{}` está el lenguaje de programación que estamos usando dentro del chunk. En nuestro caso, estamos usando `{R}`. 
+
+&lt;br&gt;
+&lt;img src="figs/39-chunk.png" style="width: 35%;"&gt;
+&lt;br&gt;
+
+- Podemos utilizar otros lenguajes de programación: `python`, `css`, `SQL`, etc. 
+
+---
+## Chunk
+
+- Escribimos nuestro código R entre los tres acentos graves...
+
+&lt;img src="figs/40-chunk.png" style="width: 35%;"&gt;
+&lt;br&gt;
+
+- ...y la R nos dará la salida de nuestra función debajo del `chunk`.
+
+&lt;img src="figs/41-chunk.png" style="width: 35%;"&gt;
+&lt;br&gt;
+
+---
+## Chunk
+
+- Puede insertar rápidamente `chunks` en su archivo con:
+
+  - El atajo de teclado `Ctrl + Alt + I` (`OS X: Cmd + Opción + I`).
+  
+  - Escribiendo los delimitadores de un `chunk`: &lt;img src="figs/45-chunk.png" style="width: 12%;"&gt;.
+
+  - O con el comando `Add Chunk` en la barra de herramienta del editor &lt;img src="figs/43-chunk.png" style="width: 3%;"&gt;.
+
+&lt;br&gt;
+.center[&lt;img src="figs/44-chunk.png" style="width: 70%;"&gt;]
+&lt;br&gt;
+
+---
+## Chunk
+
+### Definiciones
+
+&lt;img src="figs/46-chunk.png" style="width: 45%;"&gt;
+&lt;br&gt;
+
+- La salida del `chunk` se puede personalizar con las opciones de **knitr**, argumentos establecidos en el `{r ...}`.
+
+  - Por ejemplo, podemos pedirle al chunk R que genere un gráfico, pero que no muestre el código que generó el gráfico.
+
+- Aquí veremos algunas de las diversas personalizaciones que podemos hacer.
+
+- Para más informaciónes, acceda: [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/R Markdown-reference.pdf)
+
+---
+## Chunk
+
+### Definiciones
+
+&lt;img src="figs/47-chunk.png" style="width: 38%;"&gt;
+- Para evitar que el código y los resultados aparezcan en el archivo completo.
+- *R Markdown* aún ejecuta el código en el fragmento y los resultados pueden ser utilizados por otros fragmentos.
+
+--------
+&lt;br&gt;
+&lt;img src="figs/48-chunk.png" style="width: 38%;"&gt;
+
+- Para evitar que el código - pero no los resultados - aparezcan en el archivo completo.
+- Esta es una forma útil de incorporar imágenes.
+
+---
+## Chunk
+
+### Definiciones
+
+&lt;img src="figs/49-chunk.png" style="width: 40%;"&gt;
+
+- Evita que los mensajes generados por el código aparezcan en el archivo terminado.
+
+------
+
+&lt;br&gt;
+&lt;img src="figs/50-chunk.png" style="width: 40%;"&gt;
+
+- Evita que las advertencias generadas por el código aparezcan en el final.
+
+---
+## Chunk
+
+### Definiciones
+
+&lt;img src="figs/52-chunk.png" style="width: 40%;"&gt;
+
+- Indica si el código debe ejecutarse. 
+
+------
+
+&lt;br&gt;
+&lt;img src="figs/51-chunk.png" style="width: 40%;"&gt;
+
+- Agrega una leyenda a los resultados gráficos.
+
+---
+### Ejercicios 🤓
+
+&lt;br&gt;
+&gt; A cada 6 meses es necesario realizar un informe sobre el número de casos de dengue por provincia de Argentina. Los datos son del [Registro del Sistema Nacional de Vigilancia de la Salud para Argentina](http://datos.salud.gob.ar/dataset/vigilancia-de-dengue-y-zika/archivo/318834df-656d-4e71-9e87-195ebd96a0f8).
+
+&gt; Para facilitar el trabajo, decidió crear un informe dinámico con R Markdown para ayudarle 👩‍💻.
+
+1 - Cree un nuevo archivo R Markdown. En este archivo, incluya las informaciónes:
+- Titulo "Vigilancia de Dengue en Argentina"
+- Su nombre.
+- La fecha
+
+---
+### Ejercicios 🤓
+
+2 - Crea un "chunk R". Configure el `chunk` para ocultar códigos, salidas y advertencias. Solo necesitas ejecutar los códigos.
+
+3 - Al comienzo del `chunk`, incluya los paquetes que utilizará:
+
+```r
+## Paquetes ----------------------------------------------------------
+library(tidyverse) 
+library(kableExtra) 
+```
+
+4 - Crea dos objetos, uno llamado "mes_comiezo" y el otro "mes_final". En el primer objeto asigne el valor "enero" y en el segundo asigne "julio". Cree un tercer objeto llamado "año" y asigne el valor "2018".
+
+
+```r
+## Curso del tiempo --------------------------------------------------
+mes_comiezo &lt;- "Enero"
+mes_final &lt;- "Julio"
+ano &lt;- 2018
+```
+
+---
+### Ejercicios 🤓
+
+5 - Abra la siguiente base de datos en R: "`enejul2018.csv`". 
+
+
+```r
+## Descarga de la base de datos --------------------------------------
+datos &lt;- read_csv2("enejul2018.csv")
+```
+
+```
+## i Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+```
+
+```
+## 
+## -- Column specification ----------------------------------------------------------------------
+## cols(
+##   departamento_id = col_double(),
+##   departamento_nombre = col_character(),
+##   provincia_id = col_double(),
+##   provincia_nombre = col_character(),
+##   anio = col_double(),
+##   semanas_epidemiologicas = col_double(),
+##   evento_nombre = col_character(),
+##   grupo_edad_id = col_double(),
+##   grupo_edad_desc = col_character(),
+##   cantidad_casos = col_double()
+## )
+```
+
+&gt; ¿Qué variables están disponibles en esta tabla?
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Seleccione las columnas en las que queremos los datos.
+
+```r
+datos %&gt;% 
+* dplyr::select(provincia_nombre, evento_nombre, cantidad_casos)
+```
+
+```
+## # A tibble: 660 x 3
+##    provincia_nombre evento_nombre cantidad_casos
+##    &lt;chr&gt;            &lt;chr&gt;                  &lt;dbl&gt;
+##  1 Buenos Aires     Dengue                     1
+##  2 Buenos Aires     Dengue                     2
+##  3 Buenos Aires     Dengue                     1
+##  4 Buenos Aires     Dengue                     2
+##  5 Buenos Aires     Dengue                     1
+##  6 Buenos Aires     Dengue                     2
+##  7 Buenos Aires     Dengue                     1
+##  8 Buenos Aires     Dengue                     1
+##  9 Buenos Aires     Dengue                     1
+## 10 Buenos Aires     Dengue                     1
+## # ... with 650 more rows
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Agrupar datos por provincia y enfermedad.
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+* group_by(provincia_nombre, evento_nombre)
+```
+
+```
+## # A tibble: 660 x 3
+## # Groups:   provincia_nombre, evento_nombre [14]
+##    provincia_nombre evento_nombre cantidad_casos
+##    &lt;chr&gt;            &lt;chr&gt;                  &lt;dbl&gt;
+##  1 Buenos Aires     Dengue                     1
+##  2 Buenos Aires     Dengue                     2
+##  3 Buenos Aires     Dengue                     1
+##  4 Buenos Aires     Dengue                     2
+##  5 Buenos Aires     Dengue                     1
+##  6 Buenos Aires     Dengue                     2
+##  7 Buenos Aires     Dengue                     1
+##  8 Buenos Aires     Dengue                     1
+##  9 Buenos Aires     Dengue                     1
+## 10 Buenos Aires     Dengue                     1
+## # ... with 650 more rows
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+- Suma el número de casos por provincia
+
+&lt;div class="background" style="width: 1000px; height: 430px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+* summarise(total = sum(cantidad_casos))
+```
+
+```
+## # A tibble: 14 x 3
+## # Groups:   provincia_nombre [12]
+##    provincia_nombre    evento_nombre                 total
+##    &lt;chr&gt;               &lt;chr&gt;                         &lt;dbl&gt;
+##  1 Buenos Aires        Dengue                          152
+##  2 Buenos Aires        Enfermedad por Virus del Zika     1
+##  3 CABA                Dengue                          111
+##  4 Chaco               Dengue                          581
+##  5 Córdoba             Dengue                           18
+##  6 Corrientes          Dengue                           15
+##  7 Entre Ríos          Dengue                            4
+##  8 Formosa             Dengue                           23
+##  9 Misiones            Dengue                          145
+## 10 Salta               Dengue                           NA
+## 11 Salta               Enfermedad por Virus del Zika    36
+## 12 Santa Fe            Dengue                            6
+## 13 Santiago del Estero Dengue                          100
+## 14 Tucumã              Dengue                            2
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Muevamos "dengue" y "zika" de filas a columnas.
+
+&lt;div class="background" style="width: 1000px; height: 430px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+  summarise(total = sum(cantidad_casos)) %&gt;%
+* pivot_wider(names_from = evento_nombre, values_from = total)
+```
+
+```
+## # A tibble: 12 x 3
+## # Groups:   provincia_nombre [12]
+##    provincia_nombre    Dengue `Enfermedad por Virus del Zika`
+##    &lt;chr&gt;                &lt;dbl&gt;                           &lt;dbl&gt;
+##  1 Buenos Aires           152                               1
+##  2 CABA                   111                              NA
+##  3 Chaco                  581                              NA
+##  4 Córdoba                 18                              NA
+##  5 Corrientes              15                              NA
+##  6 Entre Ríos               4                              NA
+##  7 Formosa                 23                              NA
+##  8 Misiones               145                              NA
+##  9 Salta                   NA                              36
+## 10 Santa Fe                 6                              NA
+## 11 Santiago del Estero    100                              NA
+## 12 Tucumã                   2                              NA
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Borra los datos de Zica.
+
+&lt;div class="background" style="width: 1000px; height: 430px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+  summarise(total = sum(cantidad_casos)) %&gt;% 
+  pivot_wider(names_from = evento_nombre, values_from = total) %&gt;% 
+* dplyr::select(-`Enfermedad por Virus del Zika`)
+```
+
+```
+## # A tibble: 12 x 2
+## # Groups:   provincia_nombre [12]
+##    provincia_nombre    Dengue
+##    &lt;chr&gt;                &lt;dbl&gt;
+##  1 Buenos Aires           152
+##  2 CABA                   111
+##  3 Chaco                  581
+##  4 Córdoba                 18
+##  5 Corrientes              15
+##  6 Entre Ríos               4
+##  7 Formosa                 23
+##  8 Misiones               145
+##  9 Salta                   NA
+## 10 Santa Fe                 6
+## 11 Santiago del Estero    100
+## 12 Tucumã                   2
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Ordene los datos en orden descendente.
+
+&lt;div class="background" style="width: 1000px; height: 430px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+  summarise(total = sum(cantidad_casos)) %&gt;% 
+  pivot_wider(names_from = evento_nombre, values_from = total) %&gt;% 
+  dplyr::select(-`Enfermedad por Virus del Zika`) %&gt;% 
+* arrange(desc(Dengue))
+```
+
+```
+## # A tibble: 12 x 2
+## # Groups:   provincia_nombre [12]
+##    provincia_nombre    Dengue
+##    &lt;chr&gt;                &lt;dbl&gt;
+##  1 Chaco                  581
+##  2 Buenos Aires           152
+##  3 Misiones               145
+##  4 CABA                   111
+##  5 Santiago del Estero    100
+##  6 Formosa                 23
+##  7 Córdoba                 18
+##  8 Corrientes              15
+##  9 Santa Fe                 6
+## 10 Entre Ríos               4
+## 11 Tucumã                   2
+## 12 Salta                   NA
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Cambiemos el nombre de las columnas.
+
+&lt;div class="background" style="width: 1000px; height: 430px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+```r
+datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+  summarise(total = sum(cantidad_casos)) %&gt;% 
+  pivot_wider(names_from = evento_nombre, values_from = total) %&gt;% 
+  dplyr::select(-`Enfermedad por Virus del Zika`) %&gt;% 
+  arrange(desc(Dengue)) %&gt;%
+* rename(Provincia = provincia_nombre, Casos = Dengue)
+```
+
+```
+## # A tibble: 12 x 2
+## # Groups:   Provincia [12]
+##    Provincia           Casos
+##    &lt;chr&gt;               &lt;dbl&gt;
+##  1 Chaco                 581
+##  2 Buenos Aires          152
+##  3 Misiones              145
+##  4 CABA                  111
+##  5 Santiago del Estero   100
+##  6 Formosa                23
+##  7 Córdoba                18
+##  8 Corrientes             15
+##  9 Santa Fe                6
+## 10 Entre Ríos              4
+## 11 Tucumã                  2
+## 12 Salta                  NA
+```
+
+---
+### Ejercicios 🤓
+
+6 - De la tabla "`datos`" contaremos el número de casos de dengue por provincia.
+
+- Guarde todo el proceso para producir la tabla en un objeto.
+
+
+```r
+newdt &lt;- datos %&gt;% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %&gt;% 
+  group_by(provincia_nombre, evento_nombre) %&gt;% 
+  summarise(total = sum(cantidad_casos)) %&gt;% 
+  pivot_wider(names_from = evento_nombre, values_from = total) %&gt;% 
+  dplyr::select(-`Enfermedad por Virus del Zika`) %&gt;% 
+  arrange(desc(Dengue)) %&gt;%
+  rename(Provincia = provincia_nombre, Casos = Dengue) 
+```
+
+---
+
+### &lt;font color="red"&gt; !!!! &lt;/font&gt;
+
+- Puede insertar los resultados del código R directamente en los textos de R Markdown.
+
+- Debe incluir un acento grave, la letra `r`, un espacio, el nombre de su objeto y nuevamente un acento grave: &lt;img src="figs/64-code.png" style="width: 13%;"&gt;
+
+&lt;br&gt;
+.center[&lt;img src="figs/65-code.png" style="width: 45%;"&gt;]
+&lt;br&gt;
+
+&gt; Usemos esta función en nuestro ejercicio.
+
+---
+### Ejercicios 🤓
+
+7 - Complete los espacios en el texto usando la sintaxis R.
+
+&gt; En el período de `MES_COMIEZO` - `MES_FINAL` del año `AÑO`, Argentina totalizó `XX` casos de dengue, siendo la provincia de `XXXXX` la que presenta mayor número de afectados.
+
+8 - Pegue el texto del *ejercicio 7* en su archivo R Markdown; abajo del `chunk`.
+
+---
+## `kable`
+
+- La función `kable()` en **knitr** es un generador de tablas muy simple
+
+- Es simple por diseño!!
+
+- Solo genera tablas para datos estrictamente rectangulares, como `matrix` y `data.frame`. No puede formatear mucho las celdas de la tabla o combinar celdas. 
+
+- Sin embargo, esta función tiene una gran cantidad de argumentos para personalizar la apariencia de las tablas:
+
+
+```r
+tabla %&gt;%
+  kable(format, # ('latex', 'html', 'pipe', 'simple') 
+        digits = getOption("digits"), # número de dígitos
+        row.names = NA, # nombres de líneas
+        col.names = NA, # nombres de columnas
+        align, # Alineación de columnas: 'l', 'c', 'r'
+        caption = NULL, # leyenda
+        escape = TRUE) # escapar de characters especiales? TRUE/FALSE
+```
+
+---
+## `kableExtra`
+
+- El paquete `kableExtra` está diseñado para extender la funcionalidad básica de las tablas producidas usando `knitr::kable()`. 
+
+- Dado que `knitr::kable()` es simple por diseño, definitivamente tiene muchas características faltantes que se ven comúnmente en otros paquetes, y `kableExtra` ha llenado el vacío perfectamente. 
+
+- Lo más sorprendente de `kableExtra` es que la mayoría de sus características de tabla funcionan tanto para formatos **HTML** como **PDF**.
+
+- Para más informaciones: 
+  - ["*Create Awesome LaTeX Table with knitr::kable and kableExtra*" (Hao Zhu, 2020)](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). 
+
+- Instalación:
+
+```r
+install.packages("kableExtra") 
+```
+
+---
+### Ejercicios 🤓
+
+8 - Cree un nuevo `chunk` que muestre los resultados de la función, pero oculte el código.
+
+9 - Insertemos una tabla con las provincias y el total de casos de Dengue en el texto usando el paquete `kableExtra`.
+
+&lt;div class="background" style="width: 1050px; height: 445px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+
+
+```r
+newdt %&gt;% 
+  kbl(booktabs = T, # Incluye división entre extremos 
+                  align = "c", # Alineación de la tabla en el texto
+                  caption = "Distribución de casos de dengue por provincia de Argentina.", # Leyenda
+                  longtable = T) %&gt;% # Para tablas largas
+  column_spec(1, # columna 1
+              width = "6cm", # 6cm de ancho
+              latex_valign = "p") %&gt;% # alineamiento vertical
+  column_spec(2, # columna 2
+              color = "white", # color de las letras = blanco
+              width = "2.5cm", # 2.5cm de ancho
+              bold = T, # escribiendo en negrita
+              background = spec_color(newdt$Casos, end = 0.9, option = "A", direction = -1)) # colorear las líneas de acuerdo con los valores
+```
+
+&lt;table&gt;
+&lt;caption&gt;Distribución de casos de dengue por provincia de Argentina.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Provincia &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Casos &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Chaco &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(0, 0, 4, 1) !important;"&gt; 581 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Buenos Aires &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(241, 96, 93, 1) !important;"&gt; 152 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Misiones &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(243, 101, 92, 1) !important;"&gt; 145 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; CABA &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(250, 126, 94, 1) !important;"&gt; 111 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Santiago del Estero &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(251, 135, 97, 1) !important;"&gt; 100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Formosa &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 192, 132, 1) !important;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Córdoba &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 194, 135, 1) !important;"&gt; 18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Corrientes &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 196, 136, 1) !important;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Santa Fe &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 204, 142, 1) !important;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Entre Ríos &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 205, 144, 1) !important;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Tucumã &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: rgba(254, 206, 145, 1) !important;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;width: 6cm; "&gt; Salta &lt;/td&gt;
+   &lt;td style="text-align:center;width: 2.5cm; font-weight: bold;color: white !important;background-color: #BBBBBB !important;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+### Ejercicios 🤓
+
+10 - ¡Listo, salva en archivo y genera el PDF!. Comprueba los resultados de tu informe.
+
+&lt;div class="background" style="width: 1050px; height: 480px; white-space: nowrap; overflow-x: scroll; border: 0; padding: 0px;"&gt;
+&lt;img src="figs/68-informe.png" style="width: 87%;"&gt;
+
+---
+&lt;br&gt;
+
+&lt;img src="figs/66-ellie.png" style="width: 87%;"&gt;
+
+---
+&lt;br&gt;
+
+&lt;img src="figs/67-ellie.png" style="width: 100%;"&gt;
+
+---
+### Ejercicios 🤓
+
+&gt; El informe con datos sobre casos de dengue entre enero y julio de 2018 ya se ha entregado, ¡pero es hora de crear un nuevo informe! Con datos de julio hasta diciembre.
+
+11 - Cree un nuevo archivo R Markdown.
+
+12 - Copie y pegue toda la información de su informe anterior en este nuevo archivo.
+
+13 - Cambie el contenido del objeto `mes_comiezo` para "*julio*" y de `mes_final` para "*Diciembre*".
+
+```r
+mes_comiezo &lt;- "Julio"
+mes_final &lt;- "Diciembre"
+ano &lt;- 2018
+```
+
+14 - Cambiar la tabla de datos que se cargará para `juldic2018.csv`.
+
+```r
+datos &lt;- read_csv2("juldic2018.csv.csv")
+```
+
+15 - Guarde el archivo y genere el PDF.
+
+16 - Compare los resultados de los dos informes.
+
+---
+class: clear, center
+
+## ¡Fin de clase!
+
+&lt;img src="figs/69-fin.png" style="width: 50%;"&gt;
+
+---
+## Tarea 💻
+
+1. En lugar de una tabla, representa los datos del dengue con un gráfico.
+
+2. Cambie la fuente a "Times New Roman".
+
+3. Cambie el texto a dos columnas.
+
+4. Agregue una figura o tabla con la distribución de los casos de dengue por edad. Escribe una oración que explique qué grupo de edad tiene el mayor número de casos.
+
+5. Convierta el informe para los casos de virus del Zika, que también están disponibles en las tablas "`enejul2018.csv`" y "`juldic2018.csv`". No olvide cambiar el título y la información de la tabla.
+
+---
+class: middle
+
+## [¡No olvides tu tarea!](https://forms.gle/x4EbVJX76dZo3FQP9) &lt;svg viewBox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h274.9c-2.4-6.8-3.4-14-2.6-21.3l6.8-60.9 1.2-11.1 7.9-7.9 77.3-77.3c-24.5-27.7-60-45.5-99.9-45.5zm45.3 145.3l-6.8 61c-1.1 10.2 7.5 18.8 17.6 17.6l60.9-6.8 137.9-137.9-71.7-71.7-137.9 137.8zM633 268.9L595.1 231c-9.3-9.3-24.5-9.3-33.8 0l-37.8 37.8-4.1 4.1 71.8 71.7 41.8-41.8c9.3-9.4 9.3-24.5 0-33.9z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+&lt;br&gt; 
+
+&lt;br&gt;
+
+### Soma dos quadrados
+
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [Soma-Dos-Quadrados/introduccionalR](https://github.com/Soma-dos-Quadrados/introduccionalR)
+- &lt;svg viewBox="0 0 576 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somaquadrados](https://www.youtube.com/channel/UC8_OHjnszxRiit92ZJlNH4A)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M391.17,103.47H352.54v109.7h38.63ZM285,103H246.37V212.75H285ZM120.83,0,24.31,91.42V420.58H140.14V512l96.53-91.42h77.25L487.69,256V0ZM449.07,237.75l-77.22,73.12H294.61l-67.6,64v-64H140.14V36.58H449.07Z"&gt;&lt;/path&gt;&lt;/svg&gt; [/somadosquadrados](https://www.twitch.tv/somaquadrados)
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; [@somadosquadrados](https://twitter.com/somaquadrados)
+
+
+### Marília Melo Favalesso 
+
+- &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt; [mariliabioufpr@gmail.com](mariliabioufpr@gmail.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm82.29 357.6c-3.9 3.88-7.99 7.95-11.31 11.28-2.99 3-5.1 6.7-6.17 10.71-1.51 5.66-2.73 11.38-4.77 16.87l-17.39 46.85c-13.76 3-28 4.69-42.65 4.69v-27.38c1.69-12.62-7.64-36.26-22.63-51.25-6-6-9.37-14.14-9.37-22.63v-32.01c0-11.64-6.27-22.34-16.46-27.97-14.37-7.95-34.81-19.06-48.81-26.11-11.48-5.78-22.1-13.14-31.65-21.75l-.8-.72a114.792 114.792 0 0 1-18.06-20.74c-9.38-13.77-24.66-36.42-34.59-51.14 20.47-45.5 57.36-82.04 103.2-101.89l24.01 12.01C203.48 89.74 216 82.01 216 70.11v-11.3c7.99-1.29 16.12-2.11 24.39-2.42l28.3 28.3c6.25 6.25 6.25 16.38 0 22.63L264 112l-10.34 10.34c-3.12 3.12-3.12 8.19 0 11.31l4.69 4.69c3.12 3.12 3.12 8.19 0 11.31l-8 8a8.008 8.008 0 0 1-5.66 2.34h-8.99c-2.08 0-4.08.81-5.58 2.27l-9.92 9.65a8.008 8.008 0 0 0-1.58 9.31l15.59 31.19c2.66 5.32-1.21 11.58-7.15 11.58h-5.64c-1.93 0-3.79-.7-5.24-1.96l-9.28-8.06a16.017 16.017 0 0 0-15.55-3.1l-31.17 10.39a11.95 11.95 0 0 0-8.17 11.34c0 4.53 2.56 8.66 6.61 10.69l11.08 5.54c9.41 4.71 19.79 7.16 30.31 7.16s22.59 27.29 32 32h66.75c8.49 0 16.62 3.37 22.63 9.37l13.69 13.69a30.503 30.503 0 0 1 8.93 21.57 46.536 46.536 0 0 1-13.72 32.98zM417 274.25c-5.79-1.45-10.84-5-14.15-9.97l-17.98-26.97a23.97 23.97 0 0 1 0-26.62l19.59-29.38c2.32-3.47 5.5-6.29 9.24-8.15l12.98-6.49C440.2 193.59 448 223.87 448 256c0 8.67-.74 17.16-1.82 25.54L417 274.25z"&gt;&lt;/path&gt;&lt;/svg&gt; [www.mmfava.com](www.mmfava.com)
+- &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;fill:#000000;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; [ /mmfava](https://github.com/mmfava)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

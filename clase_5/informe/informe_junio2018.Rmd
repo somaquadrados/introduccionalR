@@ -1,0 +1,67 @@
+---
+title: "Vigilancia de Dengue en Argentina"
+author: "Marília Melo Favalesso"
+date: "15/07/2021"
+output:
+  pdf_document: 
+fontsize: 12pt
+geometry:
+  - top = 20mm
+  - bottom = 20mm
+  - left = 15mm
+  - right = 15mm
+linestretch: 1.5
+linkcolor: blue
+---
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Instale los paquetes ----------------------------------------------
+install.packages("kableExtra")
+install.packages("viridis")
+install.packages("ggthemes")
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+## Paquetes ----------------------------------------------------------
+library(tidyverse) # paquete para manipulación de bases de datos
+library(kableExtra) # paquete para formatación de tablas
+library(viridis) # paquete de paleta de colores
+library(ggthemes) # paquete temático para gráfico ggplot
+
+## Curso del tiempo --------------------------------------------------
+mes_comiezo <- "Enero"
+mes_final <- "Julio"
+ano <- 2018
+
+## Descarga de la base de datos --------------------------------------
+datos <- read_csv2("enejul2018.csv")
+
+# names(datos)
+# [1] "departamento_id"         "departamento_nombre"     "provincia_id"           
+# [4] "provincia_nombre"        "anio"                    "semanas_epidemiologicas"
+# [7] "evento_nombre"           "grupo_edad_id"           "grupo_edad_desc"        
+# [10] "cantidad_casos"         
+
+## Manipular la base de datos ----------------------------------------
+newdt <- datos %>% 
+  dplyr::select(provincia_nombre, evento_nombre, cantidad_casos) %>% # seleccionar columnas
+  group_by(provincia_nombre, evento_nombre) %>% # Agrupar datos por provincia y enfermedad
+  summarise(total = sum(cantidad_casos)) %>% # Suma el número de casos por provincia
+  pivot_wider(names_from = evento_nombre, values_from = total) %>% # cambiar formato de tabla
+  dplyr::select(-`Enfermedad por Virus del Zika`) %>% # borrar los datos de Zica
+  arrange(desc(Dengue)) %>%
+  rename(Provincia = provincia_nombre, Casos = Dengue)
+```
+
+En el período de `r paste0(mes_comiezo, "-", mes_final)` del año `r paste0(ano)`, Argentina totalizó `r newdt$Casos %>% sum(na.rm = TRUE)` casos de dengue, siendo la provincia de `r newdt[1,1] %>% paste0()` la que presenta mayor número de afectados (tabla 1).
+
+
+```{r tab1, echo=FALSE, message=FALSE, warning=FALSE, float = T}
+## n casos en las provincias --------------------------------------
+newdt %>%
+  kableExtra::kbl(booktabs = T, align = "c", caption = "Distribución de casos de dengue por provincia de Argentina.", longtable = T) %>%
+  column_spec(1, width = "6cm", latex_valign = "p") %>%
+  column_spec(2, color = "white", width = "2.5cm", bold = T,
+                          background = spec_color(newdt$Casos, end = 0.9, option = "A", direction = -1))
+```
+

@@ -1,0 +1,923 @@
+﻿departamento_id;departamento_nombre;provincia_id;provincia_nombre;ano;semanas_epidemiologicas;evento_nombre;grupo_edad_id;grupo_edad_desc;cantidad_casos
+2003;COMUNA 3;2;CABA;2018;15;Dengue;6;de 10 a 14 años;1
+2004;COMUNA 4;2;CABA;2018;6;Dengue;6;de 10 a 14 años;1
+6427;La Matanza;6;Buenos Aires;2018;12;Dengue;6;de 10 a 14 años;1
+6427;La Matanza;6;Buenos Aires;2018;16;Dengue;6;de 10 a 14 años;1
+82077;9 de Julio;82;Santa Fe;2018;20;Dengue;6;de 10 a 14 años;1
+2004;COMUNA 4;2;CABA;2018;14;Dengue;6;de 10 a 14 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;6;de 10 a 14 años;1
+2004;COMUNA 4;2;CABA;2018;17;Dengue;6;de 10 a 14 años;2
+2004;COMUNA 4;2;CABA;2018;18;Dengue;6;de 10 a 14 años;5
+2004;COMUNA 4;2;CABA;2018;24;Dengue;6;de 10 a 14 años;1
+2008;COMUNA 8;2;CABA;2018;18;Dengue;6;de 10 a 14 años;1
+2010;COMUNA 10;2;CABA;2018;18;Dengue;6;de 10 a 14 años;1
+6035;Avellaneda;6;Buenos Aires;2018;9;Dengue;6;de 10 a 14 años;1
+6035;Avellaneda;6;Buenos Aires;2018;11;Dengue;6;de 10 a 14 años;2
+6035;Avellaneda;6;Buenos Aires;2018;12;Dengue;6;de 10 a 14 años;1
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;2
+6035;Avellaneda;6;Buenos Aires;2018;16;Dengue;6;de 10 a 14 años;1
+6035;Avellaneda;6;Buenos Aires;2018;19;Dengue;6;de 10 a 14 años;2
+6427;La Matanza;6;Buenos Aires;2018;17;Dengue;6;de 10 a 14 años;1
+6434;Lanús;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;15;Dengue;6;de 10 a 14 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;17;Dengue;6;de 10 a 14 años;2
+6588;9 de Julio;22;Chaco;2018;16;Dengue;6;de 10 a 14 años;1
+6588;9 de Julio;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;1
+6588;9 de Julio;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;3
+6658;Quilmes;6;Buenos Aires;2018;20;Dengue;6;de 10 a 14 años;1
+6861;Vicente López;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;1
+18021;CAPITAL;18;Corrientes;2018;19;Dengue;6;de 10 a 14 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;6;de 10 a 14 años;1
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;6;de 10 a 14 años;1
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;6;de 10 a 14 años;1
+18021;CAPITAL;18;Corrientes;2018;24;Dengue;6;de 10 a 14 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;6;de 10 a 14 años;1
+18126;Saladas;18;Corrientes;2018;21;Dengue;6;de 10 a 14 años;2
+22014;Bermejo;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;1
+22021;Comandante Fernández;22;Chaco;2018;21;Dengue;6;de 10 a 14 años;1
+22021;Comandante Fernández;22;Chaco;2018;22;Dengue;6;de 10 a 14 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;6;de 10 a 14 años;1
+22039;2 De Abril;22;Chaco;2018;17;Dengue;6;de 10 a 14 años;1
+22039;2 De Abril;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;1
+22039;2 De Abril;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;4
+22039;2 De Abril;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;3
+22084;Libertador General San Martín;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;1
+22140;SAN FERNANDO;22;Chaco;2018;17;Dengue;6;de 10 a 14 años;1
+22140;SAN FERNANDO;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;1
+22140;SAN FERNANDO;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;2
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;2
+22140;SAN FERNANDO;22;Chaco;2018;23;Dengue;6;de 10 a 14 años;2
+34014;FORMOSA;34;Formosa;2018;11;Dengue;6;de 10 a 14 años;1
+46063;General Belgrano;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;1
+46063;General Belgrano;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;9
+46063;General Belgrano;22;Chaco;2018;21;Dengue;6;de 10 a 14 años;2
+46063;General Belgrano;22;Chaco;2018;23;Dengue;6;de 10 a 14 años;2
+54028;CAPITAL;54;Misiones;2018;15;Dengue;6;de 10 a 14 años;1
+54028;CAPITAL;54;Misiones;2018;23;Dengue;6;de 10 a 14 años;1
+54063;Iguazú;54;Misiones;2018;11;Dengue;6;de 10 a 14 años;1
+54063;Iguazú;54;Misiones;2018;19;Dengue;6;de 10 a 14 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;12;Dengue;6;de 10 a 14 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;15;Dengue;6;de 10 a 14 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;6;de 10 a 14 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;6;de 10 a 14 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;6;de 10 a 14 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;21;Dengue;6;de 10 a 14 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;23;Dengue;6;de 10 a 14 años;1
+66056;Grl. José de San Martín;66;Salta;2018;21;Dengue;6;de 10 a 14 años;1
+66056;Grl. José de San Martín;66;Salta;2018;22;Dengue;6;de 10 a 14 años;1
+66105;LOS ANDES;66;Salta;2018;11;Dengue;6;de 10 a 14 años;1
+66126;Orán;66;Salta;2018;22;Dengue;6;de 10 a 14 años;2
+74028;CHACABUCO;22;Chaco;2018;13;Dengue;6;de 10 a 14 años;1
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;6;de 10 a 14 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;6;de 10 a 14 años;1
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;3
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;5
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;1
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;6;de 10 a 14 años;1
+74028;CHACABUCO;22;Chaco;2018;22;Dengue;6;de 10 a 14 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;6;de 10 a 14 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;6;de 10 a 14 años;6
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;6;de 10 a 14 años;6
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;6;de 10 a 14 años;2
+90119;Yerba Buena;90;Tucumán;2018;20;Dengue;6;de 10 a 14 años;1
+126;Orán;66;Salta;2018;22;Enfermedad por Virus del Zika;6;de 10 a 14 años;1
+22039;2 De Abril;22;Chaco;2018;19;Dengue;3;de 13 a 24 meses;1
+46063;General Belgrano;22;Chaco;2018;20;Dengue;3;de 13 a 24 meses;1
+66056;Grl. José de San Martín;66;Salta;2018;20;Dengue;3;de 13 a 24 meses;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;3;de 13 a 24 meses;1
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;3;de 13 a 24 meses;1
+86035;Banda;86;Santiago del Estero;2018;18;Dengue;3;de 13 a 24 meses;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;3;de 13 a 24 meses;1
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;3;de 13 a 24 meses;1
+56;Grl. José de San Martín;66;Salta;2018;20;Enfermedad por Virus del Zika;3;de 13 a 24 meses;1
+2004;COMUNA 4;2;CABA;2018;15;Dengue;7;de 15 a 19 años;1
+2009;COMUNA 9;2;CABA;2018;5;Dengue;7;de 15 a 19 años;1
+2015;COMUNA 15;2;CABA;2018;18;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;17;Dengue;7;de 15 a 19 años;3
+6035;Avellaneda;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;2
+6252;Escobar;6;Buenos Aires;2018;40;Dengue;7;de 15 a 19 años;1
+6568;Morón;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;1
+6588;9 de Julio;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+6658;Quilmes;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;3
+6658;Quilmes;6;Buenos Aires;2018;20;Dengue;7;de 15 a 19 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;7;de 15 a 19 años;3
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;7;de 15 a 19 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;7;de 15 a 19 años;3
+18126;Saladas;18;Corrientes;2018;20;Dengue;7;de 15 a 19 años;2
+18126;Saladas;18;Corrientes;2018;21;Dengue;7;de 15 a 19 años;1
+18126;Saladas;18;Corrientes;2018;24;Dengue;7;de 15 a 19 años;1
+22021;Comandante Fernández;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+22021;Comandante Fernández;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+22021;Comandante Fernández;22;Chaco;2018;28;Dengue;7;de 15 a 19 años;1
+22036;12 de Octubre;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;3
+22039;2 De Abril;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;3
+22039;2 De Abril;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;5
+22039;2 De Abril;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;9
+22039;2 De Abril;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;4
+22039;2 De Abril;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+22070;Independencia;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+22070;Independencia;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+22084;Libertador General San Martín;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;2
+22084;Libertador General San Martín;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+22112;O'Higgins;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+22112;O'Higgins;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;2
+22112;O'Higgins;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+22112;O'Higgins;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+22140;SAN FERNANDO;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+22140;SAN FERNANDO;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+22140;SAN FERNANDO;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+46063;General Belgrano;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;1
+46063;General Belgrano;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;5
+46063;General Belgrano;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;8
+46063;General Belgrano;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;4
+46063;General Belgrano;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+46063;General Belgrano;22;Chaco;2018;23;Dengue;7;de 15 a 19 años;2
+54028;CAPITAL;54;Misiones;2018;20;Dengue;7;de 15 a 19 años;3
+54063;Iguazú;54;Misiones;2018;21;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;7;de 15 a 19 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;7;de 15 a 19 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;21;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;23;Dengue;7;de 15 a 19 años;1
+66126;Orán;66;Salta;2018;18;Dengue;7;de 15 a 19 años;1
+66126;Orán;66;Salta;2018;19;Dengue;7;de 15 a 19 años;2
+66126;Orán;66;Salta;2018;20;Dengue;7;de 15 a 19 años;1
+66126;Orán;66;Salta;2018;21;Dengue;7;de 15 a 19 años;1
+66126;Orán;66;Salta;2018;23;Dengue;7;de 15 a 19 años;1
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;7;de 15 a 19 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;4
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;5
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;10
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;2
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;3
+74028;CHACABUCO;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;2
+74028;CHACABUCO;22;Chaco;2018;23;Dengue;7;de 15 a 19 años;2
+86035;Banda;86;Santiago del Estero;2018;5;Dengue;7;de 15 a 19 años;1
+86035;Banda;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;7;de 15 a 19 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;7;de 15 a 19 años;1
+56;Grl. José de San Martín;66;Salta;2018;22;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;Orán;66;Salta;2018;18;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;Orán;66;Salta;2018;19;Enfermedad por Virus del Zika;7;de 15 a 19 años;2
+126;Orán;66;Salta;2018;20;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;Orán;66;Salta;2018;23;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+6091;Berazategui;6;Buenos Aires;2018;11;Dengue;7;de 15 a 19 años;1
+2003;COMUNA 3;2;CABA;2018;10;Dengue;7;de 15 a 19 años;1
+2003;COMUNA 3;2;CABA;2018;14;Dengue;7;de 15 a 19 años;1
+2004;COMUNA 4;2;CABA;2018;10;Dengue;7;de 15 a 19 años;1
+2004;COMUNA 4;2;CABA;2018;11;Dengue;7;de 15 a 19 años;1
+2004;COMUNA 4;2;CABA;2018;12;Dengue;7;de 15 a 19 años;1
+2004;COMUNA 4;2;CABA;2018;13;Dengue;7;de 15 a 19 años;4
+2004;COMUNA 4;2;CABA;2018;14;Dengue;7;de 15 a 19 años;1
+2004;COMUNA 4;2;CABA;2018;15;Dengue;7;de 15 a 19 años;2
+2004;COMUNA 4;2;CABA;2018;16;Dengue;7;de 15 a 19 años;2
+2012;COMUNA 12;2;CABA;2018;11;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;7;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;9;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;10;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;11;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;7;de 15 a 19 años;1
+6035;Avellaneda;6;Buenos Aires;2018;16;Dengue;7;de 15 a 19 años;2
+6035;Avellaneda;6;Buenos Aires;2018;17;Dengue;7;de 15 a 19 años;1
+6274;Florencio Varela;6;Buenos Aires;2018;10;Dengue;7;de 15 a 19 años;1
+6364;General San Martin;6;Buenos Aires;2018;11;Dengue;7;de 15 a 19 años;1
+6427;La Matanza;6;Buenos Aires;2018;12;Dengue;7;de 15 a 19 años;1
+6427;La Matanza;6;Buenos Aires;2018;13;Dengue;7;de 15 a 19 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;14;Dengue;7;de 15 a 19 años;1
+6568;Morón;6;Buenos Aires;2018;11;Dengue;7;de 15 a 19 años;1
+6568;Morón;6;Buenos Aires;2018;15;Dengue;7;de 15 a 19 años;1
+6658;Quimes;6;Buenos Aires;2018;14;Dengue;7;de 15 a 19 años;2
+6658;Quimes;6;Buenos Aires;2018;15;Dengue;7;de 15 a 19 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;15;Dengue;7;de 15 a 19 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;7
+22039;2 De Abril;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;3
+22140;SAN FERNANDO;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;1
+34014;FORMOSA;34;Formosa;2018;1;Dengue;7;de 15 a 19 años;3
+34014;FORMOSA;34;Formosa;2018;9;Dengue;7;de 15 a 19 años;1
+34014;FORMOSA;34;Formosa;2018;10;Dengue;7;de 15 a 19 años;1
+34014;FORMOSA;34;Formosa;2018;11;Dengue;7;de 15 a 19 años;1
+54028;CAPITAL;54;Misiones;2018;10;Dengue;7;de 15 a 19 años;1
+54063;Iguazú;54;Misiones;2018;17;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;10;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;12;Dengue;7;de 15 a 19 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;13;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;14;Dengue;7;de 15 a 19 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;15;Dengue;7;de 15 a 19 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;16;Dengue;7;de 15 a 19 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;7;de 15 a 19 años;4
+66049;GENERAL GÜEMES;22;Chaco;2018;15;Dengue;7;de 15 a 19 años;1
+66056;Grl. José de San Martín;66;Salta;2018;15;Dengue;7;de 15 a 19 años;1
+74028;CHACABUCO;22;Chaco;2018;13;Dengue;7;de 15 a 19 años;1
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;7;de 15 a 19 años;4
+74028;CHACABUCO;22;Chaco;2018;15;Dengue;7;de 15 a 19 años;1
+74028;CHACABUCO;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;2
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;5
+86035;Banda;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;15;Dengue;7;de 15 a 19 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;7;de 15 a 19 años;10
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;5
+90084;CAPITAL;14;Córdoba;2018;12;Dengue;7;de 15 a 19 años;1
+90084;CAPITAL;14;Córdoba;2018;13;Dengue;7;de 15 a 19 años;1
+90084;CAPITAL;14;Córdoba;2018;15;Dengue;7;de 15 a 19 años;1
+2008;COMUNA 8;2;CABA;2018;19;Dengue;4;de 2 a 4 años;1
+2010;COMUNA 10;2;CABA;2018;16;Dengue;4;de 2 a 4 años;1
+6035;Avellaneda;6;Buenos Aires;2018;17;Dengue;4;de 2 a 4 años;1
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;4;de 2 a 4 años;1
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;4;de 2 a 4 años;1
+18126;Saladas;18;Corrientes;2018;18;Dengue;4;de 2 a 4 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;4;de 2 a 4 años;1
+22021;Comandante Fernández;22;Chaco;2018;23;Dengue;4;de 2 a 4 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;4;de 2 a 4 años;2
+22039;2 De Abril;22;Chaco;2018;18;Dengue;4;de 2 a 4 años;1
+22039;2 De Abril;22;Chaco;2018;19;Dengue;4;de 2 a 4 años;1
+22039;2 De Abril;22;Chaco;2018;20;Dengue;4;de 2 a 4 años;4
+34028;Matacos;34;Formosa;2018;20;Dengue;4;de 2 a 4 años;1
+46063;General Belgrano;22;Chaco;2018;19;Dengue;4;de 2 a 4 años;1
+46063;General Belgrano;22;Chaco;2018;20;Dengue;4;de 2 a 4 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;12;Dengue;4;de 2 a 4 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;14;Dengue;4;de 2 a 4 años;1
+66056;Grl. José de San Martín;66;Salta;2018;20;Dengue;4;de 2 a 4 años;2
+86035;Banda;86;Santiago del Estero;2018;15;Dengue;4;de 2 a 4 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;4;de 2 a 4 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;4;de 2 a 4 años;4
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;4;de 2 a 4 años;2
+86147;Río Hondo;86;Santiago del Estero;2018;18;Dengue;4;de 2 a 4 años;1
+56;Grl. José de San Martín;66;Salta;2018;20;Enfermedad por Virus del Zika;4;de 2 a 4 años;1
+2002;COMUNA 2;2;CABA;2018;18;Dengue;8;de 20 a 24 años;1
+2003;COMUNA 3;2;CABA;2018;17;Dengue;8;de 20 a 24 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;8;de 20 a 24 años;1
+2004;COMUNA 4;2;CABA;2018;17;Dengue;8;de 20 a 24 años;2
+2004;COMUNA 4;2;CABA;2018;18;Dengue;8;de 20 a 24 años;3
+2004;COMUNA 4;2;CABA;2018;19;Dengue;8;de 20 a 24 años;1
+2005;COMUNA 5;2;CABA;2018;23;Dengue;8;de 20 a 24 años;1
+6035;Avellaneda;6;Buenos Aires;2018;18;Dengue;8;de 20 a 24 años;1
+6035;Avellaneda;6;Buenos Aires;2018;19;Dengue;8;de 20 a 24 años;1
+6274;Florencio Varela;6;Buenos Aires;2018;41;Dengue;8;de 20 a 24 años;1
+6412;José C. Paz;6;Buenos Aires;2018;19;Dengue;8;de 20 a 24 años;1
+6427;La Matanza;6;Buenos Aires;2018;21;Dengue;8;de 20 a 24 años;1
+6658;Quilmes;6;Buenos Aires;2018;15;Dengue;8;de 20 a 24 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;19;Dengue;8;de 20 a 24 años;1
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;8;de 20 a 24 años;3
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;8;de 20 a 24 años;2
+18021;CAPITAL;18;Corrientes;2018;24;Dengue;8;de 20 a 24 años;1
+18021;CAPITAL;18;Corrientes;2018;26;Dengue;8;de 20 a 24 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;8;de 20 a 24 años;1
+18126;Saladas;18;Corrientes;2018;20;Dengue;8;de 20 a 24 años;3
+18126;Saladas;18;Corrientes;2018;21;Dengue;8;de 20 a 24 años;1
+18133;San Cosme;18;Corrientes;2018;21;Dengue;8;de 20 a 24 años;1
+22036;12 de Octubre;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;1
+22036;12 de Octubre;22;Chaco;2018;22;Dengue;8;de 20 a 24 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;2
+22039;2 De Abril;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;4
+22039;2 De Abril;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;2
+22039;2 De Abril;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;9
+22039;2 De Abril;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;5
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;1
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;1
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;1
+22070;Independencia;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;1
+22070;Independencia;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;1
+22070;Independencia;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+22084;Libertador General San Martín;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;3
+22084;Libertador General San Martín;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+22084;Libertador General San Martín;22;Chaco;2018;22;Dengue;8;de 20 a 24 años;1
+22112;O'Higgins;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;2
+22140;SAN FERNANDO;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;3
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;1
+34014;FORMOSA;34;Formosa;2018;19;Dengue;8;de 20 a 24 años;1
+46063;General Belgrano;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;2
+46063;General Belgrano;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;6
+46063;General Belgrano;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;2
+46063;General Belgrano;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+46063;General Belgrano;22;Chaco;2018;23;Dengue;8;de 20 a 24 años;4
+54028;CAPITAL;54;Misiones;2018;19;Dengue;8;de 20 a 24 años;1
+54028;CAPITAL;54;Misiones;2018;22;Dengue;8;de 20 a 24 años;1
+54028;CAPITAL;54;Misiones;2018;26;Dengue;8;de 20 a 24 años;2
+54028;CAPITAL;54;Misiones;2018;49;Dengue;8;de 20 a 24 años;1
+54063;Iguazú;54;Misiones;2018;21;Dengue;8;de 20 a 24 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;8;de 20 a 24 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;8;de 20 a 24 años;4
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;8;de 20 a 24 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;21;Dengue;8;de 20 a 24 años;2
+66049;GENERAL GÜEMES;22;Chaco;2018;45;Dengue;8;de 20 a 24 años;1
+66056;Grl. José de San Martín;66;Salta;2018;19;Dengue;8;de 20 a 24 años;1
+66126;Orán;66;Salta;2018;11;Dengue;8;de 20 a 24 años;1
+66126;Orán;66;Salta;2018;18;Dengue;8;de 20 a 24 años;1
+66126;Orán;66;Salta;2018;19;Dengue;8;de 20 a 24 años;2
+66126;Orán;66;Salta;2018;20;Dengue;8;de 20 a 24 años;2
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;2
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;1
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;5
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;3
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+82049;General Obligado;82;Santa Fe;2018;19;Dengue;8;de 20 a 24 años;1
+82049;General Obligado;82;Santa Fe;2018;21;Dengue;8;de 20 a 24 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;8;de 20 a 24 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;8;de 20 a 24 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;8;de 20 a 24 años;1
+56;Grl. José de San Martín;66;Salta;2018;12;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+56;Grl. José de San Martín;66;Salta;2018;19;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+126;Orán;66;Salta;2018;19;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+126;Orán;66;Salta;2018;20;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+6091;Berazategui;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;2
+6091;Berazategui;6;Buenos Aires;2018;21;Dengue;9;de 25 a 34 años;1
+82077;9 de Julio;82;Santa Fe;2018;23;Dengue;9;de 25 a 34 años;1
+2001;COMUNA 1;2;CABA;2018;17;Dengue;9;de 25 a 34 años;1
+2003;COMUNA 3;2;CABA;2018;9;Dengue;9;de 25 a 34 años;1
+2004;COMUNA 4;2;CABA;2018;8;Dengue;9;de 25 a 34 años;1
+2004;COMUNA 4;2;CABA;2018;10;Dengue;9;de 25 a 34 años;1
+2004;COMUNA 4;2;CABA;2018;12;Dengue;9;de 25 a 34 años;2
+2004;COMUNA 4;2;CABA;2018;17;Dengue;9;de 25 a 34 años;3
+2004;COMUNA 4;2;CABA;2018;18;Dengue;9;de 25 a 34 años;2
+2007;COMUNA 7;2;CABA;2018;17;Dengue;9;de 25 a 34 años;1
+2007;COMUNA 7;2;CABA;2018;18;Dengue;9;de 25 a 34 años;1
+2012;COMUNA 12;2;CABA;2018;19;Dengue;9;de 25 a 34 años;1
+2014;COMUNA 14;2;CABA;2018;38;Dengue;9;de 25 a 34 años;1
+2015;COMUNA 15;2;CABA;2018;16;Dengue;9;de 25 a 34 años;1
+6035;Avellaneda;6;Buenos Aires;2018;9;Dengue;9;de 25 a 34 años;1
+6035;Avellaneda;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+6035;Avellaneda;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;2
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;3
+6035;Avellaneda;6;Buenos Aires;2018;15;Dengue;9;de 25 a 34 años;3
+6035;Avellaneda;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+6035;Avellaneda;6;Buenos Aires;2018;18;Dengue;9;de 25 a 34 años;3
+6035;Avellaneda;6;Buenos Aires;2018;19;Dengue;9;de 25 a 34 años;1
+6231;DESCONOCIDO;18;Corrientes;2018;17;Dengue;9;de 25 a 34 años;1
+6270;Ezeiza;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;1
+6270;Ezeiza;6;Buenos Aires;2018;19;Dengue;9;de 25 a 34 años;1
+6427;La Matanza;6;Buenos Aires;2018;9;Dengue;9;de 25 a 34 años;1
+6427;La Matanza;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;1
+6427;La Matanza;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;2
+6427;La Matanza;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+6427;La Matanza;6;Buenos Aires;2018;17;Dengue;9;de 25 a 34 años;4
+6427;La Matanza;6;Buenos Aires;2018;18;Dengue;9;de 25 a 34 años;3
+6427;La Matanza;6;Buenos Aires;2018;21;Dengue;9;de 25 a 34 años;1
+6434;Lanús;6;Buenos Aires;2018;10;Dengue;9;de 25 a 34 años;1
+6434;Lanús;6;Buenos Aires;2018;15;Dengue;9;de 25 a 34 años;1
+6434;Lanús;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;12;Dengue;9;de 25 a 34 años;1
+6588;9 de Julio;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;1
+6588;9 de Julio;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;2
+6658;Quilmes;6;Buenos Aires;2018;19;Dengue;9;de 25 a 34 años;1
+6658;Quimes;6;Buenos Aires;2018;8;Dengue;9;de 25 a 34 años;1
+6658;Quimes;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+6658;Quimes;6;Buenos Aires;2018;12;Dengue;9;de 25 a 34 años;1
+6658;Quimes;6;Buenos Aires;2018;15;Dengue;9;de 25 a 34 años;3
+6658;Quimes;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;2
+6665;Ramallo;6;Buenos Aires;2018;18;Dengue;9;de 25 a 34 años;1
+6805;Tigre;6;Buenos Aires;2018;20;Dengue;9;de 25 a 34 años;1
+6805;Tigre;6;Buenos Aires;2018;40;Dengue;9;de 25 a 34 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;17;Dengue;9;de 25 a 34 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;20;Dengue;9;de 25 a 34 años;1
+14161;Tercero Arriba;14;Córdoba;2018;21;Dengue;9;de 25 a 34 años;1
+18021;CAPITAL;18;Corrientes;2018;19;Dengue;9;de 25 a 34 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;9;de 25 a 34 años;3
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;9;de 25 a 34 años;3
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;9;de 25 a 34 años;2
+18126;Saladas;18;Corrientes;2018;18;Dengue;9;de 25 a 34 años;2
+18126;Saladas;18;Corrientes;2018;19;Dengue;9;de 25 a 34 años;6
+18126;Saladas;18;Corrientes;2018;21;Dengue;9;de 25 a 34 años;3
+18126;Saladas;18;Corrientes;2018;22;Dengue;9;de 25 a 34 años;1
+18168;Santo Tomé;18;Corrientes;2018;19;Dengue;9;de 25 a 34 años;1
+22014;Bermejo;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;1
+22021;Comandante Fernández;22;Chaco;2018;13;Dengue;9;de 25 a 34 años;1
+22021;Comandante Fernández;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+22021;Comandante Fernández;22;Chaco;2018;22;Dengue;9;de 25 a 34 años;1
+22021;Comandante Fernández;22;Chaco;2018;25;Dengue;9;de 25 a 34 años;1
+22021;Comandante Fernández;22;Chaco;2018;27;Dengue;9;de 25 a 34 años;1
+22036;12 de Octubre;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;2
+22036;12 de Octubre;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;1
+22039;2 De Abril;22;Chaco;2018;4;Dengue;9;de 25 a 34 años;1
+22039;2 De Abril;22;Chaco;2018;12;Dengue;9;de 25 a 34 años;1
+22039;2 De Abril;22;Chaco;2018;14;Dengue;9;de 25 a 34 años;2
+22039;2 De Abril;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;6
+22039;2 De Abril;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;7
+22039;2 De Abril;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;8
+22039;2 De Abril;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;8
+22039;2 De Abril;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;5
+22039;2 De Abril;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;7
+22039;2 De Abril;22;Chaco;2018;22;Dengue;9;de 25 a 34 años;3
+22070;Independencia;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;1
+22070;Independencia;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;1
+22084;Libertador General San Martín;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;1
+22084;Libertador General San Martín;22;Chaco;2018;24;Dengue;9;de 25 a 34 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;1
+22112;O'Higgins;22;Chaco;2018;2;Dengue;9;de 25 a 34 años;1
+22112;O'Higgins;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;1
+22112;O'Higgins;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;1
+22112;O'Higgins;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;4
+22112;O'Higgins;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+22140;SAN FERNANDO;22;Chaco;2018;11;Dengue;9;de 25 a 34 años;1
+22140;SAN FERNANDO;22;Chaco;2018;12;Dengue;9;de 25 a 34 años;1
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;2
+22140;SAN FERNANDO;22;Chaco;2018;26;Dengue;9;de 25 a 34 años;1
+30015;Concordia;30;Entre Ríos;2018;20;Dengue;9;de 25 a 34 años;1
+30015;Concordia;30;Entre Ríos;2018;50;Dengue;9;de 25 a 34 años;1
+34014;FORMOSA;34;Formosa;2018;7;Dengue;9;de 25 a 34 años;1
+34014;FORMOSA;34;Formosa;2018;8;Dengue;9;de 25 a 34 años;1
+34014;FORMOSA;34;Formosa;2018;12;Dengue;9;de 25 a 34 años;1
+34035;PATIÑO;34;Formosa;2018;7;Dengue;9;de 25 a 34 años;1
+46063;General Belgrano;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;2
+46063;General Belgrano;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;4
+46063;General Belgrano;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;8
+46063;General Belgrano;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;5
+46063;General Belgrano;22;Chaco;2018;22;Dengue;9;de 25 a 34 años;1
+46063;General Belgrano;22;Chaco;2018;23;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;2;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;8;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;16;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;18;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;19;Dengue;9;de 25 a 34 años;2
+54028;CAPITAL;54;Misiones;2018;20;Dengue;9;de 25 a 34 años;2
+54028;CAPITAL;54;Misiones;2018;22;Dengue;9;de 25 a 34 años;1
+54028;CAPITAL;54;Misiones;2018;23;Dengue;9;de 25 a 34 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;13;Dengue;9;de 25 a 34 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;14;Dengue;9;de 25 a 34 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;15;Dengue;9;de 25 a 34 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;9;de 25 a 34 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;9;de 25 a 34 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;9;de 25 a 34 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;9;de 25 a 34 años;3
+58028;COLON;14;Córdoba;2018;12;Dengue;9;de 25 a 34 años;1
+66049;GENERAL GÜEMES;22;Chaco;2018;15;Dengue;9;de 25 a 34 años;1
+66049;GENERAL GÜEMES;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;1
+66056;Grl. José de San Martín;66;Salta;2018;20;Dengue;9;de 25 a 34 años;4
+66126;Orán;66;Salta;2018;18;Dengue;9;de 25 a 34 años;1
+66126;Orán;66;Salta;2018;19;Dengue;9;de 25 a 34 años;3
+66126;Orán;66;Salta;2018;20;Dengue;9;de 25 a 34 años;2
+66126;Orán;66;Salta;2018;21;Dengue;9;de 25 a 34 años;2
+66126;Orán;66;Salta;2018;23;Dengue;9;de 25 a 34 años;1
+74028;CHACABUCO;22;Chaco;2018;13;Dengue;9;de 25 a 34 años;3
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;9;de 25 a 34 años;1
+74028;CHACABUCO;22;Chaco;2018;15;Dengue;9;de 25 a 34 años;1
+74028;CHACABUCO;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;3
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;2
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;5
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;9
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;1
+74028;CHACABUCO;22;Chaco;2018;23;Dengue;9;de 25 a 34 años;1
+82021;Castellanos;82;Santa Fe;2018;20;Dengue;9;de 25 a 34 años;1
+82049;General Obligado;82;Santa Fe;2018;22;Dengue;9;de 25 a 34 años;1
+82049;General Obligado;82;Santa Fe;2018;23;Dengue;9;de 25 a 34 años;1
+82084;ROSARIO;82;Santa Fe;2018;15;Dengue;9;de 25 a 34 años;1
+82084;ROSARIO;82;Santa Fe;2018;19;Dengue;9;de 25 a 34 años;1
+82119;San Lorenzo;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;5;Dengue;9;de 25 a 34 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;15;Dengue;9;de 25 a 34 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;9;de 25 a 34 años;7
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;9;de 25 a 34 años;3
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;9;de 25 a 34 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;9;de 25 a 34 años;1
+86063;Ciudad de Buenos Aires;2;CABA;2018;18;Dengue;9;de 25 a 34 años;1
+90084;CAPITAL;14;Córdoba;2018;12;Dengue;9;de 25 a 34 años;2
+90084;CAPITAL;14;Córdoba;2018;13;Dengue;9;de 25 a 34 años;1
+56;Grl. José de San Martín;66;Salta;2018;11;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. José de San Martín;66;Salta;2018;14;Enfermedad por Virus del Zika;9;de 25 a 34 años;2
+56;Grl. José de San Martín;66;Salta;2018;15;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. José de San Martín;66;Salta;2018;16;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. José de San Martín;66;Salta;2018;20;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;Orán;66;Salta;2018;18;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;Orán;66;Salta;2018;19;Enfermedad por Virus del Zika;9;de 25 a 34 años;2
+126;Orán;66;Salta;2018;21;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;Orán;66;Salta;2018;23;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+50028;Guaymallén;50;Mendoza;2018;23;Dengue;10;de 35 a 44 años;1
+2001;COMUNA 1;2;CABA;2018;18;Dengue;10;de 35 a 44 años;1
+2002;COMUNA 2;2;CABA;2018;10;Dengue;10;de 35 a 44 años;1
+2003;COMUNA 3;2;CABA;2018;8;Dengue;10;de 35 a 44 años;1
+2003;COMUNA 3;2;CABA;2018;12;Dengue;10;de 35 a 44 años;2
+2004;COMUNA 4;2;CABA;2018;8;Dengue;10;de 35 a 44 años;1
+2004;COMUNA 4;2;CABA;2018;10;Dengue;10;de 35 a 44 años;1
+2004;COMUNA 4;2;CABA;2018;12;Dengue;10;de 35 a 44 años;1
+2004;COMUNA 4;2;CABA;2018;14;Dengue;10;de 35 a 44 años;3
+2004;COMUNA 4;2;CABA;2018;15;Dengue;10;de 35 a 44 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;10;de 35 a 44 años;2
+2004;COMUNA 4;2;CABA;2018;18;Dengue;10;de 35 a 44 años;4
+2004;COMUNA 4;2;CABA;2018;19;Dengue;10;de 35 a 44 años;2
+2005;COMUNA 5;2;CABA;2018;11;Dengue;10;de 35 a 44 años;1
+2006;COMUNA 6;2;CABA;2018;19;Dengue;10;de 35 a 44 años;1
+2007;COMUNA 7;2;CABA;2018;18;Dengue;10;de 35 a 44 años;1
+2008;COMUNA 8;2;CABA;2018;15;Dengue;10;de 35 a 44 años;1
+2008;COMUNA 8;2;CABA;2018;18;Dengue;10;de 35 a 44 años;1
+2009;COMUNA 9;2;CABA;2018;18;Dengue;10;de 35 a 44 años;1
+2015;COMUNA 15;2;CABA;2018;9;Dengue;10;de 35 a 44 años;1
+6028;Almirante Brown;6;Buenos Aires;2018;19;Dengue;10;de 35 a 44 años;1
+6035;Avellaneda;6;Buenos Aires;2018;12;Dengue;10;de 35 a 44 años;2
+6035;Avellaneda;6;Buenos Aires;2018;13;Dengue;10;de 35 a 44 años;2
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+6035;Avellaneda;6;Buenos Aires;2018;16;Dengue;10;de 35 a 44 años;2
+6035;Avellaneda;6;Buenos Aires;2018;20;Dengue;10;de 35 a 44 años;1
+6231;DESCONOCIDO;6;DESCONOCIDA;2018;14;Dengue;10;de 35 a 44 años;1
+6231;DESCONOCIDO;6;DESCONOCIDA;2018;15;Dengue;10;de 35 a 44 años;1
+6270;Ezeiza;6;Buenos Aires;2018;11;Dengue;10;de 35 a 44 años;1
+6270;Ezeiza;6;Buenos Aires;2018;18;Dengue;10;de 35 a 44 años;1
+6427;La Matanza;6;Buenos Aires;2018;13;Dengue;10;de 35 a 44 años;1
+6427;La Matanza;6;Buenos Aires;2018;16;Dengue;10;de 35 a 44 años;1
+6427;La Matanza;6;Buenos Aires;2018;18;Dengue;10;de 35 a 44 años;3
+6427;La Matanza;6;Buenos Aires;2018;19;Dengue;10;de 35 a 44 años;2
+6434;Lanús;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+6434;Lanús;6;Buenos Aires;2018;15;Dengue;10;de 35 a 44 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;18;Dengue;10;de 35 a 44 años;1
+6539;MERLO;6;Buenos Aires;2018;10;Dengue;10;de 35 a 44 años;1
+6539;MERLO;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+6568;Morón;6;Buenos Aires;2018;9;Dengue;10;de 35 a 44 años;1
+6568;Morón;6;Buenos Aires;2018;10;Dengue;10;de 35 a 44 años;2
+6588;9 de Julio;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;1
+6588;9 de Julio;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;1
+6588;9 de Julio;22;Chaco;2018;22;Dengue;10;de 35 a 44 años;1
+6658;Quilmes;6;Buenos Aires;2018;17;Dengue;10;de 35 a 44 años;1
+6658;Quilmes;6;Buenos Aires;2018;21;Dengue;10;de 35 a 44 años;2
+6658;Quimes;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;19;Dengue;10;de 35 a 44 años;1
+18021;CAPITAL;18;Corrientes;2018;18;Dengue;10;de 35 a 44 años;1
+18021;CAPITAL;18;Corrientes;2018;19;Dengue;10;de 35 a 44 años;2
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;10;de 35 a 44 años;7
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;10;de 35 a 44 años;2
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;10;de 35 a 44 años;1
+18021;CAPITAL;18;Corrientes;2018;24;Dengue;10;de 35 a 44 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;10;de 35 a 44 años;6
+18126;Saladas;18;Corrientes;2018;20;Dengue;10;de 35 a 44 años;1
+18126;Saladas;18;Corrientes;2018;21;Dengue;10;de 35 a 44 años;1
+18154;San Miguel;6;Buenos Aires;2018;18;Dengue;10;de 35 a 44 años;1
+18168;Santo Tomé;18;Corrientes;2018;16;Dengue;10;de 35 a 44 años;1
+22014;Bermejo;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;1
+22014;Bermejo;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;1
+22021;Comandante Fernández;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;1
+22021;Comandante Fernández;22;Chaco;2018;22;Dengue;10;de 35 a 44 años;1
+22021;Comandante Fernández;22;Chaco;2018;23;Dengue;10;de 35 a 44 años;1
+22036;12 de Octubre;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;1
+22036;12 de Octubre;22;Chaco;2018;22;Dengue;10;de 35 a 44 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;10;de 35 a 44 años;3
+22039;2 De Abril;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;5
+22039;2 De Abril;22;Chaco;2018;18;Dengue;10;de 35 a 44 años;10
+22039;2 De Abril;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;11
+22039;2 De Abril;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;5
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;2
+22070;Independencia;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;1
+22070;Independencia;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;1
+22084;Libertador General San Martín;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;2
+22084;Libertador General San Martín;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;1
+22112;O'Higgins;22;Chaco;2018;18;Dengue;10;de 35 a 44 años;1
+22112;O'Higgins;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;4
+22140;SAN FERNANDO;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;1
+22140;SAN FERNANDO;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;1
+22140;SAN FERNANDO;22;Chaco;2018;18;Dengue;10;de 35 a 44 años;3
+22140;SAN FERNANDO;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;1
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;2
+22140;SAN FERNANDO;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;2
+22140;SAN FERNANDO;22;Chaco;2018;22;Dengue;10;de 35 a 44 años;1
+30084;Paraná;30;Entre Ríos;2018;16;Dengue;10;de 35 a 44 años;1
+34014;FORMOSA;34;Formosa;2018;9;Dengue;10;de 35 a 44 años;1
+34014;FORMOSA;34;Formosa;2018;11;Dengue;10;de 35 a 44 años;1
+34014;FORMOSA;34;Formosa;2018;20;Dengue;10;de 35 a 44 años;1
+46063;General Belgrano;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;1
+46063;General Belgrano;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;6
+46063;General Belgrano;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;12
+46063;General Belgrano;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;1
+46063;General Belgrano;22;Chaco;2018;22;Dengue;10;de 35 a 44 años;1
+46063;General Belgrano;22;Chaco;2018;23;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;8;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;18;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;19;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;26;Dengue;10;de 35 a 44 años;1
+54028;CAPITAL;54;Misiones;2018;46;Dengue;10;de 35 a 44 años;1
+54063;Iguazú;54;Misiones;2018;14;Dengue;10;de 35 a 44 años;2
+54063;Iguazú;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;1
+54063;Iguazú;54;Misiones;2018;18;Dengue;10;de 35 a 44 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;11;Dengue;10;de 35 a 44 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;12;Dengue;10;de 35 a 44 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;16;Dengue;10;de 35 a 44 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;10;de 35 a 44 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;10;de 35 a 44 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;21;Dengue;10;de 35 a 44 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;22;Dengue;10;de 35 a 44 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;26;Dengue;10;de 35 a 44 años;1
+54084;Montecarlo;54;Misiones;2018;20;Dengue;10;de 35 a 44 años;1
+54098;San Ignacio;54;Misiones;2018;22;Dengue;10;de 35 a 44 años;1
+66028;CAPITAL;66;Salta;2018;23;Dengue;10;de 35 a 44 años;1
+66056;Grl. José de San Martín;66;Salta;2018;19;Dengue;10;de 35 a 44 años;1
+66056;Grl. José de San Martín;66;Salta;2018;20;Dengue;10;de 35 a 44 años;2
+66056;Grl. José de San Martín;66;Salta;2018;22;Dengue;10;de 35 a 44 años;2
+66126;Orán;66;Salta;2018;19;Dengue;10;de 35 a 44 años;1
+66126;Orán;66;Salta;2018;20;Dengue;10;de 35 a 44 años;3
+66126;Orán;66;Salta;2018;22;Dengue;10;de 35 a 44 años;1
+74028;CHACABUCO;22;Chaco;2018;12;Dengue;10;de 35 a 44 años;4
+74028;CHACABUCO;22;Chaco;2018;13;Dengue;10;de 35 a 44 años;1
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;10;de 35 a 44 años;2
+74028;CHACABUCO;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;3
+74028;CHACABUCO;22;Chaco;2018;16;Dengue;10;de 35 a 44 años;2
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;4
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;10;de 35 a 44 años;4
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;10;de 35 a 44 años;3
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;10;de 35 a 44 años;3
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;10;de 35 a 44 años;2
+74028;CHACABUCO;22;Chaco;2018;23;Dengue;10;de 35 a 44 años;1
+82084;ROSARIO;82;Santa Fe;2018;18;Dengue;10;de 35 a 44 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;14;Dengue;10;de 35 a 44 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;15;Dengue;10;de 35 a 44 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;10;de 35 a 44 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;10;de 35 a 44 años;3
+86147;Río Hondo;86;Santiago del Estero;2018;20;Dengue;10;de 35 a 44 años;1
+90021;CHICLIGASTA;90;Tucumán;2018;14;Dengue;10;de 35 a 44 años;1
+90084;CAPITAL;14;Córdoba;2018;13;Dengue;10;de 35 a 44 años;1
+90084;CAPITAL;14;Córdoba;2018;16;Dengue;10;de 35 a 44 años;1
+56;Grl. José de San Martín;66;Salta;2018;10;Enfermedad por Virus del Zika;10;de 35 a 44 años;1
+56;Grl. José de San Martín;66;Salta;2018;16;Enfermedad por Virus del Zika;10;de 35 a 44 años;1
+28;Capital;66;Salta;2018;23;Enfermedad por Virus del Zika;11;de 45 a 64 años;1
+56;Grl. José de San Martín;66;Salta;2018;15;Enfermedad por Virus del Zika;11;de 45 a 64 años;1
+56;Grl. José de San Martín;66;Salta;2018;19;Enfermedad por Virus del Zika;11;de 45 a 64 años;1
+56;Grl. José de San Martín;66;Salta;2018;22;Enfermedad por Virus del Zika;11;de 45 a 64 años;1
+2001;COMUNA 1;2;CABA;2018;16;Dengue;11;de 45 a 64 años;1
+2003;COMUNA 3;2;CABA;2018;9;Dengue;11;de 45 a 64 años;2
+2003;COMUNA 3;2;CABA;2018;11;Dengue;11;de 45 a 64 años;2
+2003;COMUNA 3;2;CABA;2018;12;Dengue;11;de 45 a 64 años;2
+2003;COMUNA 3;2;CABA;2018;13;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;9;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;13;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;14;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;15;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;11;de 45 a 64 años;1
+2006;COMUNA 6;2;CABA;2018;13;Dengue;11;de 45 a 64 años;1
+2012;COMUNA 12;2;CABA;2018;11;Dengue;11;de 45 a 64 años;1
+2012;COMUNA 12;2;CABA;2018;13;Dengue;11;de 45 a 64 años;1
+2015;COMUNA 15;2;CABA;2018;12;Dengue;11;de 45 a 64 años;1
+2015;COMUNA 15;2;CABA;2018;15;Dengue;11;de 45 a 64 años;1
+6035;Avellaneda;6;Buenos Aires;2018;7;Dengue;11;de 45 a 64 años;1
+6035;Avellaneda;6;Buenos Aires;2018;10;Dengue;11;de 45 a 64 años;1
+6035;Avellaneda;6;Buenos Aires;2018;11;Dengue;11;de 45 a 64 años;1
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;11;de 45 a 64 años;2
+6231;DESCONOCIDO;2;CABA;2018;13;Dengue;11;de 45 a 64 años;1
+6231;DESCONOCIDO;6;Buenos Aires;2018;11;Dengue;11;de 45 a 64 años;1
+6410;Ituzaingó;6;Buenos Aires;2018;11;Dengue;11;de 45 a 64 años;1
+6427;La Matanza;6;Buenos Aires;2018;12;Dengue;11;de 45 a 64 años;1
+6427;La Matanza;6;Buenos Aires;2018;13;Dengue;11;de 45 a 64 años;2
+6427;La Matanza;6;Buenos Aires;2018;14;Dengue;11;de 45 a 64 años;2
+6427;La Matanza;6;Buenos Aires;2018;15;Dengue;11;de 45 a 64 años;1
+6434;Lanús;6;Buenos Aires;2018;10;Dengue;11;de 45 a 64 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;11;Dengue;11;de 45 a 64 años;1
+6490;LOMAS DE ZAMORA;6;Buenos Aires;2018;15;Dengue;11;de 45 a 64 años;1
+6568;Morón;6;Buenos Aires;2018;10;Dengue;11;de 45 a 64 años;1
+6658;Quimes;6;Buenos Aires;2018;12;Dengue;11;de 45 a 64 años;1
+6658;Quimes;6;Buenos Aires;2018;15;Dengue;11;de 45 a 64 años;1
+6658;Quimes;6;Buenos Aires;2018;16;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;11;Dengue;11;de 45 a 64 años;1
+22014;Bermejo;22;Chaco;2018;14;Dengue;11;de 45 a 64 años;2
+22021;Comandante Fernández;22;Chaco;2018;15;Dengue;11;de 45 a 64 años;1
+22039;2 De Abril;22;Chaco;2018;14;Dengue;11;de 45 a 64 años;1
+22039;2 De Abril;22;Chaco;2018;15;Dengue;11;de 45 a 64 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;11;de 45 a 64 años;8
+22039;2 De Abril;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;3
+22140;SAN FERNANDO;22;Chaco;2018;10;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;16;Dengue;11;de 45 a 64 años;1
+30084;Paraná;30;Entre Ríos;2018;14;Dengue;11;de 45 a 64 años;1
+34014;FORMOSA;34;Formosa;2018;3;Dengue;11;de 45 a 64 años;1
+34014;FORMOSA;34;Formosa;2018;10;Dengue;11;de 45 a 64 años;1
+34014;FORMOSA;34;Formosa;2018;11;Dengue;11;de 45 a 64 años;1
+34014;FORMOSA;34;Formosa;2018;12;Dengue;11;de 45 a 64 años;1
+34014;FORMOSA;34;Formosa;2018;13;Dengue;11;de 45 a 64 años;1
+54063;Iguazú;54;Misiones;2018;13;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;11;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;14;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;15;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;16;Dengue;11;de 45 a 64 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;11;de 45 a 64 años;2
+74028;CHACABUCO;22;Chaco;2018;12;Dengue;11;de 45 a 64 años;1
+74028;CHACABUCO;22;Chaco;2018;13;Dengue;11;de 45 a 64 años;6
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;11;de 45 a 64 años;2
+74028;CHACABUCO;22;Chaco;2018;15;Dengue;11;de 45 a 64 años;2
+74028;CHACABUCO;22;Chaco;2018;16;Dengue;11;de 45 a 64 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;2
+86049;CAPITAL;86;Santiago del Estero;2018;15;Dengue;11;de 45 a 64 años;3
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;11;de 45 a 64 años;8
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;11;de 45 a 64 años;2
+90084;CAPITAL;14;Córdoba;2018;13;Dengue;11;de 45 a 64 años;1
+90084;CAPITAL;14;Córdoba;2018;16;Dengue;11;de 45 a 64 años;1
+6091;Berazategui;6;Buenos Aires;2018;19;Dengue;11;de 45 a 64 años;1
+6441;La Plata;6;Buenos Aires;2018;14;Dengue;11;de 45 a 64 años;1
+2003;COMUNA 3;2;CABA;2018;15;Dengue;11;de 45 a 64 años;1
+2003;COMUNA 3;2;CABA;2018;18;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;15;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;17;Dengue;11;de 45 a 64 años;1
+2004;COMUNA 4;2;CABA;2018;18;Dengue;11;de 45 a 64 años;2
+2004;COMUNA 4;2;CABA;2018;21;Dengue;11;de 45 a 64 años;2
+2008;COMUNA 8;2;CABA;2018;18;Dengue;11;de 45 a 64 años;1
+2009;COMUNA 9;2;CABA;2018;18;Dengue;11;de 45 a 64 años;1
+2012;COMUNA 12;2;CABA;2018;17;Dengue;11;de 45 a 64 años;1
+2015;COMUNA 15;2;CABA;2018;17;Dengue;11;de 45 a 64 años;1
+6028;Almirante Brown;6;Buenos Aires;2018;18;Dengue;11;de 45 a 64 años;1
+6260;Esteban Echeverría;6;Buenos Aires;2018;19;Dengue;11;de 45 a 64 años;1
+6274;Florencio Varela;6;Buenos Aires;2018;19;Dengue;11;de 45 a 64 años;1
+6427;La Matanza;6;Buenos Aires;2018;17;Dengue;11;de 45 a 64 años;2
+6427;La Matanza;6;Buenos Aires;2018;18;Dengue;11;de 45 a 64 años;2
+6568;Morón;6;Buenos Aires;2018;18;Dengue;11;de 45 a 64 años;1
+6588;9 de Julio;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;1
+6588;9 de Julio;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;2
+6588;9 de Julio;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;1
+6588;9 de Julio;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;2
+6588;9 de Julio;22;Chaco;2018;22;Dengue;11;de 45 a 64 años;1
+6588;9 de Julio;22;Chaco;2018;23;Dengue;11;de 45 a 64 años;1
+6658;Quilmes;6;Buenos Aires;2018;19;Dengue;11;de 45 a 64 años;1
+6840;Tres de Febrero;6;Buenos Aires;2018;18;Dengue;11;de 45 a 64 años;2
+18021;CAPITAL;18;Corrientes;2018;16;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;11;de 45 a 64 años;3
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;11;de 45 a 64 años;3
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;24;Dengue;11;de 45 a 64 años;4
+18021;CAPITAL;18;Corrientes;2018;25;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;26;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;27;Dengue;11;de 45 a 64 años;1
+18021;CAPITAL;18;Corrientes;2018;28;Dengue;11;de 45 a 64 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;11;de 45 a 64 años;5
+18126;Saladas;18;Corrientes;2018;20;Dengue;11;de 45 a 64 años;5
+18126;Saladas;18;Corrientes;2018;21;Dengue;11;de 45 a 64 años;1
+22014;Bermejo;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;1
+22014;Bermejo;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;1
+22021;Comandante Fernández;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;4
+22021;Comandante Fernández;22;Chaco;2018;28;Dengue;11;de 45 a 64 años;1
+22036;12 de Octubre;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;1
+22036;12 de Octubre;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;1
+22036;12 de Octubre;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;2
+22036;12 de Octubre;22;Chaco;2018;24;Dengue;11;de 45 a 64 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;11;de 45 a 64 años;4
+22039;2 De Abril;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;10
+22039;2 De Abril;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;8
+22039;2 De Abril;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;10
+22039;2 De Abril;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;6
+22039;2 De Abril;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;1
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;16;Dengue;11;de 45 a 64 años;1
+22043;Fray Justo Santa María de Oro;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;1
+22070;Independencia;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;2
+22084;Libertador General San Martín;22;Chaco;2018;22;Dengue;11;de 45 a 64 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;2
+22098;Mayor Luis J. Fontana;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;2
+22112;O'Higgins;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;3
+22112;O'Higgins;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;4
+22140;SAN FERNANDO;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;22;Dengue;11;de 45 a 64 años;1
+22140;SAN FERNANDO;22;Chaco;2018;50;Dengue;11;de 45 a 64 años;1
+30084;Paraná;30;Entre Ríos;2018;22;Dengue;11;de 45 a 64 años;1
+34028;Matacos;34;Formosa;2018;18;Dengue;11;de 45 a 64 años;1
+46063;General Belgrano;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;1
+46063;General Belgrano;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;2
+46063;General Belgrano;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;6
+46063;General Belgrano;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;6
+46063;General Belgrano;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;2
+46063;General Belgrano;22;Chaco;2018;22;Dengue;11;de 45 a 64 años;1
+46063;General Belgrano;22;Chaco;2018;23;Dengue;11;de 45 a 64 años;1
+54028;CAPITAL;54;Misiones;2018;19;Dengue;11;de 45 a 64 años;5
+54028;CAPITAL;54;Misiones;2018;20;Dengue;11;de 45 a 64 años;2
+54028;CAPITAL;54;Misiones;2018;21;Dengue;11;de 45 a 64 años;1
+54028;CAPITAL;54;Misiones;2018;23;Dengue;11;de 45 a 64 años;1
+54028;CAPITAL;54;Misiones;2018;49;Dengue;11;de 45 a 64 años;2
+54035;Concepción;18;Corrientes;2018;19;Dengue;11;de 45 a 64 años;1
+54063;Iguazú;54;Misiones;2018;19;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;11;de 45 a 64 años;3
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;11;de 45 a 64 años;5
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;11;de 45 a 64 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;21;Dengue;11;de 45 a 64 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;22;Dengue;11;de 45 a 64 años;2
+66028;CAPITAL;66;Salta;2018;20;Dengue;11;de 45 a 64 años;1
+66056;Grl. José de San Martín;66;Salta;2018;19;Dengue;11;de 45 a 64 años;1
+66056;Grl. José de San Martín;66;Salta;2018;22;Dengue;11;de 45 a 64 años;1
+66126;Orán;66;Salta;2018;19;Dengue;11;de 45 a 64 años;1
+66126;Orán;66;Salta;2018;20;Dengue;11;de 45 a 64 años;1
+66126;Orán;66;Salta;2018;22;Dengue;11;de 45 a 64 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;11;de 45 a 64 años;3
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;11;de 45 a 64 años;8
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;11;de 45 a 64 años;5
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;11;de 45 a 64 años;3
+74028;CHACABUCO;22;Chaco;2018;21;Dengue;11;de 45 a 64 años;2
+74028;CHACABUCO;22;Chaco;2018;22;Dengue;11;de 45 a 64 años;1
+82084;ROSARIO;82;Santa Fe;2018;50;Dengue;11;de 45 a 64 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;11;de 45 a 64 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;11;de 45 a 64 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;11;de 45 a 64 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;20;Dengue;11;de 45 a 64 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;11;de 45 a 64 años;3
+90084;CAPITAL;14;Córdoba;2018;17;Dengue;11;de 45 a 64 años;1
+2003;COMUNA 3;2;CABA;2018;16;Dengue;5;de 5 a 9 años;3
+2004;COMUNA 4;2;CABA;2018;6;Dengue;5;de 5 a 9 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;5;de 5 a 9 años;3
+2004;COMUNA 4;2;CABA;2018;17;Dengue;5;de 5 a 9 años;1
+2004;COMUNA 4;2;CABA;2018;19;Dengue;5;de 5 a 9 años;1
+2010;COMUNA 10;2;CABA;2018;18;Dengue;5;de 5 a 9 años;1
+6035;Avellaneda;6;Buenos Aires;2018;14;Dengue;5;de 5 a 9 años;1
+6035;Avellaneda;6;Buenos Aires;2018;15;Dengue;5;de 5 a 9 años;2
+6427;La Matanza;6;Buenos Aires;2018;16;Dengue;5;de 5 a 9 años;1
+6539;MERLO;6;Buenos Aires;2018;10;Dengue;5;de 5 a 9 años;1
+6588;9 de Julio;22;Chaco;2018;21;Dengue;5;de 5 a 9 años;1
+6658;Quilmes;6;Buenos Aires;2018;19;Dengue;5;de 5 a 9 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;5;de 5 a 9 años;1
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;5;de 5 a 9 años;1
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;5;de 5 a 9 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;5;de 5 a 9 años;1
+22014;Bermejo;22;Chaco;2018;13;Dengue;5;de 5 a 9 años;1
+22014;Bermejo;22;Chaco;2018;18;Dengue;5;de 5 a 9 años;1
+22014;Bermejo;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;5;de 5 a 9 años;4
+22039;2 De Abril;22;Chaco;2018;17;Dengue;5;de 5 a 9 años;3
+22039;2 De Abril;22;Chaco;2018;18;Dengue;5;de 5 a 9 años;3
+22039;2 De Abril;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;2
+22039;2 De Abril;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;2
+22039;2 De Abril;22;Chaco;2018;21;Dengue;5;de 5 a 9 años;1
+22070;Independencia;22;Chaco;2018;17;Dengue;5;de 5 a 9 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;1
+22098;Mayor Luis J. Fontana;22;Chaco;2018;37;Dengue;5;de 5 a 9 años;1
+46063;General Belgrano;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;3
+46063;General Belgrano;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;2
+46063;General Belgrano;22;Chaco;2018;21;Dengue;5;de 5 a 9 años;1
+46063;General Belgrano;22;Chaco;2018;22;Dengue;5;de 5 a 9 años;1
+54028;CAPITAL;54;Misiones;2018;19;Dengue;5;de 5 a 9 años;1
+54063;Iguazú;54;Misiones;2018;13;Dengue;5;de 5 a 9 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;14;Dengue;5;de 5 a 9 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;5;de 5 a 9 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;5;de 5 a 9 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;26;Dengue;5;de 5 a 9 años;1
+66056;Grl. José de San Martín;66;Salta;2018;20;Dengue;5;de 5 a 9 años;2
+66056;Grl. José de San Martín;66;Salta;2018;21;Dengue;5;de 5 a 9 años;1
+66126;Orán;66;Salta;2018;20;Dengue;5;de 5 a 9 años;1
+74028;CHACABUCO;22;Chaco;2018;14;Dengue;5;de 5 a 9 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;5;de 5 a 9 años;1
+74028;CHACABUCO;22;Chaco;2018;18;Dengue;5;de 5 a 9 años;1
+74028;CHACABUCO;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;2
+74028;CHACABUCO;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;4
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;5;de 5 a 9 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;5;de 5 a 9 años;4
+86049;CAPITAL;86;Santiago del Estero;2018;18;Dengue;5;de 5 a 9 años;5
+86049;CAPITAL;86;Santiago del Estero;2018;21;Dengue;5;de 5 a 9 años;2
+56;Grl. José de San Martín;66;Salta;2018;21;Enfermedad por Virus del Zika;5;de 5 a 9 años;1
+126;Orán;66;Salta;2018;20;Enfermedad por Virus del Zika;5;de 5 a 9 años;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;2;igual a 1 año;1
+56;Grl. José de San Martín;66;Salta;2018;12;Enfermedad por Virus del Zika;2;igual a 1 año;1
+2004;COMUNA 4;2;CABA;2018;16;Dengue;12;mayor o igual de 65 años;1
+6035;Avellaneda;6;Buenos Aires;2018;13;Dengue;12;mayor o igual de 65 años;1
+6035;Avellaneda;6;Buenos Aires;2018;15;Dengue;12;mayor o igual de 65 años;1
+6427;La Matanza;6;Buenos Aires;2018;9;Dengue;12;mayor o igual de 65 años;1
+6427;La Matanza;6;Buenos Aires;2018;14;Dengue;12;mayor o igual de 65 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;12;mayor o igual de 65 años;2
+22039;2 De Abril;22;Chaco;2018;17;Dengue;12;mayor o igual de 65 años;1
+30084;Paraná;30;Entre Ríos;2018;16;Dengue;12;mayor o igual de 65 años;1
+34014;FORMOSA;34;Formosa;2018;12;Dengue;12;mayor o igual de 65 años;1
+54028;CAPITAL;54;Misiones;2018;15;Dengue;12;mayor o igual de 65 años;1
+54063;Iguazú;54;Misiones;2018;14;Dengue;12;mayor o igual de 65 años;1
+54063;Iguazú;54;Misiones;2018;17;Dengue;12;mayor o igual de 65 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;17;Dengue;12;mayor o igual de 65 años;2
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;12;mayor o igual de 65 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;12;mayor o igual de 65 años;1
+427;La Matanza;6;Buenos Aires;2018;11;Enfermedad por Virus del Zika;12;mayor o igual de 65 años;1
+56;Grl. José de San Martín;66;Salta;2018;22;Enfermedad por Virus del Zika;12;mayor o igual de 65 años;1
+126;Orán;66;Salta;2018;20;Enfermedad por Virus del Zika;12;mayor o igual de 65 años;1
+2008;COMUNA 8;2;CABA;2018;18;Dengue;12;mayor o igual de 65 años;1
+6028;Almirante Brown;6;Buenos Aires;2018;16;Dengue;12;mayor o igual de 65 años;1
+18021;CAPITAL;18;Corrientes;2018;20;Dengue;12;mayor o igual de 65 años;3
+18021;CAPITAL;18;Corrientes;2018;21;Dengue;12;mayor o igual de 65 años;1
+18021;CAPITAL;18;Corrientes;2018;22;Dengue;12;mayor o igual de 65 años;1
+18021;CAPITAL;18;Corrientes;2018;23;Dengue;12;mayor o igual de 65 años;2
+18021;CAPITAL;18;Corrientes;2018;24;Dengue;12;mayor o igual de 65 años;1
+18126;Saladas;18;Corrientes;2018;19;Dengue;12;mayor o igual de 65 años;2
+22014;Bermejo;22;Chaco;2018;17;Dengue;12;mayor o igual de 65 años;1
+22021;Comandante Fernández;22;Chaco;2018;20;Dengue;12;mayor o igual de 65 años;1
+22039;2 De Abril;22;Chaco;2018;16;Dengue;12;mayor o igual de 65 años;1
+22039;2 De Abril;22;Chaco;2018;17;Dengue;12;mayor o igual de 65 años;6
+22039;2 De Abril;22;Chaco;2018;18;Dengue;12;mayor o igual de 65 años;6
+22039;2 De Abril;22;Chaco;2018;19;Dengue;12;mayor o igual de 65 años;2
+22039;2 De Abril;22;Chaco;2018;20;Dengue;12;mayor o igual de 65 años;3
+22098;Mayor Luis J. Fontana;22;Chaco;2018;20;Dengue;12;mayor o igual de 65 años;1
+22140;SAN FERNANDO;22;Chaco;2018;18;Dengue;12;mayor o igual de 65 años;1
+22140;SAN FERNANDO;22;Chaco;2018;21;Dengue;12;mayor o igual de 65 años;1
+22140;SAN FERNANDO;22;Chaco;2018;23;Dengue;12;mayor o igual de 65 años;1
+34014;FORMOSA;34;Formosa;2018;17;Dengue;12;mayor o igual de 65 años;1
+46063;General Belgrano;22;Chaco;2018;20;Dengue;12;mayor o igual de 65 años;2
+46063;General Belgrano;22;Chaco;2018;21;Dengue;12;mayor o igual de 65 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;18;Dengue;12;mayor o igual de 65 años;2
+54077;Libertador Grl. San Martín;54;Misiones;2018;19;Dengue;12;mayor o igual de 65 años;1
+54077;Libertador Grl. San Martín;54;Misiones;2018;20;Dengue;12;mayor o igual de 65 años;1
+66126;Orán;66;Salta;2018;22;Dengue;12;mayor o igual de 65 años;1
+74028;CHACABUCO;22;Chaco;2018;17;Dengue;12;mayor o igual de 65 años;1
+86049;CAPITAL;86;Santiago del Estero;2018;5;Dengue;12;mayor o igual de 65 años;1
+2008;COMUNA 8;2;CABA;2018;12;Dengue;1;menor que 1 año;1
+6861;Vicente López;6;Buenos Aires;2018;52;Dengue;1;menor que 1 año;1
+18021;CAPITAL;18;Corrientes;2018;19;Dengue;1;menor que 1 año;1
+22140;SAN FERNANDO;22;Chaco;2018;20;Dengue;1;menor que 1 año;1
+46063;General Belgrano;22;Chaco;2018;21;Dengue;1;menor que 1 año;1
+66056;Grl. José de San Martín;66;Salta;2018;19;Dengue;1;menor que 1 año;1
+86035;Banda;86;Santiago del Estero;2018;16;Dengue;1;menor que 1 año;1
+86049;CAPITAL;86;Santiago del Estero;2018;16;Dengue;1;menor que 1 año;1
+86049;CAPITAL;86;Santiago del Estero;2018;17;Dengue;1;menor que 1 año;1
+56;Grl. José de San Martín;66;Salta;2018;19;Enfermedad por Virus del Zika;1;menor que 1 año;1
+86147;Río Hondo;86;Santiago del Estero;2018;21;Dengue;13;sin especificar;1

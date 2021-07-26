@@ -1,0 +1,661 @@
+﻿departamento_id;departamento_nombre;provincia_id;provincia_nombre;anio;semanas_epidemiologicas;evento_nombre;grupo_edad_id;grupo_edad_desc;cantidad_casos
+35;Avellaneda;6;Buenos Aires;2018;9;Dengue;6;de 10 a 14 años;1
+35;Avellaneda;6;Buenos Aires;2018;11;Dengue;6;de 10 a 14 años;2
+35;Avellaneda;6;Buenos Aires;2018;12;Dengue;6;de 10 a 14 años;1
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;2
+35;Avellaneda;6;Buenos Aires;2018;16;Dengue;6;de 10 a 14 años;1
+35;Avellaneda;6;Buenos Aires;2018;19;Dengue;6;de 10 a 14 años;2
+427;La Matanza;6;Buenos Aires;2018;12;Dengue;6;de 10 a 14 años;1
+427;La Matanza;6;Buenos Aires;2018;16;Dengue;6;de 10 a 14 años;1
+434;LanÃºs;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;15;Dengue;6;de 10 a 14 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;17;Dengue;6;de 10 a 14 años;2
+861;Vicente LÃ³pez;6;Buenos Aires;2018;14;Dengue;6;de 10 a 14 años;1
+35;Avellaneda;6;Buenos Aires;2018;17;Dengue;7;de 15 a 19 años;3
+35;Avellaneda;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;1
+274;Florencio Varela;6;Buenos Aires;2018;10;Dengue;7;de 15 a 19 años;1
+371;General San MartÃ­n;6;Buenos Aires;2018;11;Dengue;7;de 15 a 19 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;14;Dengue;7;de 15 a 19 años;1
+658;Quilmes;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;2
+658;Quilmes;6;Buenos Aires;2018;20;Dengue;7;de 15 a 19 años;1
+840;Tres de Febrero;6;Buenos Aires;2018;18;Dengue;7;de 15 a 19 años;1
+35;Avellaneda;6;Buenos Aires;2018;17;Dengue;4;de 2 a 4 años;1
+35;Avellaneda;6;Buenos Aires;2018;7;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;9;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;10;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;11;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;16;Dengue;8;de 20 a 24 años;2
+35;Avellaneda;6;Buenos Aires;2018;19;Dengue;8;de 20 a 24 años;1
+91;Berazategui;6;Buenos Aires;2018;11;Dengue;8;de 20 a 24 años;1
+427;La Matanza;6;Buenos Aires;2018;12;Dengue;8;de 20 a 24 años;1
+427;La Matanza;6;Buenos Aires;2018;13;Dengue;8;de 20 a 24 años;1
+427;La Matanza;6;Buenos Aires;2018;21;Dengue;8;de 20 a 24 años;1
+568;MorÃ³n;6;Buenos Aires;2018;11;Dengue;8;de 20 a 24 años;1
+568;MorÃ³n;6;Buenos Aires;2018;15;Dengue;8;de 20 a 24 años;1
+658;Quilmes;6;Buenos Aires;2018;14;Dengue;8;de 20 a 24 años;2
+658;Quilmes;6;Buenos Aires;2018;15;Dengue;8;de 20 a 24 años;2
+658;Quilmes;6;Buenos Aires;2018;18;Dengue;8;de 20 a 24 años;1
+840;Tres de Febrero;6;Buenos Aires;2018;15;Dengue;8;de 20 a 24 años;1
+840;Tres de Febrero;6;Buenos Aires;2018;19;Dengue;8;de 20 a 24 años;1
+35;Avellaneda;6;Buenos Aires;2018;9;Dengue;9;de 25 a 34 años;1
+35;Avellaneda;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+35;Avellaneda;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;2
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;3
+35;Avellaneda;6;Buenos Aires;2018;15;Dengue;9;de 25 a 34 años;3
+35;Avellaneda;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+35;Avellaneda;6;Buenos Aires;2018;18;Dengue;9;de 25 a 34 años;3
+91;Berazategui;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;2
+270;Ezeiza;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;1
+427;La Matanza;6;Buenos Aires;2018;9;Dengue;9;de 25 a 34 años;1
+427;La Matanza;6;Buenos Aires;2018;13;Dengue;9;de 25 a 34 años;1
+427;La Matanza;6;Buenos Aires;2018;14;Dengue;9;de 25 a 34 años;2
+427;La Matanza;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+427;La Matanza;6;Buenos Aires;2018;17;Dengue;9;de 25 a 34 años;4
+427;La Matanza;6;Buenos Aires;2018;18;Dengue;9;de 25 a 34 años;1
+427;La Matanza;6;Buenos Aires;2018;21;Dengue;9;de 25 a 34 años;1
+434;LanÃºs;6;Buenos Aires;2018;10;Dengue;9;de 25 a 34 años;1
+434;LanÃºs;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;12;Dengue;9;de 25 a 34 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;20;Dengue;9;de 25 a 34 años;1
+658;Quilmes;6;Buenos Aires;2018;8;Dengue;9;de 25 a 34 años;1
+658;Quilmes;6;Buenos Aires;2018;11;Dengue;9;de 25 a 34 años;1
+658;Quilmes;6;Buenos Aires;2018;12;Dengue;9;de 25 a 34 años;1
+658;Quilmes;6;Buenos Aires;2018;15;Dengue;9;de 25 a 34 años;3
+658;Quilmes;6;Buenos Aires;2018;16;Dengue;9;de 25 a 34 años;2
+658;Quilmes;6;Buenos Aires;2018;19;Dengue;9;de 25 a 34 años;1
+840;Tres de Febrero;6;Buenos Aires;2018;20;Dengue;9;de 25 a 34 años;1
+35;Avellaneda;6;Buenos Aires;2018;12;Dengue;10;de 35 a 44 años;2
+35;Avellaneda;6;Buenos Aires;2018;13;Dengue;10;de 35 a 44 años;2
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+35;Avellaneda;6;Buenos Aires;2018;16;Dengue;10;de 35 a 44 años;2
+270;Ezeiza;6;Buenos Aires;2018;11;Dengue;10;de 35 a 44 años;1
+427;La Matanza;6;Buenos Aires;2018;13;Dengue;10;de 35 a 44 años;1
+427;La Matanza;6;Buenos Aires;2018;16;Dengue;10;de 35 a 44 años;1
+434;LanÃºs;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+434;LanÃºs;6;Buenos Aires;2018;15;Dengue;10;de 35 a 44 años;1
+539;Merlo;6;Buenos Aires;2018;10;Dengue;10;de 35 a 44 años;1
+539;Merlo;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+568;MorÃ³n;6;Buenos Aires;2018;9;Dengue;10;de 35 a 44 años;1
+568;MorÃ³n;6;Buenos Aires;2018;10;Dengue;10;de 35 a 44 años;2
+658;Quilmes;6;Buenos Aires;2018;14;Dengue;10;de 35 a 44 años;1
+999;*sin dato*;6;Buenos Aires;2018;11;Dengue;10;de 45 a 64 años;1
+35;Avellaneda;6;Buenos Aires;2018;7;Dengue;10;de 45 a 64 años;1
+35;Avellaneda;6;Buenos Aires;2018;10;Dengue;10;de 45 a 64 años;1
+35;Avellaneda;6;Buenos Aires;2018;11;Dengue;10;de 45 a 64 años;1
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;10;de 45 a 64 años;2
+410;ItuzaingÃ³;6;Buenos Aires;2018;11;Dengue;10;de 45 a 64 años;1
+427;La Matanza;6;Buenos Aires;2018;12;Dengue;10;de 45 a 64 años;1
+427;La Matanza;6;Buenos Aires;2018;13;Dengue;10;de 45 a 64 años;2
+427;La Matanza;6;Buenos Aires;2018;14;Dengue;10;de 45 a 64 años;2
+427;La Matanza;6;Buenos Aires;2018;15;Dengue;10;de 45 a 64 años;1
+427;La Matanza;6;Buenos Aires;2018;18;Dengue;10;de 45 a 64 años;1
+434;LanÃºs;6;Buenos Aires;2018;10;Dengue;10;de 45 a 64 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;11;Dengue;10;de 45 a 64 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;15;Dengue;10;de 45 a 64 años;1
+490;Lomas de Zamora;6;Buenos Aires;2018;18;Dengue;10;de 45 a 64 años;1
+568;MorÃ³n;6;Buenos Aires;2018;10;Dengue;10;de 45 a 64 años;1
+658;Quilmes;6;Buenos Aires;2018;12;Dengue;10;de 45 a 64 años;1
+658;Quilmes;6;Buenos Aires;2018;15;Dengue;10;de 45 a 64 años;1
+658;Quilmes;6;Buenos Aires;2018;16;Dengue;10;de 45 a 64 años;1
+658;Quilmes;6;Buenos Aires;2018;17;Dengue;10;de 45 a 64 años;1
+658;Quilmes;6;Buenos Aires;2018;21;Dengue;10;de 45 a 64 años;2
+760;San Miguel;6;Buenos Aires;2018;18;Dengue;10;de 45 a 64 años;1
+840;Tres de Febrero;6;Buenos Aires;2018;19;Dengue;10;de 45 a 64 años;1
+35;Avellaneda;6;Buenos Aires;2018;14;Dengue;5;de 5 a 9 años;1
+35;Avellaneda;6;Buenos Aires;2018;15;Dengue;5;de 5 a 9 años;2
+427;La Matanza;6;Buenos Aires;2018;16;Dengue;5;de 5 a 9 años;1
+539;Merlo;6;Buenos Aires;2018;10;Dengue;5;de 5 a 9 años;1
+658;Quilmes;6;Buenos Aires;2018;19;Dengue;5;de 5 a 9 años;1
+35;Avellaneda;6;Buenos Aires;2018;13;Dengue;11;mayor o igual de 65 años;1
+35;Avellaneda;6;Buenos Aires;2018;15;Dengue;11;mayor o igual de 65 años;1
+427;La Matanza;6;Buenos Aires;2018;9;Dengue;11;mayor o igual de 65 años;1
+427;La Matanza;6;Buenos Aires;2018;14;Dengue;11;mayor o igual de 65 años;1
+427;La Matanza;6;Buenos Aires;2018;17;Dengue;11;mayor o igual de 65 años;2
+427;La Matanza;6;Buenos Aires;2018;18;Dengue;11;mayor o igual de 65 años;1
+568;MorÃ³n;6;Buenos Aires;2018;18;Dengue;11;mayor o igual de 65 años;1
+658;Quilmes;6;Buenos Aires;2018;19;Dengue;11;mayor o igual de 65 años;1
+427;La Matanza;6;Buenos Aires;2018;11;Enfermedad por Virus del Zika;11;mayor o igual de 65 años;1
+14;Capital;14;Córdoba;2018;12;Dengue;8;de 20 a 24 años;2
+14;Capital;14;Córdoba;2018;13;Dengue;8;de 20 a 24 años;2
+14;Capital;14;Córdoba;2018;15;Dengue;8;de 20 a 24 años;1
+14;Capital;14;Córdoba;2018;12;Dengue;9;de 25 a 34 años;3
+14;Capital;14;Córdoba;2018;13;Dengue;9;de 25 a 34 años;1
+21;ColÃ³n;14;Córdoba;2018;12;Dengue;9;de 25 a 34 años;1
+161;Tercero Arriba;14;Córdoba;2018;21;Dengue;9;de 25 a 34 años;1
+14;Capital;14;Córdoba;2018;13;Dengue;10;de 35 a 44 años;1
+14;Capital;14;Córdoba;2018;16;Dengue;10;de 35 a 44 años;1
+14;Capital;14;Córdoba;2018;10;Dengue;10;de 45 a 64 años;1
+14;Capital;14;Córdoba;2018;13;Dengue;10;de 45 a 64 años;1
+14;Capital;14;Córdoba;2018;16;Dengue;10;de 45 a 64 años;1
+14;Capital;14;Córdoba;2018;12;Dengue;11;mayor o igual de 65 años;1
+14;Capital;14;Córdoba;2018;17;Dengue;11;mayor o igual de 65 años;1
+10;COMUNA 10;2;CABA;2018;18;Dengue;6;de 10 a 14 años;1
+3;COMUNA 3;2;CABA;2018;15;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;6;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;14;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;17;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;18;Dengue;6;de 10 a 14 años;4
+4;COMUNA 4;2;CABA;2018;24;Dengue;6;de 10 a 14 años;1
+8;COMUNA 8;2;CABA;2018;18;Dengue;6;de 10 a 14 años;1
+4;COMUNA 4;2;CABA;2018;10;Dengue;7;de 15 a 19 años;1
+4;COMUNA 4;2;CABA;2018;11;Dengue;7;de 15 a 19 años;1
+4;COMUNA 4;2;CABA;2018;13;Dengue;7;de 15 a 19 años;4
+4;COMUNA 4;2;CABA;2018;14;Dengue;7;de 15 a 19 años;1
+4;COMUNA 4;2;CABA;2018;15;Dengue;7;de 15 a 19 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;7;de 15 a 19 años;2
+10;COMUNA 10;2;CABA;2018;16;Dengue;4;de 2 a 4 años;1
+12;COMUNA 12;2;CABA;2018;11;Dengue;8;de 20 a 24 años;1
+3;COMUNA 3;2;CABA;2018;10;Dengue;8;de 20 a 24 años;1
+3;COMUNA 3;2;CABA;2018;14;Dengue;8;de 20 a 24 años;1
+3;COMUNA 3;2;CABA;2018;17;Dengue;8;de 20 a 24 años;1
+4;COMUNA 4;2;CABA;2018;12;Dengue;8;de 20 a 24 años;1
+4;COMUNA 4;2;CABA;2018;15;Dengue;8;de 20 a 24 años;2
+4;COMUNA 4;2;CABA;2018;17;Dengue;8;de 20 a 24 años;1
+4;COMUNA 4;2;CABA;2018;18;Dengue;8;de 20 a 24 años;3
+4;COMUNA 4;2;CABA;2018;19;Dengue;8;de 20 a 24 años;1
+999;*sin dato*;2;CABA;2018;18;Dengue;9;de 25 a 34 años;1
+1;COMUNA 1;2;CABA;2018;17;Dengue;9;de 25 a 34 años;1
+3;COMUNA 3;2;CABA;2018;9;Dengue;9;de 25 a 34 años;1
+4;COMUNA 4;2;CABA;2018;8;Dengue;9;de 25 a 34 años;1
+4;COMUNA 4;2;CABA;2018;10;Dengue;9;de 25 a 34 años;1
+4;COMUNA 4;2;CABA;2018;12;Dengue;9;de 25 a 34 años;2
+4;COMUNA 4;2;CABA;2018;17;Dengue;9;de 25 a 34 años;3
+4;COMUNA 4;2;CABA;2018;18;Dengue;9;de 25 a 34 años;2
+999;*sin dato*;2;CABA;2018;14;Dengue;10;de 35 a 44 años;1
+999;*sin dato*;2;CABA;2018;15;Dengue;10;de 35 a 44 años;1
+15;COMUNA 15;2;CABA;2018;9;Dengue;10;de 35 a 44 años;1
+2;COMUNA 2;2;CABA;2018;10;Dengue;10;de 35 a 44 años;1
+3;COMUNA 3;2;CABA;2018;8;Dengue;10;de 35 a 44 años;1
+3;COMUNA 3;2;CABA;2018;12;Dengue;10;de 35 a 44 años;2
+4;COMUNA 4;2;CABA;2018;8;Dengue;10;de 35 a 44 años;1
+4;COMUNA 4;2;CABA;2018;10;Dengue;10;de 35 a 44 años;1
+4;COMUNA 4;2;CABA;2018;12;Dengue;10;de 35 a 44 años;1
+4;COMUNA 4;2;CABA;2018;14;Dengue;10;de 35 a 44 años;3
+4;COMUNA 4;2;CABA;2018;15;Dengue;10;de 35 a 44 años;1
+5;COMUNA 5;2;CABA;2018;11;Dengue;10;de 35 a 44 años;1
+8;COMUNA 8;2;CABA;2018;15;Dengue;10;de 35 a 44 años;1
+999;*sin dato*;2;CABA;2018;13;Dengue;10;de 45 a 64 años;1
+1;COMUNA 1;2;CABA;2018;16;Dengue;10;de 45 a 64 años;1
+12;COMUNA 12;2;CABA;2018;11;Dengue;10;de 45 a 64 años;1
+12;COMUNA 12;2;CABA;2018;13;Dengue;10;de 45 a 64 años;1
+15;COMUNA 15;2;CABA;2018;12;Dengue;10;de 45 a 64 años;1
+15;COMUNA 15;2;CABA;2018;15;Dengue;10;de 45 a 64 años;1
+3;COMUNA 3;2;CABA;2018;9;Dengue;10;de 45 a 64 años;2
+3;COMUNA 3;2;CABA;2018;11;Dengue;10;de 45 a 64 años;2
+3;COMUNA 3;2;CABA;2018;12;Dengue;10;de 45 a 64 años;2
+3;COMUNA 3;2;CABA;2018;13;Dengue;10;de 45 a 64 años;1
+4;COMUNA 4;2;CABA;2018;9;Dengue;10;de 45 a 64 años;1
+4;COMUNA 4;2;CABA;2018;13;Dengue;10;de 45 a 64 años;1
+4;COMUNA 4;2;CABA;2018;14;Dengue;10;de 45 a 64 años;1
+4;COMUNA 4;2;CABA;2018;15;Dengue;10;de 45 a 64 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;10;de 45 a 64 años;3
+4;COMUNA 4;2;CABA;2018;18;Dengue;10;de 45 a 64 años;3
+4;COMUNA 4;2;CABA;2018;19;Dengue;10;de 45 a 64 años;2
+6;COMUNA 6;2;CABA;2018;13;Dengue;10;de 45 a 64 años;1
+7;COMUNA 7;2;CABA;2018;18;Dengue;10;de 45 a 64 años;1
+9;COMUNA 9;2;CABA;2018;18;Dengue;10;de 45 a 64 años;1
+3;COMUNA 3;2;CABA;2018;16;Dengue;5;de 5 a 9 años;3
+4;COMUNA 4;2;CABA;2018;6;Dengue;5;de 5 a 9 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;5;de 5 a 9 años;3
+4;COMUNA 4;2;CABA;2018;17;Dengue;5;de 5 a 9 años;1
+4;COMUNA 4;2;CABA;2018;19;Dengue;5;de 5 a 9 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;2;igual a 1 año;1
+12;COMUNA 12;2;CABA;2018;17;Dengue;11;mayor o igual de 65 años;1
+3;COMUNA 3;2;CABA;2018;15;Dengue;11;mayor o igual de 65 años;1
+3;COMUNA 3;2;CABA;2018;18;Dengue;11;mayor o igual de 65 años;1
+4;COMUNA 4;2;CABA;2018;15;Dengue;11;mayor o igual de 65 años;1
+4;COMUNA 4;2;CABA;2018;16;Dengue;11;mayor o igual de 65 años;1
+4;COMUNA 4;2;CABA;2018;17;Dengue;11;mayor o igual de 65 años;1
+4;COMUNA 4;2;CABA;2018;18;Dengue;11;mayor o igual de 65 años;1
+4;COMUNA 4;2;CABA;2018;21;Dengue;11;mayor o igual de 65 años;2
+8;COMUNA 8;2;CABA;2018;12;Dengue;1;menor que 1 año;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;6;de 10 a 14 años;1
+39;2 de Abril;22;Chaco;2018;17;Dengue;6;de 10 a 14 años;2
+39;2 de Abril;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;1
+39;2 de Abril;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;4
+39;2 de Abril;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;2
+105;9 de Julio;22;Chaco;2018;16;Dengue;6;de 10 a 14 años;1
+28;CHACABUCO;22;Chaco;2018;13;Dengue;6;de 10 a 14 años;1
+28;CHACABUCO;22;Chaco;2018;14;Dengue;6;de 10 a 14 años;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;6;de 10 a 14 años;1
+28;CHACABUCO;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;3
+28;CHACABUCO;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;5
+28;CHACABUCO;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;2
+28;CHACABUCO;22;Chaco;2018;21;Dengue;6;de 10 a 14 años;1
+28;CHACABUCO;22;Chaco;2018;22;Dengue;6;de 10 a 14 años;1
+49;General Belgrano;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;1
+49;General Belgrano;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;9
+49;General Belgrano;22;Chaco;2018;23;Dengue;6;de 10 a 14 años;2
+140;SAN FERNANDO;22;Chaco;2018;18;Dengue;6;de 10 a 14 años;1
+140;SAN FERNANDO;22;Chaco;2018;19;Dengue;6;de 10 a 14 años;2
+140;SAN FERNANDO;22;Chaco;2018;20;Dengue;6;de 10 a 14 años;2
+39;2 de Abril;22;Chaco;2018;19;Dengue;3;de 13 a 24 meses;1
+28;CHACABUCO;22;Chaco;2018;20;Dengue;3;de 13 a 24 meses;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;6
+39;2 de Abril;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;5
+39;2 de Abril;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;5
+39;2 de Abril;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;7
+39;2 de Abril;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;4
+39;2 de Abril;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+28;CHACABUCO;22;Chaco;2018;13;Dengue;7;de 15 a 19 años;1
+28;CHACABUCO;22;Chaco;2018;14;Dengue;7;de 15 a 19 años;2
+28;CHACABUCO;22;Chaco;2018;16;Dengue;7;de 15 a 19 años;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;7
+28;CHACABUCO;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;6
+28;CHACABUCO;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;10
+28;CHACABUCO;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;2
+28;CHACABUCO;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;3
+28;CHACABUCO;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;3
+28;CHACABUCO;22;Chaco;2018;23;Dengue;7;de 15 a 19 años;2
+21;Comandante FernÃ¡ndez;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+49;General Belgrano;22;Chaco;2018;17;Dengue;7;de 15 a 19 años;1
+49;General Belgrano;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;4
+49;General Belgrano;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;6
+49;General Belgrano;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;4
+49;General Belgrano;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+49;General Belgrano;22;Chaco;2018;23;Dengue;7;de 15 a 19 años;2
+84;Libertador General San MartÃ­n;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+112;O'Higgins;22;Chaco;2018;18;Dengue;7;de 15 a 19 años;1
+112;O'Higgins;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+112;O'Higgins;22;Chaco;2018;20;Dengue;7;de 15 a 19 años;1
+112;O'Higgins;22;Chaco;2018;21;Dengue;7;de 15 a 19 años;1
+140;SAN FERNANDO;22;Chaco;2018;19;Dengue;7;de 15 a 19 años;1
+140;SAN FERNANDO;22;Chaco;2018;22;Dengue;7;de 15 a 19 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;4;de 2 a 4 años;2
+39;2 de Abril;22;Chaco;2018;19;Dengue;4;de 2 a 4 años;1
+39;2 de Abril;22;Chaco;2018;20;Dengue;4;de 2 a 4 años;4
+28;CHACABUCO;22;Chaco;2018;17;Dengue;4;de 2 a 4 años;1
+49;General Belgrano;22;Chaco;2018;19;Dengue;4;de 2 a 4 años;1
+49;General Belgrano;22;Chaco;2018;20;Dengue;4;de 2 a 4 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;6
+39;2 de Abril;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;5
+39;2 de Abril;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;2
+39;2 de Abril;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;5
+39;2 de Abril;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;4
+28;CHACABUCO;22;Chaco;2018;14;Dengue;8;de 20 a 24 años;3
+28;CHACABUCO;22;Chaco;2018;15;Dengue;8;de 20 a 24 años;1
+28;CHACABUCO;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;4
+28;CHACABUCO;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;1
+28;CHACABUCO;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;5
+28;CHACABUCO;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;3
+28;CHACABUCO;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+43;Fray Justo Santa MarÃ­a de Oro;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;1
+49;General Belgrano;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;2
+49;General Belgrano;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;6
+49;General Belgrano;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;3
+49;General Belgrano;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+49;General Belgrano;22;Chaco;2018;23;Dengue;8;de 20 a 24 años;4
+63;General GÃ¼emes;22;Chaco;2018;15;Dengue;8;de 20 a 24 años;1
+70;Independencia;22;Chaco;2018;17;Dengue;8;de 20 a 24 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;3
+84;Libertador General San MartÃ­n;22;Chaco;2018;21;Dengue;8;de 20 a 24 años;1
+112;O'Higgins;22;Chaco;2018;18;Dengue;8;de 20 a 24 años;1
+112;O'Higgins;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;1
+140;SAN FERNANDO;22;Chaco;2018;16;Dengue;8;de 20 a 24 años;1
+140;SAN FERNANDO;22;Chaco;2018;19;Dengue;8;de 20 a 24 años;2
+140;SAN FERNANDO;22;Chaco;2018;20;Dengue;8;de 20 a 24 años;1
+39;2 de Abril;22;Chaco;2018;4;Dengue;9;de 25 a 34 años;1
+39;2 de Abril;22;Chaco;2018;12;Dengue;9;de 25 a 34 años;1
+39;2 de Abril;22;Chaco;2018;14;Dengue;9;de 25 a 34 años;2
+39;2 de Abril;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;6
+39;2 de Abril;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;6
+39;2 de Abril;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;9
+39;2 de Abril;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;9
+39;2 de Abril;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;4
+39;2 de Abril;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;3
+39;2 de Abril;22;Chaco;2018;22;Dengue;9;de 25 a 34 años;3
+14;Bermejo;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;1
+28;CHACABUCO;22;Chaco;2018;13;Dengue;9;de 25 a 34 años;3
+28;CHACABUCO;22;Chaco;2018;14;Dengue;9;de 25 a 34 años;1
+28;CHACABUCO;22;Chaco;2018;15;Dengue;9;de 25 a 34 años;1
+28;CHACABUCO;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;3
+28;CHACABUCO;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;2
+28;CHACABUCO;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;5
+28;CHACABUCO;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;8
+28;CHACABUCO;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+28;CHACABUCO;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;1
+28;CHACABUCO;22;Chaco;2018;23;Dengue;9;de 25 a 34 años;1
+21;Comandante FernÃ¡ndez;22;Chaco;2018;13;Dengue;9;de 25 a 34 años;1
+21;Comandante FernÃ¡ndez;22;Chaco;2018;27;Dengue;9;de 25 a 34 años;1
+49;General Belgrano;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;2
+49;General Belgrano;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;3
+49;General Belgrano;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;7
+49;General Belgrano;22;Chaco;2018;21;Dengue;9;de 25 a 34 años;3
+49;General Belgrano;22;Chaco;2018;22;Dengue;9;de 25 a 34 años;1
+49;General Belgrano;22;Chaco;2018;23;Dengue;9;de 25 a 34 años;1
+63;General GÃ¼emes;22;Chaco;2018;15;Dengue;9;de 25 a 34 años;1
+63;General GÃ¼emes;22;Chaco;2018;16;Dengue;9;de 25 a 34 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;1
+112;O'Higgins;22;Chaco;2018;17;Dengue;9;de 25 a 34 años;1
+112;O'Higgins;22;Chaco;2018;18;Dengue;9;de 25 a 34 años;1
+112;O'Higgins;22;Chaco;2018;19;Dengue;9;de 25 a 34 años;3
+112;O'Higgins;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+140;SAN FERNANDO;22;Chaco;2018;11;Dengue;9;de 25 a 34 años;1
+140;SAN FERNANDO;22;Chaco;2018;12;Dengue;9;de 25 a 34 años;1
+140;SAN FERNANDO;22;Chaco;2018;20;Dengue;9;de 25 a 34 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;10;de 35 a 44 años;2
+39;2 de Abril;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;1
+28;CHACABUCO;22;Chaco;2018;12;Dengue;10;de 35 a 44 años;4
+28;CHACABUCO;22;Chaco;2018;13;Dengue;10;de 35 a 44 años;1
+28;CHACABUCO;22;Chaco;2018;14;Dengue;10;de 35 a 44 años;2
+28;CHACABUCO;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;3
+28;CHACABUCO;22;Chaco;2018;16;Dengue;10;de 35 a 44 años;2
+28;CHACABUCO;22;Chaco;2018;17;Dengue;10;de 35 a 44 años;2
+70;Independencia;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;1
+140;SAN FERNANDO;22;Chaco;2018;15;Dengue;10;de 35 a 44 años;1
+39;2 de Abril;22;Chaco;2018;14;Dengue;10;de 45 a 64 años;1
+39;2 de Abril;22;Chaco;2018;15;Dengue;10;de 45 a 64 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;10;de 45 a 64 años;9
+39;2 de Abril;22;Chaco;2018;17;Dengue;10;de 45 a 64 años;8
+39;2 de Abril;22;Chaco;2018;18;Dengue;10;de 45 a 64 años;8
+39;2 de Abril;22;Chaco;2018;19;Dengue;10;de 45 a 64 años;10
+39;2 de Abril;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;2
+14;Bermejo;22;Chaco;2018;14;Dengue;10;de 45 a 64 años;2
+28;CHACABUCO;22;Chaco;2018;12;Dengue;10;de 45 a 64 años;1
+28;CHACABUCO;22;Chaco;2018;13;Dengue;10;de 45 a 64 años;6
+28;CHACABUCO;22;Chaco;2018;14;Dengue;10;de 45 a 64 años;2
+28;CHACABUCO;22;Chaco;2018;15;Dengue;10;de 45 a 64 años;2
+28;CHACABUCO;22;Chaco;2018;16;Dengue;10;de 45 a 64 años;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;10;de 45 a 64 años;4
+28;CHACABUCO;22;Chaco;2018;18;Dengue;10;de 45 a 64 años;3
+28;CHACABUCO;22;Chaco;2018;19;Dengue;10;de 45 a 64 años;3
+28;CHACABUCO;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;3
+28;CHACABUCO;22;Chaco;2018;21;Dengue;10;de 45 a 64 años;2
+28;CHACABUCO;22;Chaco;2018;23;Dengue;10;de 45 a 64 años;1
+21;Comandante FernÃ¡ndez;22;Chaco;2018;15;Dengue;10;de 45 a 64 años;1
+49;General Belgrano;22;Chaco;2018;17;Dengue;10;de 45 a 64 años;1
+49;General Belgrano;22;Chaco;2018;19;Dengue;10;de 45 a 64 años;8
+49;General Belgrano;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;13
+49;General Belgrano;22;Chaco;2018;21;Dengue;10;de 45 a 64 años;2
+49;General Belgrano;22;Chaco;2018;22;Dengue;10;de 45 a 64 años;1
+49;General Belgrano;22;Chaco;2018;23;Dengue;10;de 45 a 64 años;1
+70;Independencia;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;1
+84;Libertador General San MartÃ­n;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;1
+112;O'Higgins;22;Chaco;2018;19;Dengue;10;de 45 a 64 años;3
+140;SAN FERNANDO;22;Chaco;2018;10;Dengue;10;de 45 a 64 años;1
+140;SAN FERNANDO;22;Chaco;2018;16;Dengue;10;de 45 a 64 años;1
+140;SAN FERNANDO;22;Chaco;2018;17;Dengue;10;de 45 a 64 años;1
+140;SAN FERNANDO;22;Chaco;2018;18;Dengue;10;de 45 a 64 años;2
+140;SAN FERNANDO;22;Chaco;2018;20;Dengue;10;de 45 a 64 años;2
+140;SAN FERNANDO;22;Chaco;2018;21;Dengue;10;de 45 a 64 años;1
+140;SAN FERNANDO;22;Chaco;2018;22;Dengue;10;de 45 a 64 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;5;de 5 a 9 años;4
+39;2 de Abril;22;Chaco;2018;17;Dengue;5;de 5 a 9 años;1
+39;2 de Abril;22;Chaco;2018;18;Dengue;5;de 5 a 9 años;4
+39;2 de Abril;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;1
+39;2 de Abril;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;1
+14;Bermejo;22;Chaco;2018;13;Dengue;5;de 5 a 9 años;1
+14;Bermejo;22;Chaco;2018;18;Dengue;5;de 5 a 9 años;1
+28;CHACABUCO;22;Chaco;2018;14;Dengue;5;de 5 a 9 años;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;5;de 5 a 9 años;1
+28;CHACABUCO;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;2
+28;CHACABUCO;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;3
+49;General Belgrano;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;3
+49;General Belgrano;22;Chaco;2018;20;Dengue;5;de 5 a 9 años;3
+49;General Belgrano;22;Chaco;2018;21;Dengue;5;de 5 a 9 años;1
+49;General Belgrano;22;Chaco;2018;22;Dengue;5;de 5 a 9 años;1
+98;Mayor Luis J. Fontana;22;Chaco;2018;19;Dengue;5;de 5 a 9 años;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;11;mayor o igual de 65 años;5
+39;2 de Abril;22;Chaco;2018;17;Dengue;11;mayor o igual de 65 años;10
+39;2 de Abril;22;Chaco;2018;18;Dengue;11;mayor o igual de 65 años;7
+39;2 de Abril;22;Chaco;2018;19;Dengue;11;mayor o igual de 65 años;9
+39;2 de Abril;22;Chaco;2018;20;Dengue;11;mayor o igual de 65 años;3
+39;2 de Abril;22;Chaco;2018;21;Dengue;11;mayor o igual de 65 años;1
+105;9 de Julio;22;Chaco;2018;19;Dengue;11;mayor o igual de 65 años;2
+28;CHACABUCO;22;Chaco;2018;17;Dengue;11;mayor o igual de 65 años;4
+28;CHACABUCO;22;Chaco;2018;18;Dengue;11;mayor o igual de 65 años;8
+28;CHACABUCO;22;Chaco;2018;19;Dengue;11;mayor o igual de 65 años;5
+28;CHACABUCO;22;Chaco;2018;20;Dengue;11;mayor o igual de 65 años;3
+28;CHACABUCO;22;Chaco;2018;21;Dengue;11;mayor o igual de 65 años;2
+28;CHACABUCO;22;Chaco;2018;22;Dengue;11;mayor o igual de 65 años;1
+43;Fray Justo Santa MarÃ­a de Oro;22;Chaco;2018;16;Dengue;11;mayor o igual de 65 años;1
+49;General Belgrano;22;Chaco;2018;17;Dengue;11;mayor o igual de 65 años;1
+49;General Belgrano;22;Chaco;2018;18;Dengue;11;mayor o igual de 65 años;2
+49;General Belgrano;22;Chaco;2018;19;Dengue;11;mayor o igual de 65 años;6
+49;General Belgrano;22;Chaco;2018;20;Dengue;11;mayor o igual de 65 años;6
+49;General Belgrano;22;Chaco;2018;21;Dengue;11;mayor o igual de 65 años;2
+49;General Belgrano;22;Chaco;2018;22;Dengue;11;mayor o igual de 65 años;1
+49;General Belgrano;22;Chaco;2018;23;Dengue;11;mayor o igual de 65 años;1
+112;O'Higgins;22;Chaco;2018;18;Dengue;11;mayor o igual de 65 años;2
+112;O'Higgins;22;Chaco;2018;19;Dengue;11;mayor o igual de 65 años;2
+140;SAN FERNANDO;22;Chaco;2018;17;Dengue;11;mayor o igual de 65 años;1
+140;SAN FERNANDO;22;Chaco;2018;20;Dengue;11;mayor o igual de 65 años;1
+140;SAN FERNANDO;22;Chaco;2018;21;Dengue;11;mayor o igual de 65 años;1
+49;General Belgrano;22;Chaco;2018;21;Dengue;1;menor que 1 año;1
+39;2 de Abril;22;Chaco;2018;16;Dengue;12;sin especificar;1
+39;2 de Abril;22;Chaco;2018;17;Dengue;12;sin especificar;3
+39;2 de Abril;22;Chaco;2018;18;Dengue;12;sin especificar;4
+39;2 de Abril;22;Chaco;2018;19;Dengue;12;sin especificar;1
+28;CHACABUCO;22;Chaco;2018;17;Dengue;12;sin especificar;1
+49;General Belgrano;22;Chaco;2018;20;Dengue;12;sin especificar;1
+49;General Belgrano;22;Chaco;2018;21;Dengue;12;sin especificar;1
+140;SAN FERNANDO;22;Chaco;2018;18;Dengue;12;sin especificar;1
+140;SAN FERNANDO;22;Chaco;2018;21;Dengue;12;sin especificar;1
+126;Saladas;18;Corrientes;2018;19;Dengue;7;de 15 a 19 años;1
+21;Capital;18;Corrientes;2018;21;Dengue;8;de 20 a 24 años;1
+126;Saladas;18;Corrientes;2018;20;Dengue;8;de 20 a 24 años;1
+999;*sin dato*;18;Corrientes;2018;17;Dengue;9;de 25 a 34 años;1
+21;Capital;18;Corrientes;2018;23;Dengue;9;de 25 a 34 años;1
+126;Saladas;18;Corrientes;2018;18;Dengue;9;de 25 a 34 años;1
+126;Saladas;18;Corrientes;2018;19;Dengue;9;de 25 a 34 años;2
+168;Santo TomÃ©;18;Corrientes;2018;16;Dengue;10;de 35 a 44 años;1
+21;Capital;18;Corrientes;2018;11;Dengue;10;de 45 a 64 años;1
+21;Capital;18;Corrientes;2018;20;Dengue;10;de 45 a 64 años;1
+126;Saladas;18;Corrientes;2018;20;Dengue;11;mayor o igual de 65 años;2
+21;Capital;18;Corrientes;2018;20;Dengue;12;sin especificar;2
+15;Concordia;30;Entre Ríos;2018;20;Dengue;9;de 25 a 34 años;1
+84;ParanÃ¡;32;Entre Ríos;2018;16;Dengue;10;de 35 a 44 años;1
+84;ParanÃ¡;31;Entre Ríos;2018;14;Dengue;10;de 45 a 64 años;1
+84;ParanÃ¡;33;Entre Ríos;2018;16;Dengue;11;mayor o igual de 65 años;1
+14;Formosa;34;Formosa;2018;11;Dengue;6;de 10 a 14 años;1
+14;Formosa;34;Formosa;2018;10;Dengue;7;de 15 a 19 años;1
+28;Matacos;34;Formosa;2018;20;Dengue;4;de 2 a 4 años;1
+14;Formosa;34;Formosa;2018;1;Dengue;8;de 20 a 24 años;3
+14;Formosa;34;Formosa;2018;9;Dengue;8;de 20 a 24 años;1
+14;Formosa;34;Formosa;2018;11;Dengue;8;de 20 a 24 años;1
+14;Formosa;34;Formosa;2018;19;Dengue;8;de 20 a 24 años;1
+14;Formosa;34;Formosa;2018;7;Dengue;9;de 25 a 34 años;1
+14;Formosa;34;Formosa;2018;8;Dengue;9;de 25 a 34 años;1
+14;Formosa;34;Formosa;2018;12;Dengue;9;de 25 a 34 años;1
+35;PATIÃ‘O;34;Formosa;2018;7;Dengue;9;de 25 a 34 años;1
+14;Formosa;34;Formosa;2018;9;Dengue;10;de 35 a 44 años;1
+14;Formosa;34;Formosa;2018;11;Dengue;10;de 35 a 44 años;1
+14;Formosa;34;Formosa;2018;3;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;10;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;11;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;12;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;13;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;20;Dengue;10;de 45 a 64 años;1
+14;Formosa;34;Formosa;2018;12;Dengue;11;mayor o igual de 65 años;1
+28;Matacos;34;Formosa;2018;18;Dengue;11;mayor o igual de 65 años;1
+28;Capital;54;Misiones;2018;15;Dengue;6;de 10 a 14 años;1
+63;IguazÃº;54;Misiones;2018;11;Dengue;6;de 10 a 14 años;1
+63;IguazÃº;54;Misiones;2018;19;Dengue;6;de 10 a 14 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;12;Dengue;6;de 10 a 14 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;15;Dengue;6;de 10 a 14 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;6;de 10 a 14 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;6;de 10 a 14 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;6;de 10 a 14 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;21;Dengue;6;de 10 a 14 años;1
+28;Capital;54;Misiones;2018;20;Dengue;7;de 15 a 19 años;3
+63;IguazÃº;54;Misiones;2018;17;Dengue;7;de 15 a 19 años;1
+63;IguazÃº;54;Misiones;2018;21;Dengue;7;de 15 a 19 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;10;Dengue;7;de 15 a 19 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;12;Dengue;7;de 15 a 19 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;7;de 15 a 19 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;16;Dengue;7;de 15 a 19 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;7;de 15 a 19 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;7;de 15 a 19 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;7;de 15 a 19 años;3
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;7;de 15 a 19 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;21;Dengue;7;de 15 a 19 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;12;Dengue;4;de 2 a 4 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;4;de 2 a 4 años;1
+28;Capital;54;Misiones;2018;10;Dengue;8;de 20 a 24 años;1
+28;Capital;54;Misiones;2018;19;Dengue;8;de 20 a 24 años;1
+28;Capital;54;Misiones;2018;22;Dengue;8;de 20 a 24 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;12;Dengue;8;de 20 a 24 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;13;Dengue;8;de 20 a 24 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;8;de 20 a 24 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;15;Dengue;8;de 20 a 24 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;8;de 20 a 24 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;8;de 20 a 24 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;8;de 20 a 24 años;4
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;8;de 20 a 24 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;21;Dengue;8;de 20 a 24 años;1
+28;Capital;54;Misiones;2018;2;Dengue;9;de 25 a 34 años;1
+28;Capital;54;Misiones;2018;8;Dengue;9;de 25 a 34 años;1
+28;Capital;54;Misiones;2018;16;Dengue;9;de 25 a 34 años;1
+28;Capital;54;Misiones;2018;18;Dengue;9;de 25 a 34 años;1
+28;Capital;54;Misiones;2018;19;Dengue;9;de 25 a 34 años;2
+28;Capital;54;Misiones;2018;20;Dengue;9;de 25 a 34 años;1
+28;Capital;54;Misiones;2018;22;Dengue;9;de 25 a 34 años;1
+63;IguazÃº;54;Misiones;2018;21;Dengue;9;de 25 a 34 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;13;Dengue;9;de 25 a 34 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;9;de 25 a 34 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;15;Dengue;9;de 25 a 34 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;9;de 25 a 34 años;3
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;9;de 25 a 34 años;4
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;9;de 25 a 34 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;9;de 25 a 34 años;3
+28;Capital;54;Misiones;2018;8;Dengue;10;de 35 a 44 años;1
+28;Capital;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;1
+63;IguazÃº;54;Misiones;2018;14;Dengue;10;de 35 a 44 años;2
+63;IguazÃº;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;11;Dengue;10;de 35 a 44 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;12;Dengue;10;de 35 a 44 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;16;Dengue;10;de 35 a 44 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;10;de 35 a 44 años;3
+28;Capital;54;Misiones;2018;18;Dengue;10;de 45 a 64 años;1
+28;Capital;54;Misiones;2018;19;Dengue;10;de 45 a 64 años;1
+28;Capital;54;Misiones;2018;20;Dengue;10;de 45 a 64 años;1
+28;Capital;54;Misiones;2018;26;Dengue;10;de 45 a 64 años;1
+63;IguazÃº;54;Misiones;2018;13;Dengue;10;de 45 a 64 años;1
+63;IguazÃº;54;Misiones;2018;18;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;11;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;15;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;16;Dengue;10;de 45 a 64 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;10;de 45 a 64 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;10;de 45 a 64 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;21;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;22;Dengue;10;de 45 a 64 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;26;Dengue;10;de 45 a 64 años;1
+84;Montecarlo;54;Misiones;2018;20;Dengue;10;de 45 a 64 años;1
+98;San Ignacio;54;Misiones;2018;22;Dengue;10;de 45 a 64 años;1
+28;Capital;54;Misiones;2018;19;Dengue;5;de 5 a 9 años;1
+63;IguazÃº;54;Misiones;2018;13;Dengue;5;de 5 a 9 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;14;Dengue;5;de 5 a 9 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;5;de 5 a 9 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;5;de 5 a 9 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;26;Dengue;5;de 5 a 9 años;1
+28;Capital;54;Misiones;2018;15;Dengue;11;mayor o igual de 65 años;1
+28;Capital;54;Misiones;2018;19;Dengue;11;mayor o igual de 65 años;5
+28;Capital;54;Misiones;2018;20;Dengue;11;mayor o igual de 65 años;2
+28;Capital;54;Misiones;2018;21;Dengue;11;mayor o igual de 65 años;1
+63;IguazÃº;54;Misiones;2018;14;Dengue;11;mayor o igual de 65 años;1
+63;IguazÃº;54;Misiones;2018;17;Dengue;11;mayor o igual de 65 años;1
+63;IguazÃº;54;Misiones;2018;19;Dengue;11;mayor o igual de 65 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;17;Dengue;11;mayor o igual de 65 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;11;mayor o igual de 65 años;3
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;11;mayor o igual de 65 años;6
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;11;mayor o igual de 65 años;2
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;21;Dengue;11;mayor o igual de 65 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;22;Dengue;11;mayor o igual de 65 años;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;18;Dengue;12;sin especificar;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;19;Dengue;12;sin especificar;1
+77;Libertador Grl. San MartÃ­n;54;Misiones;2018;20;Dengue;12;sin especificar;1
+105;LOS ANDES;66;Salta;2018;11;Dengue;6;de 10 a 14 años;
+126;OrÃ¡n;66;Salta;2018;22;Enfermedad por Virus del Zika;6;de 10 a 14 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Enfermedad por Virus del Zika;3;de 13 a 24 meses;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;22;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;OrÃ¡n;66;Salta;2018;18;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;OrÃ¡n;66;Salta;2018;19;Enfermedad por Virus del Zika;7;de 15 a 19 años;2
+126;OrÃ¡n;66;Salta;2018;20;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+126;OrÃ¡n;66;Salta;2018;23;Enfermedad por Virus del Zika;7;de 15 a 19 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Dengue;4;de 2 a 4 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Enfermedad por Virus del Zika;4;de 2 a 4 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;15;Dengue;8;de 20 a 24 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;12;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;19;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+126;OrÃ¡n;66;Salta;2018;19;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+126;OrÃ¡n;66;Salta;2018;20;Enfermedad por Virus del Zika;8;de 20 a 24 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Dengue;9;de 25 a 34 años;2
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;11;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;14;Enfermedad por Virus del Zika;9;de 25 a 34 años;2
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;15;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;16;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;OrÃ¡n;66;Salta;2018;18;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;OrÃ¡n;66;Salta;2018;19;Enfermedad por Virus del Zika;9;de 25 a 34 años;2
+126;OrÃ¡n;66;Salta;2018;21;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+126;OrÃ¡n;66;Salta;2018;23;Enfermedad por Virus del Zika;9;de 25 a 34 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;10;Enfermedad por Virus del Zika;10;de 35 a 44 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;16;Enfermedad por Virus del Zika;10;de 35 a 44 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Dengue;10;de 45 a 64 años;2
+28;Capital;66;Salta;2018;23;Enfermedad por Virus del Zika;10;de 45 a 64 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;15;Enfermedad por Virus del Zika;10;de 45 a 64 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;19;Enfermedad por Virus del Zika;10;de 45 a 64 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;22;Enfermedad por Virus del Zika;10;de 45 a 64 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;20;Dengue;5;de 5 a 9 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;21;Enfermedad por Virus del Zika;5;de 5 a 9 años;1
+126;OrÃ¡n;66;Salta;2018;20;Enfermedad por Virus del Zika;5;de 5 a 9 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;12;Enfermedad por Virus del Zika;2;igual a 1 año;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;22;Enfermedad por Virus del Zika;11;mayor o igual de 65 años;1
+126;OrÃ¡n;66;Salta;2018;20;Enfermedad por Virus del Zika;11;mayor o igual de 65 años;1
+56;Grl. JosÃ© de San MartÃ­n;66;Salta;2018;19;Enfermedad por Virus del Zika;1;menor que 1 año;1
+49;General Obligado;82;Santa Fe;2018;19;Dengue;8;de 20 a 24 años;1
+49;General Obligado;82;Santa Fe;2018;21;Dengue;8;de 20 a 24 años;1
+77;9 de Julio;82;Santa Fe;2018;23;Dengue;9;de 25 a 34 años;1
+84;Rosario;82;Santa Fe;2018;15;Dengue;9;de 25 a 34 años;1
+84;Rosario;82;Santa Fe;2018;19;Dengue;9;de 25 a 34 años;1
+84;Rosario;82;Santa Fe;2018;18;Dengue;10;de 45 a 64 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;6;de 10 a 14 años;2
+49;Capital;86;Santiago del Estero;2018;17;Dengue;6;de 10 a 14 años;6
+49;Capital;86;Santiago del Estero;2018;18;Dengue;6;de 10 a 14 años;6
+49;Capital;86;Santiago del Estero;2018;17;Dengue;3;de 13 a 24 meses;1
+35;Banda;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;7;de 15 a 19 años;7
+49;Capital;86;Santiago del Estero;2018;17;Dengue;7;de 15 a 19 años;4
+49;Capital;86;Santiago del Estero;2018;18;Dengue;7;de 15 a 19 años;1
+35;Banda;86;Santiago del Estero;2018;15;Dengue;4;de 2 a 4 años;1
+35;Banda;86;Santiago del Estero;2018;18;Dengue;4;de 2 a 4 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;4;de 2 a 4 años;1
+49;Capital;86;Santiago del Estero;2018;17;Dengue;4;de 2 a 4 años;4
+49;Capital;86;Santiago del Estero;2018;18;Dengue;4;de 2 a 4 años;2
+147;RÃ­o Hondo;86;Santiago del Estero;2018;18;Dengue;4;de 2 a 4 años;1
+49;Capital;86;Santiago del Estero;2018;15;Dengue;8;de 20 a 24 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;8;de 20 a 24 años;3
+49;Capital;86;Santiago del Estero;2018;17;Dengue;8;de 20 a 24 años;5
+49;Capital;86;Santiago del Estero;2018;18;Dengue;8;de 20 a 24 años;1
+49;Capital;86;Santiago del Estero;2018;5;Dengue;9;de 25 a 34 años;1
+49;Capital;86;Santiago del Estero;2018;15;Dengue;9;de 25 a 34 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;9;de 25 a 34 años;7
+49;Capital;86;Santiago del Estero;2018;17;Dengue;9;de 25 a 34 años;3
+49;Capital;86;Santiago del Estero;2018;18;Dengue;9;de 25 a 34 años;2
+49;Capital;86;Santiago del Estero;2018;14;Dengue;10;de 35 a 44 años;1
+49;Capital;86;Santiago del Estero;2018;15;Dengue;10;de 35 a 44 años;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;10;de 35 a 44 años;2
+49;Capital;86;Santiago del Estero;2018;15;Dengue;10;de 45 a 64 años;3
+49;Capital;86;Santiago del Estero;2018;16;Dengue;10;de 45 a 64 años;8
+49;Capital;86;Santiago del Estero;2018;17;Dengue;10;de 45 a 64 años;5
+49;Capital;86;Santiago del Estero;2018;16;Dengue;5;de 5 a 9 años;1
+49;Capital;86;Santiago del Estero;2018;17;Dengue;5;de 5 a 9 años;4
+49;Capital;86;Santiago del Estero;2018;18;Dengue;5;de 5 a 9 años;5
+49;Capital;86;Santiago del Estero;2018;16;Dengue;11;mayor o igual de 65 años;2
+49;Capital;86;Santiago del Estero;2018;17;Dengue;11;mayor o igual de 65 años;1
+49;Capital;86;Santiago del Estero;2018;18;Dengue;11;mayor o igual de 65 años;1
+35;Banda;86;Santiago del Estero;2018;16;Dengue;1;menor que 1 año;1
+49;Capital;86;Santiago del Estero;2018;16;Dengue;1;menor que 1 año;1
+49;Capital;86;Santiago del Estero;2018;17;Dengue;1;menor que 1 año;1
+49;Capital;86;Santiago del Estero;2018;5;Dengue;12;sin especificar;1
+21;Chicligasta;90;Tucumã;2018;14;Dengue;10;de 35 a 44 años;1
+105;TafÃ­ Viejo;90;Tucumã;2018;22;Dengue;12;sin especificar;1

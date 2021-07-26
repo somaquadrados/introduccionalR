@@ -11,12 +11,11 @@ library(tidyverse)
 
 # convert to pdf
 setwd("C:/Users/mmfav/OneDrive/GitHub/cursos/somadosquadrados/introduccionalR/clase_1")
-purrr::map(dir(pattern = ".Rmd$"), pagedown::chrome_print)
+purrr::map(dir(pattern = ".Rmd$"), pagedown::chrome_print(timeout = 120,  options = list(transferMode = "ReturnAsStream")))
 
-pagedown::chrome_print("clase_1.html")
-# system("`npm bin`/decktape remark file.html file.pdf")
-# remotes::install_github('rstudio/pagedown')
-
+pagedown::chrome_print("clase_1.html", timeout = 120,  options = list(transferMode = "ReturnAsStream"))
 # ---------------------------------end---------------------------------------- #
 
+
+pagedown::chrome_print()
 

@@ -11,22 +11,37 @@ output:
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
-
 ---
 ## Introducción
 
 .center[<img src="figs/33-ini1.png" style="width: 55%;">]
+
+<!--
+Antes de comenzar la clase, me gustaría decir esto: la programación no es más que una forma de comunicarse con nuestra computadora. Las computadoras, como nosotres, se comunican "por escrito" y los lenguajes de programación son el medio para comunicarse con ellas.
+-->
 
 ---
 ## Introducción
 
 .center[<img src="figs/34-ini2.png" style="width: 52%;">]
 
+<!--
+Por ejemplo, podemos pedirle a la computadora que calcule una función simple escribiendo y ejecutando código en el lenguaje R.
+
+Esta información me ayudó a no tener miedo de programar. Aprender un lenguaje de programación es como aprender cualquier idioma, como español o portugués.
+(:
+-->
+
 ---
 ## Introducción
+### En nuestras diapositivas
 
 <br>
-.center[<img src="figs/38-rstudio.png" style="width: 75%;">]
+.center[<img src="figs/38-rstudio.png" style="width: 70%;">]
+
+<!--
+También quiero aclararle lo siguiente, en caso de duda: Las áreas grises en las diapositivas corresponden a los códigos R. Debajo de esta área, después de los símbolos "hash", veremos la salida de este código.
+-->
 
 ---
 ## Introducción
@@ -36,6 +51,12 @@ output:
 [`clase_1.R`](clase_1.R)
 ]
 
+<!--
+El script de esta clase está disponible en el sitio web del curso (lo dejaré en la descripción del video).
+
+Todo lo que les voy a mostrar se describe en este script.
+-->
+
 ---
 ## Introducción
 
@@ -44,6 +65,23 @@ output:
 <button type="button">Tools</button> **>** <button type="button">Global options</button> **>** <button type="button">Code</button> **>** <button type="button">Saving</button> **>** <button type="button">Default text enconding</button> **>** select **UTF-8**
 
 .center[<img src="figs/40-utf8.gif" style="width: 70%;">]
+
+<!--
+Si abre el script y ve que los acentos no se muestran correctamente o alguna otra configuración incorrecta, intente cambiar la codificación a UTF-8.
+-->
+
+---
+## Introducción
+
+### Sistema de puntuación
+
+<br>
+.center[<img src="figs/39-pontuacion.png" style="width: 70%;">]
+<br>
+
+<!--
+Otro dato importante es que R, a diferencia de nosotres, usa el punto como separador decimal y la coma como separador de miles. Es sumamente importante ser consciente de este hecho para que no obtengamos resultados incorrectos.
+-->
 
 ---
 # Script
@@ -62,11 +100,19 @@ output:
 
 - [Funciones](#funciones)
 
+<!--
+En esta clase veremos los siguientes contenidos: Objetivos y asignaciones, clases, tipos de objetos, estructura de control y funciones.
+-->
+
 ---
 name: objatr
 class: middle, center
 
 # Objetos y atribuciones
+
+<!--
+Comenzando con objetos y asignaciones
+-->
 
 ---
 ## Objetos y atribuciones
@@ -84,32 +130,49 @@ objeto # Siempre que evaluamos el `objeto`, la R devolverá el valor 6
 
 > El símbolo **`=`** se puede utilizar en lugar de **`<-`** pero no se recomienda. 
 
+<!--
+Los objetos son variables capazes de almacenar cualquier valor o estructura de datos.
+
+Vamos tener un valor asignado - en el ejemplo es el valor 6 -, un operador de asignação - signo menor y guion - y el nombre del objeto - que en nuestro caso es "objeto". 
+
+Al asignar el valor 6 al nombre "objeto", siempre que escribamos "objeto" seguido de CTRL + ENTER, la R devolverá el valor asignado.
+
+También podemos utilizar el "igual" como símbolo de asignación, pero como escapa a las normas de una buena programación con R, se desaconseja su uso.
+-->
+
 ---
 ## Objetos y atribuciones
 
 ```{r}
-j <- 14
+j <- 14 # CRTL + ENTER
 ```
 
 ...está haciendo una **declaración**, es decir, declarando que la variable `j` ahora se convertirá en un objeto que contiene el número `14`. Las declaraciones se pueden hacer una en cada línea ...
 
 ```{r}
-j <- 14
-y <- 24
+j <- 14 # CRTL + ENTER
+y <- 24 # CRTL + ENTER
 ```
 
 ... o separados por `;`
 
 ```{r}
-j <- 14; y <- 24
+j <- 14; y <- 24 # CRTL + ENTER
 ```
 
 podemos usar el `;` siguiendo la asignación para llamar a nuestro objeto y ver su contenido:
 
 ```{r}
-j <- 14; j
+j <- 14; j # CRTL + ENTER
 ```
 
+<!--
+Al declarar "j <-14" en R, estamos declarando que la variable j ahora se convertirá en un objeto que contiene el valor 14.
+
+Podemos hacer una declaración por línea o podemos escribir dos o más declaraciónes en la misma línea, separadas por un punto y coma.
+
+También podemos usar el punto-coma siguiendo la asignación para llamar a nuestro objeto y ver su contenido
+-->
 ---
 ## Objetos y atribuciones
 
@@ -129,6 +192,10 @@ e <- "d"
 e
 ```
 
+<!--
+Como podemos ver en estes otros ejemplos de asignación, los objetos pueden tener diferentes naturalezas, no siempre serán solo numérico, también tenemos objetos con valores de tipo carácter.
+-->
+
 ---
 ## Objetos y atribuciones
 
@@ -137,13 +204,33 @@ e
 ```{r}
 a <- 5
 a
+```
 
+--
+
+```{r}
 a <- "bien"
 a
+```
 
-a <- 36924612
+--
+
+```{r}
+a <- 36
 a
 ```
+
+<!--
+También es importante tener en cuenta que los objetos solo pueden almacenar una estructura de valor a la vez.
+
+Suponga que inicialmente establecemos el valor "5" para un objeto llamado "a". Cuando llamo "a" en R, R devolverá el valor 5, cierto?
+
+Si en un segundo momento asigno la palabra "bien" al objeto "a", cuando llamo a este objeto R devolverá la palabra "bien" y no el valor 5, ¿se entiende?
+
+Es como si hubiera sustituido un valor por otro ... En este caso, el último valor asignado siempre será el valor válido!!
+
+¡Esto es muy, muy importante! Siempre tenemos que estar atentos para no cometer errores al utilizar R.
+-->
 
 ---
 ## Reglas para nombrar objetos
@@ -163,6 +250,26 @@ a
 6. La **R** distingue entre mayúsculas y minúsculas, por lo que:
 
   > obj ≠ Obj ≠ OBJ
+  
+<!--
+Existen algunas reglas para nombrar objetos en R.
+
+1. El nombre de los objetos pueden estar formados por *letras*, *números*, underline y punto.
+
+2. **No** se puede empezar con un número y/o un punto
+
+3. **No** puede contener espacios
+
+4. Evitar el uso de acentos
+
+5. Evitar el uso de nombres de funciones como:
+
+  > sum, diff, df, var, pt, data, C, etc
+
+6. La **R** distingue entre mayúsculas y minúsculas, por lo que:
+
+  > obj ≠ Obj ≠ OBJ 
+-->
 
 ---
 ## Reglas para nombrar objetos
@@ -197,6 +304,8 @@ w <- k
 w
 ```
 
+--
+
 Podemos usar objetos para realizar operaciones matemáticas...
 
 ```{r}
@@ -207,8 +316,16 @@ a + y / j
 
 ```{r}
 k <- a + y / j
+k
 ```
 
+<!--
+Otra característica importante de los objetos es que podemos almacenar el valor de un objeto en otro.
+
+Por ejemplo, si le asigno el valor 10 al objeto k, y luego le asigno el objeto k al nombre w, w se convierte en 10.
+
+También podemos usar estos objetos en operaciones matemáticas y asignar esas operaciones matemáticas a un nuevo objeto.
+-->
 ---
 ## Gestionar el lugar de trabajo
 
@@ -222,6 +339,12 @@ Para eliminar solo un objeto con `rm()`:
 rm(a) # elimina el objeto 'obj'
 ls() # ¿Qué objetos quedan?
 ```
+
+<!--
+Para saber qué objetos tengo en mi entorno r, simplemente use la función "ls()".
+
+y para eliminar algun objeto, use la función "rm()" con el nombre del objeto entre los parentesis. 
+-->
 
 ---
 ## Gestionar el lugar de trabajo
@@ -239,23 +362,25 @@ rm(list = ls()) # elimina TODOS los objetos
 ls() # ¿Qué objetos quedan?
 ```
 
+<!--
+Es posible eliminar más de un objeto con la función rm (), o incluso eliminar todos los objetos usando la función rm(list = ls()).
+-->
 ---
 ## Gestionar el lugar de trabajo
 
 #### Observación:
 
-La pestaña "**Environmental**" de RStudio muestra los objetos creados hasta ahora en la sesión actual.
+La pestaña "**Environmental**" de RStudio muestra los objetos creados en la sesión actual.
 
 <center>
 <img src="figs/2-envi.png" style="width: 75%;">
 </center>
 
-
 ---
-## Objetos y atribuciones
+## Ejercicio
 
 .pull-left[
-Fuiste al campo y recogiste algunos mosquitos, que se enumeran en la siguiente tabla. 
+Fuiste al campo y recogiste algunos vectores, que se enumeran en la siguiente tabla. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -269,14 +394,16 @@ data.frame(Objeto, n) %>%
 ]
 
 .pull-right[
-1 - Cree objetos para cada especie de mosquito y almacene el número de individuos en cada objeto (**n** en la tabla).
+1 - Cree objetos para cada especie y almacene el número de individuos en cada objeto (**n** en la tabla).
 
-2 - Cree objetos para cada especie de mosquito y almacene el número de individuos en cada objeto (**n** en la tabla).
+2 - ¿Qué porcentaje de *Lutzomyia sp.* se muestreó?
 
-3 - ¿Qué porcentaje de *Lutzomyia sp.* se muestreó?
-
-4 - Si eliminamos los mosquitos desconocidos, ¿cuál es la cantidad total muestreada? ¿Y cuál es el porcentaje de *Aedes*?
+3 - Si eliminamos los vectores desconocidos, ¿cuál es la cantidad total muestreada? ¿Y cuál es el porcentaje de *Aedes*?
 ]
+
+<!--
+Ahora les voy a dejar un ejercicio para que ustedes intenten responder. Pausa esta clase y, si tienes alguna duda, envíanos un mensaje por telegrama o por mail.
+-->
 
 ---
 name: clases
@@ -291,7 +418,6 @@ Los `objetos` tienen tres características:
 
 > <big> a <- 1</big>
 
-
 1. **Nombre** que le damos al objeto (= a)
 
 2. **Contenido** en sí del objeto (= 1)
@@ -301,18 +427,32 @@ Los `objetos` tienen tres características:
   - `Clase`: naturaleza del elementos (1 = numerico)
   - `Estructura`: Cómo están organizados los elementos (a = vector)
 
+<!--
+Creé un objeto en R llamado "A".
+
+Este objeto tiene:
+
+- un nombre = a
+- un contenido = b
+- y sus atributos.
+
+Los atributos se pueden dividir en "clase" (que es la naturaleza del elemento) y "estructura" (cómo se organizan los elementos).
+
+Veremos a ambos en la continuación. 
+-->
+
 ---
 ## Clases de objetos
 
-La clase de un objeto es muy importante en **R**! Es a partir de él que las funciones y los operadores pueden saber *exactamente* qué hacer con un objeto. 
+La clase de un objeto es muy importante en **R**! Es a partir de ella que las funciones y los operadores pueden saber *exactamente* qué hacer con un objeto. 
 
 --
 
 Por ejemplo, es posible sumar dos objetos numéricos,...
 
 ```{r}
-a = 1
-b = 2
+a <- 1
+b <- 2
 a + b
 ```
 
@@ -320,8 +460,8 @@ a + b
 
 ... pero no podemos sumar dos caracteres:
 ```{r eval=FALSE, include=TRUE}
-c = "c"
-d = "!"
+c <- "c"
+d <- "!"
 c + d
 ```
 
@@ -337,7 +477,7 @@ c + d
 **R** tiene 5 clases básicas de objetos, también llamados **objetos atómicos**:
 
 .pull-left[
-1 - `numeric`: Números reales, punto flotante (enteros o decimales).
+1 - `numeric`: Números reales, punto flotante (decimales).
 ```{r}
 num <- 1.50
 ```
@@ -403,6 +543,7 @@ f(5)
 ## Clases de objetos
 
 #### Importante!
+
 2 - Las expresiones de tipo `character` deben aparecer entre comillas simples o dobles:
 ```{r}
 bb <- 'Esto es un character!'
@@ -411,7 +552,7 @@ bb
 cc <- "Lo mismo (:"
 cc
 
-dd <- "I'm gonna take my horse to the old town road ♫"
+dd <- "I'm gonna take my horse to the old town road"
 dd
 ```
 
@@ -453,19 +594,26 @@ hh == ii
 > **==** : operador matemático "exactamente igual a ..."
 
 ---
-## Clases de objetos
-
-### Ejercicios
+## Ejercicios
 
 1 - Crea un objeto para las clases `numeric`, `integer`, `character` e `logical` y comprueba que `r fontawesome::fa("r-project")` lo hizo correctamente.
 
-2 - Trabajará con un modelo matemático en el que la variable de respuesta tiene una distribución de Poisson. Tu variable de respuesta es:
+2 - Tenga en cuenta los siguientes objetos:
 
 ```{r}
-vr <- c(20, 22, 21, 26, 14, 30, 21, 39)
+a <- 35 + 18^4 * 2
+b <- 2L + 3L + 5L
+c <- 2L + 3L + 5
+d <- "Me encanta la r" == TRUE
+e <- F
+f <- "2L + 3L + 5L"
 ```
 
-Escribe la 'vr' para que la clase coincida con el tipo `integer`. 
+a) ¿Cuál es la clase de cada objeto?
+
+b) ¿Qué objetos tienen la misma clase y cuáles no?
+
+b) ¿Qué objetos tienen el mismo valor y cuáles no?
 
 ---
 name: tipos
@@ -724,11 +872,25 @@ area
 - El factor representa medidas de una variable *cualitativa*, que puede ser *nominal* u *ordinal*.
 
 ```{r}
-temporada <- factor(x = c("verano", "verano", "primavera", "primavera", "primavera", "otono", "invierno",  "invierno"), 
+estacion <- factor(x = c("verano", "verano", "primavera", "primavera", "primavera", "otono", "invierno",  "invierno"), 
                     levels = c("verano", "primavera", "otono", "invierno"))
 
-temporada
+estacion
 ```
+
+<!--
+Los factores corresponden a una colección unidimensional de valores de la clase "character".
+
+Los factores se utilizan para representar variables categóricas. Las variables categóricas pueden ser nominales (desordenadas) u ordinales (ordenadas).
+
+Los objetos de tipo factor se crean utilizando la función factor() en R. Los posibles valores de un objeto de tipo factor se denominan niveles (levels).
+
+De esta manera, un factor contendrá un vector de valores y sus valores representan niveles.
+
+Por ejemplo, puedo tener un factor que represente las veces que he muestreado en el campo. En este caso, realicé dos muestreos en "verano", tres en "primavera", uno en "otoño" y uno en "invierno".
+
+Como estamos trabajando con factores, R entenderá que valores iguales a "verano" se refieren al mismo nivel que mi factor.
+-->
 
 ---
 ## Tipos de objetos
@@ -767,8 +929,8 @@ levels(genero)
 - *Factor ordinal*: variable ordinal.
 
 ```{r}
-mes <- factor(x = c("Janeiro", "Janeiro", "Fevereiro", "Fevereiro", "Março", "Março"),
-              levels = c("Janeiro", "Fevereiro", "Março"), ordered = TRUE)
+mes <- factor(x = c("enero", "enero", "febrero", "febrero", "marzo", "marzo"),
+              levels = c("enero", "febrero", "marzo"), ordered = TRUE)
 mes
 
 levels(mes)
@@ -838,6 +1000,8 @@ De esta manera, cree un vector que repita 12 veces el nombre de cada ubicación 
 - Almacena datos de una única clase.
 
 .center[<img src="figs/9-matrixe2.png" style="width: 68%;">]
+
+.center[Volume respiratório forzado (vez)]
 
 ---
 ## Tipos de objetos
@@ -1109,7 +1273,7 @@ crea una **lista** en r: `list()`.
 ```{r}
 lis <- list(rbind(c(3,6), c(4,5)), 
             sample(1:100, 5), 
-            factor(2, 6, 9))
+            factor(c("a", "a", "b", "c")))
 lis
 ```
 
@@ -1156,10 +1320,118 @@ class: middle, center
 
 - En otras palabras, estamos diciendo que para **cada elemento i** contenido en el **conjunto de valores** ejecutaremos los comandos que están dentro de las llaves (**code**).
 
-- El índice no tiene que ser **i**, en realidad puede ser cualquier letra o palabra. 
 ```{r eval=FALSE, include=TRUE}
-for(w in conjunto_de_valores){code}
+for(i in conjunto_de_valores){code}
 ```
+
+> El índice no tiene que ser **i**, en realidad puede ser cualquier letra o palabra. 
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+    <img src="figs/40-for.png" style="width: 30%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/41-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/42-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/43-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/44-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/45-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/46-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/47-for.png" style="width: 45%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Imprimamos los números del 1 al 6.
+
+<br>
+.center[<img src="figs/48-for.png" style="width: 45%;">]
 
 ---
 ## Estructuras de Control
@@ -1175,8 +1447,8 @@ for(w in conjunto_de_valores){code}
 # Creamos un vector con valores entre 1 y 6
 objeto1 <- 1:6
 
-for(v in objeto1){ # Para cada valor v en 'objeto1' (= i)
-  print(v) # imprime el valor v
+for(i in objeto1){ # Para cada valor i en 'objeto1' (= i)
+  print(i) # imprime el valor i
 }
 ```
 ]
@@ -1188,8 +1460,8 @@ for(v in objeto1){ # Para cada valor v en 'objeto1' (= i)
 # También podemos pedirle a R que imprima 
 # valores entre 1 y 6 directamente:
 
-for(p in 1:6){ # Para cada valor p entre 1 y 6 (= i)
-  print(p) # imprime el valor p
+for(i in 1:6){ # Para cada valor i entre 1 y 6 (= i)
+  print(i) # imprime el valor i
 }
 ```
 ]
@@ -1203,55 +1475,116 @@ for(p in 1:6){ # Para cada valor p entre 1 y 6 (= i)
 
   - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
   
+    <img src="figs/49-for.png" style="width: 35%;">
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/50-for.png" style="width: 40%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/51-for.png" style="width: 40%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/52-for.png" style="width: 40%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/53-for.png" style="width: 40%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/54-for.png" style="width: 40%;">]
+
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+
+.center[<img src="figs/55-for.png" style="width: 40%;">]
+    
+---
+## Estructuras de Control
+
+### Estructuras de repetición: `for()`
+
+- Para facilitar la comprensión, veamos dos ejemplos muy simples:
+
+  - Le pedimos a la r que sume +1 a cada valor entre 1 y 6 y luego imprima.
+  
 ```{r}
-for(m in 1:6){ # Para cada valor m entre 1 y 6 (= i)
-  a <- m + 1 # agregue el valor en m con 1 y guárdelo en "a"
+for(i in 1:6){ # Para cada valor i entre 1 y 6 (= i)
+  a <- i + 1 # agregue el valor en i con 1 y guárdelo en "a"
   print(a) # imprime el objeto a
 }
 ```
 
 ---
-## Estructuras de Control
+## Ejercicio
 
-### Estructuras de repetición: `for()`
+1 - Supongamos que ha estado en el campo durante 6 meses, registrando números de especies por cada mes. Al final del campo, desea calcular la frecuencia acumulada de especies.
 
-Muestreó especies en tres ubicaciones diferentes: loc1, loc2 y loc3. Al final del muestreo, desea calcular el total de especies muestreadas. Haga esto usando el comando "`for()`".
+```{r eval=FALSE, include=TRUE}
+# Número de especies muestreadas cada mes
+sps <- c(10, 12, 16, 15, 18, 11)
 
-```{r}
-loc1 <- c(1, 8, 5)
-loc2 <- c(4, 7, 1)
-loc3 <- c(9, 4, 3)
+# Loop
+total <- 0
 
-mt <- rbind(loc1, loc2, loc3)
-colnames(mt) <- c('T1', 'T2', 'T3')
-
-mt
-```
-
----
-## Estructuras de Control
-
-### Estructuras de repetición: `for()`
-
-Muestreó especies en tres ubicaciones diferentes: loc1, loc2 y loc3. Al final del muestreo, desea calcular el total de especies muestreadas. Haga esto usando el comando "`for()`".
-
-```{r}
-for(loc in 1:3){ # Para cada uno de los 3 loc's...
-  s <- sum(mt[loc, 1:3]) # ... sumar las columnas entre 1 y 3
-  print(s) # imprimir el resultado
+for(n in sps){
+  total <- total + n
+  print(total)
 }
+
 ```
 
+> En una hoja de papel, escriba todos los pasos por los que pasará este *loop* y el resultado de cada ciclo. 
+
 ---
-## Estructuras de Control
+## Ejercicio
 
-### Estructuras de repetición: `for()`
+2 - Escriba un loop `for` que calcule el cubo de cada número entre 1 y 7 usando la función `print()` para imprimir el resultado.
 
-#### Ejercicio
-
-1 - Escriba un loop `for` que calcule el cubo de cada número entre 1 y 7 usando la función `print()`.
-
-2 - Pesó a diferentes personas con 1.80 m de altura y obtuvo los siguientes valores: 70, 85, 90, 68. Cree un loop `for` para calcular el IMC de estas personas según la siguiente expresión matemática: IMC = Peso ÷ (Altura × Altura).
+3 - Pesó a diferentes personas con 1.80 m de altura y obtuvo los siguientes valores: 70, 85, 90, 68. Cree un loop `for` para calcular el IMC de estas personas según la siguiente expresión matemática: IMC = Peso ÷ (Altura × Altura).
 
 ---
 ## Estructuras de Control
@@ -1288,16 +1621,116 @@ if(<condicion 1>){
 
 ### Estructuras de selección: `if()`
 
-Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>20)" y "no ideales (<21)".
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/56-if.png" style="width: 40%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/57-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/58-if.png" style="width: 80%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/59-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/60-if.png" style="width: 45%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/61-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/62-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/63-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/64-if.png" style="width: 63%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
+
+<br>
+<img src="figs/65-if.png" style="width: 55%;">
+
+---
+## Estructuras de Control
+
+### Estructuras de selección: `if()`
+
+- Es posible que deseemos clasificar los niveles de vitamina D de los pacientes en "ideales (>21)" y "no ideales (<=21)": c(5, 30, 39, 14, 45).
 
 ```{r}
-vitamina_D <- sample(0:60, 5)
+vitamina_D <- c(5, 30, 39, 14, 45)
 vitamina_D
 ```
 
 ```{r}
-for(paciente in vitamina_D){ # para cada uno de los pacientes en "vitamina_D"...
-  if(paciente > 21){print("ideales")} # si el paciente tiene un valor> 21, imprima "ideal" 
+for(i in vitamina_D){ # para cada uno de los pacientes en "vitamina_D"...
+  if(i > 21){print("ideales")} # si el paciente tiene un valor> 21, imprima "ideal" 
   else{print("no ideales")} # demás, imprima "no ideales"
 }
 ```
@@ -1353,11 +1786,7 @@ for(paciente in glicose){ # para cada paciente con datos de glucosa...
 ```
 
 ---
-## Estructuras de Control
-
-### Estructuras de selección: `if()`
-
-#### Ejercicio
+## Ejercicio
 
 .pull-left[
 Tomando como entrada la altura y el sexo (codificados de la siguiente manera: 1 = mujer 2 = hombre) de una persona, calcule e imprima su peso ideal, usando las siguientes fórmulas:
@@ -1418,13 +1847,103 @@ while(condición lógica){
 
 - Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
 
+  <img src="figs/66-while.png" style="width: 45%;">
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/67-while.png" style="width: 45%;">
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/68-while.png" style="width: 45%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/69-while.png" style="width: 45%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/70-while.png" style="width: 90%;">
+
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/71-while.png" style="width: 90%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/72-while.png" style="width: 90%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/73-while.png" style="width: 90%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/74-while.png" style="width: 90%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
+  <img src="figs/75-while.png" style="width: 90%;">
+  
+---
+## Estructuras de Control
+
+### Estructura de repetición: `while()`
+
+- Por ejemplo, dado que n = 5, siempre que no sea igual a 0, R no detendrá la ejecución del ciclo.
+
 ```{r}
-n = 5
+n <- 5
 
 while(n > 0){ # siempre que el valor de n sea mayor que 0 ...
   print("R está trabajando")
   print(n)
-  n = n - 1
+  n <- n - 1
 }
 ```
 
@@ -1456,7 +1975,7 @@ class: middle, center
 
 - Las funciones toman **argumentos**.
 
-- Los argumentos son los valores u objetos que ponemos entre paréntesis y que las funciones necesitan un par funcional (calculando un resultado).
+- Los argumentos son los valores u objetos que ponemos entre paréntesis y que las funciones necesitan para funcional (calculando un resultado).
 
 - Por ejemplo, la función `class()` necesita recibir un objeto para investigar la clase y devolverlo:
 
@@ -1510,13 +2029,11 @@ rep(x,
 
 - **x**: valores que se repetirán.
 - **times**: Un vector de valor entero que da el número (no negativo) de veces que se repite cada elemento si tiene una longitud (x), o que se repite todo el vector si tiene una longitud 1.
-- **lenght.out**: O comprimento desejado do vetor de saída. 
-- **each**: Cada elemento de x é repetido todas as vezes.
+- **lenght.out**: La longitud deseada del vector de salida.
+- **each**: Cada elemento de x se repite cada vez.
 
 ---
-## Funciones
-
-### Argumentos
+## Ejercicio
 
 #### ¿Cuál es la diferencia entre las salidas?
 
