@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de datos biológicos con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Eliana F. Burgos" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducción al análisis de datos biológicos con R
+## Clase 3
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Eliana F. Burgos
+
+---
+
+#**Clase 3**
+
+###**Contenido**
+1. [Variables Estadísticas]()
+2. [Distribución de probabilidad]()
+3. [Estadistica descriptiva: medidas de posición]()
+4. [Estadística descriptiva: medidas de dispersión]()
+
+&lt;center&gt;
+&lt;img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6QKjQtfwW03xkk47wA8R6JuGUsl_RND5zdg&amp;usqp=CAU.jpg' width = '30%'&gt;
+ 
+---
+#**IMPORTANTE: LEER!!**
+
+### *Consejos útiles*
+
+1.Recuerde leer bien las consignas y escribir todo lo que necesite en su script. 
+
+2.NO hay calificación en estos ejercicios, son solo para aplicar lo que vimos en la clase teórica y que podamos cerrar la idea. 
+
+3.Copie también en su script los errores que se vaya encontrando, para poder debatir su solución y en caso de que haya podido resolverlos, anote la solución y si usted llegó por análisis propio o mediante búsqueda en la web.
+
+4.Trabaje con el tipo de dato correctamente! Setee las variables numéricas como númericas, factores como factores, etc… 
+
+5.Al finalizar todos los ejercicios, complete el formulario que se encuetra al final de esta guía. 
+
+---
+&lt;center&gt;
+&lt;br&gt;
+Además **PACIENCIA Y COMIDITA RICA** a la hora de hacer los ejercicios
+&lt;br&gt;
+*Cualquier duda nos escriben al mail o al grupo de telegram.*
+
+[efburgos@conicet.gov.ar](mail) ; [mariliabioufpr@gmail.com](mail)
+**__
+##**Vamos a programar**
+
+&lt;img src = 'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&amp;v=2&amp;jpgQuality=100&amp;width=700&amp;url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Foriginal%2F000%2F026%2F489%2Fcrying.jpg'&gt; 
+---
+##**Ejercicio 1** &lt;img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZ-0NfXymoasISfI42MQPy82lKgaVoC22RA&amp;usqp=CAUU' width = '10%'&gt;
+
+&lt;br&gt; 
+&gt; Estudiamos la abundancia de escarabajos en cuatro sitios (a,b,c,d) con diferentes grados de conservación. Medimos la humedad del suelo y el porcentaje de cobertura herbácea a un metro del suelo. 
+
+&lt;br&gt; 
+**OBJETIVO**:Queremos evaluar si la humedad y la cobertura vegetal tienen alguna influencia sobre la abundancia de los escarabajos. 
+
+
+&lt;img src= 'https://erradica.com/wp-content/uploads/2017/03/1-3-1.jpg' width=35%&gt;
+
+
+---
+*Resuelva*
+
+&lt;br&gt;
+
+1.Identifique la **variable respuesta**: ¿Qué tipo de variable es? ¿Qué valores **mínimos** y **máximos** toma?
+
+2.Identifique las **variables explicativas**: ¿Qué tipo de variable son? ¿Qué valores mínimos y máximos toman?
+
+3.Calcule la **media** para la variable respuesta y las variables explicativas para todo el estudio
+
+4.Calcule la **moda** para la variable respuesta y las explicativas para todo el estudio.
+
+5.Calcule los **cuartiles** para la variable respuesta y explicativas para todo el estudio.
+
+6.¿Hay diferencias entre los sitios? Haga un **boxplot** donde se visualicen las medidas de posición para la abundancia en cada sitio
+
+7.¿Cuál es la **variabilidad** de la abundancia en cada sitio? ¿Es **simétrica** mi variable respuesta?
+---
+Ejercicio 1
+
+&lt;br&gt;
+8.Piense en el tipo de datos que componen la variable respuesta. ¿Qué **distribución de probabilidad** cree que presentan?
+
+9.Modele las distribuciones de probabilidad posibles para su variable respuesta y compare el resultado con su identificación previa. 
+
+10.Grafique la abundancia de los escarabajos en función de la **humedad**. 
+
+11.Grafique la abundancia de los escarabajos en función de la **cobertura vegetal**.
+
+12.La humedad del suelo depende en cierta manera de la cobertura vegetal presente en un determinado sitio. Entonces, ¿Usted cree que son **variables independientes**? ¿Cómo corroboraría esto? 
+
+13.Haga una tabla con los estadísticos descriptivos calculados hasta el momento. Puede hacerlo en Excel o con la función **flextable** del paquete *“flextable”*(Gohel, 2021).
+
+**__
+
+&lt;center&gt;
+*Recuerde completar el formulario copiando el script correspondiente a cada pregunta*
+---
+##**Ejercicio 2**   &lt;img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRboJH6AZY7OEZLkHTgPnM3nmiZYU9JoB1z3Q&amp;usqp=CAU' width = '10%'&gt; 
+&gt; Un amigo médico nos escribe un mail pidiéndonos ayuda con los análisis de datos de pacientes jóvenes que sufren fibrosis quística y nos envía la base de datos. Él quiere saber si la capacidad pulmonar en estos jóvenes varía con la edad o el sexo. Entonces, nuestra variable respuesta será “capacidad pulmonar” y las variables explicatorias “edad” y “sexo”. Note que la edad esta expresada en rangos y que el sexo esta expresado en 0,1, 2 siendo 0=hombre, 1= mujer, 2=intersex.
+
+**OBJETIVO**: Evaluar si existen cambios en la capacidad de pulmonar del paciente con fibrosis quistica de acuerdo a su edad y sexo.
+
+&lt;img src = 'https://rochepacientes.es/content/dam/roche-pacientes-2/es/assets/images/sintomas-fibrosis-idiopatica-quistica.png' width = '45%'&gt;
+---
+*Resuelva*
+
+&lt;br&gt;
+1.Identifique qué **tipo de variable** es “capacidad pulmonar” y evalue la **distribución de probabilidad** que presenta mediante un histograma.
+
+2.¿Qué medida estadística puede identificar en el histograma? .
+
+3.Calcule la **media**, **mediana** y **moda** de la capacidad pulmonar para cada **franja etaria**. 
+
+4.Calcule la **media**,**mediana** y **moda** de la capacidad pulmonar para cada **sexo**. 
+
+5.¿Qué tan variable es la “capacidad pulmonar” en nuestra población muestra? Mida el **sesgo**, ***curtosis** y el **coeficiente de variación**. 
+
+6.Grafique la capacidad pulmonar en función de la edad y en función del sexo. Puede elegir el gráfico que le resulte más visual o explicativo
+
+7.Concluya brevemente en función de los resultados.
+
+**__
+&lt;center&gt;
+*Recuerde completar el formulario copiando el script correspondiente a cada pregunta*
+---
+##**Ejercicio 3**  &lt;img src = 'https://thumbs.dreamstime.com/b/cartoon-opossum-vector-illustration-flat-style-front-side-144797105.jpg' width = '10%'&gt; 
+
+&gt; En el marco de la evaluación del estado de conservación de mamíferos de la provincia, nos designaron la especie *Chironectes minimus* mejor conocida como **cuica de agua**, una zarigüeya propia de la Selva Paranaense y que, hasta el momento, en nuestro país solo se encuentra en Misiones. 
+Sabemos que en otras regiones su peso es menor en áreas degradadas respecto de las áreas conservadas. Realizamos la captura de las zarigüeyas (con ayuda de un veterinario,  las medidas de bioseguridad adecuadas y los permisos correspondientes), donde registramos el peso y el sexo de los individuos en dos sitios completamente distintos: un área natural protegida y un cultivo de yerba con arroyos y tajamares.
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmH9HoKBC3XuICk-OohsmJbVD9wLN0b1AZ8g&amp;usqp=CAU)
+
+---
+&lt;br&gt;
+&lt;br&gt;
+
+**OBJETIVO**: Evaluar de manera preliminar si las cuicas de agua sufren cambios 
+en sus tamaños en función del ambiente en el que se encuentran. 
+
+*Resuelva*
+
+1.Si la variable respuesta es el peso de las zarigüeyas ¿Qué **tipo de variable** es y cual sería la **distribución de probabilidades**? 
+
+2.Grafica un **histograma** del peso de las zarigüeyas ¿Qué se observa?
+
+3.Identifica la **media** y la **moda** del peso. 
+
+4.Grafica el **peso** de las zarigüeyas en función del **uso del suelo**.
+
+5.¿Qué podes concluir sobre el grafico anterior?
+
+6.Dado que solo muestreamos una sola vez por estación y en un solo año, ¿Crees que estos valores son concluyentes? Calcula el **coeficiente de variación** del peso para uso del suelo y concluye sobre esto.
+---
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+7.Suponiendo que nuestros datos son robustos y que pueden servir para hacer inferencias, ¿Cuál crees que es la implicancia de estos resultados para la conservación de esta especie?
+
+8.¿Qué otro **análisis descriptivo** podrías realizar? Pueden ser gráficos o el cálculo de otras medidas de posición/dispersión, o ambos. 
+
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+**__
+&lt;center&gt;
+*Recuerde completar el formulario copiando el script correspondiente a cada pregunta*
+---
+## **Ejercicio 4** &lt;img src = 'https://comodibujar.club/wp-content/uploads/2019/10/murcielago-kawaii.jpg' width = '10%'&gt; 
+&gt; Nos salió una beca para hacer una pasantía en Malasia estudiando reservorios del virus Nipah, un patógeno transmitido por murciélagos frugívoros que viven cercanos a zonas de cria de cerdos para consumo humano. 
+Queremos identificar las especies que intervienen en el ciclo silvestre de este virus y conocer como es la seroprevalencia de dicho patógeno en dos áreas naturales.  
+Fuimos a campo, hicimos la captura de murciélagos, buscamos anticuerpos, y armamos la tabla. Ahora nos toca comenzar a analizar estos datos.
+
+**Objetivo**: Evaluar la seroprevalencia del virus Nipah en poblaciones de murciélagos en función del sitio, estación del año y de la riqueza y diversidad del ensamble. 
+
+&lt;img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGdCp6Uq-qOtAqBx9CTSP374lZ1ITeFOT2vw&amp;usqp=CAU' width='20%'&gt;
+
+---
+
+*Resuelva*
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+1.Si la **variable respuesta** es la seroprevalencia del virus en el área natural protegida, ¿qué tipo de variable es? ¿Cómo mediría usted la simetría de esta variable? ¿A qué distribución corresponde?
+
+2.Charlando con un colega le pregunta si la seroprevalencia del virus está relacionada con la riqueza y diversidad del ensamble, ¿Cómo podría usted, de manera exploratoria, **visualizar** si existe esta relación? 
+
+3.Dado que la diversidad está relacionada a la riqueza, ¿qué análisis podría hacer para evaluar estadísticamente la **relación** entre estas variables?
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+4.¿Cuál es la seroprevalencia **media** del virus en murciélagos? ¿Qué tan **variable** es esa seroprevalencia?
+
+5.¿Qué sucede con la seroprevalencia **media** del virus entre estaciones del año? ¿Y entre áreas naturales protegidas? 
+
+6.En base a todos estos análisis **descriptivos**, ¿qué podría usted concluir?
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;be&gt;
+
+**__
+&lt;center&gt;
+*Recuerde completar el formulario copiando el script correspondiente a cada pregunta*
+---
+&lt;center&gt; 
+&lt;img src ='https://ih1.redbubble.net/image.2395980068.1959/st,small,507x507-pad,600x600,f8f8f8.jpg' width='50%'&gt;
+**__
+**COMPLETE EL FORMULARIO**     -&gt;     [https://forms.gle/tmLsFUB5VfVqEcTKA] 
+
+ *FIN*
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:10"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
