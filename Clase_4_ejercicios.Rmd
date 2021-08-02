@@ -1,0 +1,71 @@
+---
+title: "Introducción al análisis de datos biológicos con R"
+subtitle: "Clase 4- Ejercicios"
+author: 
+  - "<img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>"
+  - "Eliana F. Burgos"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:10
+---
+# **Clase 4**
+##**CONTENIDO**
+
+ 1. [Estadística descriptiva: frecuencias](Estadística descriptiva: frecuencias)
+ 
+ 2. [Gráficos](graficos)
+ 
+![rata](https://media0.giphy.com/media/60NrFxmeeSCoE/giphy.gif)  
+---
+## **Ejercicio 4, clase 3** <img src = 'https://comodibujar.club/wp-content/uploads/2019/10/murcielago-kawaii.jpg' width = '10%'> 
+> Nos salió una beca para hacer una pasantía en Malasia estudiando reservorios del virus Nipah, un patógeno transmitido por murciélagos frugívoros que viven cercanos a zonas de cria de cerdos para consumo humano. 
+Queremos identificar las especies que intervienen en el ciclo silvestre de este virus y conocer como es la seroprevalencia de dicho patógeno en dos áreas naturales.  
+Fuimos a campo, hicimos la captura de murciélagos, buscamos anticuerpos, y armamos la tabla. Ahora nos toca comenzar a analizar estos datos.
+
+**Objetivo**: Evaluar la seroprevalencia del virus Nipah en poblaciones de murciélagos en función del sitio, estación del añoo y de la riqueza y diversidad del ensamble. 
+
+<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGdCp6Uq-qOtAqBx9CTSP374lZ1ITeFOT2vw&usqp=CAU' width='20%'>
+
+---
+**NOTA:** Vamos a utilizar la base de datos del ejercicio cuatro de la clase anterior
+<br>
+
+***Resuelva***
+<br>
+1. Grafique un histograma de frecuencias de la seroprevalencia del virus y su línea de densidad
+
+2. Realice un grafico de barras de la seroprevalencia en función de las áreas de estudio 
+
+3. Realice un gráfico de violin de la seroprevalencia en función de las áreas de estudio y compare con el grafico de barras. 
+
+4. Al gráfico de violin realizado anteriormente, agréguele la media con el comando **stat_summary**. Vea el **Help** para programar las especificaciones de color y linea. 
+
+---
+<br>
+
+***Resuelva***
+
+<br>
+
+5.Realice un boxplot de la prevalencia por área de estudio. Compare los tres gráficos realizados hasta el momento. ¿Cual elegiria para reportar en un informe y por qué?
+
+6.Grafique el número de individuos positivos, en función de los analizados con un grafico de líneas.
+
+7.Sabemos que las especies *P. vampyrus* y *P. hypomelanus* son las únicas especies donde detectamos anticuerpos contra el virus Nipah. Grafique la seroprevalencia del virus en función de cada una de las especies. Utilice el gráfico que le resultes más claro y sencillo de interpretar. Si quisiera hacer un grafico de red, recuerde cómo debe ser la estructura de los datos. 
+---
+<br>
+**Dudas y/o consultas**
+
+[efburgos@conicet.gov.ar]() ; [mariliabioufpr@gmail.com]()
+
+<CENTER>
+![rata](https://media4.giphy.com/media/TEuDo5xqaxS5M8Sr9s/giphy.gif)  
+
+<br>
+**Formulario->** [https://forms.gle/qgCHhq5nQU3Y15Q46]()
+
+
