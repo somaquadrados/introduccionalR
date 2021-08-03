@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de datos biológicos con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Eliana F. Burgos" />
+    <script src="Clase_4_Teoria_final_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+    <script src="Clase_4_Teoria_final_files/jquery-1.11.1/jquery.min.js"></script>
+    <link href="Clase_4_Teoria_final_files/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+    <script src="Clase_4_Teoria_final_files/dygraphs-1.1.1/dygraph-combined.js"></script>
+    <script src="Clase_4_Teoria_final_files/dygraphs-1.1.1/shapes.js"></script>
+    <script src="Clase_4_Teoria_final_files/moment-2.8.4/moment.js"></script>
+    <script src="Clase_4_Teoria_final_files/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+    <script src="Clase_4_Teoria_final_files/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+    <script src="Clase_4_Teoria_final_files/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducción al análisis de datos biológicos con R
+## Clase 4
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Eliana F. Burgos
+
+---
+
+# **Clase 4**
+##**CONTENIDO**
+
+ 1. [Estadística descriptiva: frecuencias](Estadística descriptiva: frecuencias)
+ 
+ 2. [Gráficos](graficos)
+ 
+![rata](https://media0.giphy.com/media/60NrFxmeeSCoE/giphy.gif)  
+---
+##**Frecuencias y distribución de frecuencias**
+&lt;br&gt;
+ - es la base de la inferencia estadística
+ 
+ - representa la cantidad de veces que un determinado valor se repite en nuestra muestra
+ - organiza la información disponible para describir los datos
+ 
+ &lt;br&gt;
+ 
+ &lt;center&gt;
+ **lista de valores + frecuencias =&gt; distribución de frecuencias**
+ 
+.right[&lt;img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYW0dHicadjHrkJcGcAmqaf03Ptin3jNLNmQ&amp;usqp=CAU' width = '20%'&gt;] 
+---
+## **RETOMAMOS EL EJERCICIO 3 DE LA CLASE ANTERIOR**
+
+&gt; En el marco de la evaluación del estado de conservaciónn de mamíferos de la provincia, nos designaron la especie *Chironectes minimus* mejor conocida como **cuica de agua**,  propia de la Selva Paranaense y que, hasta el momento, en nuestro país solo se encuentra en Misiones. 
+Sabemos que en otras regiones su peso es menor en áreas degradadas respecto de las áreas conservadas. Realizamos la captura de esta especie (con ayuda de un veterinario,  las medidas de bioseguridad adecuadas y los permisos correspondientes), donde registramos el peso y el sexo de los individuos en dos sitios completamente distintos: un área natural protegida y un cultivo de yerba con arroyos y tajamares.
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmH9HoKBC3XuICk-OohsmJbVD9wLN0b1AZ8g&amp;usqp=CAU)
+
+
+
+
+---
+##**FRECUENCIAS ABSOLUTAS Y RELATIVAS**
+**Frecuencia absoluta**
+-&gt; es el número de veces que se repite un valor
+
+**Frecuencia relativa**
+-&gt; la proporción que representa esa frecuencia absoluta en relación con el total. 
+
+**Frecuencias acumuladas**
+-&gt; suma sucesiva de las frecuencias de los datos ordenados de menor a mayor, 
+
+***Ejemplo***
+
+
+```r
+f.abs &lt;- table(datos$uso_suelo)
+f.abs
+```
+
+```
+## 
+## cultivo reserva 
+##      19      20
+```
+
+```r
+prop.table(f.abs)
+```
+
+```
+## 
+##   cultivo   reserva 
+## 0.4871795 0.5128205
+```
+---
+&lt;br&gt;
+si quiero expresarla en porcentaje uso **prop.table()*100**
+
+
+```r
+prop.table(f.abs)
+```
+
+```
+## 
+##   cultivo   reserva 
+## 0.4871795 0.5128205
+```
+
+```r
+prop.table(f.abs)*100
+```
+
+```
+## 
+##  cultivo  reserva 
+## 48.71795 51.28205
+```
+.right[&lt;img src = 'https://i.pinimg.com/236x/2f/bf/80/2fbf806d96ad84d634ac877e5dcdafce.jpg' width = '25%'&gt;] 
+
+---
+***Ejemplo***
+&lt;br&gt;
+
+
+
+```
+## 
+## 2014 2015 
+##   30    9
+```
+
+```
+## 
+##      2014      2015 
+## 0.7692308 0.2307692
+```
+
+
+
+
+
+```
+## 
+##  h  m 
+## 18 21
+```
+
+```
+## 
+##         h         m 
+## 0.4615385 0.5384615
+```
+
+---
+##**Distribuciónn de frecuencias**  &lt;img src = 'https://thumbs.dreamstime.com/b/cartoon-opossum-vector-illustration-flat-style-front-side-144797105.jpg' width = '7%'&gt; 
+
+- es la especificaciónn de las frecuencias correspondientes a cada uno de sus valores 
+
+Variable    | Frec. absoluta |Frec. relativa
+------------| ---------------|------------
+USO DEL SUELO|               |
+ reserva    | 20             |  0.5128205
+ cultivo    | 19             |  0.4871795 
+AÑO         |                |
+ 2014       | 30             |  0.7692308 
+ 2015       |  9             |  0.2307692
+SEXO        |                |
+  m         | 21             |  0.5384615
+  h         | 18             |  0.4615385 
+
+---
+**Variables cuantitativas** &lt;img src = 'https://thumbs.dreamstime.com/b/cartoon-opossum-vector-illustration-flat-style-front-side-144797105.jpg' width = '7%'&gt; 
+- **podemos calcular las frecuencias para cada valor**
+
+
+```
+## 
+## 467 497 525 545 556 573 586 598 603 617 625 634 642 653 661 681 693 714 
+##   1   1   3   3   3   1   6   1   1   2   2   2   1   3   1   3   3   2
+```
+
+```
+## 
+##        467        497        525        545        556        573        586 
+## 0.02564103 0.02564103 0.07692308 0.07692308 0.07692308 0.02564103 0.15384615 
+##        598        603        617        625        634        642        653 
+## 0.02564103 0.02564103 0.05128205 0.05128205 0.05128205 0.02564103 0.07692308 
+##        661        681        693        714 
+## 0.02564103 0.07692308 0.07692308 0.05128205
+```
+
+
+---
+
+ - **Tabla de distribución de frecuencias** &lt;img src = 'https://thumbs.dreamstime.com/b/cartoon-opossum-vector-illustration-flat-style-front-side-144797105.jpg' width = '7%'&gt; 
+ 
+
+```r
+library(fdth)
+tabla &lt;- fdt(datos$peso, start=460, end=715, h=15)
+tabla
+```
+
+```
+##  Class limits f   rf rf(%) cf  cf(%)
+##     [460,475) 1 0.03  2.56  1   2.56
+##     [475,490) 0 0.00  0.00  1   2.56
+##     [490,505) 1 0.03  2.56  2   5.13
+##     [505,520) 0 0.00  0.00  2   5.13
+##     [520,535) 3 0.08  7.69  5  12.82
+##     [535,550) 3 0.08  7.69  8  20.51
+##     [550,565) 3 0.08  7.69 11  28.21
+##     [565,580) 1 0.03  2.56 12  30.77
+##     [580,595) 6 0.15 15.38 18  46.15
+##     [595,610) 2 0.05  5.13 20  51.28
+##     [610,625) 2 0.05  5.13 22  56.41
+##     [625,640) 4 0.10 10.26 26  66.67
+##     [640,655) 4 0.10 10.26 30  76.92
+##     [655,670) 1 0.03  2.56 31  79.49
+##     [670,685) 3 0.08  7.69 34  87.18
+##     [685,700) 3 0.08  7.69 37  94.87
+##     [700,715) 2 0.05  5.13 39 100.00
+```
+
+---
+###**Frecuencias relativas**
+- **Graficar**: Histograma
+
+
+```r
+plot(tabla, type="fh", 
+     main="Frecuencia absoluta del 
+     peso en gramos de 
+     Cuicas de agua para Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+![zarigueyas](https://media2.giphy.com/media/fXJsGMCnBtBO9URXWe/giphy.gif) 
+
+---
+- **Graficar**: Polígono de frecuencias
+
+&lt;br&gt;
+
+
+```r
+plot(tabla, type="fp", col="red",
+    main="Frecuencia absoluta del 
+     peso en gramos 
+    de Cuicas de agua para Misiones" ) 
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+ ![zarigueyas](https://media2.giphy.com/media/fXJsGMCnBtBO9URXWe/giphy.gif) 
+
+---
+###**Frecuencias acumuladas**
+ **Graficar**: Histograma
+&lt;br&gt;
+
+```r
+plot(tabla, type="cfh",
+     main="Frecuencia acumulada del 
+     peso en gramos de 
+     Cuicas de agua para Misiones") 
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+![zarigueyas](https://media2.giphy.com/media/fXJsGMCnBtBO9URXWe/giphy.gif) 
+
+---
+ **Graficar**: Polígono de frecuencias
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+plot(tabla, type="cfp",col="red",
+     main="Frecuencia acumulada del 
+     peso en gramos de 
+     Cuicas de agua para Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+![zarigueyas](https://media2.giphy.com/media/fXJsGMCnBtBO9URXWe/giphy.gif)
+
+
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;center&gt;
+&lt;br&gt;
+#**GRÁFICOS**
+&lt;br&gt;
+![raton](https://media3.giphy.com/media/EPwELUbhreEPC/giphy.gif)  
+---
+##**GRAFICAR EN R**
+
+Paquete ***stats***
+  - histogramas
+  - gráficos de densidad
+  - gráficos de línea
+  - gráficos de cajas
+  - gráficos de barra
+  - gráficos de torta
+  
+&lt;br&gt;
+
+![raton](https://media3.giphy.com/media/d1E2IByItLUuONMc/giphy.gif)  
+---
+**Histogramas básico para una variable continua**
+&lt;br&gt;
+
+&lt;br&gt;
+
+```r
+hist(datos$peso, main = "Frecuencia del peso en gramos
+     de Cuicas de agua para Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+**Histogramas básico para una variable continua**
+&lt;br&gt;
+
+
+```r
+hist(datos$peso, main = "Frecuencia del peso en gramos
+     de Cuicas de agua para Misiones",
+     xlab = "Peso (gr)",
+     ylab = "Frecuencia",
+     col = "red",
+     border = "black",
+     )
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+
+
+---
+**Gráficos de densidad**
+
+&lt;br&gt;
+
+
+```r
+densidad &lt;- density(datos$peso)
+plot(densidad, 
+     main = "Función de densidad del peso en gramos
+     de Cuicas de agua para Misiones",
+     xlab = "Peso (gr)",
+     ylab = "Densidad")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+
+---
+**Gráficos de línea**
+
+&lt;br&gt;
+
+```r
+plot(datos$peso, type="l", col="blue")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+
+---
+**Gráficos de caja**
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+boxplot(datos$peso, main = "Boxplot del peso en gramos
+     de Cuicas de agua para Misiones", ylab="Peso (gr)",
+        outline = TRUE)
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+
+
+---
+**Gráficos de barra**
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+plot(datos$sexo, main = "Grafico de barras del sexo
+     de Cuicas de agua para Misiones",
+     xlab = "Sexo", ylab = "Frecuencia")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+---
+**Gráficos de barra**
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+barplot(height=datos$peso, width=0.5, space=TRUE, col="green1",
+        main="Grafico de barras del peso 
+        de cuicas de agua para Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+---
+**Gráficos de barra**
+&lt;br&gt;
+&lt;br&gt;
+
+```r
+barplot(table(datos$peso), width=0.5, space=TRUE, col="green1",
+        border="black", main="Grafico de barras del peso 
+        de cuicas de agua para Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+
+---
+**Gráficos de torta**
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+porcentajes &lt;- as.numeric(round(((prop.table(table(datos$sexo)))*100),2))
+porcentajes
+```
+
+```
+## [1] 46.15 53.85
+```
+
+```r
+etiquetas &lt;- c("Hembra", "Macho")
+etiquetas
+```
+
+```
+## [1] "Hembra" "Macho"
+```
+---
+&lt;br&gt; 
+
+&lt;br&gt;
+
+
+```r
+pie(porcentajes, etiquetas,
+    main = "Proporción de sexos de las 
+    Cuicas de agua en Misiones",
+    sub = "")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+---
+&lt;br&gt;
+
+&lt;br&gt;
+
+
+```r
+etiquetas &lt;- paste(etiquetas, porcentajes)
+etiquetas &lt;- paste(etiquetas, "%", sep = "")
+pie(porcentajes, etiquetas,
+    main = "Proporción de sexos de las 
+    Cuicas de agua en Misiones",
+    sub = "")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+
+---
+&lt;br&gt;
+&lt;center&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+![raton](https://media1.giphy.com/media/JfnrkEiBDsghO/giphy.gif)
+
+---
+##**Paquete *"tidyverse"***
+&lt;br&gt;
+Es un conjunto de paquetes que comparten algunas estructuras y funciones para importar, manipular, modelar y graficar datos
+
+.center[&lt;img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWyI45Rr2T-v9J78CXjtyFD7e0fOpjQduqKA&amp;usqp=CAU.jpg' width = '75%'&gt;]
+---
+##**ggplot2**
+&lt;br&gt;
+
+```r
+library(ggplot2)
+```
+
+**Estructura**
+- datos -&gt; base de datos, tabla
+- aes -&gt; asocia los elementos a graficar
+- geometrías -&gt; capas, define el tipo de gráfico (histograma, barras, etc)
+- facetas -&gt; permite dividir un gráico en dos o mas partes siguiendo las mismas escalas
+
+![raton](https://media2.giphy.com/media/Ymayf1Iw1VNHr6bZKF/giphy-downsized.gif)  
+---
+##**ggplot2**
+&lt;br&gt;
+&lt;center&gt;
+
+&lt;img src = 'ggplot2_cheatsheet.jpg' width = '80%'&gt;
+&lt;br&gt;
+
+
+[https://www.rstudio.com/wp-content/uploads/2015/04/ggplot2-spanish.pdf]()
+
+---
+##**ggplot2**
+&lt;br&gt;
+
+  - histogramas
+  - gráficos de densidad
+  - gráficos de puntos
+  - gráficos de línea
+  - gráficos de cajas
+  - gráficos de barra
+  - gráficos de torta
+  
+  
+.right[&lt;img src = 'rata.jpg' width = '30%'&gt;]  
+---
+##**Histogramas**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(x = peso) )+
+  geom_histogram(binwidth = 15) +
+  scale_x_continuous("Peso (gr)") + 
+  scale_y_continuous("Frecuencia") +
+      ggtitle("Histograma del peso en gramos de 
+              Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://m.media-amazon.com/images/I/31QvaqPJjlL._AC_SY450_.jpg' width = '20%'&gt;
+
+---
+##**Gráficos de densidad**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(x = peso) )+
+ geom_density() +
+  scale_x_continuous("Peso (gr)") + 
+  scale_y_continuous("Frecuencia") +
+  ggtitle("Peso en gramos de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://m.media-amazon.com/images/I/31QvaqPJjlL._AC_SY450_.jpg' width = '20%'&gt;
+---
+##**Gráficos de puntos**
+&lt;br&gt;
+
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col = sexo))+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+
+---
+##**Gráficos de puntos**
+&lt;br&gt;
+
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col = sexo) , size=6)+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Gráficos de puntos**
+&lt;br&gt;
+
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col = sexo),size=6, alpha = 1/5) + ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Gráficos de puntos**
+&lt;br&gt;
+
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, shape= sexo), size=3)+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Gráficos de puntos**
+
+&lt;br&gt;
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col=sexo), size=6)+
+  facet_grid(.~uso_suelo)+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Transformación estadística**
+&lt;br&gt;
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col=sexo), size=4)+
+  geom_smooth(aes(x = peso, y = lcorporal), method = 'lm')+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-31-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Transformación estadística**
+&lt;br&gt;
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col=sexo), size=4)+
+  geom_smooth(aes(x = peso, y = lcorporal, linetype=uso_suelo), 
+              method = 'lm')+ ggtitle("Peso (gr) y largo corporal (cm) de           Cuicas de agua en Misiones")
+```
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-32-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Transformación estadística**
+&lt;br&gt;
+
+```r
+ggplot(data = datos) +
+  geom_point(aes(x = peso, y = lcorporal, col=sexo), size=4)+
+  geom_smooth(aes(x = peso, y = lcorporal), method = 'lm') +
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")+
+  facet_grid(rows = vars(uso_suelo))
+```
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-33-1.png)&lt;!-- --&gt;
+&lt;img src = 'ratonleyendo.jpg' width = '20%'&gt;
+---
+##**Gráficos de línea**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+  geom_line(aes(x=peso, y=lcorporal))+
+  ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-34-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://pbs.twimg.com/media/EkRHZQ7WsAAPoiW.jpg' width = '20%'&gt;
+---
+##**Gráficos de línea**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+    geom_line(aes(x=peso, y=lcorporal, colour=uso_suelo), linetype=1, size=1) + ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones") 
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-35-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://pbs.twimg.com/media/EkRHZQ7WsAAPoiW.jpg' width = '20%'&gt;
+---
+##**Gráficos de línea**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+    geom_line(aes(x=peso, y=lcorporal, colour=sexo), linetype=1, size=1)  + ggtitle("Peso (gr) y largo corporal (cm) de 
+          Cuicas de agua en Misiones")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://pbs.twimg.com/media/EkRHZQ7WsAAPoiW.jpg' width = '20%'&gt;
+---
+##**Gráficos de barra**
+&lt;br&gt;
+
+```r
+ggplot(data = datos) +
+  geom_bar(aes(x = uso_suelo))+
+  ggtitle("Individuos de Cuica de agua
+          capturados por sexo en cada uso del suelo")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-37-1.png)&lt;!-- --&gt;
+&lt;img src = 'shoro.jpg' width = '20%'&gt;
+---
+##**Gráficos de barra**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(fill=sexo,x=uso_suelo)) + 
+  geom_bar(position="dodge")+
+  ggtitle("Individuos de Cuica de agua
+          capturados por sexo en cada uso del suelo")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+&lt;img src = 'shoro.jpg' width = '20%'&gt;
+---
+##**Gráficos de barra**
+&lt;br&gt;
+
+
+```r
+ggplot(datos, aes(x=uso_suelo, y= peso, fill=sexo)) + 
+  geom_bar(position="dodge", stat= "identity")+
+  ggtitle("Peso (gr) de Cuicas de agua en función del sexo 
+  para cada uso del suelo")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-39-1.png)&lt;!-- --&gt;
+&lt;img src = 'shoro.jpg' width = '20%'&gt;
+---
+##**Gráficos de barra**
+
+&lt;br&gt;
+
+ **geom_bar()** y **geom_col()** grafican conteos, proporciones o frecuencias de los datos
+
+&lt;br&gt;
+
+ si queremos graficar los valores crudos de una variable cuantitativa, es mejor usar un gráfico de lineas o de puntos
+
+&lt;br&gt;
+
+ para estas variables también podemos usar boxplot que ademas nos da una idea de las medidas de posicion y dispersion de nuestra variable
+ 
+
+&lt;br&gt;
+
+
+.right[&lt;img src = 'https://cdn160.picsart.com/upscale-241865244038212.png?type=webp&amp;to=min&amp;r=640' width = '20%'&gt; ]
+---
+##**Gráficos de caja**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+  geom_boxplot(aes(x = uso_suelo, y = peso))+
+     geom_jitter(aes(x = uso_suelo, y = peso), 
+              size = 2,
+              alpha = 0.5,
+              width = 0.1)
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-40-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://m.media-amazon.com/images/I/31QvaqPJjlL._AC_SY450_.jpg' width = '20%'&gt;
+---
+##**Gráficos de caja**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+  geom_boxplot(aes(x = uso_suelo, y = peso, fill=sexo))
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://m.media-amazon.com/images/I/31QvaqPJjlL._AC_SY450_.jpg' width = '20%'&gt;
+---
+##**Gráficos de caja**
+&lt;br&gt;
+
+```r
+ggplot(datos) +
+  geom_boxplot(aes(x = uso_suelo, y = peso, fill=sexo))+
+  scale_y_continuous(limits=c(400,800))
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-42-1.png)&lt;!-- --&gt;
+&lt;img src = 'https://m.media-amazon.com/images/I/31QvaqPJjlL._AC_SY450_.jpg' width = '20%'&gt;
+---
+##**Gráficos de violin**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(x=uso_suelo, y=peso)) + 
+  geom_violin(fill="blue")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
+&lt;img src = 'hams.jpg' width = '20%'&gt;
+---
+##**Gráficos de violin**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(x=uso_suelo, y=peso)) + 
+  geom_violin(fill="blue")+ stat_summary(fun = "mean",
+               geom = "crossbar", 
+               width = 0.5,
+               colour = "black")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-44-1.png)&lt;!-- --&gt;
+&lt;img src = 'hams.jpg' width = '20%'&gt;
+---
+##**Gráficos de violin**
+&lt;br&gt;
+
+```r
+ggplot(datos, aes(x=uso_suelo, y=peso, fill=sexo)) + 
+  geom_violin()
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-45-1.png)&lt;!-- --&gt;
+&lt;img src = 'hams.jpg' width = '20%'&gt;
+---
+##**Gráficos**
+&lt;br&gt;
+
+Para ver mas estilos de gráficos y cómo programarlos 
+
+   **-&gt;** [https://www.r-graph-gallery.com/index.html]()
+   
+   &lt;br&gt;
+
+.center[&lt;img src = 'ggplot.jpg' width = '40%'&gt;]
+---
+##**Gráficos temporales**
+&lt;br&gt;
+
+```r
+library(tidyverse)
+library(lubridate)
+
+set.seed(1984)
+f &lt;- sample(seq(as.Date('2015-01-01'), as.Date('2021-01-01'), by = "month"), 12)
+# Dato de tipo 'date' (tiempo)
+fecha &lt;- c(f) %&gt;%
+  as.Date()
+fecha
+```
+
+```
+##  [1] "2018-04-01" "2016-08-01" "2019-10-01" "2017-08-01" "2016-05-01"
+##  [6] "2020-08-01" "2017-12-01" "2018-02-01" "2018-09-01" "2020-05-01"
+## [11] "2015-10-01" "2015-02-01"
+```
+---
+&lt;br&gt;
+&lt;br&gt;
+
+
+```r
+rural &lt;- sample(15:30, 12)
+urbano &lt;- sample(30:100, 12)
+periurbano &lt;- sample(15:70, 12)
+data &lt;- data.frame(rural, urbano, periurbano, fecha) %&gt;% 
+  pivot_longer(-fecha, 
+               names_to = "uso_tierra", 
+               values_to = "casos")
+data
+```
+
+```
+## # A tibble: 36 x 3
+##    fecha      uso_tierra casos
+##    &lt;date&gt;     &lt;chr&gt;      &lt;int&gt;
+##  1 2018-04-01 rural         16
+##  2 2018-04-01 urbano        78
+##  3 2018-04-01 periurbano    20
+##  4 2016-08-01 rural         23
+##  5 2016-08-01 urbano        50
+##  6 2016-08-01 periurbano    22
+##  7 2019-10-01 rural         20
+##  8 2019-10-01 urbano        83
+##  9 2019-10-01 periurbano    41
+## 10 2017-08-01 rural         24
+## # ... with 26 more rows
+```
+---
+**Gráfico de línea**
+
+ &lt;br&gt;
+
+```r
+ggplot(data, aes(x=fecha, y=casos)) +
+  geom_line()
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-48-1.png)&lt;!-- --&gt;
+
+---
+**Gráfico de línea**
+
+ &lt;br&gt;
+
+```r
+data %&gt;% 
+  ggplot(aes(x = fecha, y = casos, color = uso_tierra)) +
+  geom_line() + 
+  geom_point()
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-49-1.png)&lt;!-- --&gt;
+---
+**Gráfico de barras**
+ &lt;br&gt;
+ &lt;br&gt;
+ 
+
+```r
+data %&gt;% 
+  ggplot(aes(x = fecha, y = casos, fill = uso_tierra)) +
+  geom_bar(position="dodge", stat="identity")
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-50-1.png)&lt;!-- --&gt;
+---
+**Gráfico de área**
+ &lt;br&gt;
+ &lt;br&gt;
+ 
+
+```r
+data %&gt;% 
+  ggplot(aes(x = fecha, y = casos, fill = uso_tierra)) +
+ geom_area(alpha=0.5)
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-51-1.png)&lt;!-- --&gt;
+---
+##**Mapas interactivos**
+&lt;br&gt;
+
+
+```r
+library(dygraphs)
+library(xts)  
+```
+
+```r
+data1 &lt;- xts(x = data$casos, order.by = data$fecha)
+```
+---
+##**Mapas interactivos**
+&lt;br&gt;
+
+
+```r
+p &lt;- dygraph(data1) %&gt;%
+  dyOptions( fillGraph=TRUE )
+p
+```
+
+<div id="htmlwidget-6afeb6b4a24fd9ab3b83" style="width:432px;height:360px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6afeb6b4a24fd9ab3b83">{"x":{"attrs":{"labels":["second","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60,"drawAxis":true},"y":{"drawAxis":true}},"stackedGraph":false,"fillGraph":true,"fillAlpha":0.15,"stepPlot":false,"drawPoints":false,"pointSize":1,"drawGapEdgePoints":false,"connectSeparatedPoints":false,"strokeWidth":1,"strokeBorderColor":"white","colorValue":0.5,"colorSaturation":1,"includeZero":false,"drawAxesAtZero":false,"logscale":false,"axisTickSize":3,"axisLineColor":"black","axisLineWidth":0.3,"axisLabelColor":"black","axisLabelFontSize":14,"axisLabelWidth":60,"drawGrid":true,"gridLineWidth":0.3,"rightGap":5,"digitsAfterDecimal":2,"labelsKMB":false,"labelsKMG2":false,"labelsUTC":false,"maxNumberWidth":6,"animatedZooms":false,"mobileDisableYTouch":true,"disableZoom":false},"scale":"seconds","annotations":[],"shadings":[],"events":[],"format":"date","data":[["2015-02-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-02-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2015-10-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-05-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2016-08-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-08-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2017-12-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-02-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-04-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2019-10-01T00:00:00.000Z","2020-05-01T00:00:00.000Z","2020-05-01T00:00:00.000Z","2020-05-01T00:00:00.000Z","2020-08-01T00:00:00.000Z","2020-08-01T00:00:00.000Z","2020-08-01T00:00:00.000Z"],[21,68,64,25,37,30,19,55,54,23,50,22,24,49,34,29,89,48,22,61,42,16,78,20,28,66,47,20,83,41,17,58,40,18,97,59]],"fixedtz":false,"tzone":"UTC"},"evals":[],"jsHooks":[]}</script>
+
+---
+##**Gráfico de red**
+&lt;br&gt;
+También llamados "**Spider**",  gráficos de "**Web**", "**Polar**" o "**Radarchart**"
+
+&lt;br&gt;
+Base de datos 
+
+  ** -&gt;** *fila* ** -&gt;** una entidad 
+  
+  ** -&gt;** *columna* ** -&gt;** variable cuantitativa
+  
+Las dos primeras filas proporcionan el mínimo y el máximo que se utilizará para cada variable  
+
+Sirve para graficar **RELACIONES** entre los datos
+
+```r
+library(fmsb)
+```
+.right[&lt;img src = 'https://i.pinimg.com/originals/b8/4d/6f/b84d6f367d5ba5e7808da350e6a0f111.png' width = '25%'&gt;]
+  
+---
+##**Gráfico de red** 
+&lt;img src = 'spider.jpg' width = '10%'&gt; **Teoria de grafos**
+
+&lt;br&gt;
+
+**Grafos** son un conjunto de **nodos** y **aristas**  
+
+Permiten reprensentar relaciones **binarias** dentro de un conjunto
+
+Relaciones **dirigidas** o **no dirigidas**
+
+.center[&lt;img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Connexe_et_pas_connexe.svg/400px-Connexe_et_pas_connexe.svg.png' width = '45%'&gt;]
+---
+**Ejemplo**
+&lt;br&gt;
+
+
+&lt;br&gt;
+
+```r
+radarchart(data)
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-57-1.png)&lt;!-- --&gt;
+---
+&lt;center&gt;
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-58-1.png)&lt;!-- --&gt;
+
+---
+**Ejemplo**
+&lt;br&gt;
+
+
+
+```r
+radarchart( casos, axistype=1 , 
+   cglcol="grey", cglty=1, axislabcol="grey", 
+   caxislabels=seq(0,20,5), cglwd=0.8)
+```
+
+![](Clase_4_Teoria_final_files/figure-html/unnamed-chunk-60-1.png)&lt;!-- --&gt;
+---
+&lt;br&gt;
+**Dudas y/o consultas**
+&lt;br&gt;
+
+[efburgos@conicet.gov.ar]() ; [mariliabioufpr@gmail.com]()
+
+&lt;CENTER&gt;
+![rata](https://media4.giphy.com/media/TEuDo5xqaxS5M8Sr9s/giphy.gif)  
+
+
+&lt;br&gt;
+**Ejercicios -&gt;** [Ejercicios_Clase4.pdf]()
+&lt;br&gt;
+
+**Formulario-&gt;** [https://forms.gle/3gnn3eMoG6efYaoy6]()
+
+&lt;br&gt;
+*FIN*
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:10"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

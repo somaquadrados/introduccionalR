@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción al análisis de datos biológicos con R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="author" content="Eliana F. Burgos" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducción al análisis de datos biológicos con R
+## Clase 4- Ejercicios
+### <img src = 'https://github.com/Soma-dos-Quadrados/ArtesSoma/blob/main/simbolo_smfundo4.png?raw=true' width = '25%'>
+### Eliana F. Burgos
+
+---
+
+# **Clase 4**
+##**CONTENIDO**
+
+ 1. [Estadística descriptiva: frecuencias](Estadística descriptiva: frecuencias)
+ 
+ 2. [Gráficos](graficos)
+ 
+![rata](https://media0.giphy.com/media/60NrFxmeeSCoE/giphy.gif)  
+---
+## **Ejercicio 4, clase 3** &lt;img src = 'https://comodibujar.club/wp-content/uploads/2019/10/murcielago-kawaii.jpg' width = '10%'&gt; 
+&gt; Nos salió una beca para hacer una pasantía en Malasia estudiando reservorios del virus Nipah, un patógeno transmitido por murciélagos frugívoros que viven cercanos a zonas de cria de cerdos para consumo humano. 
+Queremos identificar las especies que intervienen en el ciclo silvestre de este virus y conocer como es la seroprevalencia de dicho patógeno en dos áreas naturales.  
+Fuimos a campo, hicimos la captura de murciélagos, buscamos anticuerpos, y armamos la tabla. Ahora nos toca comenzar a analizar estos datos.
+
+**Objetivo**: Evaluar la seroprevalencia del virus Nipah en poblaciones de murciélagos en función del sitio, estación del añoo y de la riqueza y diversidad del ensamble. 
+
+&lt;img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGdCp6Uq-qOtAqBx9CTSP374lZ1ITeFOT2vw&amp;usqp=CAU' width='20%'&gt;
+
+---
+**NOTA:** Vamos a utilizar la base de datos del ejercicio cuatro de la clase anterior
+&lt;br&gt;
+
+***Resuelva***
+&lt;br&gt;
+1. Grafique un histograma de frecuencias de la seroprevalencia del virus y su línea de densidad
+
+2. Realice un grafico de barras de la seroprevalencia en función de las áreas de estudio 
+
+3. Realice un gráfico de violin de la seroprevalencia en función de las áreas de estudio y compare con el grafico de barras. 
+
+4. Al gráfico de violin realizado anteriormente, agréguele la media con el comando **stat_summary**. Vea el **Help** para programar las especificaciones de color y linea. 
+
+---
+&lt;br&gt;
+
+***Resuelva***
+
+&lt;br&gt;
+
+5.Realice un boxplot de la prevalencia por área de estudio. Compare los tres gráficos realizados hasta el momento. ¿Cual elegiria para reportar en un informe y por qué?
+
+6.Grafique el número de individuos positivos, en función de los analizados con un grafico de líneas.
+
+7.Sabemos que las especies *P. vampyrus* y *P. hypomelanus* son las únicas especies donde detectamos anticuerpos contra el virus Nipah. Grafique la seroprevalencia del virus en función de cada una de las especies. Utilice el gráfico que le resultes más claro y sencillo de interpretar. Si quisiera hacer un grafico de red, recuerde cómo debe ser la estructura de los datos. 
+---
+&lt;br&gt;
+**Dudas y/o consultas**
+
+[efburgos@conicet.gov.ar]() ; [mariliabioufpr@gmail.com]()
+
+&lt;CENTER&gt;
+![rata](https://media4.giphy.com/media/TEuDo5xqaxS5M8Sr9s/giphy.gif)  
+
+&lt;br&gt;
+**Formulario-&gt;** [https://forms.gle/qgCHhq5nQU3Y15Q46]()
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:10"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
